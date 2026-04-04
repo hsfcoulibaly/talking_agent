@@ -1,0 +1,146 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{url}
+
+\title{Master Project: Bridging Vision and Language---A Multi-Image AI Pipeline for Context-Aware NPC Storytelling}
+\author{Hassan Coulibaly}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Modern interactive media frequently struggles with ludonarrative dissonance, where dynamically driven player actions conflict with static, pre-scripted game narratives. While recent advancements in Vision-Language Models (VLMs) have enabled narrative extraction from single, static images, these approaches lack the temporal and sequential context required to interpret complex gameplay. This project introduces a novel, multi-modal machine learning pipeline designed to generate context-aware, dynamic dialogue for Non-Playable Characters (NPCs) based on sequential gameplay screenshots. The proposed architecture separates visual perception from narrative generation to strictly ground the AI in gameplay reality. First, a VLM sequentially processes in-game images to extract key entities, actions, and environmental states, structuring this data into a chronological scene graph. Second, a Large Language Model (LLM) utilizes this structured data---constrained by established interactive storytelling principles---to generate dramatically meaningful and credible NPC dialogue. By filtering raw visual data into a strict JSON framework before text generation, the pipeline reduces LLM hallucination and arbitrary content creation. This approach demonstrates a scalable method for bridging computer vision and natural language processing, allowing games to dynamically translate visual player events into coherent, immersive lore without sacrificing narrative integrity.
+\end{abstract}
+
+\section{Introduction}
+
+The landscape of interactive media and video games has evolved from simple, linear progression into expansive, open-world environments where player agency dictates the flow of events. As rendering technologies and physics engines have advanced to create highly realistic simulations, the systems governing in-game storytelling have often lagged behind. In most contemporary open-world games, Non-Playable Character (NPC) dialogue remains heavily pre-scripted. While branching dialogue trees offer the illusion of choice, they are ultimately finite and struggle to account for the emergent, unpredictable actions players take in a physics-driven world.
+
+This master's project implements a prototype \emph{talking agent} pipeline: a batch of time-ordered gameplay screenshots is summarized per frame by a VLM, merged into a single structured \emph{scene graph}, and passed to an LLM that produces short NPC dialogue under explicit grounding constraints. The implementation uses Google's \texttt{gemini-2.0-flash} for both the vision and language calls, with extraction forced to \texttt{application/json} for machine-parseable state.
+
+
+\section{Background}
+%1st paper 
+
+
+
+%\url{https://ieeexplore.ieee.org/document/11227644}
+
+
+A prototype system for AI \& Interactive Storytelling in Cultural Heritage was developed for the Dunhuang Murals (specifically the Jataka stories) to move beyond passive viewing~\cite{11227644}.
+%Core Modules: 
+The system includes mural segmentation to explain individual elements, interactive knowledge graphs that trigger cinematic visual effects when clicked, and a creative reconstruction tool where users build their own comic-style narratives.
+%AI Integration: 
+An AI agent (built on the COZE platform and GPT models) acts as an approachable guide, providing real-time explanations and creative suggestions while drawing from a curated knowledge base to prevent ``hallucinations''.
+%Outcomes: 
+User testing showed high scores in attractiveness, novelty, and stimulation, suggesting the system helps users form deeper emotional and intellectual connections with heritage.
+
+%%2nd paper
+%Virtual Reality (VR) for Prehistoric Archaeology
+%%\url{https://ieeexplore.ieee.org/document/11025303}
+%
+%The Crvena Stijena VR project in Montenegro addresses the difficulty common visitors have in understanding prehistoric sites, which often appear as abstract excavations~\cite{11025303}.
+%
+%The Experience: Users enter a 3D reconstruction of the cave where they can explore digital replicas of archaeological findings. The application features an intro animation of the earth's creation and a ``Lara Croft"-style guide.
+%
+%Gamification: To increase engagement, users participate in a deer hunting gameplay using prehistoric tools, but only after passing a quiz on the educational content.
+%
+%Key Findings: The most impressive part for users was the ability to handle and rotate 3D reconstructions of tool fragments, providing a level of access impossible in physical museums where items are behind glass
+%
+%%3rd paper 
+%Storytelling \& AI in Engineering Education
+%%\url{https://ieeexplore.ieee.org/document/9929609}
+%
+%Researchers at Shahid Beheshti University utilized storytelling and AI to teach complex engineering concepts, specifically series DC-DC converters, in online environments~\cite{9929609}.
+%
+%Metaphorical Learning: Technical circuit components were taught using metaphors; for example, a diode was described as a "Toll Road" (one-way traffic), and a sliding controller was cast as "Municipal Police".
+%
+%Interactive Steps: The method involves five steps including questioning, student grouping in Adobe Connect, and a creative phase where students draw diagrams based on the story metaphors.
+%
+%AI's Role: Students were required to compare their own technical interpretations of the story with AI-generated responses to promote deeper critical analysis.
+%
+%Outcomes: Over 90\% of students found the method more effective and memorable than "dry" traditional lectures, noting it significantly increased participation in online settings
+
+
+\section{System Architecture and Implementation}
+
+\subsection{Design goals}
+
+The design follows three principles aligned with the research abstract: (1)~\textbf{temporal grounding}---images are processed in a user-defined order (e.g., lexicographic filename order as a proxy for capture order); (2)~\textbf{structured mediation}---raw pixels are never passed directly to the dialogue model; only JSON derived from vision passes through; (3)~\textbf{constrained narration}---the final prompt instructs the model to avoid inventing entities, locations, or plot beats absent from the scene graph.
+
+\subsection{Stage 1: Per-frame visual extraction}
+
+For each frame index $i = 0,1,\ldots$, the pipeline sends the screenshot and a fixed instruction prompt to the VLM. The model must return a JSON object with fields including \texttt{location}, \texttt{time\_of\_day}, \texttt{player\_status}, \texttt{recent\_action}, \texttt{notable\_enemies\_or\_objects}, and \texttt{visible\_entities} (a list of short strings). Extraction uses a low temperature (0.2) to favor factual stability. Each result is wrapped with metadata: \texttt{frame\_index}, \texttt{source\_image}, and \texttt{observation}.
+
+\subsection{Stage 2: Consolidation into a chronological scene graph}
+
+Per-frame observations are merged into one JSON \emph{scene graph} suitable for dialogue generation. Two modes are implemented:
+
+\begin{itemize}
+  \item \textbf{LLM consolidation (default).} A second call to the same model merges the ordered frame list into a graph with \texttt{timeline\_summary}, \texttt{environment} (\texttt{location}, \texttt{time\_of\_day}, \texttt{conditions}), \texttt{entities} (with \texttt{id}, \texttt{name\_or\_description}, \texttt{type}, \texttt{first\_frame}, \texttt{last\_frame}), \texttt{events} (\texttt{frame\_index}, \texttt{description}, \texttt{involved\_entity\_ids}), and \texttt{player\_arc} (\texttt{status\_notes}, \texttt{notable\_actions}). The consolidator is instructed not to invent content absent from the observations.
+  \item \textbf{Simple stitch (\texttt{--simple-consolidate}).} A deterministic merge (no extra API call) concatenates actions, collects entity strings, and builds a minimal graph; useful for cost-sensitive runs or ablations.
+\end{itemize}
+
+\subsection{Stage 3: NPC dialogue generation}
+
+The LLM receives only the consolidated scene graph and a block of \emph{storytelling constraints}: ground claims in the JSON, avoid filling gaps with specific unsupported lore, keep a short campfire recap in second person, and avoid omniscient narration. Dialogue generation uses a higher temperature (0.7) for phrasing variety while the input remains fixed structured state.
+
+\section{Codebase, Data Layout, and Reproducibility}
+
+The repository is organized as follows (paths relative to project root):
+
+\begin{verbatim}
+talking_agent/
+  data/
+    test_screenshots/     <- preferred input folder
+    extracted_state/      <- *_frames.json, *_scene_graph.json
+    generated_stories/    <- *_npc_dialogue.txt
+  test_images/            <- legacy samples if test_screenshots is empty
+  evaluation/
+    ground_truth_labels.csv
+    human_scoring_template.csv
+  src/
+    main_pipeline.py
+    evaluator.py
+  .env.example
+  requirements.txt
+\end{verbatim}
+
+\subsection{Execution}
+
+From the repository root, after \texttt{pip install -r requirements.txt} and setting \texttt{GEMINI\_API\_KEY} in a local \texttt{.env} file (see \texttt{.env.example}):
+
+\begin{verbatim}
+python src/main_pipeline.py
+python src/main_pipeline.py --images-dir path/to/screenshots
+python src/main_pipeline.py --simple-consolidate
+\end{verbatim}
+
+\noindent By default, the script uses \texttt{data/test\_screenshots} if it contains images; otherwise it falls back to \texttt{test\_images}. Output files are timestamped (UTC) under \texttt{data/extracted\_state/} and \texttt{data/generated\_stories/}.
+
+\subsection{API keys and version control}
+
+Secrets must not be committed. Contributors should copy \texttt{.env.example} to \texttt{.env} and add the key locally. If a key was ever committed, it should be revoked in the Google AI console and replaced with a new key; historical git commits do not erase exposure.
+
+\section{Evaluation}
+
+\subsection{Structured VLM labels}
+
+The script \texttt{src/evaluator.py} reads \texttt{evaluation/ground\_truth\_labels.csv} with columns \texttt{Image\_ID}, \texttt{Condition\_Tested}, \texttt{Ground\_Truth}, and \texttt{VLM\_Prediction} (binary 0/1). It reports precision, recall, and F1 per condition and a macro-averaged F1. Rows should be populated with real labels and model predictions from the experimenter's runs.
+
+\subsection{Human scoring}
+
+The template \texttt{evaluation/human\_scoring\_template.csv} supports optional Likert-style ratings (e.g., coherence, grounding, engagement) for dialogue or scene-graph quality.
+
+\section{Limitations and Future Work}
+
+Frame order is user-supplied (e.g., filename order), not inferred from video timestamps. VLM mistakes propagate into the graph and dialogue; consolidation may over- or under-merge events. The pipeline does not yet integrate live game APIs or native scene graphs from engines; extending to engine telemetry would tighten grounding further.
+
+\bibliographystyle{IEEEbib}
+%\bibliographystyle{ACM-Reference-Format}
+\bibliography{refs}
+
+
+\end{document}

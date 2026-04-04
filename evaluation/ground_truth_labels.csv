@@ -1,0 +1,5 @@
+Image_ID,Condition_Tested,Ground_Truth,VLM_Prediction
+example_image_skyrim.jpg,location_detectable,1,1
+example_image_skyrim.jpg,action_described,1,0
+sc6w23.jpg,location_detectable,1,1
+sc6w23.jpg,action_described,0,0

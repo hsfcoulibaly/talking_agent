@@ -1,0 +1,38 @@
+1st paper 
+
+AI & Interactive Storytelling in Cultural Heritage
+https://ieeexplore.ieee.org/document/11227644
+
+
+A prototype system was developed for the Dunhuang Murals (specifically the Jataka stories) to move beyond passive viewing
+
+Core Modules: The system includes mural segmentation to explain individual elements, interactive knowledge graphs that trigger cinematic visual effects when clicked, and a creative reconstruction tool where users build their own comic-style narratives
+
+AI Integration: An AI agent (built on the COZE platform and GPT models) acts as an approachable guide, providing real-time explanations and creative suggestions while drawing from a curated knowledge base to prevent "hallucinations"
+
+Outcomes: User testing showed high scores in attractiveness, novelty, and stimulation, suggesting the system helps users form deeper emotional and intellectual connections with heritage
+
+2nd paper
+Virtual Reality (VR) for Prehistoric Archaeology
+https://ieeexplore.ieee.org/document/11025303
+
+The Crvena Stijena VR project in Montenegro addresses the difficulty common visitors have in understanding prehistoric sites, which often appear as abstract excavations.
+
+The Experience: Users enter a 3D reconstruction of the cave where they can explore digital replicas of archaeological findings. The application features an intro animation of the earth's creation and a "Lara Croft"-style guide.
+
+Gamification: To increase engagement, users participate in a deer hunting gameplay using prehistoric tools, but only after passing a quiz on the educational content.
+
+Key Findings: The most impressive part for users was the ability to handle and rotate 3D reconstructions of tool fragments, providing a level of access impossible in physical museums where items are behind glass
+
+3rd paper Storytelling & AI in Engineering Education
+https://ieeexplore.ieee.org/document/9929609
+
+Researchers at Shahid Beheshti University utilized storytelling and AI to teach complex engineering concepts, specifically series DC-DC converters, in online environments.
+
+Metaphorical Learning: Technical circuit components were taught using metaphors; for example, a diode was described as a "Toll Road" (one-way traffic), and a sliding controller was cast as "Municipal Police".
+
+Interactive Steps: The method involves five steps including questioning, student grouping in Adobe Connect, and a creative phase where students draw diagrams based on the story metaphors.
+
+AI's Role: Students were required to compare their own technical interpretations of the story with AI-generated responses to promote deeper critical analysis.
+
+Outcomes: Over 90% of students found the method more effective and memorable than "dry" traditional lectures, noting it significantly increased participation in online settings
