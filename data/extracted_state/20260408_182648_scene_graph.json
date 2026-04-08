@@ -1,0 +1,118 @@
+{
+  "timeline_summary": "The player begins by observing a red Saurian on a hillside in Natlan before engaging a Wayob Manifestation in combat. The battle intensifies as the active character switches to Wanderer, who sustains critical damage and is forced to retreat from the large enemy.",
+  "environment": {
+    "location": "Grassy hillside in Natlan near a mechanical structure",
+    "time_of_day": "day",
+    "conditions": [
+      "Clear weather",
+      "Grassy terrain",
+      "Active combat zone"
+    ]
+  },
+  "entities": [
+    {
+      "id": "e1",
+      "name_or_description": "Jean",
+      "type": "npc",
+      "first_frame": 0,
+      "last_frame": 4
+    },
+    {
+      "id": "e2",
+      "name_or_description": "Kinich",
+      "type": "npc",
+      "first_frame": 0,
+      "last_frame": 4
+    },
+    {
+      "id": "e3",
+      "name_or_description": "Wanderer",
+      "type": "npc",
+      "first_frame": 0,
+      "last_frame": 4
+    },
+    {
+      "id": "e4",
+      "name_or_description": "Yanfei",
+      "type": "npc",
+      "first_frame": 0,
+      "last_frame": 4
+    },
+    {
+      "id": "e5",
+      "name_or_description": "Wayob Manifestation (Large red fiery beast)",
+      "type": "creature",
+      "first_frame": 0,
+      "last_frame": 4
+    },
+    {
+      "id": "e6",
+      "name_or_description": "Mechanical building",
+      "type": "environment",
+      "first_frame": 3,
+      "last_frame": 3
+    },
+    {
+      "id": "e7",
+      "name_or_description": "Quest marker",
+      "type": "player_hint",
+      "first_frame": 0,
+      "last_frame": 3
+    }
+  ],
+  "events": [
+    {
+      "frame_index": 0,
+      "description": "Player stands still on a hillside observing a red Saurian and distant ruins.",
+      "involved_entity_ids": [
+        "e1",
+        "e5",
+        "e7"
+      ]
+    },
+    {
+      "frame_index": 1,
+      "description": "Player runs across an open field toward a large red creature.",
+      "involved_entity_ids": [
+        "e1",
+        "e5"
+      ]
+    },
+    {
+      "frame_index": 2,
+      "description": "Jean engages the Wayob Manifestation in combat, surrounded by green elemental effects.",
+      "involved_entity_ids": [
+        "e1",
+        "e5"
+      ]
+    },
+    {
+      "frame_index": 3,
+      "description": "Wanderer takes over combat, triggering Swirl reactions against Saurian enemies near a mechanical structure.",
+      "involved_entity_ids": [
+        "e3",
+        "e5",
+        "e6",
+        "e7"
+      ]
+    },
+    {
+      "frame_index": 4,
+      "description": "Wanderer attempts to flee from the large red enemy while at critically low health.",
+      "involved_entity_ids": [
+        "e3",
+        "e5"
+      ]
+    }
+  ],
+  "player_arc": {
+    "status_notes": "The player started at full health with Jean but ended the sequence with Wanderer at critically low health (550/16728) and unable to switch characters.",
+    "notable_actions": [
+      "Exploration",
+      "Engaging boss-level enemy",
+      "Triggering Swirl reactions",
+      "Tactical retreat"
+    ]
+  },
+  "consolidation_method": "llm"
+}

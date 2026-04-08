@@ -17,7 +17,7 @@ The pipeline asks whether an LLM can produce engaging, grounded NPC dialogue fro
 
 ## Architecture
 
-1. **Per-frame visual extraction (VLM):** `gemini-2.0-flash` reads each image and returns strict JSON (`location`, `recent_action`, `visible_entities`, etc.).
+1. **Per-frame visual extraction (VLM):** A Gemini model (default `gemini-2.0-flash`; override with `GEMINI_MODEL` in `.env` or `--model`) reads each image and returns strict JSON (`location`, `recent_action`, `visible_entities`, etc.).
 2. **Temporal consolidation:** Either an LLM merges frames into a chronological scene graph (`entities`, `events`, `player_arc`, …) or a deterministic **simple stitch** (`--simple-consolidate`) for cheaper runs.
 3. **Narrative generation (LLM):** The same model role-plays an NPC and speaks only from the scene graph, with rules that limit hallucination.
 
@@ -28,7 +28,8 @@ talking_agent/
 ├── data/
 │   ├── test_screenshots/   # Preferred input folder (screenshots for batch runs)
 │   ├── extracted_state/    # Written: *_frames.json, *_scene_graph.json
-│   └── generated_stories/   # Written: *_npc_dialogue.txt
+│   ├── generated_stories/   # Written: *_npc_dialogue.txt
+│   └── analysis/figures/   # Written by src/eda_visualize.py (PNG exports)
 ├── test_images/            # Legacy sample screenshots (used if test_screenshots is empty)
 ├── evaluation/
 │   ├── ground_truth_labels.csv   # Template + sample rows for F1 evaluation
@@ -60,16 +61,35 @@ Defaults: uses `data/test_screenshots` if it contains images, otherwise `test_im
 ```bash
 python src/main_pipeline.py --images-dir path/to/screenshots
 python src/main_pipeline.py --simple-consolidate
+python src/main_pipeline.py --model gemini-3-flash-preview --max-frames 15 --max-image-side 1024
 ```
 
-`--simple-consolidate` skips the LLM scene-graph merge (one VLM call per frame plus one dialogue LLM call).
+`--simple-consolidate` skips the LLM scene-graph merge (one VLM call per frame plus one dialogue LLM call). Use `--max-frames`, `--sleep`, and `--max-image-side` to limit cost and ease API rate limits on large folders.
+
+If VLM finished but merge/dialogue failed, resume without redoing vision calls:
+
+```bash
+python src/main_pipeline.py --from-frames-json data/extracted_state/<run_id>_frames.json --model gemini-3-flash-preview
+```
 
 ## Evaluation (VLM binary labels)
 
-Fill in `evaluation/ground_truth_labels.csv` with your own `VLM_Prediction` column from experiments, then:
+`evaluation/ground_truth_labels.csv` lists one row per **frame** (`Image_ID`, e.g. `frame_0001.png`) and **condition** (binary checks such as `location_detectable`, `action_described`). Replace the sample **Ground_Truth** and **VLM_Prediction** (0/1) with labels from your rubric and pipeline outputs, then:
 
 ```bash
 python src/evaluator.py
 ```
 
 Human study ratings can be recorded from `evaluation/human_scoring_template.csv`.
+
+## EDA / figures from saved runs
+
+After you have `data/extracted_state/*_frames.json` (and matching `*_scene_graph.json`), generate plots and summary stats:
+
+```bash
+pip install -r requirements.txt
+python src/eda_visualize.py
+python src/eda_visualize.py --run-id 20260408_182648
+```
+
+PNGs are written to `data/analysis/figures/` (run overview, per-frame metrics, entity types/spans, event timeline, evaluation bars when the CSV is filled).

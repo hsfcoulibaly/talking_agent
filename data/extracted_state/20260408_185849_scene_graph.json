@@ -1,0 +1,187 @@
+{
+  "timeline_summary": "The player travels across Natlan and Fontaine, alternating between exploration, NPC interactions in the Fortress of Meropide, and intense combat against Wayob Manifestations, Fatui Skirmishers, and Treasure Hoarders. Throughout the journey, the party utilizes specialized traversal skills and transformations to reach the 'Bureau de d\u00e9lib\u00e9ration' quest objective.",
+  "environment": {
+    "location": "Natlan and Fontaine regions, including the Fortress of Meropide",
+    "time_of_day": "Dynamic cycle (Day, Dusk, Night)",
+    "conditions": [
+      "Sunny",
+      "Rainy",
+      "Underground industrial",
+      "Coastal",
+      "Bioluminescent caverns"
+    ]
+  },
+  "entities": [
+    {
+      "id": "e1",
+      "name_or_description": "Jean",
+      "type": "player_hint",
+      "first_frame": 0,
+      "last_frame": 196
+    },
+    {
+      "id": "e2",
+      "name_or_description": "Kinich",
+      "type": "player_hint",
+      "first_frame": 0,
+      "last_frame": 196
+    },
+    {
+      "id": "e3",
+      "name_or_description": "Wanderer",
+      "type": "player_hint",
+      "first_frame": 0,
+      "last_frame": 196
+    },
+    {
+      "id": "e4",
+      "name_or_description": "Yanfei",
+      "type": "player_hint",
+      "first_frame": 0,
+      "last_frame": 196
+    },
+    {
+      "id": "e5",
+      "name_or_description": "Goldflame Qucusaur Tyrant",
+      "type": "creature",
+      "first_frame": 2,
+      "last_frame": 2
+    },
+    {
+      "id": "e6",
+      "name_or_description": "Wayob Manifestation",
+      "type": "creature",
+      "first_frame": 8,
+      "last_frame": 132
+    },
+    {
+      "id": "e7",
+      "name_or_description": "Sedzimir",
+      "type": "npc",
+      "first_frame": 66,
+      "last_frame": 68
+    },
+    {
+      "id": "e8",
+      "name_or_description": "Catherine",
+      "type": "npc",
+      "first_frame": 69,
+      "last_frame": 70
+    },
+    {
+      "id": "e9",
+      "name_or_description": "Treasure Hoarders",
+      "type": "npc",
+      "first_frame": 89,
+      "last_frame": 111
+    },
+    {
+      "id": "e10",
+      "name_or_description": "Fatui Skirmishers",
+      "type": "npc",
+      "first_frame": 94,
+      "last_frame": 180
+    },
+    {
+      "id": "e11",
+      "name_or_description": "Millennial Pearl Seahorse",
+      "type": "creature",
+      "first_frame": 122,
+      "last_frame": 124
+    },
+    {
+      "id": "e12",
+      "name_or_description": "Ajaw",
+      "type": "creature",
+      "first_frame": 11,
+      "last_frame": 180
+    },
+    {
+      "id": "e13",
+      "name_or_description": "Koholasaur",
+      "type": "creature",
+      "first_frame": 152,
+      "last_frame": 193
+    }
+  ],
+  "events": [
+    {
+      "frame_index": 2,
+      "description": "Jean engages the Goldflame Qucusaur Tyrant with Anemo abilities.",
+      "involved_entity_ids": [
+        "e1",
+        "e5"
+      ]
+    },
+    {
+      "frame_index": 42,
+      "description": "Kinich falls to zero health in a dark crevice.",
+      "involved_entity_ids": [
+        "e2"
+      ]
+    },
+    {
+      "frame_index": 66,
+      "description": "Yanfei speaks with the NPC Sedzimir in an urban industrial area.",
+      "involved_entity_ids": [
+        "e4",
+        "e7"
+      ]
+    },
+    {
+      "frame_index": 70,
+      "description": "Yanfei interacts with Catherine at the Adventurers' Guild in the Fortress of Meropide.",
+      "involved_entity_ids": [
+        "e4",
+        "e8"
+      ]
+    },
+    {
+      "frame_index": 93,
+      "description": "Jean activates her Elemental Burst, Dandelion Breeze.",
+      "involved_entity_ids": [
+        "e1"
+      ]
+    },
+    {
+      "frame_index": 130,
+      "description": "Wanderer is defeated during combat with a Spirit-Ways Beast.",
+      "involved_entity_ids": [
+        "e3"
+      ]
+    },
+    {
+      "frame_index": 138,
+      "description": "Kinich opens a chest and receives Primogems and Adventure EXP.",
+      "involved_entity_ids": [
+        "e2"
+      ]
+    },
+    {
+      "frame_index": 157,
+      "description": "Kinich solves a light beam puzzle involving a crescent moon symbol.",
+      "involved_entity_ids": [
+        "e2"
+      ]
+    },
+    {
+      "frame_index": 188,
+      "description": "The player character transforms into a Koholasaur to navigate water.",
+      "involved_entity_ids": [
+        "e2",
+        "e13"
+      ]
+    }
+  ],
+  "player_arc": {
+    "status_notes": "The party experiences several casualties, with Kinich and Wanderer both falling at different points, though the team remains focused on the distant quest marker.",
+    "notable_actions": [
+      "Engaging in high-level elemental combat",
+      "Navigating industrial and cavernous environments",
+      "Solving environmental light puzzles",
+      "Utilizing character-specific traversal skills like grappling and hovering",
+      "Interacting with key NPCs for quest progression"
+    ]
+  },
+  "consolidation_method": "llm"
+}

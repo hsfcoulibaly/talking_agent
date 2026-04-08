@@ -7,11 +7,13 @@ import argparse
 import json
 import os
 import re
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
 from dotenv import load_dotenv
 from google import genai
+from google.genai import errors as genai_errors
 from google.genai import types
 from PIL import Image
 
@@ -27,7 +29,77 @@ if not api_key:
     )
 
 client = genai.Client(api_key=api_key)
-MODEL_ID = "gemini-2.0-flash"
+MODEL_ID = (os.getenv("GEMINI_MODEL") or "gemini-3-flash-preview").strip()
+
+
+def _free_tier_quota_exhausted(exc: genai_errors.ClientError) -> bool:
+    """True when API reports no remaining free-tier quota (retries will not help)."""
+    blob = str(getattr(exc, "details", exc))
+    if "limit: 0" not in blob:
+        return False
+    return (
+        "free_tier" in blob.lower()
+        or "FreeTier" in blob
+        or "generate_content_free_tier" in blob
+    )
+
+
+def _generate_content(
+    contents: list | str,
+    config: types.GenerateContentConfig,
+    *,
+    max_retries: int = 6,
+) -> types.GenerateContentResponse:
+    """Call Gemini with backoff on 429; fail fast when free-tier quota is exhausted."""
+    base_delay = 2.0
+    last_exc: BaseException | None = None
+    for attempt in range(max_retries):
+        try:
+            return client.models.generate_content(
+                model=MODEL_ID,
+                contents=contents,
+                config=config,
+            )
+        except genai_errors.ClientError as e:
+            last_exc = e
+            msg = str(e)
+            if "429" not in msg and "RESOURCE_EXHAUSTED" not in msg:
+                raise
+            if _free_tier_quota_exhausted(e):
+                raise RuntimeError(
+                    f"No remaining Gemini free-tier quota for model `{MODEL_ID}` "
+                    f"(API reports limit: 0). Retrying will not help.\n\n"
+                    f"Fixes:\n"
+                    f"  • Wait until the daily quota resets, or enable billing for paid quota.\n"
+                    f"  • Try another model: set GEMINI_MODEL in .env or pass --model "
+                    f'(see https://ai.google.dev/gemini-api/docs/models).\n'
+                    f"  • Use fewer/smaller images: --max-frames and --max-image-side."
+                ) from e
+            wait = base_delay
+            m = re.search(r"retry in ([0-9.]+)\s*s", msg, re.I)
+            if m:
+                wait = float(m.group(1)) + 1.0
+            print(
+                f"Rate limited (429). Waiting {wait:.1f}s "
+                f"(attempt {attempt + 1}/{max_retries})..."
+            )
+            time.sleep(wait)
+            base_delay = min(base_delay * 1.5, 90.0)
+    assert last_exc is not None
+    raise last_exc
+
+
+def _resize_image_max_side(image: Image.Image, max_side: int) -> Image.Image:
+    if max_side <= 0:
+        return image
+    w, h = image.size
+    if w <= max_side and h <= max_side:
+        return image
+    if w >= h:
+        nw, nh = max_side, max(1, round(h * (max_side / w)))
+    else:
+        nh, nw = max_side, max(1, round(w * (max_side / h)))
+    return image.resize((nw, nh), Image.Resampling.LANCZOS)
 
 
 def discover_image_paths(images_dir: Path) -> list[Path]:
@@ -49,7 +121,12 @@ def default_images_directory() -> Path:
     return legacy
 
 
-def extract_game_state(image_path: str | Path, frame_index: int = 0) -> dict:
+def extract_game_state(
+    image_path: str | Path,
+    frame_index: int = 0,
+    *,
+    max_image_side: int | None = None,
+) -> dict:
     """Per-frame VLM extraction: structured observation from one screenshot."""
     path = Path(image_path)
     print(f"Analyzing frame {frame_index}: {path.name}")
@@ -58,6 +135,9 @@ def extract_game_state(image_path: str | Path, frame_index: int = 0) -> dict:
         image = Image.open(path)
     except FileNotFoundError:
         return {"error": f"Image not found at {path}"}
+
+    if max_image_side and max_image_side > 0:
+        image = _resize_image_max_side(image.convert("RGB"), max_image_side)
 
     prompt = f"""
     This is frame index {frame_index} in a time-ordered gameplay sequence (lower index = earlier).
@@ -71,10 +151,9 @@ def extract_game_state(image_path: str | Path, frame_index: int = 0) -> dict:
     - "visible_entities": array of short strings naming distinct people/creatures/objects you can name.
     """
 
-    response = client.models.generate_content(
-        model=MODEL_ID,
-        contents=[image, prompt],
-        config=types.GenerateContentConfig(
+    response = _generate_content(
+        [image, prompt],
+        types.GenerateContentConfig(
             response_mime_type="application/json",
             temperature=0.2,
         ),
@@ -87,11 +166,26 @@ def extract_game_state(image_path: str | Path, frame_index: int = 0) -> dict:
         return {"raw_text": response.text}
 
 
+def _coerce_consolidated_scene_graph(parsed: object) -> dict | None:
+    """Turn sometimes-wrong LLM JSON (e.g. a one-element array) into a scene graph dict."""
+    if isinstance(parsed, dict):
+        return parsed
+    if isinstance(parsed, list):
+        for item in parsed:
+            if isinstance(item, dict) and (
+                "entities" in item
+                or "events" in item
+                or "timeline_summary" in item
+            ):
+                return item
+    return None
+
+
 def consolidate_scene_graph_llm(frames: list[dict]) -> dict:
     """Merge ordered per-frame observations into one chronological scene graph (JSON)."""
     payload = json.dumps(frames, indent=2)
     schema_hint = """
-    Return EXACTLY one JSON object with:
+    Return EXACTLY one JSON object (not an array) with:
     - "timeline_summary": one or two sentences ordering what happened across frames.
     - "environment": object with "location", "time_of_day", "conditions" (array of short strings).
     - "entities": array of objects, each with "id" (e.g. e1), "name_or_description", "type"
@@ -111,16 +205,22 @@ def consolidate_scene_graph_llm(frames: list[dict]) -> dict:
     {payload}
     """
 
-    response = client.models.generate_content(
-        model=MODEL_ID,
-        contents=prompt,
-        config=types.GenerateContentConfig(
+    response = _generate_content(
+        prompt,
+        types.GenerateContentConfig(
             response_mime_type="application/json",
             temperature=0.2,
         ),
     )
     try:
-        graph = json.loads(response.text)
+        parsed = json.loads(response.text)
+        graph = _coerce_consolidated_scene_graph(parsed)
+        if graph is None:
+            print(
+                "Warning: consolidator JSON was not a scene-graph object; "
+                "falling back to simple stitch."
+            )
+            return consolidate_scene_graph_simple(frames)
         graph["consolidation_method"] = "llm"
         return graph
     except json.JSONDecodeError:
@@ -240,51 +340,79 @@ def generate_npc_story(scene_graph: dict) -> str:
     Write the companion's spoken dialogue only, no preface or stage directions.
     """
 
-    response = client.models.generate_content(
-        model=MODEL_ID,
-        contents=prompt,
-        config=types.GenerateContentConfig(temperature=0.7),
+    response = _generate_content(
+        prompt,
+        types.GenerateContentConfig(temperature=0.7),
     )
     return response.text or ""
 
 
 def run_pipeline(
-    images_dir: Path,
+    images_dir: Path | None,
     *,
     use_llm_consolidation: bool = True,
     run_id: str | None = None,
+    max_frames: int | None = None,
+    sleep_seconds: float = 0.0,
+    max_image_side: int | None = None,
+    from_frames_json: Path | None = None,
 ) -> dict:
     """Run full pipeline: VLM per frame -> scene graph -> NPC line. Saves JSON and story text."""
-    paths = discover_image_paths(images_dir)
-    if not paths:
-        raise FileNotFoundError(
-            f"No images in {images_dir}. Add .jpg/.png screenshots, or pass --images-dir."
-        )
-
-    rid = run_id or datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    print(f"Using Gemini model: {MODEL_ID}")
     extracted_dir = PROJECT_ROOT / "data" / "extracted_state"
     stories_dir = PROJECT_ROOT / "data" / "generated_stories"
     extracted_dir.mkdir(parents=True, exist_ok=True)
     stories_dir.mkdir(parents=True, exist_ok=True)
 
-    frames: list[dict] = []
-    for i, path in enumerate(paths):
-        obs = extract_game_state(path, frame_index=i)
-        try:
-            rel = path.relative_to(PROJECT_ROOT)
-        except ValueError:
-            rel = path
-        frames.append(
-            {
-                "frame_index": i,
-                "source_image": str(rel).replace("\\\\", "/"),
-                "observation": obs,
-            }
+    if from_frames_json is not None:
+        fp = Path(from_frames_json).resolve()
+        if not fp.is_file():
+            raise FileNotFoundError(f"No frames file: {fp}")
+        raw = fp.read_text(encoding="utf-8")
+        frames = json.loads(raw)
+        if not isinstance(frames, list):
+            raise ValueError(f"Expected a JSON array of frames in {fp}")
+        stem = fp.stem
+        rid = run_id or (
+            stem.removesuffix("_frames") if stem.endswith("_frames") else stem
         )
+        frames_path = fp
+        print(f"Loaded {len(frames)} frames from {fp.relative_to(PROJECT_ROOT)} (skip VLM)")
+    else:
+        if images_dir is None:
+            raise ValueError("images_dir is required unless --from-frames-json is set")
+        paths = discover_image_paths(images_dir)
+        if not paths:
+            raise FileNotFoundError(
+                f"No images in {images_dir}. Add .jpg/.png screenshots, or pass --images-dir."
+            )
+        if max_frames is not None and max_frames > 0:
+            paths = paths[:max_frames]
 
-    frames_path = extracted_dir / f"{rid}_frames.json"
-    frames_path.write_text(json.dumps(frames, indent=2), encoding="utf-8")
-    print(f"Wrote per-frame extractions: {frames_path.relative_to(PROJECT_ROOT)}")
+        rid = run_id or datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+
+        frames = []
+        for i, path in enumerate(paths):
+            obs = extract_game_state(
+                path, frame_index=i, max_image_side=max_image_side
+            )
+            try:
+                rel = path.relative_to(PROJECT_ROOT)
+            except ValueError:
+                rel = path
+            frames.append(
+                {
+                    "frame_index": i,
+                    "source_image": str(rel).replace("\\\\", "/"),
+                    "observation": obs,
+                }
+            )
+            if sleep_seconds > 0 and i + 1 < len(paths):
+                time.sleep(sleep_seconds)
+
+        frames_path = extracted_dir / f"{rid}_frames.json"
+        frames_path.write_text(json.dumps(frames, indent=2), encoding="utf-8")
+        print(f"Wrote per-frame extractions: {frames_path.relative_to(PROJECT_ROOT)}")
 
     if use_llm_consolidation:
         scene_graph = consolidate_scene_graph_llm(frames)
@@ -333,17 +461,67 @@ def _parse_args() -> argparse.Namespace:
         action="store_true",
         help="Stitch scene graph without an extra LLM call (cheaper; less structured).",
     )
+    parser.add_argument(
+        "--max-frames",
+        type=int,
+        default=None,
+        metavar="N",
+        help="Process only the first N images after sorting (caps API usage for large folders).",
+    )
+    parser.add_argument(
+        "--sleep",
+        type=float,
+        default=0.0,
+        metavar="SEC",
+        help="Seconds to wait after each VLM frame (reduces bursts; try 2–15 on free tier).",
+    )
+    parser.add_argument(
+        "--model",
+        type=str,
+        default=None,
+        help="Gemini model id (overrides GEMINI_MODEL in .env), e.g. gemini-2.5-flash.",
+    )
+    parser.add_argument(
+        "--max-image-side",
+        type=int,
+        default=None,
+        metavar="PX",
+        help="If set, shrink each frame so longest edge is at most PX (lowers input tokens).",
+    )
+    parser.add_argument(
+        "--from-frames-json",
+        type=Path,
+        default=None,
+        metavar="PATH",
+        help="Skip VLM: load per-frame JSON from a saved *_frames.json and only merge + dialogue.",
+    )
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     args = _parse_args()
-    img_dir = args.images_dir
-    if img_dir is None:
-        img_dir = default_images_directory()
-    img_dir = img_dir.resolve()
+    if args.model:
+        MODEL_ID = args.model.strip()
 
-    run_pipeline(
-        img_dir,
-        use_llm_consolidation=not args.simple_consolidate,
-    )
+    if args.from_frames_json:
+        run_pipeline(
+            None,
+            use_llm_consolidation=not args.simple_consolidate,
+            max_frames=None,
+            sleep_seconds=0.0,
+            max_image_side=None,
+            from_frames_json=args.from_frames_json,
+        )
+    else:
+        img_dir = args.images_dir
+        if img_dir is None:
+            img_dir = default_images_directory()
+        img_dir = img_dir.resolve()
+
+        run_pipeline(
+            img_dir,
+            use_llm_consolidation=not args.simple_consolidate,
+            max_frames=args.max_frames,
+            sleep_seconds=args.sleep,
+            max_image_side=args.max_image_side,
+        )

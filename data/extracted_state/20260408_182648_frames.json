@@ -1,0 +1,93 @@
+[
+  {
+    "frame_index": 0,
+    "source_image": "data\\test_screenshots\\frame_0001.png",
+    "observation": {
+      "location": "grassy hillside in Natlan",
+      "time_of_day": "day",
+      "player_status": "full health (21916/21916), level 90",
+      "recent_action": "standing still and looking at the horizon",
+      "notable_enemies_or_objects": "red Saurian, yellow flowers, distant ruins, quest marker",
+      "visible_entities": [
+        "Jean",
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "red Saurian"
+      ]
+    }
+  },
+  {
+    "frame_index": 1,
+    "source_image": "data\\test_screenshots\\frame_0002.png",
+    "observation": {
+      "location": "grassy hillside in Natlan",
+      "time_of_day": "day",
+      "player_status": "full health (21916/21916)",
+      "recent_action": "running across an open field",
+      "notable_enemies_or_objects": "large red creature (level 89), glowing blue plants",
+      "visible_entities": [
+        "Jean",
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "large red creature"
+      ]
+    }
+  },
+  {
+    "frame_index": 2,
+    "source_image": "data\\test_screenshots\\frame_0003.png",
+    "observation": {
+      "location": "grassy hills near a wooden structure",
+      "time_of_day": "day",
+      "player_status": "Jean is at full health (21916/21916)",
+      "recent_action": "Jean is engaging in combat with a large fiery beast, surrounded by a green elemental effect",
+      "notable_enemies_or_objects": "large fiery horned beast (Wayob Manifestation)",
+      "visible_entities": [
+        "Jean",
+        "Wayob Manifestation",
+        "Kinich",
+        "Wanderer",
+        "Yanfei"
+      ]
+    }
+  },
+  {
+    "frame_index": 3,
+    "source_image": "data\\test_screenshots\\frame_0004.png",
+    "observation": {
+      "location": "grassy hillside near a large mechanical structure",
+      "time_of_day": "day",
+      "player_status": "active character Wanderer has critically low health (550/16728)",
+      "recent_action": "Wanderer is attacking enemies with Anemo, triggering Swirl reactions and dealing damage",
+      "notable_enemies_or_objects": "Saurian enemies, large mechanical building, blue quest marker beam",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean",
+        "Saurian enemies",
+        "mechanical building"
+      ]
+    }
+  },
+  {
+    "frame_index": 4,
+    "source_image": "data\\test_screenshots\\frame_0005.png",
+    "observation": {
+      "location": "grassy field",
+      "time_of_day": "day",
+      "player_status": "critically low health (550/16728)",
+      "recent_action": "running away from a large enemy while unable to switch characters",
+      "notable_enemies_or_objects": "large red boss-like creature at the top edge",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean",
+        "large red enemy"
+      ]
+    }
+  }
+]

@@ -1,0 +1,3544 @@
+[
+  {
+    "frame_index": 0,
+    "source_image": "data\\test_screenshots\\frame_0001.png",
+    "observation": {
+      "location": "grassy hillside in a mountainous region",
+      "time_of_day": "day",
+      "player_status": "Jean is at full health (21916/21916)",
+      "recent_action": "standing still, observing the landscape",
+      "notable_enemies_or_objects": "a large red and black Saurian creature, a quest marker in the distance",
+      "visible_entities": [
+        "Jean",
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Saurian"
+      ]
+    }
+  },
+  {
+    "frame_index": 1,
+    "source_image": "data\\test_screenshots\\frame_0002.png",
+    "observation": {
+      "location": "grassy mountain path",
+      "time_of_day": "day",
+      "player_status": "Jean at full health (21916/21916 HP)",
+      "recent_action": "sprinting forward along a dirt path",
+      "notable_enemies_or_objects": "large red saurian creature, glowing blue plants",
+      "visible_entities": [
+        "Jean",
+        "large red saurian",
+        "glowing blue plants"
+      ]
+    }
+  },
+  {
+    "frame_index": 2,
+    "source_image": "data\\test_screenshots\\frame_0003.png",
+    "observation": {
+      "location": "grassy field in Natlan",
+      "time_of_day": "day",
+      "player_status": "Jean at full health (21916/21916)",
+      "recent_action": "Jean is engaging a large fire-themed elite enemy with an Anemo skill",
+      "notable_enemies_or_objects": "Wayob Manifestation (large fire-themed elite enemy)",
+      "visible_entities": [
+        "Jean",
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Wayob Manifestation"
+      ]
+    }
+  },
+  {
+    "frame_index": 3,
+    "source_image": "data\\test_screenshots\\frame_0004.png",
+    "observation": {
+      "location": "grassy hills near a mechanical structure",
+      "time_of_day": "day",
+      "player_status": "critically low health (550/16728)",
+      "recent_action": "attacking an enemy and triggering a Swirl reaction",
+      "notable_enemies_or_objects": "large mechanical enemy, mechanical building",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean",
+        "mechanical enemy"
+      ]
+    }
+  },
+  {
+    "frame_index": 4,
+    "source_image": "data\\test_screenshots\\frame_0005.png",
+    "observation": {
+      "location": "open grassy field",
+      "time_of_day": "day",
+      "player_status": "Wanderer is at critical health (550/16728) and character switching is currently disabled",
+      "recent_action": "Wanderer is sprinting across the grass while being targeted by a powerful enemy",
+      "notable_enemies_or_objects": "Level 89 large red boss enemy, green energy beam",
+      "visible_entities": [
+        "Wanderer",
+        "Large red boss enemy",
+        "Bushes",
+        "Rocks"
+      ]
+    }
+  },
+  {
+    "frame_index": 5,
+    "source_image": "data\\test_screenshots\\frame_0006.png",
+    "observation": {
+      "location": "open grassy field near a Natlan settlement",
+      "time_of_day": "day",
+      "player_status": "18455/21667 HP, Level 90",
+      "recent_action": "Kinich is using his grappling hook elemental skill to swing through the air",
+      "notable_enemies_or_objects": "quest marker, wooden building, mini-map",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Emilie",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 6,
+    "source_image": "data\\test_screenshots\\frame_0007.png",
+    "observation": {
+      "location": "grassy field in Natlan",
+      "time_of_day": "day",
+      "player_status": "18455 / 21667 HP, Level 90",
+      "recent_action": "Kinich is performing a combat move against a Wayob Manifestation, causing Burning damage",
+      "notable_enemies_or_objects": "Wayob Manifestation, damage numbers (2104), Burning status indicator",
+      "visible_entities": [
+        "Kinich",
+        "Wayob Manifestation",
+        "rocks",
+        "grass",
+        "distant building"
+      ]
+    }
+  },
+  {
+    "frame_index": 7,
+    "source_image": "data\\test_screenshots\\frame_0008.png",
+    "observation": {
+      "location": "grassy hillside near a large mechanical structure",
+      "time_of_day": "day",
+      "player_status": "Jean at full health (21916/21916), level 90",
+      "recent_action": "Jean is attacking a large Saurian enemy, triggering a Swirl (Dispersion) reaction",
+      "notable_enemies_or_objects": "large Saurian enemy (Goldflame Qucusaur Tyrant), mechanical structure",
+      "visible_entities": [
+        "Jean",
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Goldflame Qucusaur Tyrant"
+      ]
+    }
+  },
+  {
+    "frame_index": 8,
+    "source_image": "data\\test_screenshots\\frame_0009.png",
+    "observation": {
+      "location": "grassy hills in Natlan",
+      "time_of_day": "day",
+      "player_status": "15193/15193 HP, Level 80",
+      "recent_action": "engaging in combat, triggering a Swirl (Dispersion) reaction while the enemy shows Pyro immunity",
+      "notable_enemies_or_objects": "Wayob Manifestation (Level 89 enemy)",
+      "visible_entities": [
+        "Yanfei",
+        "Wayob Manifestation",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 9,
+    "source_image": "data\\test_screenshots\\frame_0010.png",
+    "observation": {
+      "location": "open field near a large structure in Natlan",
+      "time_of_day": "dusk",
+      "player_status": "Yanfei at full health (15193/15193), level 80; party includes Kinich, Wanderer, and Jean",
+      "recent_action": "Yanfei is attacking a Goldflame Qucusaur Tyrant; the enemy is showing 'Immunis\u00e9' (Immune) to the Pyro damage",
+      "notable_enemies_or_objects": "Goldflame Qucusaur Tyrant (level 89)",
+      "visible_entities": [
+        "Yanfei",
+        "Goldflame Qucusaur Tyrant",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 10,
+    "source_image": "data\\test_screenshots\\frame_0011.png",
+    "observation": {
+      "location": "grassy hillside in Natlan",
+      "time_of_day": "day",
+      "player_status": "Kinich at full health (21667/21667)",
+      "recent_action": "Kinich is performing a swinging attack with his elemental skill against a Wayob Manifestation, creating Dendro and Pyro elemental reactions.",
+      "notable_enemies_or_objects": "Wayob Manifestation (Level 89), Flamegranate plant, Dendro particles",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "Wayob Manifestation",
+        "Flamegranate"
+      ]
+    }
+  },
+  {
+    "frame_index": 11,
+    "source_image": "data\\test_screenshots\\frame_0012.png",
+    "observation": {
+      "location": "grassy hillside in Natlan",
+      "time_of_day": "day",
+      "player_status": "21667 / 21667 HP, level 90",
+      "recent_action": "Kinich is using his elemental skill to attack a Wayob Manifestation, dealing Dendro damage",
+      "notable_enemies_or_objects": "Wayob Manifestation (Level 89)",
+      "visible_entities": [
+        "Kinich",
+        "Wayob Manifestation",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 12,
+    "source_image": "data\\test_screenshots\\frame_0013.png",
+    "observation": {
+      "location": "grassy hills in Natlan",
+      "time_of_day": "dusk",
+      "player_status": "Jean (Level 90) at full health (21916/21916)",
+      "recent_action": "Jean is performing a sword strike against a large red beast, dealing 1333 damage",
+      "notable_enemies_or_objects": "large red horned beast (Niv. 89), blue glowing plants",
+      "visible_entities": [
+        "Jean",
+        "large red horned beast",
+        "blue glowing plants"
+      ]
+    }
+  },
+  {
+    "frame_index": 13,
+    "source_image": "data\\test_screenshots\\frame_0014.png",
+    "observation": {
+      "location": "grassy hillside near cliffs",
+      "time_of_day": "day",
+      "player_status": "10266/16728 HP, Level 90",
+      "recent_action": "engaging in combat, triggering a Swirl (Dispersion) reaction",
+      "notable_enemies_or_objects": "Level 89 enemy, blue glowing plants",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean",
+        "Enemy",
+        "Blue flowers"
+      ]
+    }
+  },
+  {
+    "frame_index": 14,
+    "source_image": "data\\test_screenshots\\frame_0015.png",
+    "observation": {
+      "location": "grassy hillside near rocky cliffs",
+      "time_of_day": "day",
+      "player_status": "Wanderer at 10266/16728 HP, level 90",
+      "recent_action": "Wanderer is attacking an enemy, triggering a Swirl (Dispersion) reaction; fire is burning on the ground",
+      "notable_enemies_or_objects": "large enemy (Mitachurl), fire patches, background structure, blue quest beam",
+      "visible_entities": [
+        "Wanderer",
+        "Mitachurl",
+        "fire",
+        "cliffs",
+        "wooden structure"
+      ]
+    }
+  },
+  {
+    "frame_index": 15,
+    "source_image": "data\\test_screenshots\\frame_0016.png",
+    "observation": {
+      "location": "grassy field",
+      "time_of_day": "day",
+      "player_status": "HP 10266/16728",
+      "recent_action": "collecting loot from a defeated enemy",
+      "notable_enemies_or_objects": "loot items (Montre de poche du M\u00e9decin itin\u00e9rant, Lueur de givrenuit, Brillance de givrenuit), character EXP notification",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 16,
+    "source_image": "data\\test_screenshots\\frame_0017.png",
+    "observation": {
+      "location": "grassy hillside",
+      "time_of_day": "dusk",
+      "player_status": "10266/16728 HP",
+      "recent_action": "Wanderer is hovering and moving towards a glowing orb",
+      "notable_enemies_or_objects": "glowing orb, rocks, small plant",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean",
+        "glowing orb"
+      ]
+    }
+  },
+  {
+    "frame_index": 17,
+    "source_image": "data\\test_screenshots\\frame_0018.png",
+    "observation": {
+      "location": "grassy hillside near industrial structures",
+      "time_of_day": "day",
+      "player_status": "HP 10266/16728",
+      "recent_action": "running forward on a dirt path",
+      "notable_enemies_or_objects": "glowing crescent moon effect, large mechanical tower, wooden building",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 18,
+    "source_image": "data\\test_screenshots\\frame_0019.png",
+    "observation": {
+      "location": "grassy hillside near mechanical ruins",
+      "time_of_day": "day",
+      "player_status": "HP 10266/16728, Level 90",
+      "recent_action": "running through tall grass towards a large structure",
+      "notable_enemies_or_objects": "large mechanical structure, tall grass",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 19,
+    "source_image": "data\\test_screenshots\\frame_0020.png",
+    "observation": {
+      "location": "rocky cliffside with wooden platforms",
+      "time_of_day": "day",
+      "player_status": "Wanderer at 10266/16728 HP, level 90; currently in Windfavored flying state",
+      "recent_action": "Wanderer is flying towards a wooden platform on a cliffside",
+      "notable_enemies_or_objects": "wooden platforms, crates, mechanical structure, quest marker",
+      "visible_entities": [
+        "Wanderer",
+        "wooden platforms",
+        "crates",
+        "mechanical structure"
+      ]
+    }
+  },
+  {
+    "frame_index": 20,
+    "source_image": "data\\test_screenshots\\frame_0021.png",
+    "observation": {
+      "location": "mountainous cliffside with mechanical structures",
+      "time_of_day": "day",
+      "player_status": "HP 10266/16728, Level 90",
+      "recent_action": "gliding over a mechanical platform",
+      "notable_enemies_or_objects": "mechanical platform, quest marker",
+      "visible_entities": [
+        "Wanderer",
+        "mechanical platform"
+      ]
+    }
+  },
+  {
+    "frame_index": 21,
+    "source_image": "data\\test_screenshots\\frame_0022.png",
+    "observation": {
+      "location": "metallic platform in a mountainous region",
+      "time_of_day": "dusk",
+      "player_status": "10266/16728 HP, Level 90",
+      "recent_action": "standing on a hexagonal platform with an interaction prompt visible",
+      "notable_enemies_or_objects": "hexagonal metallic platform, interaction prompt bar",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 22,
+    "source_image": "data\\test_screenshots\\frame_0023.png",
+    "observation": {
+      "location": "high-altitude metallic structure",
+      "time_of_day": "day",
+      "player_status": "Wanderer (Level 90) with 10266/16728 HP, elemental burst ready",
+      "recent_action": "standing on a metal platform ledge",
+      "notable_enemies_or_objects": "quest marker for 'Bureau de d\u00e9lib\u00e9ration', industrial pipes and platforms",
+      "visible_entities": [
+        "Wanderer"
+      ]
+    }
+  },
+  {
+    "frame_index": 23,
+    "source_image": "data\\test_screenshots\\frame_0024.png",
+    "observation": {
+      "location": "Industrial mechanical platform in Natlan",
+      "time_of_day": "dusk",
+      "player_status": "Health at 10266/16728, Level 90",
+      "recent_action": "Standing still on a high-altitude metallic structure",
+      "notable_enemies_or_objects": "Mechanical lever, large industrial cranes, quest marker for Bureau de d\u00e9lib\u00e9ration",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 24,
+    "source_image": "data\\test_screenshots\\frame_0025.png",
+    "observation": {
+      "location": "outdoor industrial mechanical platform",
+      "time_of_day": "dusk",
+      "player_status": "HP 10266/16728, Level 90, Elemental Burst ready",
+      "recent_action": "standing idle on a platform",
+      "notable_enemies_or_objects": "large mechanical ring structure, lever mechanism, quest marker",
+      "visible_entities": [
+        "Wanderer",
+        "mechanical ring",
+        "lever"
+      ]
+    }
+  },
+  {
+    "frame_index": 25,
+    "source_image": "data\\test_screenshots\\frame_0026.png",
+    "observation": {
+      "location": "mechanical platform overlooking the sea",
+      "time_of_day": "day",
+      "player_status": "Health: 10266/16728, Level 90",
+      "recent_action": "walking across a circular metallic platform",
+      "notable_enemies_or_objects": "circular metallic platform with blue glowing parts, lever, quest marker",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 26,
+    "source_image": "data\\test_screenshots\\frame_0027.png",
+    "observation": {
+      "location": "elevated mechanical platform overlooking a mountainous landscape",
+      "time_of_day": "day",
+      "player_status": "Wanderer at level 90 with 10266/16728 HP; Elemental Burst is ready",
+      "recent_action": "standing on a lift platform with the interaction prompt 'Monter' visible",
+      "notable_enemies_or_objects": "lift interaction prompt ('Monter'), mini-map, quest marker",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich (party icon)",
+        "Yanfei (party icon)",
+        "Jean (party icon)"
+      ]
+    }
+  },
+  {
+    "frame_index": 27,
+    "source_image": "data\\test_screenshots\\frame_0028.png",
+    "observation": {
+      "location": "high cliffside elevator platform",
+      "time_of_day": "day",
+      "player_status": "10266/16728 HP",
+      "recent_action": "activating the elevator",
+      "notable_enemies_or_objects": "mechanical elevator, quest marker",
+      "visible_entities": [
+        "Wanderer"
+      ]
+    }
+  },
+  {
+    "frame_index": 28,
+    "source_image": "data\\test_screenshots\\frame_0029.png",
+    "observation": {
+      "location": "high metallic platform overlooking a coastal cliff area",
+      "time_of_day": "day",
+      "player_status": "Wanderer at level 90 with 10266/16728 HP; Elemental Burst ready",
+      "recent_action": "standing on a high platform looking at the landscape",
+      "notable_enemies_or_objects": "quest marker (3781m), distant coastal structures, metallic platform",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 29,
+    "source_image": "data\\test_screenshots\\frame_0030.png",
+    "observation": {
+      "location": "high-altitude mechanical platform near a cliffside",
+      "time_of_day": "day",
+      "player_status": "Health: 10266/16728, Level 90",
+      "recent_action": "standing idle on a circular platform",
+      "notable_enemies_or_objects": "mechanical platform, quest marker",
+      "visible_entities": [
+        "Wanderer"
+      ]
+    }
+  },
+  {
+    "frame_index": 30,
+    "source_image": "data\\test_screenshots\\frame_0031.png",
+    "observation": {
+      "location": "high-altitude mechanical platform",
+      "time_of_day": "night",
+      "player_status": "Wanderer at 10266/16728 HP, level 90, elemental burst ready",
+      "recent_action": "standing still on a platform looking at a large mechanical structure",
+      "notable_enemies_or_objects": "large mechanical beams, quest marker for Bureau de d\u00e9lib\u00e9ration",
+      "visible_entities": [
+        "Wanderer",
+        "mechanical platform",
+        "distant landscape",
+        "quest marker"
+      ]
+    }
+  },
+  {
+    "frame_index": 31,
+    "source_image": "data\\test_screenshots\\frame_0032.png",
+    "observation": {
+      "location": "industrial metallic ruins",
+      "time_of_day": "night",
+      "player_status": "Wanderer at 10266/16728 HP",
+      "recent_action": "running across a metal platform towards a teleport waypoint",
+      "notable_enemies_or_objects": "teleport waypoint, graffiti-covered wall, metallic stairs",
+      "visible_entities": [
+        "Wanderer",
+        "Teleport Waypoint"
+      ]
+    }
+  },
+  {
+    "frame_index": 32,
+    "source_image": "data\\test_screenshots\\frame_0033.png",
+    "observation": {
+      "location": "Terrain d'entra\u00eenement du nord",
+      "time_of_day": "night",
+      "player_status": "10266/16728 HP, Level 90",
+      "recent_action": "running forward across stone slabs",
+      "notable_enemies_or_objects": "quest marker, stone path, small tent in the distance",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 33,
+    "source_image": "data\\test_screenshots\\frame_0034.png",
+    "observation": {
+      "location": "grassy path near dark ruins",
+      "time_of_day": "night",
+      "player_status": "Health: 10266/16728, Level 90, Wanderer active",
+      "recent_action": "standing near dark debris with glowing blue environmental effects",
+      "notable_enemies_or_objects": [
+        "dark jagged debris",
+        "glowing blue plants",
+        "floating creatures",
+        "quest marker"
+      ],
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean",
+        "floating creatures"
+      ]
+    }
+  },
+  {
+    "frame_index": 34,
+    "source_image": "data\\test_screenshots\\frame_0035.png",
+    "observation": {
+      "location": "rocky mountain path with wooden structures",
+      "time_of_day": "night",
+      "player_status": "HP 10266/16728, Level 90",
+      "recent_action": "walking up wooden stairs",
+      "notable_enemies_or_objects": [
+        "wooden stairs",
+        "large mechanical structure",
+        "quest marker"
+      ],
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean",
+        "mechanical structure"
+      ]
+    }
+  },
+  {
+    "frame_index": 35,
+    "source_image": "data\\test_screenshots\\frame_0036.png",
+    "observation": {
+      "location": "grassy field with debris",
+      "time_of_day": "night",
+      "player_status": "Wanderer (Level 90) with 10266/16728 HP; Elemental Burst ready",
+      "recent_action": "running across a grassy field",
+      "notable_enemies_or_objects": "broken boat debris, stone slabs, quest marker",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 36,
+    "source_image": "data\\test_screenshots\\frame_0037.png",
+    "observation": {
+      "location": "grassy field with a dirt path",
+      "time_of_day": "day",
+      "player_status": "10266 / 16728 HP, Level 90",
+      "recent_action": "Wanderer is sprinting or using his elemental skill to move quickly across the terrain",
+      "notable_enemies_or_objects": "Quest marker for 'Rendez-vous au Bureau de d\u00e9lib\u00e9ration', mini-map, distant structures",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 37,
+    "source_image": "data\\test_screenshots\\frame_0038.png",
+    "observation": {
+      "location": "grassy path near ruins",
+      "time_of_day": "day",
+      "player_status": "HP 10266/16728, Level 90",
+      "recent_action": "gliding towards a path",
+      "notable_enemies_or_objects": "glowing creature, ruins, quest marker",
+      "visible_entities": [
+        "Wanderer",
+        "glowing creature",
+        "ruined structures"
+      ]
+    }
+  },
+  {
+    "frame_index": 38,
+    "source_image": "data\\test_screenshots\\frame_0039.png",
+    "observation": {
+      "location": "grassy hills with a dirt path",
+      "time_of_day": "day",
+      "player_status": "10266 / 16728 HP, Level 90",
+      "recent_action": "collected three Baie du solstice items while traveling",
+      "notable_enemies_or_objects": "Baie du solstice items, quest marker for Bureau de d\u00e9lib\u00e9ration",
+      "visible_entities": [
+        "Wanderer",
+        "Kinich",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 39,
+    "source_image": "data\\test_screenshots\\frame_0040.png",
+    "observation": {
+      "location": "grassy hills at night",
+      "time_of_day": "night",
+      "player_status": "Wanderer at level 90 with 10266/16728 HP; currently in windfavored state (flying)",
+      "recent_action": "Wanderer is hovering across the terrain using his elemental skill",
+      "notable_enemies_or_objects": "quest marker for 'Bureau de d\u00e9lib\u00e9ration', minimap",
+      "visible_entities": [
+        "Wanderer",
+        "grassy terrain",
+        "distant mountains"
+      ]
+    }
+  },
+  {
+    "frame_index": 40,
+    "source_image": "data\\test_screenshots\\frame_0041.png",
+    "observation": {
+      "location": "high altitude mountainous area",
+      "time_of_day": "night",
+      "player_status": "full health (21667/21667), level 90",
+      "recent_action": "Kinich is using his elemental skill, appearing in a pixelated green form while moving through the air",
+      "notable_enemies_or_objects": "quest marker for 'Bureau de d\u00e9lib\u00e9ration'",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 41,
+    "source_image": "data\\test_screenshots\\frame_0042.png",
+    "observation": {
+      "location": "dark cave or deep chasm",
+      "time_of_day": "night",
+      "player_status": "full health (21667/21667), level 90",
+      "recent_action": "gliding or swinging through the air",
+      "notable_enemies_or_objects": "quest marker (3713m away)",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 42,
+    "source_image": "data\\test_screenshots\\frame_0043.png",
+    "observation": {
+      "location": "dark rocky crevice",
+      "time_of_day": "night",
+      "player_status": "Kinich (Level 90) is at 0/21667 HP (fallen/dead)",
+      "recent_action": "The player character has just died or fallen into a dark, deep area.",
+      "notable_enemies_or_objects": "glowing blue crystals or plants at the bottom",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 43,
+    "source_image": "data\\test_screenshots\\frame_0044.png",
+    "observation": {
+      "location": "dark cave or cliffside",
+      "time_of_day": "unclear",
+      "player_status": "HP 10266/16728, Level 90",
+      "recent_action": "climbing a dark rock face",
+      "notable_enemies_or_objects": "none",
+      "visible_entities": [
+        "Wanderer"
+      ]
+    }
+  },
+  {
+    "frame_index": 44,
+    "source_image": "data\\test_screenshots\\frame_0045.png",
+    "observation": {
+      "location": "dark cliffside",
+      "time_of_day": "night",
+      "player_status": "Health: 10266/16728, Level 90",
+      "recent_action": "climbing a vertical wall",
+      "notable_enemies_or_objects": "none",
+      "visible_entities": [
+        "Wanderer"
+      ]
+    }
+  },
+  {
+    "frame_index": 45,
+    "source_image": "data\\test_screenshots\\frame_0046.png",
+    "observation": {
+      "location": "cliffside in Natlan",
+      "time_of_day": "day",
+      "player_status": "HP 9445/16728, Level 90",
+      "recent_action": "camera is pressed against a dark rock wall, obstructing the view",
+      "notable_enemies_or_objects": "dark rock wall, quest marker 'Rendez-vous au Bureau de d\u00e9lib\u00e9ration'",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 46,
+    "source_image": "data\\test_screenshots\\frame_0047.png",
+    "observation": {
+      "location": "steep cliffside",
+      "time_of_day": "night",
+      "player_status": "HP 9445/16728, Level 90",
+      "recent_action": "climbing a vertical rock wall",
+      "notable_enemies_or_objects": "glowing red projectile or effect",
+      "visible_entities": [
+        "Wanderer"
+      ]
+    }
+  },
+  {
+    "frame_index": 47,
+    "source_image": "data\\test_screenshots\\frame_0048.png",
+    "observation": {
+      "location": "mountainous cliffside",
+      "time_of_day": "night",
+      "player_status": "Wanderer at 8625/16728 HP, level 90, elemental burst ready",
+      "recent_action": "Wanderer is attacking a target on the cliffside, causing a fiery explosion and dealing 410 damage",
+      "notable_enemies_or_objects": "red glowing target on the wall, damage numbers (410), fiery explosion",
+      "visible_entities": [
+        "Wanderer",
+        "cliffside",
+        "explosion effect"
+      ]
+    }
+  },
+  {
+    "frame_index": 48,
+    "source_image": "data\\test_screenshots\\frame_0049.png",
+    "observation": {
+      "location": "dark rocky cliffside",
+      "time_of_day": "night",
+      "player_status": "Yanfei at full health (15193/15193), level 80, stamina bar active while climbing",
+      "recent_action": "Yanfei is climbing a vertical rock face surrounded by glowing particles",
+      "notable_enemies_or_objects": "glowing colorful particles, quest marker on the minimap",
+      "visible_entities": [
+        "Yanfei"
+      ]
+    }
+  },
+  {
+    "frame_index": 49,
+    "source_image": "data\\test_screenshots\\frame_0050.png",
+    "observation": {
+      "location": "a mystical forest with glowing blue plants",
+      "time_of_day": "night",
+      "player_status": "Yanfei is at full health (15193/15193)",
+      "recent_action": "Yanfei is running forward, leaving a blue trail",
+      "notable_enemies_or_objects": "glowing blue flora, wooden stairs, quest marker",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 50,
+    "source_image": "data\\test_screenshots\\frame_0051.png",
+    "observation": {
+      "location": "grassy coastal area near cliffs",
+      "time_of_day": "night",
+      "player_status": "HP 14783/15193, Level 80",
+      "recent_action": "Yanfei is using a grappling movement ability to zip through the air",
+      "notable_enemies_or_objects": [
+        "mechanical platform",
+        "glowing blue orb",
+        "small companion creature"
+      ],
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean",
+        "small companion creature"
+      ]
+    }
+  },
+  {
+    "frame_index": 51,
+    "source_image": "data\\test_screenshots\\frame_0052.png",
+    "observation": {
+      "location": "coastal area with glowing purple rock formations",
+      "time_of_day": "night",
+      "player_status": "Yanfei (Level 80) has 13552/15193 HP",
+      "recent_action": "Yanfei is performing a Pyro attack, dealing 410 damage",
+      "notable_enemies_or_objects": "glowing pink crystals, quest marker, water",
+      "visible_entities": [
+        "Yanfei",
+        "glowing pink crystals",
+        "water"
+      ]
+    }
+  },
+  {
+    "frame_index": 52,
+    "source_image": "data\\test_screenshots\\frame_0053.png",
+    "observation": {
+      "location": "underground cave with glowing blue flora",
+      "time_of_day": "unclear",
+      "player_status": "Yanfei (Level 80) with 13552/15193 HP",
+      "recent_action": "Yanfei is running across the surface of the water, leaving circular ripples",
+      "notable_enemies_or_objects": "large glowing blue aquatic plants with tall stalks",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean",
+        "glowing blue plants"
+      ]
+    }
+  },
+  {
+    "frame_index": 53,
+    "source_image": "data\\test_screenshots\\frame_0054.png",
+    "observation": {
+      "location": "dark rocky coastal area",
+      "time_of_day": "night",
+      "player_status": "Yanfei active with 13552/15193 HP",
+      "recent_action": "Yanfei is running across a dark, rocky surface near the water.",
+      "notable_enemies_or_objects": "wooden structure, floating gadget, quest marker",
+      "visible_entities": [
+        "Yanfei",
+        "floating gadget",
+        "wooden structure"
+      ]
+    }
+  },
+  {
+    "frame_index": 54,
+    "source_image": "data\\test_screenshots\\frame_0055.png",
+    "observation": {
+      "location": "rocky coastal area",
+      "time_of_day": "night",
+      "player_status": "HP 13552/15193, Level 80",
+      "recent_action": "running across dark rocky terrain",
+      "notable_enemies_or_objects": "quest marker",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 55,
+    "source_image": "data\\test_screenshots\\frame_0056.png",
+    "observation": {
+      "location": "steep rocky cliffside",
+      "time_of_day": "night",
+      "player_status": "Yanfei at 13142/15193 HP",
+      "recent_action": "climbing a dark rock wall",
+      "notable_enemies_or_objects": "floating gadget companion",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean",
+        "floating gadget"
+      ]
+    }
+  },
+  {
+    "frame_index": 56,
+    "source_image": "data\\test_screenshots\\frame_0057.png",
+    "observation": {
+      "location": "steep mountain cliff",
+      "time_of_day": "night",
+      "player_status": "HP 13142/15193, Level 80",
+      "recent_action": "climbing a steep rock face",
+      "notable_enemies_or_objects": "none",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 57,
+    "source_image": "data\\test_screenshots\\frame_0058.png",
+    "observation": {
+      "location": "rocky cliffside",
+      "time_of_day": "night",
+      "player_status": "Yanfei (Level 80) with 13142/15193 HP and a partially depleted stamina bar",
+      "recent_action": "climbing a steep mountain wall",
+      "notable_enemies_or_objects": "quest marker for 'Rendez-vous au Bureau de d\u00e9lib\u00e9ration'",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 58,
+    "source_image": "data\\test_screenshots\\frame_0059.png",
+    "observation": {
+      "location": "rocky cliffside",
+      "time_of_day": "night",
+      "player_status": "Yanfei (Level 80) with 13142/15193 HP, stamina bar active while climbing",
+      "recent_action": "climbing a steep mountain face",
+      "notable_enemies_or_objects": "quest objective 'Rendez-vous au Bureau de d\u00e9lib\u00e9ration'",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 59,
+    "source_image": "data\\test_screenshots\\frame_0060.png",
+    "observation": {
+      "location": "rocky mountain slope",
+      "time_of_day": "night",
+      "player_status": "HP 13142/15193, Level 80, stamina bar active",
+      "recent_action": "sprinting up a steep incline",
+      "notable_enemies_or_objects": "quest marker for 'Bureau de d\u00e9lib\u00e9ration' (3495m away)",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 60,
+    "source_image": "data\\test_screenshots\\frame_0061.png",
+    "observation": {
+      "location": "grassy slope overlooking an industrial facility",
+      "time_of_day": "night",
+      "player_status": "HP 13142/15193, Level 80",
+      "recent_action": "Yanfei is moving forward on a grassy path",
+      "notable_enemies_or_objects": "large industrial structure, trees, bushes",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 61,
+    "source_image": "data\\test_screenshots\\frame_0062.png",
+    "observation": {
+      "location": "grassy hillside near industrial structures",
+      "time_of_day": "night",
+      "player_status": "Yanfei at 13142/15193 HP, level 80",
+      "recent_action": "Yanfei is running across a field of blue flowers",
+      "notable_enemies_or_objects": "blue flowers, small lizard-like creature, industrial buildings in background",
+      "visible_entities": [
+        "Yanfei",
+        "small lizard",
+        "blue flowers",
+        "industrial structures"
+      ]
+    }
+  },
+  {
+    "frame_index": 62,
+    "source_image": "data\\test_screenshots\\frame_0063.png",
+    "observation": {
+      "location": "industrial city district",
+      "time_of_day": "night",
+      "player_status": "Yanfei (Level 80) has 13142/15193 HP",
+      "recent_action": "gliding through an industrial area",
+      "notable_enemies_or_objects": [
+        "quest marker",
+        "industrial buildings",
+        "glowing crates"
+      ],
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 63,
+    "source_image": "data\\test_screenshots\\frame_0064.png",
+    "observation": {
+      "location": "Fortress of Meropide",
+      "time_of_day": "unclear",
+      "player_status": "HP 13142/15193, Level 80",
+      "recent_action": "gliding through the industrial area",
+      "notable_enemies_or_objects": "quest marker for Bureau de d\u00e9lib\u00e9ration, co-op request from Eli",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 64,
+    "source_image": "data\\test_screenshots\\frame_0065.png",
+    "observation": {
+      "location": "Fortress of Meropide, Fontaine",
+      "time_of_day": "unclear",
+      "player_status": "Yanfei (Level 80) at 13142/15193 HP",
+      "recent_action": "gliding through the air with a wind glider",
+      "notable_enemies_or_objects": "quest marker (3604m), co-op request notification from Eli, industrial machinery and structures",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean",
+        "Eli (notification)",
+        "various NPCs",
+        "wind glider"
+      ]
+    }
+  },
+  {
+    "frame_index": 65,
+    "source_image": "data\\test_screenshots\\frame_0066.png",
+    "observation": {
+      "location": "Fortress of Meropide",
+      "time_of_day": "unclear",
+      "player_status": "Yanfei (Lv. 80) with 13142/15193 HP",
+      "recent_action": "Yanfei is gliding through the facility towards a quest objective",
+      "notable_enemies_or_objects": "Quest marker 'Rendez-vous au Bureau de d\u00e9lib\u00e9ration', teleport waypoint, shop stall",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean",
+        "NPCs",
+        "Teleport Waypoint"
+      ]
+    }
+  },
+  {
+    "frame_index": 66,
+    "source_image": "data\\test_screenshots\\frame_0067.png",
+    "observation": {
+      "location": "underground city street",
+      "time_of_day": "unclear",
+      "player_status": "unclear",
+      "recent_action": "talking to an NPC named Sedzimir",
+      "notable_enemies_or_objects": "dialogue box",
+      "visible_entities": [
+        "Yanfei",
+        "Sedzimir",
+        "background NPCs"
+      ]
+    }
+  },
+  {
+    "frame_index": 67,
+    "source_image": "data\\test_screenshots\\frame_0068.png",
+    "observation": {
+      "location": "industrial urban area",
+      "time_of_day": "day",
+      "player_status": "unclear",
+      "recent_action": "speaking with NPC Sedzimir about alpacas and Snezhnaya",
+      "notable_enemies_or_objects": "dialogue interface with choice options",
+      "visible_entities": [
+        "Yanfei",
+        "Sedzimir",
+        "background NPCs"
+      ]
+    }
+  },
+  {
+    "frame_index": 68,
+    "source_image": "data\\test_screenshots\\frame_0069.png",
+    "observation": {
+      "location": "industrial urban area",
+      "time_of_day": "unclear",
+      "player_status": "unclear",
+      "recent_action": "engaging in dialogue with an NPC named Sedzimir",
+      "notable_enemies_or_objects": "dialogue interface, NPC's backpack",
+      "visible_entities": [
+        "Yanfei",
+        "Sedzimir",
+        "background NPCs"
+      ]
+    }
+  },
+  {
+    "frame_index": 69,
+    "source_image": "data\\test_screenshots\\frame_0070.png",
+    "observation": {
+      "location": "Fortress of Meropide, Adventurers' Guild",
+      "time_of_day": "unclear",
+      "player_status": "13142/15193 HP",
+      "recent_action": "Standing at the Adventurers' Guild counter to speak with Catherine",
+      "notable_enemies_or_objects": "Catherine, Adventurers' Guild desk, quest objective 'Rendez-vous au Bureau de d\u00e9lib\u00e9ration'",
+      "visible_entities": [
+        "Yanfei",
+        "Catherine",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 70,
+    "source_image": "data\\test_screenshots\\frame_0071.png",
+    "observation": {
+      "location": "Fortress of Meropide, Adventurers' Guild counter",
+      "time_of_day": "unclear",
+      "player_status": "unclear",
+      "recent_action": "initiating dialogue with Catherine",
+      "notable_enemies_or_objects": [
+        "Catherine",
+        "Adventurers' Guild counter",
+        "blue energy canisters",
+        "small robot toy",
+        "book"
+      ],
+      "visible_entities": [
+        "Yanfei",
+        "Catherine",
+        "small robot",
+        "blue canisters",
+        "flowers"
+      ]
+    }
+  },
+  {
+    "frame_index": 71,
+    "source_image": "data\\test_screenshots\\frame_0072.png",
+    "observation": {
+      "location": "Fortress of Meropide, industrial shop area",
+      "time_of_day": "unclear",
+      "player_status": "unclear",
+      "recent_action": "standing at a service counter",
+      "notable_enemies_or_objects": "service counter, book, blue energy canisters, small robot figurine, graffiti",
+      "visible_entities": [
+        "Yanfei",
+        "female NPC shopkeeper",
+        "male NPC in background"
+      ]
+    }
+  },
+  {
+    "frame_index": 72,
+    "source_image": "data\\test_screenshots\\frame_0073.png",
+    "observation": {
+      "location": "indoor workshop or reception area",
+      "time_of_day": "unclear",
+      "player_status": "unclear",
+      "recent_action": "standing at a counter interacting with a receptionist",
+      "notable_enemies_or_objects": "book on the counter, blue energy canisters, small robot toy, blue flowers",
+      "visible_entities": [
+        "Yanfei",
+        "receptionist NPC",
+        "man in background"
+      ]
+    }
+  },
+  {
+    "frame_index": 73,
+    "source_image": "data\\test_screenshots\\frame_0074.png",
+    "observation": {
+      "location": "Fortress of Meropide",
+      "time_of_day": "unclear",
+      "player_status": "HP 13142/15193, Level 80",
+      "recent_action": "moving through the industrial area towards a quest objective",
+      "notable_enemies_or_objects": "Teleport Waypoint, industrial machinery, crates, street lamps",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean",
+        "Teleport Waypoint",
+        "Multiple NPCs"
+      ]
+    }
+  },
+  {
+    "frame_index": 74,
+    "source_image": "data\\test_screenshots\\frame_0075.png",
+    "observation": {
+      "location": "industrial underground facility",
+      "time_of_day": "unclear",
+      "player_status": "Yanfei at 13142/15193 HP, Level 80",
+      "recent_action": "Yanfei is running forward across a metallic plaza",
+      "notable_enemies_or_objects": "quest marker (3629m), industrial crates, metal structures",
+      "visible_entities": [
+        "Yanfei",
+        "NPC in brown coat",
+        "NPCs on elevated platform",
+        "Kinich (party UI)",
+        "Wanderer (party UI)",
+        "Jean (party UI)"
+      ]
+    }
+  },
+  {
+    "frame_index": 75,
+    "source_image": "data\\test_screenshots\\frame_0076.png",
+    "observation": {
+      "location": "industrial settlement area",
+      "time_of_day": "dusk",
+      "player_status": "Yanfei (HP: 13142/15193, Level 80)",
+      "recent_action": "running towards a building entrance for a quest objective",
+      "notable_enemies_or_objects": "quest marker (Rendez-vous au Bureau de d\u00e9lib\u00e9ration), NPCs near a counter, wooden crates",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean",
+        "NPCs"
+      ]
+    }
+  },
+  {
+    "frame_index": 76,
+    "source_image": "data\\test_screenshots\\frame_0077.png",
+    "observation": {
+      "location": "industrial area with rocky terrain",
+      "time_of_day": "day",
+      "player_status": "Yanfei has 13142/15193 HP",
+      "recent_action": "running towards a teleport waypoint",
+      "notable_enemies_or_objects": "teleport waypoint, quest marker, industrial structures",
+      "visible_entities": [
+        "Yanfei",
+        "Teleport Waypoint"
+      ]
+    }
+  },
+  {
+    "frame_index": 77,
+    "source_image": "data\\test_screenshots\\frame_0078.png",
+    "observation": {
+      "location": "outdoor path near a settlement in Natlan",
+      "time_of_day": "day",
+      "player_status": "Yanfei at 13142/15193 HP, level 80",
+      "recent_action": "Yanfei is running along a dirt path towards a quest objective",
+      "notable_enemies_or_objects": "Sweet Flower, quest marker, wooden fence, buildings",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 78,
+    "source_image": "data\\test_screenshots\\frame_0079.png",
+    "observation": {
+      "location": "industrial settlement area",
+      "time_of_day": "night",
+      "player_status": "Yanfei active, 13142/15193 HP, Level 80",
+      "recent_action": "Yanfei is running through a settlement towards a building",
+      "notable_enemies_or_objects": "large crate with a ship logo, wooden structures, lanterns, mini-map",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean",
+        "distant NPC"
+      ]
+    }
+  },
+  {
+    "frame_index": 79,
+    "source_image": "data\\test_screenshots\\frame_0080.png",
+    "observation": {
+      "location": "lush forest path in Natlan",
+      "time_of_day": "day",
+      "player_status": "Yanfei at 13142/15193 HP, level 80; Elemental Burst ready",
+      "recent_action": "Yanfei is running forward along a path towards a distant quest objective.",
+      "notable_enemies_or_objects": "three small bird-like creatures with red caps, blue glowing plants, quest marker for 'Bureau de d\u00e9lib\u00e9ration'",
+      "visible_entities": [
+        "Yanfei",
+        "Saurian-like creatures",
+        "blue glowing plants",
+        "mini-map",
+        "party UI"
+      ]
+    }
+  },
+  {
+    "frame_index": 80,
+    "source_image": "data\\test_screenshots\\frame_0081.png",
+    "observation": {
+      "location": "grassy hillside with rocks and glowing plants",
+      "time_of_day": "night",
+      "player_status": "13142 / 15193 HP, Level 80",
+      "recent_action": "Yanfei is running past a glowing blue crescent-shaped object",
+      "notable_enemies_or_objects": "glowing blue crescent object, glowing blue plants, quest objective 'Rendez-vous au Bureau de d\u00e9lib\u00e9ration'",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich (UI)",
+        "Wanderer (UI)",
+        "Jean (UI)",
+        "glowing blue crescent object"
+      ]
+    }
+  },
+  {
+    "frame_index": 81,
+    "source_image": "data\\test_screenshots\\frame_0082.png",
+    "observation": {
+      "location": "grassy hillside near a cliff",
+      "time_of_day": "day",
+      "player_status": "Yanfei (Level 80) with 13142/15193 HP",
+      "recent_action": "collected two pieces of Fowl and is currently near a glowing blue plant",
+      "notable_enemies_or_objects": [
+        "glowing blue plant",
+        "Fowl (Volaille)"
+      ],
+      "visible_entities": [
+        "Yanfei",
+        "glowing blue plant",
+        "bushes",
+        "rock wall"
+      ]
+    }
+  },
+  {
+    "frame_index": 82,
+    "source_image": "data\\test_screenshots\\frame_0083.png",
+    "observation": {
+      "location": "lush forest path with glowing flora",
+      "time_of_day": "night",
+      "player_status": "HP 13142/15193, Level 80",
+      "recent_action": "running along a path towards a quest objective",
+      "notable_enemies_or_objects": "glowing blue plants, a Seelie-like orb, quest marker",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean",
+        "Seelie-like orb"
+      ]
+    }
+  },
+  {
+    "frame_index": 83,
+    "source_image": "data\\test_screenshots\\frame_0084.png",
+    "observation": {
+      "location": "grassy forest path",
+      "time_of_day": "day",
+      "player_status": "Yanfei at 13142/15193 HP, Level 80",
+      "recent_action": "running forward along a path with blue particle effects",
+      "notable_enemies_or_objects": "small birds, glowing blue plants, quest marker",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean",
+        "small birds",
+        "glowing plants"
+      ]
+    }
+  },
+  {
+    "frame_index": 84,
+    "source_image": "data\\test_screenshots\\frame_0085.png",
+    "observation": {
+      "location": "grassy hillside overlooking a body of water with a large mechanical structure",
+      "time_of_day": "night",
+      "player_status": "Yanfei is active with 13142/15193 HP",
+      "recent_action": "The player just collected a Matsutake and is currently running across the field.",
+      "notable_enemies_or_objects": [
+        "Leisurely Puffin",
+        "Matsutake (recently obtained)",
+        "large mechanical structure in the background",
+        "glowing blue plants"
+      ],
+      "visible_entities": [
+        "Yanfei",
+        "Leisurely Puffin",
+        "large mechanical structure"
+      ]
+    }
+  },
+  {
+    "frame_index": 85,
+    "source_image": "data\\test_screenshots\\frame_0086.png",
+    "observation": {
+      "location": "coastal cliff overlooking a large body of water with a dome-like structure in the distance",
+      "time_of_day": "night",
+      "player_status": "Yanfei (Level 80) with 13142/15193 HP",
+      "recent_action": "running forward towards the edge of the cliff",
+      "notable_enemies_or_objects": "Fortress of Meropide in the distance, floating red Phlogiston orb, quest marker for 'Bureau de d\u00e9lib\u00e9ration'",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean",
+        "birds",
+        "Fortress of Meropide"
+      ]
+    }
+  },
+  {
+    "frame_index": 86,
+    "source_image": "data\\test_screenshots\\frame_0087.png",
+    "observation": {
+      "location": "rocky coastline",
+      "time_of_day": "night",
+      "player_status": "Yanfei active, 13142/15193 HP, Level 80",
+      "recent_action": "running towards a group of NPCs and a mysterious object",
+      "notable_enemies_or_objects": "purple object with glowing eyes, NPCs, distant chest",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean",
+        "NPCs",
+        "Purple object with eyes"
+      ]
+    }
+  },
+  {
+    "frame_index": 87,
+    "source_image": "data\\test_screenshots\\frame_0088.png",
+    "observation": {
+      "location": "coastal rocky area near a teleport waypoint",
+      "time_of_day": "night",
+      "player_status": "Kinich has 550/21667 HP; revival menu open",
+      "recent_action": "opening the revival item menu to heal a fallen character",
+      "notable_enemies_or_objects": "teleport waypoint, revival items (Velout\u00e9 de champignons), NPC Rolf",
+      "visible_entities": [
+        "Kinich",
+        "Rolf",
+        "Teleport Waypoint",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 88,
+    "source_image": "data\\test_screenshots\\frame_0089.png",
+    "observation": {
+      "location": "dark coastal area",
+      "time_of_day": "night",
+      "player_status": "Jean is at full health (21916/21916)",
+      "recent_action": "Jean is sprinting towards a group of Fatui enemies",
+      "notable_enemies_or_objects": "three level 89 Fatui Skirmishers, quest marker for 'Rendez-vous au Bureau de d\u00e9lib\u00e9ration'",
+      "visible_entities": [
+        "Jean",
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Fatui Skirmishers"
+      ]
+    }
+  },
+  {
+    "frame_index": 89,
+    "source_image": "data\\test_screenshots\\frame_0090.png",
+    "observation": {
+      "location": "rocky shoreline near a mountain",
+      "time_of_day": "night",
+      "player_status": "Jean (Level 90) at 20976/21916 HP, Elemental Burst ready",
+      "recent_action": "Jean is in combat with Treasure Hoarders, launching them into the air with an attack",
+      "notable_enemies_or_objects": "Treasure Hoarders (Level 89), floating cube gadget with an exclamation mark",
+      "visible_entities": [
+        "Jean",
+        "Treasure Hoarders",
+        "floating cube gadget"
+      ]
+    }
+  },
+  {
+    "frame_index": 90,
+    "source_image": "data\\test_screenshots\\frame_0091.png",
+    "observation": {
+      "location": "rocky coastal area",
+      "time_of_day": "night",
+      "player_status": "Health: 20976/21916, Level 90",
+      "recent_action": "Jean has launched a Treasure Hoarder into the air, likely using her Elemental Skill.",
+      "notable_enemies_or_objects": [
+        "Treasure Hoarder (Niv. 89)",
+        "Mechanical box with exclamation mark",
+        "Glowing blue plants"
+      ],
+      "visible_entities": [
+        "Jean",
+        "Treasure Hoarder",
+        "Mechanical box",
+        "Kinich",
+        "Wanderer",
+        "Yanfei"
+      ]
+    }
+  },
+  {
+    "frame_index": 91,
+    "source_image": "data\\test_screenshots\\frame_0092.png",
+    "observation": {
+      "location": "cliffside or high altitude",
+      "time_of_day": "day",
+      "player_status": "Jean at 20035/21916 HP",
+      "recent_action": "launching enemies into the air",
+      "notable_enemies_or_objects": "two Treasure Hoarders falling",
+      "visible_entities": [
+        "Jean",
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Treasure Hoarders"
+      ]
+    }
+  },
+  {
+    "frame_index": 92,
+    "source_image": "data\\test_screenshots\\frame_0093.png",
+    "observation": {
+      "location": "rocky outdoor area in Natlan",
+      "time_of_day": "night",
+      "player_status": "Jean (Level 90) with 19565/21916 HP",
+      "recent_action": "Jean is moving towards Treasure Hoarder enemies in a combat encounter",
+      "notable_enemies_or_objects": "Treasure Hoarders, floating quest device with an exclamation mark",
+      "visible_entities": [
+        "Jean",
+        "Treasure Hoarder Scout",
+        "Treasure Hoarder Crusher",
+        "floating quest device"
+      ]
+    }
+  },
+  {
+    "frame_index": 93,
+    "source_image": "data\\test_screenshots\\frame_0094.png",
+    "observation": {
+      "location": "dark rocky terrain",
+      "time_of_day": "night",
+      "player_status": "Jean at 21916/21916 HP",
+      "recent_action": "Jean has just activated her Elemental Burst, Dandelion Breeze, creating a large Anemo field.",
+      "notable_enemies_or_objects": "Dandelion Breeze field, floating dandelion seeds",
+      "visible_entities": [
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 94,
+    "source_image": "data\\test_screenshots\\frame_0095.png",
+    "observation": {
+      "location": "coastal area at night",
+      "time_of_day": "night",
+      "player_status": "Kinich is active with 12,649 / 21,667 HP",
+      "recent_action": "Kinich is using his Elemental Skill to tether to an enemy, dealing 11,444 Dendro damage and receiving 912 healing",
+      "notable_enemies_or_objects": "Level 89 Fatui Skirmisher",
+      "visible_entities": [
+        "Kinich",
+        "Fatui Skirmisher",
+        "glowing flora",
+        "water"
+      ]
+    }
+  },
+  {
+    "frame_index": 95,
+    "source_image": "data\\test_screenshots\\frame_0096.png",
+    "observation": {
+      "location": "rocky lakeside area",
+      "time_of_day": "night",
+      "player_status": "15387 / 21667 HP, Level 90",
+      "recent_action": "Kinich is dealing Dendro damage with a large pixelated explosion",
+      "notable_enemies_or_objects": "humanoid enemies, pixelated Dendro energy sphere",
+      "visible_entities": [
+        "Kinich",
+        "humanoid enemies",
+        "pixelated energy sphere",
+        "damage numbers"
+      ]
+    }
+  },
+  {
+    "frame_index": 96,
+    "source_image": "data\\test_screenshots\\frame_0097.png",
+    "observation": {
+      "location": "dark sandy beach near water",
+      "time_of_day": "night",
+      "player_status": "HP 15387/21667, Level 90",
+      "recent_action": "Kinich is using his elemental skill to grapple a target while wielding his claymore",
+      "notable_enemies_or_objects": [
+        "grapple target",
+        "glowing aquatic plants",
+        "large rock",
+        "quest marker"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "Ajaw",
+        "glowing plants",
+        "grapple target"
+      ]
+    }
+  },
+  {
+    "frame_index": 97,
+    "source_image": "data\\test_screenshots\\frame_0098.png",
+    "observation": {
+      "location": "rocky shore with glowing blue crystals",
+      "time_of_day": "night",
+      "player_status": "21916/21916 HP, Level 90",
+      "recent_action": "approaching a small robot with an exclamation mark to examine it",
+      "notable_enemies_or_objects": [
+        "small robot with exclamation mark",
+        "glowing blue crystals",
+        "seashell",
+        "starfish",
+        "NPC worker"
+      ],
+      "visible_entities": [
+        "Jean",
+        "small robot",
+        "NPC worker",
+        "blue crystals",
+        "seashell",
+        "starfish"
+      ]
+    }
+  },
+  {
+    "frame_index": 98,
+    "source_image": "data\\test_screenshots\\frame_0099.png",
+    "observation": {
+      "location": "rocky coastal area",
+      "time_of_day": "night",
+      "player_status": "full health (21916/21916)",
+      "recent_action": "Jean is attacking a Treasure Hoarder, dealing 625 damage",
+      "notable_enemies_or_objects": "Treasure Hoarder (Level 89)",
+      "visible_entities": [
+        "Jean",
+        "Treasure Hoarder",
+        "rocks",
+        "ocean"
+      ]
+    }
+  },
+  {
+    "frame_index": 99,
+    "source_image": "data\\test_screenshots\\frame_0100.png",
+    "observation": {
+      "location": "rocky coastal area",
+      "time_of_day": "night",
+      "player_status": "Jean at full health (21916/21916), level 90",
+      "recent_action": "Jean is engaging a level 89 enemy, dealing 814 damage",
+      "notable_enemies_or_objects": "Level 89 human enemy with Hydro status, large rock, crate with glowing investigation points",
+      "visible_entities": [
+        "Jean",
+        "Treasure Hoarder",
+        "Kinich",
+        "Wanderer",
+        "Yanfei"
+      ]
+    }
+  },
+  {
+    "frame_index": 100,
+    "source_image": "data\\test_screenshots\\frame_0101.png",
+    "observation": {
+      "location": "rocky cliffside near the ocean",
+      "time_of_day": "night",
+      "player_status": "Jean (Lv. 90) has 20574/21916 HP; Elemental Burst is ready",
+      "recent_action": "Jean is attacking a Hydro Slime, dealing 625 damage and receiving 234 healing",
+      "notable_enemies_or_objects": "Hydro Slime",
+      "visible_entities": [
+        "Jean",
+        "Hydro Slime",
+        "Kinich",
+        "Wanderer",
+        "Yanfei"
+      ]
+    }
+  },
+  {
+    "frame_index": 101,
+    "source_image": "data\\test_screenshots\\frame_0102.png",
+    "observation": {
+      "location": "rocky coastal area",
+      "time_of_day": "night",
+      "player_status": "Jean (Level 90) with 15556/21916 HP",
+      "recent_action": "Jean is in combat with a Treasure Hoarder, dealing damage.",
+      "notable_enemies_or_objects": "Treasure Hoarder (Level 89)",
+      "visible_entities": [
+        "Jean",
+        "Treasure Hoarder"
+      ]
+    }
+  },
+  {
+    "frame_index": 102,
+    "source_image": "data\\test_screenshots\\frame_0103.png",
+    "observation": {
+      "location": "rocky coastal area",
+      "time_of_day": "day",
+      "player_status": "Jean is active with 15119/21916 HP; party includes Kinich, Wanderer, and Yanfei.",
+      "recent_action": "Jean is engaged in combat with a Treasure Hoarder, dealing 1306 physical damage and receiving 234 healing.",
+      "notable_enemies_or_objects": "Treasure Hoarder Crusher (Level 89)",
+      "visible_entities": [
+        "Jean",
+        "Treasure Hoarder Crusher",
+        "rocks",
+        "ocean"
+      ]
+    }
+  },
+  {
+    "frame_index": 103,
+    "source_image": "data\\test_screenshots\\frame_0104.png",
+    "observation": {
+      "location": "rocky shore",
+      "time_of_day": "night",
+      "player_status": "Jean has 9867/21916 HP",
+      "recent_action": "Jean is attacking a Fatui Skirmisher, dealing 814 damage",
+      "notable_enemies_or_objects": "Fatui Skirmisher",
+      "visible_entities": [
+        "Jean",
+        "Fatui Skirmisher",
+        "Kinich",
+        "Wanderer",
+        "Yanfei"
+      ]
+    }
+  },
+  {
+    "frame_index": 104,
+    "source_image": "data\\test_screenshots\\frame_0105.png",
+    "observation": {
+      "location": "rocky coastal path",
+      "time_of_day": "day",
+      "player_status": "HP 17259/21667, Level 90",
+      "recent_action": "engaging in combat with a Treasure Hoarder",
+      "notable_enemies_or_objects": "Treasure Hoarder (Level 89)",
+      "visible_entities": [
+        "Kinich",
+        "Treasure Hoarder",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 105,
+    "source_image": "data\\test_screenshots\\frame_0106.png",
+    "observation": {
+      "location": "rocky coastal area near a large structure",
+      "time_of_day": "night",
+      "player_status": "Health: 15193/15193, Level 80",
+      "recent_action": "Standing near a Fatui Skirmisher enemy",
+      "notable_enemies_or_objects": "Fatui Skirmisher - Hydrogunner Legionnaire (Level 89)",
+      "visible_entities": [
+        "Yanfei",
+        "Fatui Skirmisher",
+        "rocks",
+        "ocean",
+        "distant fortress"
+      ]
+    }
+  },
+  {
+    "frame_index": 106,
+    "source_image": "data\\test_screenshots\\frame_0107.png",
+    "observation": {
+      "location": "rocky shore near the Fortress of Meropide",
+      "time_of_day": "night",
+      "player_status": "Yanfei (Level 80) with 14498/15193 HP; party includes Kinich, Wanderer, and Jean",
+      "recent_action": "Yanfei is confronting a level 89 enemy near some rocks",
+      "notable_enemies_or_objects": "Level 89 enemy with a Hydro status effect",
+      "visible_entities": [
+        "Yanfei",
+        "Level 89 enemy",
+        "rocks",
+        "Fortress of Meropide",
+        "water"
+      ]
+    }
+  },
+  {
+    "frame_index": 107,
+    "source_image": "data\\test_screenshots\\frame_0108.png",
+    "observation": {
+      "location": "rocky coastline near a large mechanical structure",
+      "time_of_day": "night",
+      "player_status": "Yanfei is active with 13593/15193 HP",
+      "recent_action": "Yanfei is running along the shore",
+      "notable_enemies_or_objects": "Level 89 enemy, large mechanical fortress",
+      "visible_entities": [
+        "Yanfei",
+        "Level 89 enemy",
+        "large mechanical structure"
+      ]
+    }
+  },
+  {
+    "frame_index": 108,
+    "source_image": "data\\test_screenshots\\frame_0109.png",
+    "observation": {
+      "location": "rocky coastline near a large mechanical structure",
+      "time_of_day": "night",
+      "player_status": "Yanfei is active with 11854/15193 HP",
+      "recent_action": "Yanfei is running along the shore near a small robot monitor with an exclamation mark",
+      "notable_enemies_or_objects": "small robot monitor, large mechanical fortress in the distance",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean",
+        "small robot monitor"
+      ]
+    }
+  },
+  {
+    "frame_index": 109,
+    "source_image": "data\\test_screenshots\\frame_0110.png",
+    "observation": {
+      "location": "rocky coastal area",
+      "time_of_day": "night",
+      "player_status": "Yanfei (Lv. 80) at 9349/15193 HP",
+      "recent_action": "Yanfei is engaged in combat with a level 89 enemy, dealing damage.",
+      "notable_enemies_or_objects": [
+        "Level 89 enemy",
+        "mechanical box with exclamation mark",
+        "quest marker"
+      ],
+      "visible_entities": [
+        "Yanfei",
+        "Level 89 enemy",
+        "mechanical box",
+        "rocks",
+        "minimap"
+      ]
+    }
+  },
+  {
+    "frame_index": 110,
+    "source_image": "data\\test_screenshots\\frame_0111.png",
+    "observation": {
+      "location": "rocky shoreline",
+      "time_of_day": "night",
+      "player_status": "Yanfei active, 7538/15193 HP",
+      "recent_action": "Standing in front of a Treasure Hoarder and a mechanical device",
+      "notable_enemies_or_objects": [
+        "Treasure Hoarder (Level 89)",
+        "mechanical device with exclamation mark",
+        "chest"
+      ],
+      "visible_entities": [
+        "Yanfei",
+        "Treasure Hoarder",
+        "mechanical device",
+        "chest"
+      ]
+    }
+  },
+  {
+    "frame_index": 111,
+    "source_image": "data\\test_screenshots\\frame_0112.png",
+    "observation": {
+      "location": "rocky mountainous area",
+      "time_of_day": "night",
+      "player_status": "Yanfei active, 6633/15193 HP",
+      "recent_action": "Yanfei is observing a Treasure Hoarder mining a large rock.",
+      "notable_enemies_or_objects": [
+        "Treasure Hoarder",
+        "large rock",
+        "crate with blue ore"
+      ],
+      "visible_entities": [
+        "Yanfei",
+        "Treasure Hoarder",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 112,
+    "source_image": "data\\test_screenshots\\frame_0113.png",
+    "observation": {
+      "location": "dark rocky area near ice",
+      "time_of_day": "night",
+      "player_status": "5033/15193 HP, Level 80",
+      "recent_action": "walking towards a large rock wall",
+      "notable_enemies_or_objects": [
+        "large rock wall",
+        "ice-filled wooden crate",
+        "glowing investigation point"
+      ],
+      "visible_entities": [
+        "Yanfei",
+        "Kinich (UI)",
+        "Wanderer (UI)",
+        "Jean (UI)"
+      ]
+    }
+  },
+  {
+    "frame_index": 113,
+    "source_image": "data\\test_screenshots\\frame_0114.png",
+    "observation": {
+      "location": "rocky riverbank near mountains",
+      "time_of_day": "night",
+      "player_status": "Yanfei active, HP 5033/15193",
+      "recent_action": "collected three Iron Chunks",
+      "notable_enemies_or_objects": "Iron Chunks, large blue crystalline rocks",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 114,
+    "source_image": "data\\test_screenshots\\frame_0115.png",
+    "observation": {
+      "location": "dark coastal beach",
+      "time_of_day": "night",
+      "player_status": "Yanfei at 5033/15193 HP",
+      "recent_action": "running along the shoreline towards a purple rift",
+      "notable_enemies_or_objects": [
+        "purple rift",
+        "blue glowing plant",
+        "quest marker"
+      ],
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean",
+        "blue glowing plant",
+        "purple rift"
+      ]
+    }
+  },
+  {
+    "frame_index": 115,
+    "source_image": "data\\test_screenshots\\frame_0116.png",
+    "observation": {
+      "location": "coastal area with mountains and a waterfall",
+      "time_of_day": "night",
+      "player_status": "Yanfei at 5033/15193 HP, Level 80",
+      "recent_action": "standing near the water, observing the landscape",
+      "notable_enemies_or_objects": "floating red and green objects, waterfall, quest marker",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 116,
+    "source_image": "data\\test_screenshots\\frame_0117.png",
+    "observation": {
+      "location": "a dark sand beach at the base of a large cliff",
+      "time_of_day": "night",
+      "player_status": "Yanfei active with 5033/15193 HP",
+      "recent_action": "running towards the cliff face",
+      "notable_enemies_or_objects": "blue glowing flora, quest marker on the mini-map",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 117,
+    "source_image": "data\\test_screenshots\\frame_0118.png",
+    "observation": {
+      "location": "grassy cliffside near water",
+      "time_of_day": "night",
+      "player_status": "Yanfei (Level 80) with 5033/15193 HP",
+      "recent_action": "collected three Lakkabaies",
+      "notable_enemies_or_objects": "Lakkabaie, glowing blue plant structure, moon",
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean",
+        "glowing blue plant"
+      ]
+    }
+  },
+  {
+    "frame_index": 118,
+    "source_image": "data\\test_screenshots\\frame_0119.png",
+    "observation": {
+      "location": "rocky canyon with a waterfall",
+      "time_of_day": "day",
+      "player_status": "Yanfei at 5033/15193 HP",
+      "recent_action": "running across a dark surface towards a path near a waterfall",
+      "notable_enemies_or_objects": [
+        "waterfall",
+        "quest marker: Rendez-vous au Bureau de d\u00e9lib\u00e9ration",
+        "small glowing creature in the distance"
+      ],
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 119,
+    "source_image": "data\\test_screenshots\\frame_0120.png",
+    "observation": {
+      "location": "rocky lakeside with a waterfall",
+      "time_of_day": "night",
+      "player_status": "Yanfei (Level 80) with 5033/15193 HP",
+      "recent_action": "running towards a teleport waypoint",
+      "notable_enemies_or_objects": [
+        "teleport waypoint",
+        "waterfall",
+        "quest marker"
+      ],
+      "visible_entities": [
+        "Yanfei",
+        "Kinich",
+        "Wanderer",
+        "Jean",
+        "NPC",
+        "teleport waypoint"
+      ]
+    }
+  },
+  {
+    "frame_index": 120,
+    "source_image": "data\\test_screenshots\\frame_0121.png",
+    "observation": {
+      "location": "rocky terrain near a waterfall",
+      "time_of_day": "day",
+      "player_status": "Yanfei is active with 5033/15193 HP",
+      "recent_action": "running towards NPC Rolf",
+      "notable_enemies_or_objects": [
+        "glowing crystal structure",
+        "waterfall"
+      ],
+      "visible_entities": [
+        "Yanfei",
+        "Rolf",
+        "glowing crystal structure"
+      ]
+    }
+  },
+  {
+    "frame_index": 121,
+    "source_image": "data\\test_screenshots\\frame_0122.png",
+    "observation": {
+      "location": "mountainous valley with a waterfall",
+      "time_of_day": "night",
+      "player_status": "HP 5033/15193, Level 80",
+      "recent_action": "running towards a purple creature and a locked chest",
+      "notable_enemies_or_objects": "purple creature, locked chest, floating blue structure, red glowing orb",
+      "visible_entities": [
+        "Yanfei",
+        "purple creature",
+        "locked chest",
+        "waterfall",
+        "floating blue structure",
+        "red glowing orb"
+      ]
+    }
+  },
+  {
+    "frame_index": 122,
+    "source_image": "data\\test_screenshots\\frame_0123.png",
+    "observation": {
+      "location": "riverbank",
+      "time_of_day": "day",
+      "player_status": "Yanfei (Level 80) has 5033/15193 HP and is 'Tremp\u00e9' (Wet)",
+      "recent_action": "Yanfei is running across shallow water near several enemies",
+      "notable_enemies_or_objects": "Large Hydro Slime, Small Hydro Slime, large purple beast, locked chest",
+      "visible_entities": [
+        "Yanfei",
+        "Large Hydro Slime",
+        "Small Hydro Slime",
+        "Large purple beast",
+        "Locked chest"
+      ]
+    }
+  },
+  {
+    "frame_index": 123,
+    "source_image": "data\\test_screenshots\\frame_0124.png",
+    "observation": {
+      "location": "grassy shoreline",
+      "time_of_day": "day",
+      "player_status": "5033 / 15193 HP",
+      "recent_action": "engaging in combat and triggering an Electro-Charged reaction",
+      "notable_enemies_or_objects": "Hydro Slimes, Consecrated Fanged Beast",
+      "visible_entities": [
+        "Yanfei",
+        "Hydro Slimes",
+        "Consecrated Fanged Beast"
+      ]
+    }
+  },
+  {
+    "frame_index": 124,
+    "source_image": "data\\test_screenshots\\frame_0125.png",
+    "observation": {
+      "location": "grassy riverbank",
+      "time_of_day": "day",
+      "player_status": "Jean has 8962/21916 HP and is affected by the Wet status",
+      "recent_action": "Jean is sprinting past two Hydro Slimes",
+      "notable_enemies_or_objects": "two Hydro Slimes and a Tainted Hydro Phantasm",
+      "visible_entities": [
+        "Jean",
+        "Hydro Slime",
+        "Hydro Slime",
+        "Tainted Hydro Phantasm"
+      ]
+    }
+  },
+  {
+    "frame_index": 125,
+    "source_image": "data\\test_screenshots\\frame_0126.png",
+    "observation": {
+      "location": "grassy lakeside",
+      "time_of_day": "day",
+      "player_status": "Kinich (Level 90) has 15449/21667 HP; party includes Wanderer, Yanfei, and Jean.",
+      "recent_action": "Kinich is performing a rapid movement or attack towards a Hydro Slime.",
+      "notable_enemies_or_objects": "Hydro Slime (Level 89), a large purple Koholasaur, and a shell on the ground.",
+      "visible_entities": [
+        "Kinich",
+        "Hydro Slime",
+        "Koholasaur",
+        "shell",
+        "blue plants"
+      ]
+    }
+  },
+  {
+    "frame_index": 126,
+    "source_image": "data\\test_screenshots\\frame_0127.png",
+    "observation": {
+      "location": "grassy riverside",
+      "time_of_day": "day",
+      "player_status": "Kinich (Niv. 90) with 12237/21667 HP",
+      "recent_action": "Kinich is attacking a Consecrated Horned Crocodile, dealing 62871 Dendro damage.",
+      "notable_enemies_or_objects": "Consecrated Horned Crocodile, Hydro Slime",
+      "visible_entities": [
+        "Kinich",
+        "Consecrated Horned Crocodile",
+        "Hydro Slime"
+      ]
+    }
+  },
+  {
+    "frame_index": 127,
+    "source_image": "data\\test_screenshots\\frame_0128.png",
+    "observation": {
+      "location": "grassy shore near water",
+      "time_of_day": "day",
+      "player_status": "12237/21667 HP, Level 90",
+      "recent_action": "engaging in combat with Hydro Slimes, triggering Hyperbloom reactions, and collecting loot",
+      "notable_enemies_or_objects": "Hydro Slimes, Mucus de Blob, Bave de Blob",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "Hydro Slimes",
+        "Mucus de Blob",
+        "Bave de Blob"
+      ]
+    }
+  },
+  {
+    "frame_index": 128,
+    "source_image": "data\\test_screenshots\\frame_0129.png",
+    "observation": {
+      "location": "grassy riverbank near a waterfall",
+      "time_of_day": "day",
+      "player_status": "Kinich at 12167/21667 HP, level 90",
+      "recent_action": "Kinich is in a combat stance, engaging a Hydro Slime and a large purple beast.",
+      "notable_enemies_or_objects": [
+        "Hydro Slime (Niv. 89)",
+        "Large purple beast (Niv. 89)",
+        "Mora x32 drop"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "Hydro Slime",
+        "Large purple beast",
+        "Waterfall"
+      ]
+    }
+  },
+  {
+    "frame_index": 129,
+    "source_image": "data\\test_screenshots\\frame_0130.png",
+    "observation": {
+      "location": "coastal area with a river",
+      "time_of_day": "night",
+      "player_status": "health 4838 / 16728, level 90",
+      "recent_action": "The player is in combat with a large Electro creature and has just gained character experience.",
+      "notable_enemies_or_objects": "a large Electro deer-like creature, a locked treasure chest",
+      "visible_entities": [
+        "Wanderer",
+        "Electro deer-like creature",
+        "locked treasure chest",
+        "Kinich",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 130,
+    "source_image": "data\\test_screenshots\\frame_0131.png",
+    "observation": {
+      "location": "grassy riverbank near a waterfall",
+      "time_of_day": "day",
+      "player_status": "Wanderer (level 90) has 0/16728 HP",
+      "recent_action": "Wanderer is in combat with a Thundercraven Rifthound; a Swirl reaction was triggered, and Wanderer has just been defeated.",
+      "notable_enemies_or_objects": "Thundercraven Rifthound",
+      "visible_entities": [
+        "Wanderer",
+        "Thundercraven Rifthound",
+        "waterfall"
+      ]
+    }
+  },
+  {
+    "frame_index": 131,
+    "source_image": "data\\test_screenshots\\frame_0132.png",
+    "observation": {
+      "location": "lakeside shore",
+      "time_of_day": "day",
+      "player_status": "8200 / 21667 HP, Level 90, Wet status",
+      "recent_action": "running across the water's edge towards a locked chest",
+      "notable_enemies_or_objects": "locked chest, investigation point, Dendro particle",
+      "visible_entities": [
+        "Kinich",
+        "locked chest",
+        "Dendro particle",
+        "investigation point"
+      ]
+    }
+  },
+  {
+    "frame_index": 132,
+    "source_image": "data\\test_screenshots\\frame_0133.png",
+    "observation": {
+      "location": "grassy shore near a body of water in Natlan",
+      "time_of_day": "day",
+      "player_status": "Kinich active with 8200/21667 HP",
+      "recent_action": "Kinich is using his grappling hook skill to orbit and attack a large enemy, dealing 62871 Dendro damage",
+      "notable_enemies_or_objects": "Wayob Manifestation, Dendro projectiles, treasure chest in the distance",
+      "visible_entities": [
+        "Kinich",
+        "Wayob Manifestation",
+        "Dendro particles",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 133,
+    "source_image": "data\\test_screenshots\\frame_0134.png",
+    "observation": {
+      "location": "riverside grassy field",
+      "time_of_day": "day",
+      "player_status": "Kinich (Level 90) with 5906/21667 HP",
+      "recent_action": "Kinich is performing a Dendro attack, triggering Bloom and Hyperbloom reactions against a large fungal enemy",
+      "notable_enemies_or_objects": "large purple fungal enemy",
+      "visible_entities": [
+        "Kinich",
+        "large fungal enemy",
+        "damage indicators",
+        "party UI"
+      ]
+    }
+  },
+  {
+    "frame_index": 134,
+    "source_image": "data\\test_screenshots\\frame_0135.png",
+    "observation": {
+      "location": "grassy hillside near a lake",
+      "time_of_day": "day",
+      "player_status": "Kinich (Level 90) with 5695/21667 HP",
+      "recent_action": "picking up slime materials (Mucus de Blob, Bave de Blob)",
+      "notable_enemies_or_objects": "Mucus de Blob, Bave de Blob, green energy particles",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 135,
+    "source_image": "data\\test_screenshots\\frame_0136.png",
+    "observation": {
+      "location": "grassy outdoor area near water",
+      "time_of_day": "night",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "Kinich is performing a powerful Dendro attack, summoning a large pixelated dragon construct",
+      "notable_enemies_or_objects": "pixelated dragon construct (Ajaw), enemy health bar (Level 89)",
+      "visible_entities": [
+        "Kinich",
+        "Ajaw",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 136,
+    "source_image": "data\\test_screenshots\\frame_0137.png",
+    "observation": {
+      "location": "lakeside mountainous region",
+      "time_of_day": "night",
+      "player_status": "Kinich (Level 90), HP 5695/21667, Elemental Burst ready, Skill on cooldown (9.2s)",
+      "recent_action": "Kinich is interacting with Ajaw after gaining character EXP from a recent encounter",
+      "notable_enemies_or_objects": "Ajaw (pixelated green dragon), red particle effects, EXP notification",
+      "visible_entities": [
+        "Kinich",
+        "Ajaw",
+        "Wanderer (sidebar)",
+        "Yanfei (sidebar)",
+        "Jean (sidebar)"
+      ]
+    }
+  },
+  {
+    "frame_index": 137,
+    "source_image": "data\\test_screenshots\\frame_0138.png",
+    "observation": {
+      "location": "grassy riverbank",
+      "time_of_day": "day",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "opening a chest and receiving 200 Mora",
+      "notable_enemies_or_objects": [
+        "chest",
+        "Mora loot notification",
+        "quest marker"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "chest"
+      ]
+    }
+  },
+  {
+    "frame_index": 138,
+    "source_image": "data\\test_screenshots\\frame_0139.png",
+    "observation": {
+      "location": "coastal rocky area",
+      "time_of_day": "day",
+      "player_status": "Health: 5695/21667, Adventure Rank 57",
+      "recent_action": "Opened a chest and collected rewards including 5 Primogems and various items",
+      "notable_enemies_or_objects": "Opened chest, Primogems, Pyro Sigils, Lucky Dog's Eagle Feather, Adventurer's Flower, Silver Sword",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "Chest"
+      ]
+    }
+  },
+  {
+    "frame_index": 139,
+    "source_image": "data\\test_screenshots\\frame_0140.png",
+    "observation": {
+      "location": "grassy coastal field in Natlan",
+      "time_of_day": "day",
+      "player_status": "Kinich active, HP 5695/21667, level 90",
+      "recent_action": "The player just obtained a Hero's Wit and is running towards a glowing item on the ground.",
+      "notable_enemies_or_objects": [
+        "Hero's Wit (item notification)",
+        "glowing item on ground",
+        "quest marker: Rendez-vous au Bureau de d\u00e9lib\u00e9ration"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "glowing item",
+        "rocks",
+        "distant mountains",
+        "water"
+      ]
+    }
+  },
+  {
+    "frame_index": 140,
+    "source_image": "data\\test_screenshots\\frame_0141.png",
+    "observation": {
+      "location": "grassy field near the coast",
+      "time_of_day": "day",
+      "player_status": "Health: 5695/21667, Level 90",
+      "recent_action": "standing still in a field",
+      "notable_enemies_or_objects": "glowing plant near rocks, quest marker on minimap",
+      "visible_entities": [
+        "Kinich",
+        "glowing plant",
+        "rocks",
+        "minimap",
+        "party UI"
+      ]
+    }
+  },
+  {
+    "frame_index": 141,
+    "source_image": "data\\test_screenshots\\frame_0142.png",
+    "observation": {
+      "location": "coastal rocky shore",
+      "time_of_day": "day",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "running along the beach after collecting a Sweet Flower",
+      "notable_enemies_or_objects": "Sweet Flower (collected), red energy beam in the distance",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 142,
+    "source_image": "data\\test_screenshots\\frame_0143.png",
+    "observation": {
+      "location": "rocky coastal area",
+      "time_of_day": "night",
+      "player_status": "Kinich (Level 90) with 5695/21667 HP",
+      "recent_action": "running across a rocky beach towards a cliffside",
+      "notable_enemies_or_objects": "floating orb emitting a red laser beam, red glowing sigil on cliff, large Saurian creature",
+      "visible_entities": [
+        "Kinich",
+        "Saurian",
+        "floating orb",
+        "red glowing sigil"
+      ]
+    }
+  },
+  {
+    "frame_index": 143,
+    "source_image": "data\\test_screenshots\\frame_0144.png",
+    "observation": {
+      "location": "dark coastal beach near cliffs",
+      "time_of_day": "night",
+      "player_status": "Kinich at low health (5695/21667)",
+      "recent_action": "running across the dark sand towards a cliff",
+      "notable_enemies_or_objects": [
+        "small saurian (Yumkasaur) on a rock",
+        "purple rift in the sky",
+        "quest objective marker"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "Yumkasaur",
+        "cliffs",
+        "ocean"
+      ]
+    }
+  },
+  {
+    "frame_index": 144,
+    "source_image": "data\\test_screenshots\\frame_0145.png",
+    "observation": {
+      "location": "rocky mountainous area near a cave entrance",
+      "time_of_day": "night",
+      "player_status": "Health: 5695/21667 (low health), Level 90",
+      "recent_action": "running towards a cave opening",
+      "notable_enemies_or_objects": [
+        "cave entrance",
+        "quest marker",
+        "mini-map",
+        "party UI"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 145,
+    "source_image": "data\\test_screenshots\\frame_0146.png",
+    "observation": {
+      "location": "dark rocky cavern",
+      "time_of_day": "unclear",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "Kinich is running across dark ground",
+      "notable_enemies_or_objects": "distant glowing cave entrance, quest marker",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 146,
+    "source_image": "data\\test_screenshots\\frame_0147.png",
+    "observation": {
+      "location": "dark rocky cave",
+      "time_of_day": "unclear",
+      "player_status": "low health (5695/21667)",
+      "recent_action": "running forward into a cavern",
+      "notable_enemies_or_objects": "green glowing creature in the distance",
+      "visible_entities": [
+        "Kinich",
+        "green creature"
+      ]
+    }
+  },
+  {
+    "frame_index": 147,
+    "source_image": "data\\test_screenshots\\frame_0148.png",
+    "observation": {
+      "location": "dark cave with glowing crystals",
+      "time_of_day": "unclear",
+      "player_status": "Kinich at 5695/21667 HP, level 90",
+      "recent_action": "running towards a wooden crate with an investigation point",
+      "notable_enemies_or_objects": [
+        "wooden crate with investigation point",
+        "large blue crystals",
+        "green vines"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "wooden crate",
+        "blue crystals"
+      ]
+    }
+  },
+  {
+    "frame_index": 148,
+    "source_image": "data\\test_screenshots\\frame_0149.png",
+    "observation": {
+      "location": "dark cave with large green plants",
+      "time_of_day": "unclear",
+      "player_status": "Kinich is at low health (5695/21667)",
+      "recent_action": "running through a narrow cave passage",
+      "notable_enemies_or_objects": "large green plants, rocky path",
+      "visible_entities": [
+        "Kinich",
+        "large green plants",
+        "rocks"
+      ]
+    }
+  },
+  {
+    "frame_index": 149,
+    "source_image": "data\\test_screenshots\\frame_0150.png",
+    "observation": {
+      "location": "dark underground cavern with a green pool",
+      "time_of_day": "unclear",
+      "player_status": "low health (5695/21667), level 90",
+      "recent_action": "standing on a ledge overlooking a pool of green liquid",
+      "notable_enemies_or_objects": "Saurians (rhino-like creatures), glowing crystals",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "Saurians",
+        "glowing crystals"
+      ]
+    }
+  },
+  {
+    "frame_index": 150,
+    "source_image": "data\\test_screenshots\\frame_0151.png",
+    "observation": {
+      "location": "dark cave with glowing blue crystals",
+      "time_of_day": "unclear",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "standing on a ledge overlooking a cave floor",
+      "notable_enemies_or_objects": "two small boar-like creatures, glowing crystals, blue flora",
+      "visible_entities": [
+        "Kinich",
+        "two boar-like creatures",
+        "glowing crystals",
+        "blue plants"
+      ]
+    }
+  },
+  {
+    "frame_index": 151,
+    "source_image": "data\\test_screenshots\\frame_0152.png",
+    "observation": {
+      "location": "Natlan, outdoor mountainous region",
+      "time_of_day": "day",
+      "player_status": "Kinich (Level 90) with 5695/21667 HP. Elemental Burst is ready.",
+      "recent_action": "A massive yellow and green explosion is filling the screen, likely from Kinich's combat abilities.",
+      "notable_enemies_or_objects": "Quest marker for 'Bureau de d\u00e9lib\u00e9ration', large explosion effect.",
+      "visible_entities": [
+        "Kinich",
+        "Explosion effect",
+        "Minimap",
+        "Quest objective"
+      ]
+    }
+  },
+  {
+    "frame_index": 152,
+    "source_image": "data\\test_screenshots\\frame_0153.png",
+    "observation": {
+      "location": "underground cavern with green liquid",
+      "time_of_day": "unclear",
+      "player_status": "Kinich at low health (5695/21667), level 90, elemental burst ready",
+      "recent_action": "standing near resting saurians in a glowing green pool",
+      "notable_enemies_or_objects": [
+        "two Yumkasaurs",
+        "glowing crystals",
+        "green liquid pool",
+        "strange plants"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "Yumkasaurs",
+        "glowing crystals",
+        "plants"
+      ]
+    }
+  },
+  {
+    "frame_index": 153,
+    "source_image": "data\\test_screenshots\\frame_0154.png",
+    "observation": {
+      "location": "dark cavern with glowing green liquid",
+      "time_of_day": "unclear",
+      "player_status": "Kinich at 5695/21667 HP",
+      "recent_action": "obtained a Rainbow Drop Crystal while running",
+      "notable_enemies_or_objects": [
+        "Rainbow Drop Crystal",
+        "Capybaras",
+        "glowing blue plants"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "Capybaras",
+        "glowing plants"
+      ]
+    }
+  },
+  {
+    "frame_index": 154,
+    "source_image": "data\\test_screenshots\\frame_0155.png",
+    "observation": {
+      "location": "dark cave with glowing blue crystals and green liquid",
+      "time_of_day": "unclear",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "approaching two small Saurian creatures near a glowing orb",
+      "notable_enemies_or_objects": "two Koholasaurus hatchlings, glowing blue orb, glowing crystals, blue plants",
+      "visible_entities": [
+        "Kinich",
+        "two Koholasaurus hatchlings",
+        "glowing orb",
+        "blue plants",
+        "glowing crystals"
+      ]
+    }
+  },
+  {
+    "frame_index": 155,
+    "source_image": "data\\test_screenshots\\frame_0156.png",
+    "observation": {
+      "location": "dark cave with bioluminescent flora",
+      "time_of_day": "unclear",
+      "player_status": "Health 5695/21667, Level 90",
+      "recent_action": "Kinich is running through a cave, passing by a glowing blue flower.",
+      "notable_enemies_or_objects": "glowing blue flower, Ajaw (companion), quest marker for 'Rendez-vous au Bureau de d\u00e9lib\u00e9ration'",
+      "visible_entities": [
+        "Kinich",
+        "Ajaw",
+        "glowing blue flower"
+      ]
+    }
+  },
+  {
+    "frame_index": 156,
+    "source_image": "data\\test_screenshots\\frame_0157.png",
+    "observation": {
+      "location": "dark underground cave",
+      "time_of_day": "unclear",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "standing near glowing crystals and a crescent moon symbol",
+      "notable_enemies_or_objects": "large glowing crystal, small glowing crystal, crescent moon light",
+      "visible_entities": [
+        "Kinich",
+        "large glowing crystal",
+        "small glowing crystal",
+        "crescent moon light"
+      ]
+    }
+  },
+  {
+    "frame_index": 157,
+    "source_image": "data\\test_screenshots\\frame_0158.png",
+    "observation": {
+      "location": "dark underground cavern",
+      "time_of_day": "unclear",
+      "player_status": "HP 5695/21667, level 90",
+      "recent_action": "activating a light beam puzzle mechanism",
+      "notable_enemies_or_objects": [
+        "glowing plant mechanism",
+        "crescent moon symbol on rock",
+        "blue energy beam"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "glowing plant",
+        "crescent moon symbol"
+      ]
+    }
+  },
+  {
+    "frame_index": 158,
+    "source_image": "data\\test_screenshots\\frame_0159.png",
+    "observation": {
+      "location": "bioluminescent cave with green water",
+      "time_of_day": "unclear",
+      "player_status": "HP 5695/21667",
+      "recent_action": "standing in green water facing a glowing blue crescent object",
+      "notable_enemies_or_objects": "glowing blue crescent, grapple point, bioluminescent plants",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "glowing blue crescent",
+        "bioluminescent plants"
+      ]
+    }
+  },
+  {
+    "frame_index": 159,
+    "source_image": "data\\test_screenshots\\frame_0160.png",
+    "observation": {
+      "location": "dark cave with green water",
+      "time_of_day": "unclear",
+      "player_status": "Kinich at low health (5695/21667), level 90, elemental burst ready",
+      "recent_action": "running towards a purple spirit and a chest",
+      "notable_enemies_or_objects": [
+        "purple spirit",
+        "green chest",
+        "green water",
+        "lily pads"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "purple spirit",
+        "chest",
+        "lily pads"
+      ]
+    }
+  },
+  {
+    "frame_index": 160,
+    "source_image": "data\\test_screenshots\\frame_0161.png",
+    "observation": {
+      "location": "dark cave",
+      "time_of_day": "unclear",
+      "player_status": "HP 5695/21667, Level 90, Adventure Rank 57",
+      "recent_action": "opened a chest and obtained a Lunaculus and adventure EXP",
+      "notable_enemies_or_objects": "green chest, Lunaculus",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "green chest"
+      ]
+    }
+  },
+  {
+    "frame_index": 161,
+    "source_image": "data\\test_screenshots\\frame_0162.png",
+    "observation": {
+      "location": "dark underground cavern with green liquid",
+      "time_of_day": "unclear",
+      "player_status": "5695/21667 HP, Level 90",
+      "recent_action": "moving through a cave after receiving 5 Primogems",
+      "notable_enemies_or_objects": "glowing crystals, green plants, green liquid, Primogem notification",
+      "visible_entities": [
+        "Kinich",
+        "glowing crystals",
+        "green plants"
+      ]
+    }
+  },
+  {
+    "frame_index": 162,
+    "source_image": "data\\test_screenshots\\frame_0163.png",
+    "observation": {
+      "location": "dark underground cave with green liquid",
+      "time_of_day": "unclear",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "running across green liquid, received a new item notification",
+      "notable_enemies_or_objects": [
+        "two glowing crystals",
+        "new item notification: \u00c9tapes de fabrication du cr\u00e9puscule brod\u00e9 dans les feuilles"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "glowing crystals"
+      ]
+    }
+  },
+  {
+    "frame_index": 163,
+    "source_image": "data\\test_screenshots\\frame_0164.png",
+    "observation": {
+      "location": "underground cavern with green liquid",
+      "time_of_day": "unclear",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "interacting with a crystal puzzle mechanism using a blue energy beam",
+      "notable_enemies_or_objects": [
+        "floating crystals",
+        "glowing orb",
+        "bioluminescent plants"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "floating crystals",
+        "glowing orb",
+        "plants"
+      ]
+    }
+  },
+  {
+    "frame_index": 164,
+    "source_image": "data\\test_screenshots\\frame_0165.png",
+    "observation": {
+      "location": "dark cave",
+      "time_of_day": "unclear",
+      "player_status": "5695/21667 HP",
+      "recent_action": "obtained a Cristal arc-en-gouttes",
+      "notable_enemies_or_objects": "Cristal arc-en-gouttes, blue glowing orb, large blue flower",
+      "visible_entities": [
+        "Kinich",
+        "blue flower",
+        "glowing orb"
+      ]
+    }
+  },
+  {
+    "frame_index": 165,
+    "source_image": "data\\test_screenshots\\frame_0166.png",
+    "observation": {
+      "location": "dark cave with glowing green flora",
+      "time_of_day": "unclear",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "dashing forward, leaving white particle trails",
+      "notable_enemies_or_objects": "blue glowing plant, large green leafy plants",
+      "visible_entities": [
+        "Kinich",
+        "blue glowing plant",
+        "large green plants"
+      ]
+    }
+  },
+  {
+    "frame_index": 166,
+    "source_image": "data\\test_screenshots\\frame_0167.png",
+    "observation": {
+      "location": "dark rocky cavern",
+      "time_of_day": "unclear",
+      "player_status": "low health (5695/21667), level 90, climbing",
+      "recent_action": "climbing a vertical rock face",
+      "notable_enemies_or_objects": "none",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 167,
+    "source_image": "data\\test_screenshots\\frame_0168.png",
+    "observation": {
+      "location": "rocky cave passage",
+      "time_of_day": "unclear",
+      "player_status": "Kinich (level 90) with low health (5695/21667)",
+      "recent_action": "running forward through a cave towards an exit",
+      "notable_enemies_or_objects": "quest marker for 'Bureau de d\u00e9lib\u00e9ration', green foliage",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 168,
+    "source_image": "data\\test_screenshots\\frame_0169.png",
+    "observation": {
+      "location": "dark cave with glowing blue crystals",
+      "time_of_day": "night",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "running towards a broken crate containing a glowing investigation point",
+      "notable_enemies_or_objects": [
+        "broken crates",
+        "glowing blue crystals",
+        "investigation point"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 169,
+    "source_image": "data\\test_screenshots\\frame_0170.png",
+    "observation": {
+      "location": "rocky hillside near the coast",
+      "time_of_day": "day",
+      "player_status": "5695 / 21667 HP, Level 90",
+      "recent_action": "just finished gathering iron and white iron chunks",
+      "notable_enemies_or_objects": "Morceau de fer blanc (White Iron Chunk), Morceau de fer (Iron Chunk), quest objective marker",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 170,
+    "source_image": "data\\test_screenshots\\frame_0171.png",
+    "observation": {
+      "location": "a dark sandy beach near a grassy cliff",
+      "time_of_day": "day",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "running across the beach",
+      "notable_enemies_or_objects": "quest marker pointing towards a destination, distant ships",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 171,
+    "source_image": "data\\test_screenshots\\frame_0172.png",
+    "observation": {
+      "location": "dark sandy beach",
+      "time_of_day": "day",
+      "player_status": "HP 5695/21667",
+      "recent_action": "obtained a lizard tail",
+      "notable_enemies_or_objects": "lizard tail",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 172,
+    "source_image": "data\\test_screenshots\\frame_0173.png",
+    "observation": {
+      "location": "open field near a large mechanical structure",
+      "time_of_day": "day",
+      "player_status": "Kinich at 5695/21667 HP, Level 90",
+      "recent_action": "running forward across a sandy area",
+      "notable_enemies_or_objects": "large mechanical structure, quest marker",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "mechanical structure"
+      ]
+    }
+  },
+  {
+    "frame_index": 173,
+    "source_image": "data\\test_screenshots\\frame_0174.png",
+    "observation": {
+      "location": "coastal beach with orange grass",
+      "time_of_day": "day",
+      "player_status": "Health: 5695/21667, Level 90",
+      "recent_action": "Kinich is running across a dark sand beach towards a patch of orange grass with Ajaw flying nearby.",
+      "notable_enemies_or_objects": "Ajaw, orange grass, distant industrial structure",
+      "visible_entities": [
+        "Kinich",
+        "Ajaw",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 174,
+    "source_image": "data\\test_screenshots\\frame_0175.png",
+    "observation": {
+      "location": "coastal area with orange grass and mechanical debris",
+      "time_of_day": "day",
+      "player_status": "Health: 5695/21667, Level 90",
+      "recent_action": "collected 3 Lakkabaie (Lakelight Lilies) and is approaching enemies",
+      "notable_enemies_or_objects": "two Fatui enemies (Niv. 88), mechanical debris, distant chest",
+      "visible_entities": [
+        "Kinich",
+        "Fatui enemies",
+        "mechanical debris",
+        "chest",
+        "Lakelight Lilies (collected)"
+      ]
+    }
+  },
+  {
+    "frame_index": 175,
+    "source_image": "data\\test_screenshots\\frame_0176.png",
+    "observation": {
+      "location": "open field with orange grass and mechanical ruins",
+      "time_of_day": "day",
+      "player_status": "low health (5695/21667), active character Kinich at level 90",
+      "recent_action": "engaging in combat with Fatui Skirmishers near a large mechanical gear",
+      "notable_enemies_or_objects": "two Fatui Skirmishers (Hydrogunner and Anemoboxer), large mechanical gear",
+      "visible_entities": [
+        "Kinich",
+        "Fatui Skirmisher (Hydrogunner)",
+        "Fatui Skirmisher (Anemoboxer)",
+        "large mechanical gear"
+      ]
+    }
+  },
+  {
+    "frame_index": 176,
+    "source_image": "data\\test_screenshots\\frame_0177.png",
+    "observation": {
+      "location": "riverbank in a grassy region",
+      "time_of_day": "day",
+      "player_status": "5695 / 21667 HP",
+      "recent_action": "Kinich is using his elemental skill to tether and attack a Fatui Skirmisher, dealing Dendro damage.",
+      "notable_enemies_or_objects": "Fatui Skirmishers (Niv. 88), Ajaw",
+      "visible_entities": [
+        "Kinich",
+        "Fatui Skirmisher",
+        "Ajaw"
+      ]
+    }
+  },
+  {
+    "frame_index": 177,
+    "source_image": "data\\test_screenshots\\frame_0178.png",
+    "observation": {
+      "location": "rocky plains with ruins",
+      "time_of_day": "day",
+      "player_status": "5695 / 21667 HP, Level 90",
+      "recent_action": "Kinich is attacking a mechanical enemy with Dendro damage, dealing 21472 damage; loot is appearing on screen from a defeated foe",
+      "notable_enemies_or_objects": "mechanical automaton enemy, EXP Personnage, Mora",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "mechanical enemy",
+        "loot icons"
+      ]
+    }
+  },
+  {
+    "frame_index": 178,
+    "source_image": "data\\test_screenshots\\frame_0179.png",
+    "observation": {
+      "location": "desolate ashy plains",
+      "time_of_day": "night",
+      "player_status": "Kinich at low health (5695/21667 HP)",
+      "recent_action": "collecting loot (Mandat immacul\u00e9, Mandat en lambeaux, Mora) after a combat encounter",
+      "notable_enemies_or_objects": "large mechanical debris, loot items, small green mechanical structures",
+      "visible_entities": [
+        "Kinich",
+        "mechanical debris",
+        "small green mechanical objects"
+      ]
+    }
+  },
+  {
+    "frame_index": 179,
+    "source_image": "data\\test_screenshots\\frame_0180.png",
+    "observation": {
+      "location": "sandy coastal area",
+      "time_of_day": "day",
+      "player_status": "5695 / 21667 HP",
+      "recent_action": "running forward across the sand",
+      "notable_enemies_or_objects": "Ajaw (blue companion), Mountain-Bracing Cleaver (claymore)",
+      "visible_entities": [
+        "Kinich",
+        "Ajaw"
+      ]
+    }
+  },
+  {
+    "frame_index": 180,
+    "source_image": "data\\test_screenshots\\frame_0181.png",
+    "observation": {
+      "location": "dark sand beach",
+      "time_of_day": "day",
+      "player_status": "5695 / 21667 HP",
+      "recent_action": "running towards a group of Fatui guarding a locked chest after collecting Lakkabaie",
+      "notable_enemies_or_objects": "Fatui Skirmishers, locked chest, Lakkabaie items",
+      "visible_entities": [
+        "Kinich",
+        "Fatui Skirmishers",
+        "locked chest",
+        "Lakkabaie icons"
+      ]
+    }
+  },
+  {
+    "frame_index": 181,
+    "source_image": "data\\test_screenshots\\frame_0182.png",
+    "observation": {
+      "location": "desolate coastal area with dark sand and orange foliage",
+      "time_of_day": "day",
+      "player_status": "HP: 5695/21667, Level 90",
+      "recent_action": "running across a dark sandy beach towards a distant objective",
+      "notable_enemies_or_objects": "large rocks, massive industrial structure in the background, quest marker",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 182,
+    "source_image": "data\\test_screenshots\\frame_0183.png",
+    "observation": {
+      "location": "coastal area with dark sand near a massive mechanical structure",
+      "time_of_day": "day",
+      "player_status": "Health: 5695/21667, Level 90",
+      "recent_action": "running towards the large dome structure",
+      "notable_enemies_or_objects": [
+        "large mechanical dome",
+        "glowing blue plants",
+        "orange bushes",
+        "quest marker"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "large mechanical structure"
+      ]
+    }
+  },
+  {
+    "frame_index": 183,
+    "source_image": "data\\test_screenshots\\frame_0184.png",
+    "observation": {
+      "location": "shoreline near a large mechanical structure",
+      "time_of_day": "day",
+      "player_status": "Kinich has 5695/21667 HP",
+      "recent_action": "Kinich is sprinting across the beach",
+      "notable_enemies_or_objects": "Mint plant, mechanical debris, large floating structure",
+      "visible_entities": [
+        "Kinich",
+        "Mint plant",
+        "mechanical debris",
+        "large floating structure"
+      ]
+    }
+  },
+  {
+    "frame_index": 184,
+    "source_image": "data\\test_screenshots\\frame_0185.png",
+    "observation": {
+      "location": "coastal beach with rocky cliffs and industrial structures",
+      "time_of_day": "day",
+      "player_status": "5695 / 21667 health",
+      "recent_action": "running across the dark sand",
+      "notable_enemies_or_objects": "large ship, glowing blue plants, quest marker",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 185,
+    "source_image": "data\\test_screenshots\\frame_0186.png",
+    "observation": {
+      "location": "coastal area with dark sand and industrial structures",
+      "time_of_day": "day",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "running across the beach",
+      "notable_enemies_or_objects": [
+        "large floating industrial structure",
+        "glowing blue plants",
+        "distant boat"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 186,
+    "source_image": "data\\test_screenshots\\frame_0187.png",
+    "observation": {
+      "location": "coastal area with a large mechanical structure",
+      "time_of_day": "day",
+      "player_status": "Health 5695/21667 (low), Level 90",
+      "recent_action": "collected three 'Galet gel\u00e9' items while moving across water",
+      "notable_enemies_or_objects": [
+        "large mechanical structure",
+        "glowing plants",
+        "Galet gel\u00e9 items",
+        "glowing orb"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "large mechanical structure",
+        "glowing plants"
+      ]
+    }
+  },
+  {
+    "frame_index": 187,
+    "source_image": "data\\test_screenshots\\frame_0188.png",
+    "observation": {
+      "location": "coastal area with floating islands and a large mechanical structure",
+      "time_of_day": "day",
+      "player_status": "5695 / 21667 HP, Level 90",
+      "recent_action": "standing on a rocky shore, looking towards a large mechanical dome and a translucent blue creature",
+      "notable_enemies_or_objects": "large mechanical dome, floating islands, glowing pink orb, translucent blue creature",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "translucent blue creature"
+      ]
+    }
+  },
+  {
+    "frame_index": 188,
+    "source_image": "data\\test_screenshots\\frame_0189.png",
+    "observation": {
+      "location": "coastal area with small islands",
+      "time_of_day": "day",
+      "player_status": "Health: 5695/21667, Level 90",
+      "recent_action": "The player is using a movement ability, appearing as a glowing blue creature with red and yellow particle effects.",
+      "notable_enemies_or_objects": [
+        "Seelie",
+        "Quest marker"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "Seelie"
+      ]
+    }
+  },
+  {
+    "frame_index": 189,
+    "source_image": "data\\test_screenshots\\frame_0190.png",
+    "observation": {
+      "location": "mountainous coastal area with a waterfall",
+      "time_of_day": "day",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "gliding through the air",
+      "notable_enemies_or_objects": "waterfall, quest marker, glowing plants",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "waterfall"
+      ]
+    }
+  },
+  {
+    "frame_index": 190,
+    "source_image": "data\\test_screenshots\\frame_0191.png",
+    "observation": {
+      "location": "coastal area with dark sand",
+      "time_of_day": "day",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "gliding over the beach",
+      "notable_enemies_or_objects": "wooden crates, glowing blue plants, quest marker",
+      "visible_entities": [
+        "Kinich",
+        "wooden crates",
+        "glowing blue plants"
+      ]
+    }
+  },
+  {
+    "frame_index": 191,
+    "source_image": "data\\test_screenshots\\frame_0192.png",
+    "observation": {
+      "location": "coastal area with mountains",
+      "time_of_day": "day",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "controlling a Koholasaur over the water",
+      "notable_enemies_or_objects": "glowing pink orbs in the sky, quest marker",
+      "visible_entities": [
+        "Koholasaur",
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 192,
+    "source_image": "data\\test_screenshots\\frame_0193.png",
+    "observation": {
+      "location": "shoreline",
+      "time_of_day": "night",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "moving as a Koholasaur on the beach",
+      "notable_enemies_or_objects": [
+        "glowing blue plants",
+        "quest marker"
+      ],
+      "visible_entities": [
+        "Koholasaur",
+        "glowing plants"
+      ]
+    }
+  },
+  {
+    "frame_index": 193,
+    "source_image": "data\\test_screenshots\\frame_0194.png",
+    "observation": {
+      "location": "coastal shoreline",
+      "time_of_day": "day (raining)",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "swimming in water transformed as a Koholasaur",
+      "notable_enemies_or_objects": "Seelie, glowing aquatic plants",
+      "visible_entities": [
+        "Koholasaur",
+        "Seelie",
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  },
+  {
+    "frame_index": 194,
+    "source_image": "data\\test_screenshots\\frame_0195.png",
+    "observation": {
+      "location": "coastal area with dark sand and rock formations",
+      "time_of_day": "day",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "collected a Lunaculus and performing a skill with red visual effects",
+      "notable_enemies_or_objects": "Lunaculus (collected), large floating structure in the sky, glowing blue plants",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean",
+        "floating structure",
+        "glowing plants"
+      ]
+    }
+  },
+  {
+    "frame_index": 195,
+    "source_image": "data\\test_screenshots\\frame_0196.png",
+    "observation": {
+      "location": "surreal digital realm",
+      "time_of_day": "unclear",
+      "player_status": "HP 5695/21667, Level 90",
+      "recent_action": "Kinich is performing an aerial maneuver using his grappling hook skill",
+      "notable_enemies_or_objects": [
+        "floating green pixelated cubes",
+        "large mechanical structure in the background",
+        "yellow circular gauge"
+      ],
+      "visible_entities": [
+        "Kinich",
+        "Wanderer (UI)",
+        "Yanfei (UI)",
+        "Jean (UI)",
+        "floating cubes"
+      ]
+    }
+  },
+  {
+    "frame_index": 196,
+    "source_image": "data\\test_screenshots\\frame_0197.png",
+    "observation": {
+      "location": "coastal area with rocky cliffs",
+      "time_of_day": "day (overcast/rainy)",
+      "player_status": "HP 5695/21667, level 90, stamina partially depleted",
+      "recent_action": "standing in shallow water during rain",
+      "notable_enemies_or_objects": "quest marker for 'Bureau de d\u00e9lib\u00e9ration', mini-map",
+      "visible_entities": [
+        "Kinich",
+        "Wanderer",
+        "Yanfei",
+        "Jean"
+      ]
+    }
+  }
+]
