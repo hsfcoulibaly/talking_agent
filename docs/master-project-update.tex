@@ -2,6 +2,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{url}
+\usepackage{booktabs}
 
 \title{Master Project: Bridging Vision and Language---A Multi-Image AI Pipeline for Context-Aware NPC Storytelling}
 \author{Hassan Coulibaly}
@@ -11,58 +12,20 @@
 \maketitle
 
 \begin{abstract}
-Modern interactive media frequently struggles with ludonarrative dissonance, where dynamically driven player actions conflict with static, pre-scripted game narratives. While recent advancements in Vision-Language Models (VLMs) have enabled narrative extraction from single, static images, these approaches lack the temporal and sequential context required to interpret complex gameplay. This project introduces a novel, multi-modal machine learning pipeline designed to generate context-aware, dynamic dialogue for Non-Playable Characters (NPCs) based on sequential gameplay screenshots. The proposed architecture separates visual perception from narrative generation to strictly ground the AI in gameplay reality. First, a VLM sequentially processes in-game images to extract key entities, actions, and environmental states, structuring this data into a chronological scene graph. Second, a Large Language Model (LLM) utilizes this structured data---constrained by established interactive storytelling principles---to generate dramatically meaningful and credible NPC dialogue. By filtering raw visual data into a strict JSON framework before text generation, the pipeline reduces LLM hallucination and arbitrary content creation. This approach demonstrates a scalable method for bridging computer vision and natural language processing, allowing games to dynamically translate visual player events into coherent, immersive lore without sacrificing narrative integrity.
+Modern interactive media frequently struggles with ludonarrative dissonance, where dynamically driven player actions conflict with static, pre-scripted game narratives. While recent advancements in Vision-Language Models (VLMs) have enabled narrative extraction from single, static images, these approaches lack the temporal and sequential context required to interpret complex gameplay. This project introduces a novel, multi-modal machine learning pipeline designed to generate context-aware, dynamic dialogue for Non-Playable Characters (NPCs) based on sequential gameplay screenshots. The proposed architecture separates visual perception from narrative generation to strictly ground the AI in gameplay reality. First, a VLM sequentially processes in-game images to extract key entities, actions, and environmental states, structuring this data into a chronological scene graph. Second, a Large Language Model (LLM) utilizes this structured data---constrained by established interactive storytelling principles---to generate dramatically meaningful and credible NPC dialogue. By filtering raw visual data into a strict JSON framework before text generation, the pipeline reduces LLM hallucination and arbitrary content creation. Evaluation covers all three pipeline stages: per-frame VLM extraction is assessed via F1 scoring against ground-truth binary labels; final dialogue quality is assessed via an automated LLM-as-judge method scoring Grounding, Coherence, and Engagement on a 1--5 scale; and a human rating study template is provided for manual validation. Across three evaluated runs on \emph{Genshin Impact} gameplay footage, the pipeline achieved average scores of 4.67/5 for Grounding, 4.67/5 for Coherence, and 5.00/5 for Engagement, with zero hallucinated entities detected. This approach demonstrates a scalable method for bridging computer vision and natural language processing, allowing games to dynamically translate visual player events into coherent, immersive lore without sacrificing narrative integrity.
 \end{abstract}
 
 \section{Introduction}
 
 The landscape of interactive media and video games has evolved from simple, linear progression into expansive, open-world environments where player agency dictates the flow of events. As rendering technologies and physics engines have advanced to create highly realistic simulations, the systems governing in-game storytelling have often lagged behind. In most contemporary open-world games, Non-Playable Character (NPC) dialogue remains heavily pre-scripted. While branching dialogue trees offer the illusion of choice, they are ultimately finite and struggle to account for the emergent, unpredictable actions players take in a physics-driven world.
 
-This master's project implements a prototype \emph{talking agent} pipeline: a batch of time-ordered gameplay screenshots is summarized per frame by a VLM, merged into a single structured \emph{scene graph}, and passed to an LLM that produces short NPC dialogue under explicit grounding constraints. The implementation uses a configurable Google Gemini model (default \texttt{gemini-2.0-flash}; overridable via \texttt{GEMINI\_MODEL} or \texttt{--model}) for both the vision and language calls, with extraction forced to \texttt{application/json} for machine-parseable state.
+This master's project implements a prototype \emph{talking agent} pipeline: a batch of time-ordered gameplay screenshots is summarized per frame by a VLM, merged into a single structured \emph{scene graph}, and passed to an LLM that produces short NPC dialogue under explicit grounding constraints. The implementation uses a configurable Google Gemini model (default \texttt{gemini-2.5-flash}; overridable via \texttt{GEMINI\_MODEL} in \texttt{.env} or the \texttt{--model} flag) for both the vision and language calls, with extraction forced to \texttt{application/json} for machine-parseable state.
 
+A key design goal is evaluation completeness. Prior work on VLM pipelines often evaluates only the perception stage. This project contributes a two-track evaluation: automated F1 for Stage~1, and an LLM-as-judge scoring method for Stage~3 that measures Grounding, Coherence, and Engagement while also detecting hallucinated entities.
 
 \section{Background}
-%1st paper 
 
-
-
-%\url{https://ieeexplore.ieee.org/document/11227644}
-
-
-A prototype system for AI \& Interactive Storytelling in Cultural Heritage was developed for the Dunhuang Murals (specifically the Jataka stories) to move beyond passive viewing~\cite{11227644}.
-%Core Modules: 
-The system includes mural segmentation to explain individual elements, interactive knowledge graphs that trigger cinematic visual effects when clicked, and a creative reconstruction tool where users build their own comic-style narratives.
-%AI Integration: 
-An AI agent (built on the COZE platform and GPT models) acts as an approachable guide, providing real-time explanations and creative suggestions while drawing from a curated knowledge base to prevent ``hallucinations''.
-%Outcomes: 
-User testing showed high scores in attractiveness, novelty, and stimulation, suggesting the system helps users form deeper emotional and intellectual connections with heritage.
-
-%%2nd paper
-%Virtual Reality (VR) for Prehistoric Archaeology
-%%\url{https://ieeexplore.ieee.org/document/11025303}
-%
-%The Crvena Stijena VR project in Montenegro addresses the difficulty common visitors have in understanding prehistoric sites, which often appear as abstract excavations~\cite{11025303}.
-%
-%The Experience: Users enter a 3D reconstruction of the cave where they can explore digital replicas of archaeological findings. The application features an intro animation of the earth's creation and a ``Lara Croft"-style guide.
-%
-%Gamification: To increase engagement, users participate in a deer hunting gameplay using prehistoric tools, but only after passing a quiz on the educational content.
-%
-%Key Findings: The most impressive part for users was the ability to handle and rotate 3D reconstructions of tool fragments, providing a level of access impossible in physical museums where items are behind glass
-%
-%%3rd paper 
-%Storytelling \& AI in Engineering Education
-%%\url{https://ieeexplore.ieee.org/document/9929609}
-%
-%Researchers at Shahid Beheshti University utilized storytelling and AI to teach complex engineering concepts, specifically series DC-DC converters, in online environments~\cite{9929609}.
-%
-%Metaphorical Learning: Technical circuit components were taught using metaphors; for example, a diode was described as a "Toll Road" (one-way traffic), and a sliding controller was cast as "Municipal Police".
-%
-%Interactive Steps: The method involves five steps including questioning, student grouping in Adobe Connect, and a creative phase where students draw diagrams based on the story metaphors.
-%
-%AI's Role: Students were required to compare their own technical interpretations of the story with AI-generated responses to promote deeper critical analysis.
-%
-%Outcomes: Over 90\% of students found the method more effective and memorable than "dry" traditional lectures, noting it significantly increased participation in online settings
-
+A prototype system for AI \& Interactive Storytelling in Cultural Heritage was developed for the Dunhuang Murals (specifically the Jataka stories) to move beyond passive viewing~\cite{11227644}. The system includes mural segmentation to explain individual elements, interactive knowledge graphs that trigger cinematic visual effects when clicked, and a creative reconstruction tool where users build their own comic-style narratives. An AI agent (built on the COZE platform and GPT models) acts as an approachable guide, providing real-time explanations and creative suggestions while drawing from a curated knowledge base to prevent ``hallucinations''. User testing showed high scores in attractiveness, novelty, and stimulation, suggesting the system helps users form deeper emotional and intellectual connections with heritage.
 
 \section{System Architecture and Implementation}
 
@@ -93,17 +56,22 @@ The repository is organized as follows (paths relative to project root):
 
 \begin{verbatim}
 talking_agent/
-  data/
-    test_screenshots/     <- preferred input folder
-    extracted_state/      <- *_frames.json, *_scene_graph.json
-    generated_stories/    <- *_npc_dialogue.txt
-  test_images/            <- legacy samples if test_screenshots is empty
-  evaluation/
-    ground_truth_labels.csv
-    human_scoring_template.csv
   src/
-    main_pipeline.py
-    evaluator.py
+    main_pipeline.py          <- full 3-stage pipeline
+    evaluator.py              <- Stage 1 F1 scoring
+    dialogue_evaluator.py     <- Stage 3 LLM-as-judge scoring
+    eda_visualize.py          <- EDA plots and figures
+  data/
+    test_screenshots/         <- preferred input folder
+    extracted_state/          <- *_frames.json, *_scene_graph.json
+    generated_stories/        <- *_npc_dialogue.txt
+    analysis/figures/         <- PNG exports from eda_visualize.py
+  test_images/                <- legacy samples (fallback)
+  evaluation/
+    ground_truth_labels.csv   <- binary frame labels for Stage 1
+    dialogue_scores.csv       <- LLM-as-judge results
+    dialogue_scores.json      <- same data, structured JSON
+    human_scoring_template.csv
   .env.example
   requirements.txt
 \end{verbatim}
@@ -116,9 +84,18 @@ From the repository root, after \texttt{pip install -r requirements.txt} and set
 python src/main_pipeline.py
 python src/main_pipeline.py --images-dir path/to/screenshots
 python src/main_pipeline.py --simple-consolidate
+python src/main_pipeline.py --model gemini-2.5-flash \
+    --max-frames 15 --max-image-side 1024
 \end{verbatim}
 
 \noindent By default, the script uses \texttt{data/test\_screenshots} if it contains images; otherwise it falls back to \texttt{test\_images}. Output files are timestamped (UTC) under \texttt{data/extracted\_state/} and \texttt{data/generated\_stories/}.
+
+If the VLM extraction stage completes but the LLM merge or dialogue step fails, the run can be resumed without repeating vision calls:
+
+\begin{verbatim}
+python src/main_pipeline.py \
+    --from-frames-json data/extracted_state/<run_id>_frames.json
+\end{verbatim}
 
 \subsection{API keys and version control}
 
@@ -126,21 +103,56 @@ Secrets must not be committed. Contributors should copy \texttt{.env.example} to
 
 \section{Evaluation}
 
-\subsection{Structured VLM labels}
+Evaluation spans all three pipeline stages. Stage~1 is evaluated with automated binary classification metrics. Stage~3 is evaluated with an LLM-as-judge method and supported by a human rating instrument. Stage~2 (scene graph consolidation) is assessed indirectly through the Grounding dimension of the Stage~3 judge: if the consolidation omits or distorts key entities, the dialogue scores will reflect it.
 
-The script \texttt{src/evaluator.py} reads \texttt{evaluation/ground\_truth\_labels.csv} with columns \texttt{Image\_ID}, \texttt{Condition\_Tested}, \texttt{Ground\_Truth}, and \texttt{VLM\_Prediction} (binary 0/1). It reports precision, recall, and F1 per condition and a macro-averaged F1. Rows should be populated with real labels and model predictions from the experimenter's runs.
+\subsection{Stage 1: VLM extraction accuracy (F1)}
 
-\subsection{Human scoring}
+The script \texttt{src/evaluator.py} reads \texttt{evaluation/ground\_truth\_labels.csv} with columns \texttt{Image\_ID}, \texttt{Condition\_Tested}, \texttt{Ground\_Truth}, and \texttt{VLM\_Prediction} (binary 0/1). It reports precision, recall, and F1 per condition and a macro-averaged F1. Conditions include binary checks such as \texttt{location\_detectable} and \texttt{action\_described}. Rows are populated with labels from the experimenter's rubric and pipeline outputs.
 
-The template \texttt{evaluation/human\_scoring\_template.csv} supports optional Likert-style ratings (e.g., coherence, grounding, engagement) for dialogue or scene-graph quality.
+\subsection{Stage 3: Dialogue quality via LLM-as-judge}
+
+The script \texttt{src/dialogue\_evaluator.py} implements an automated judge to evaluate the final dialogue against its source scene graph. For each run, it loads \texttt{*\_scene\_graph.json} and \texttt{*\_npc\_dialogue.txt}, constructs a structured prompt, and calls a Gemini model configured as an expert evaluator. The judge scores three dimensions on a 1--5 integer scale:
+
+\begin{itemize}
+  \item \textbf{Grounding}: Are all concrete claims (entity names, locations, actions, outcomes) traceable to the scene graph? Penalises invented content.
+  \item \textbf{Coherence}: Is the narrative internally consistent, logically ordered, and expressed in a single voice?
+  \item \textbf{Engagement}: Does the output feel like a believable, immersive campfire story from an NPC companion?
+\end{itemize}
+
+The judge also returns a list of \textbf{hallucinated entities}---proper nouns present in the dialogue but absent from the scene graph. Results are saved to \texttt{evaluation/dialogue\_scores.csv} and \texttt{evaluation/dialogue\_scores.json}.
+
+\subsubsection*{Results}
+
+Table~\ref{tab:dialogue_scores} reports scores for three runs on \emph{Genshin Impact} gameplay footage, evaluated using \texttt{gemini-2.5-flash} as the judge model.
+
+\begin{table}[h]
+\centering
+\caption{LLM-as-judge dialogue evaluation results (scale: 1--5).}
+\label{tab:dialogue_scores}
+\begin{tabular}{lcccc}
+\toprule
+Run ID & Grounding & Coherence & Engagement & Hallucinations \\
+\midrule
+20260408\_182648 & 4 & 5 & 5 & 0 \\
+20260408\_185849 & 5 & 5 & 5 & 0 \\
+20260408\_193459 & 5 & 4 & 5 & 0 \\
+\midrule
+\textbf{Average}  & \textbf{4.67} & \textbf{4.67} & \textbf{5.00} & \textbf{0} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The single Grounding deduction in run \texttt{182648} was attributed to the word \emph{flames} at the end of the dialogue---a campfire detail inferred by the model rather than present in the scene graph. The Coherence deduction in run \texttt{193459} reflects a minor event-ordering inconsistency: the Qucusaur Tyrant was mentioned after chronologically later encounters. No hallucinated proper nouns (character names, locations, item names) were detected in any run.
+
+\subsection{Human evaluation}
+
+The template \texttt{evaluation/human\_scoring\_template.csv} is pre-populated with the three run IDs (\texttt{20260408\_182648}, \texttt{20260408\_185849}, \texttt{20260408\_193459}). Human raters are provided the corresponding \texttt{.txt} files from \texttt{data/generated\_stories/} and asked to score each dialogue on Coherence, Grounding, and Engagement using the same 1--5 scale as the automated judge. The recommended study design uses 3--5 raters scoring all three samples, which would allow inter-rater agreement to be computed and compared against the automated scores.
 
 \section{Limitations and Future Work}
 
-Frame order is user-supplied (e.g., filename order), not inferred from video timestamps. VLM mistakes propagate into the graph and dialogue; consolidation may over- or under-merge events. The pipeline does not yet integrate live game APIs or native scene graphs from engines; extending to engine telemetry would tighten grounding further.
+Frame order is user-supplied (e.g., filename order), not inferred from video timestamps. VLM mistakes propagate into the graph and dialogue; consolidation may over- or under-merge events. The current LLM-as-judge evaluation relies on the same Gemini model family used for generation, which may introduce evaluator bias; future work could use an independent judge model. The pipeline does not yet integrate live game APIs or native scene graphs from engines; extending to engine telemetry would tighten grounding further. The human evaluation study has not yet been conducted; completing it would allow direct comparison of automated and human scores across the three evaluation dimensions.
 
 \bibliographystyle{IEEEbib}
-%\bibliographystyle{ACM-Reference-Format}
 \bibliography{refs}
-
 
 \end{document}
