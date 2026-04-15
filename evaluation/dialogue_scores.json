@@ -1,0 +1,41 @@
+[
+  {
+    "run_id": "20260408_182648",
+    "grounding_score": 4,
+    "grounding_justification": "Almost all concrete claims regarding locations, entities, actions, and outcomes are directly traceable to the scene graph, with only the 'flames' at the end being an invented detail.",
+    "coherence_score": 5,
+    "coherence_justification": "The dialogue recounts the events in a clear, chronological order, maintaining a consistent narrative voice and logical flow without any contradictions.",
+    "engagement_score": 5,
+    "engagement_justification": "The dialogue uses evocative language and a warm, reflective tone, making it feel like a believable and immersive story told by an NPC companion.",
+    "hallucinated_entities": [],
+    "hallucination_count": 0,
+    "model_used": "gemini-2.5-flash",
+    "dialogue_preview": "That was a narrow escape on the hillside, and I’m glad we finally found a moment to catch our breath. You held your grou…"
+  },
+  {
+    "run_id": "20260408_185849",
+    "grounding_score": 5,
+    "grounding_justification": "Every concrete claim regarding locations, entities, actions, and outcomes is directly supported by information within the scene graph.",
+    "coherence_score": 5,
+    "coherence_justification": "The dialogue is internally consistent, follows a logical progression of events from the day, and maintains a singular, reflective voice throughout.",
+    "engagement_score": 5,
+    "engagement_justification": "The dialogue is warm, appreciative, and reflective, using natural pacing and evocative language to create a believable and immersive campfire story from a companion.",
+    "hallucinated_entities": [],
+    "hallucination_count": 0,
+    "model_used": "gemini-2.5-flash",
+    "dialogue_preview": "We’ve covered a lot of ground today, from the wilds of Natlan to the industrial shadows of the Fortress of Meropide. You…"
+  },
+  {
+    "run_id": "20260408_193459",
+    "grounding_score": 5,
+    "grounding_justification": "Every concrete claim in the dialogue, including locations, entity names, and specific actions/outcomes, is directly traceable to information present in the scene graph.",
+    "coherence_score": 4,
+    "coherence_justification": "The dialogue is internally consistent and reads as a single voice, but the chronological order of recounted events has minor jumps, such as mentioning the Qucusaur Tyrant after later encounters and Sedzimir after puzzles.",
+    "engagement_score": 5,
+    "engagement_justification": "The dialogue is vivid and immersive, using evocative language and a warm, reflective tone that perfectly suits a companion recounting shared adventures around a campfire.",
+    "hallucinated_entities": [],
+    "hallucination_count": 0,
+    "model_used": "gemini-2.5-flash",
+    "dialogue_preview": "We’ve come a long way from those industrial ruins and the bioluminescent caves, haven’t we? I watched you lead us throug…"
+  }
+]
