@@ -95,7 +95,11 @@ def _generate_text(prompt: str, *, max_retries: int = 6) -> str:
 # Judge prompt
 # ---------------------------------------------------------------------------
 
-JUDGE_PROMPT = """You are an expert evaluator for AI-generated NPC (non-player character) dialogue in video games. Your job is to score a single piece of NPC dialogue against the structured scene graph that was used to generate it.
+JUDGE_PROMPT = """You are an expert evaluator for AI-generated NPC (non-player character) dialogue \
+in video games. Your evaluation framework is based on Ernest Adams, \
+"Fundamentals of Game Design" (3rd ed., Pearson, 2014), which defines a good game story as: \
+an account of dramatically meaningful events that is credible, coherent, \
+without undue repetition, and without arbitrary content.
 
 ## Scene Graph (JSON)
 {scene_graph}
@@ -104,24 +108,52 @@ JUDGE_PROMPT = """You are an expert evaluator for AI-generated NPC (non-player c
 {dialogue}
 
 ## Your Task
-Score the dialogue on three dimensions. For each dimension give an integer score from 1 to 5 and a one-sentence justification.
+Score the dialogue on SEVEN dimensions. For each dimension give an integer score from 1 to 5
+and a one-sentence justification.
 
-**Grounding** — Do all concrete claims in the dialogue (locations, entity names, actions, outcomes) match information present in the scene graph? Penalise invented characters, places, or events.
+**Grounding** — Do all concrete claims (locations, entity names, actions, outcomes) match the
+  scene graph? Penalise invented characters, places, or events not supported by the JSON.
   1 = Mostly hallucinated / many invented details
   3 = Some claims grounded, some invented
   5 = Every concrete claim is directly traceable to the scene graph
 
-**Coherence** — Is the dialogue internally consistent? Does the narration follow a logical order? Does it read as a single voice?
+**Coherence** — Is the dialogue internally consistent, logically ordered, and expressed in a
+  single narrative voice?
   1 = Contradictory or incoherent
   3 = Mostly coherent with minor inconsistencies
   5 = Fully coherent and well-ordered
 
-**Engagement** — Does this feel like a believable, immersive campfire story from an NPC companion? Is the tone warm, the pacing natural, and the language evocative?
-  1 = Robotic or unnatural
-  3 = Adequate but forgettable
-  5 = Vivid and immersive; would fit in the game
+**Credibility** — Is the story believable within the universe of the game? Does the tone,
+  vocabulary, and framing fit what an NPC companion would plausibly say?
+  1 = Implausible, out-of-character, or breaks the game world
+  3 = Mostly believable with some awkward moments
+  5 = Fully credible; reads as something a real in-game NPC would say
 
-Also list any **hallucinated entities** — proper nouns (character names, place names, item names) that appear in the dialogue but are NOT present in the scene graph. If none, write "none".
+**Repetition** — Is the dialogue free from undue repetition of ideas, phrases, or events?
+  1 = The same idea or phrase is repeated multiple times
+  3 = Minor repetition that does not seriously harm the story
+  5 = No undue repetition; every sentence adds new information
+
+**Arbitrary Content** — Does the dialogue avoid mentioning irrelevant or arbitrary game elements
+  (UI details such as health bars, menus, HUD text, quest markers, or other non-story content)?
+  1 = Multiple mentions of arbitrary/UI elements that break immersion
+  3 = One minor mention of an irrelevant element
+  5 = No arbitrary content; every detail serves the story
+
+**Emotional Richness** — Does the dialogue express genuine emotion and human warmth, rather than
+  reading as a dry log of events?
+  1 = Purely factual; no emotional expression whatsoever
+  3 = Some emotional language but feels mechanical overall
+  5 = Warm, emotionally resonant; feels like a human companion speaking
+
+**Engagement** — Taken as a whole, does the dialogue feel like a dramatically meaningful,
+  immersive campfire story? Is the pacing natural and the language evocative?
+  1 = Robotic or unnatural; would not fit in a real game
+  3 = Adequate but forgettable
+  5 = Vivid and immersive; would genuinely fit in the game
+
+Also list any **hallucinated entities** — proper nouns (character names, place names, item names)
+that appear in the dialogue but are NOT present in the scene graph. If none, return an empty list.
 
 ## Response Format
 Respond with ONLY valid JSON, no markdown fences, no extra text:
@@ -130,6 +162,14 @@ Respond with ONLY valid JSON, no markdown fences, no extra text:
   "grounding_justification": "<one sentence>",
   "coherence_score": <1-5>,
   "coherence_justification": "<one sentence>",
+  "credibility_score": <1-5>,
+  "credibility_justification": "<one sentence>",
+  "repetition_score": <1-5>,
+  "repetition_justification": "<one sentence>",
+  "arbitrary_content_score": <1-5>,
+  "arbitrary_content_justification": "<one sentence>",
+  "emotional_richness_score": <1-5>,
+  "emotional_richness_justification": "<one sentence>",
   "engagement_score": <1-5>,
   "engagement_justification": "<one sentence>",
   "hallucinated_entities": ["<entity>", ...]
@@ -181,18 +221,27 @@ def evaluate_run(run_id: str) -> dict:
         print(f"  Raw response:\n{raw}\n")
         raise RuntimeError(f"JSON parse error for run {run_id}") from exc
 
+    hallucinated = [e for e in scores.get("hallucinated_entities", []) if e.lower() != "none"]
     return {
-        "run_id":                    run_id,
-        "grounding_score":           scores.get("grounding_score"),
-        "grounding_justification":   scores.get("grounding_justification", ""),
-        "coherence_score":           scores.get("coherence_score"),
-        "coherence_justification":   scores.get("coherence_justification", ""),
-        "engagement_score":          scores.get("engagement_score"),
-        "engagement_justification":  scores.get("engagement_justification", ""),
-        "hallucinated_entities":     scores.get("hallucinated_entities", []),
-        "hallucination_count":       len([e for e in scores.get("hallucinated_entities", []) if e.lower() != "none"]),
-        "model_used":                MODEL_ID,
-        "dialogue_preview":          dialogue[:120] + ("…" if len(dialogue) > 120 else ""),
+        "run_id":                           run_id,
+        "grounding_score":                  scores.get("grounding_score"),
+        "grounding_justification":          scores.get("grounding_justification", ""),
+        "coherence_score":                  scores.get("coherence_score"),
+        "coherence_justification":          scores.get("coherence_justification", ""),
+        "credibility_score":                scores.get("credibility_score"),
+        "credibility_justification":        scores.get("credibility_justification", ""),
+        "repetition_score":                 scores.get("repetition_score"),
+        "repetition_justification":         scores.get("repetition_justification", ""),
+        "arbitrary_content_score":          scores.get("arbitrary_content_score"),
+        "arbitrary_content_justification":  scores.get("arbitrary_content_justification", ""),
+        "emotional_richness_score":         scores.get("emotional_richness_score"),
+        "emotional_richness_justification": scores.get("emotional_richness_justification", ""),
+        "engagement_score":                 scores.get("engagement_score"),
+        "engagement_justification":         scores.get("engagement_justification", ""),
+        "hallucinated_entities":            hallucinated,
+        "hallucination_count":              len(hallucinated),
+        "model_used":                       MODEL_ID,
+        "dialogue_preview":                 dialogue[:120] + ("..." if len(dialogue) > 120 else ""),
     }
 
 
@@ -213,20 +262,35 @@ def discover_run_ids() -> list[str]:
     return complete
 
 
+SCORE_KEYS = [
+    "grounding_score",
+    "coherence_score",
+    "credibility_score",
+    "repetition_score",
+    "arbitrary_content_score",
+    "emotional_richness_score",
+    "engagement_score",
+]
+
+JUSTIFICATION_KEYS = [k.replace("_score", "_justification") for k in SCORE_KEYS]
+
+CSV_FIELDNAMES = (
+    ["run_id"]
+    + SCORE_KEYS
+    + ["hallucination_count"]
+    + JUSTIFICATION_KEYS
+    + ["hallucinated_entities", "model_used", "dialogue_preview"]
+)
+
+
 def save_results(results: list[dict]) -> None:
     out_dir = PROJECT_ROOT / "evaluation"
     out_dir.mkdir(exist_ok=True)
 
     # CSV
     csv_path = out_dir / "dialogue_scores.csv"
-    fieldnames = [
-        "run_id", "grounding_score", "coherence_score", "engagement_score",
-        "hallucination_count", "grounding_justification",
-        "coherence_justification", "engagement_justification",
-        "hallucinated_entities", "model_used", "dialogue_preview",
-    ]
     with open(csv_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
+        writer = csv.DictWriter(f, fieldnames=CSV_FIELDNAMES, extrasaction="ignore")
         writer.writeheader()
         for r in results:
             row = dict(r)
@@ -242,36 +306,40 @@ def save_results(results: list[dict]) -> None:
 
 
 def print_summary(results: list[dict]) -> None:
-    print("\n" + "=" * 65)
-    print(f"{'Run ID':<22} | {'Ground':>6} | {'Cohere':>6} | {'Engage':>6} | {'Halluc':>6}")
-    print("=" * 65)
-    totals = {"grounding_score": 0, "coherence_score": 0, "engagement_score": 0, "hallucination_count": 0}
+    col_labels = ["Ground", "Cohere", "Credib", "Repet", "Arbitr", "EmRich", "Engage", "Halluc"]
+    col_keys   = SCORE_KEYS + ["hallucination_count"]
+    width = 22 + 9 * len(col_labels)
+    header = f"{'Run ID':<22} | " + " | ".join(f"{h:>6}" for h in col_labels)
+    print("\n" + "=" * len(header))
+    print(header)
+    print("=" * len(header))
+
+    totals = {k: 0 for k in col_keys}
     for r in results:
-        print(
-            f"{r['run_id']:<22} | {r['grounding_score']:>6} | "
-            f"{r['coherence_score']:>6} | {r['engagement_score']:>6} | "
-            f"{r['hallucination_count']:>6}"
+        row = f"{r['run_id']:<22} | " + " | ".join(
+            f"{(r.get(k) or 0):>6}" for k in col_keys
         )
-        for k in totals:
-            totals[k] += r[k] or 0
+        print(row)
+        for k in col_keys:
+            totals[k] += r.get(k) or 0
+
     n = len(results)
-    print("-" * 65)
-    print(
-        f"{'AVERAGE':<22} | {totals['grounding_score']/n:>6.2f} | "
-        f"{totals['coherence_score']/n:>6.2f} | {totals['engagement_score']/n:>6.2f} | "
-        f"{totals['hallucination_count']/n:>6.2f}"
+    print("-" * len(header))
+    avg_row = f"{'AVERAGE':<22} | " + " | ".join(
+        f"{totals[k]/n:>6.2f}" for k in col_keys
     )
-    print("=" * 65)
+    print(avg_row)
+    print("=" * len(header))
 
     print("\nJustifications:")
+    labels = ["Grounding", "Coherence", "Credibility", "Repetition",
+              "Arb.Content", "Emot.Richness", "Engagement"]
     for r in results:
         print(f"\n  [{r['run_id']}]")
-        print(f"  Grounding  : {r['grounding_justification']}")
-        print(f"  Coherence  : {r['coherence_justification']}")
-        print(f"  Engagement : {r['engagement_justification']}")
-        halluc = [e for e in r["hallucinated_entities"] if e.lower() != "none"]
-        if halluc:
-            print(f"  Hallucinated: {', '.join(halluc)}")
+        for label, jkey in zip(labels, JUSTIFICATION_KEYS):
+            print(f"  {label:<14}: {r.get(jkey, '')}")
+        if r["hallucinated_entities"]:
+            print(f"  Hallucinated  : {', '.join(r['hallucinated_entities'])}")
 
 
 # ---------------------------------------------------------------------------

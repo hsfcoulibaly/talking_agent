@@ -325,8 +325,12 @@ def generate_npc_story(scene_graph: dict) -> str:
     - Ground every concrete claim in the provided JSON. Do not invent quests, characters,
       or locations not supported by entities, events, or environment.
     - If information is thin, stay in-character but vague; do not fill gaps with specific lore.
-    - One short paragraph (3-6 sentences). Speak to the player in second person ("you").
+    - Target length: 80-120 words (roughly 4-6 sentences). Speak to the player in second
+      person ("you"). Do not pad to hit the target; stop when the story is complete.
     - Campfire recap tone: reflective, immediate aftermath—not omniscient narration.
+    - Express genuine emotion and human warmth; avoid listing events like a log or status report.
+    - Do not mention game UI elements (health bars, menus, icons, HUD text, quest markers).
+    - Avoid repeating the same idea or phrase more than once.
     """
 
     prompt = f"""

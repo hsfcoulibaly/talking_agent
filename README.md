@@ -36,7 +36,7 @@ A Gemini model reads each screenshot and returns strict JSON per frame: `locatio
 Either an LLM merges all frame observations into a chronological scene graph with `entities`, `events`, `player_arc`, and `environment` fields, or a deterministic **simple stitch** (`--simple-consolidate`) does the same without an LLM call.
 
 **Stage 3 — Narrative generation (LLM)**
-The same model role-plays an NPC companion speaking at a campfire. The prompt explicitly forbids inventing characters, locations, or quests not present in the scene graph, directing the model to use vague language when the visual data is thin.
+The same model role-plays an NPC companion speaking at a campfire. The prompt constrains the output to 80–120 words, forbids inventing characters/locations/quests not in the scene graph, prohibits mention of game UI elements (health bars, menus, HUD text), requires emotional expression, and disallows repetition of ideas.
 
 ---
 
@@ -125,13 +125,19 @@ Outputs Precision, Recall, and F1 per condition plus a macro-average F1.
 
 ### Stage 3 — Dialogue quality (LLM-as-judge)
 
-`src/dialogue_evaluator.py` uses a Gemini model as an automated judge. For each run it loads the scene graph and the generated dialogue, then scores three dimensions:
+`src/dialogue_evaluator.py` uses a Gemini model as an automated judge. The scoring dimensions are derived from Ernest Adams, *Fundamentals of Game Design* (3rd ed., Pearson, 2014), which defines a good game story as credible, coherent, free of undue repetition, free of arbitrary content, and dramatically meaningful.
 
-| Dimension | Description |
+For each run the judge loads the scene graph and the generated dialogue and scores **7 dimensions** on a 1–5 scale:
+
+| Dimension | What it measures |
 |---|---|
-| **Grounding** (1–5) | Are all concrete claims traceable to the scene graph? Penalises invented entities, places, or events. |
-| **Coherence** (1–5) | Is the narrative internally consistent and logically ordered? |
-| **Engagement** (1–5) | Does it feel like a believable, immersive NPC campfire story? |
+| **Grounding** | All concrete claims traceable to the scene graph; no invented entities or events |
+| **Coherence** | Internally consistent, logically ordered, single narrative voice |
+| **Credibility** | Believable within the game universe; fits what an NPC would plausibly say |
+| **Repetition** | Free from undue repetition of ideas or phrases (5 = none) |
+| **Arbitrary Content** | No game-UI elements such as health bars, menus, or HUD text (5 = none) |
+| **Emotional Richness** | Genuine emotion and human warmth, not a dry event log |
+| **Engagement** | Dramatically meaningful and immersive as a campfire story |
 
 It also flags **hallucinated entities** — proper nouns in the dialogue absent from the scene graph.
 
@@ -148,20 +154,11 @@ python src/dialogue_evaluator.py --model gemini-3-flash-preview
 
 Results are saved to `evaluation/dialogue_scores.csv` and `evaluation/dialogue_scores.json`.
 
-**Current results (3 runs, judge: gemini-2.5-flash):**
-
-| Run ID | Grounding | Coherence | Engagement | Hallucinations |
-|---|---|---|---|---|
-| 20260408_182648 | 4/5 | 5/5 | 5/5 | 0 |
-| 20260408_185849 | 5/5 | 5/5 | 5/5 | 0 |
-| 20260408_193459 | 5/5 | 4/5 | 5/5 | 0 |
-| **Average** | **4.67** | **4.67** | **5.00** | **0** |
-
-The Grounding deduction in run `182648` is the word "flames" at the end of the dialogue — a campfire detail inferred rather than present in the scene graph. The Coherence deduction in run `193459` is a minor event ordering inconsistency. Zero hallucinated entities across all runs.
+> **Note:** The scores below were produced with the previous 3-dimension judge. Re-run `dialogue_evaluator.py` to get updated scores across all 7 dimensions.
 
 ### Human evaluation
 
-`evaluation/human_scoring_template.csv` is pre-populated with the 3 run IDs. Provide raters with the corresponding `.txt` files from `data/generated_stories/` and ask them to score each on Coherence, Grounding, and Engagement (1–5 scale). Recommended: 3–5 raters, 3+ dialogue samples each.
+`evaluation/human_scoring_template.csv` is pre-populated with the 3 run IDs and columns for all 7 dimensions. Provide raters with the corresponding `.txt` files from `data/generated_stories/` and ask them to score each dialogue using the same 1–5 scale. Recommended: 3–5 raters scoring all 3 samples — this allows inter-rater agreement to be computed and compared against the automated scores.
 
 ---
 

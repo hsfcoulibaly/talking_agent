@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage{url}
 \usepackage{booktabs}
+\usepackage{array}
 
 \title{Master Project: Bridging Vision and Language---A Multi-Image AI Pipeline for Context-Aware NPC Storytelling}
 \author{Hassan Coulibaly}
@@ -21,7 +22,7 @@ The landscape of interactive media and video games has evolved from simple, line
 
 This master's project implements a prototype \emph{talking agent} pipeline: a batch of time-ordered gameplay screenshots is summarized per frame by a VLM, merged into a single structured \emph{scene graph}, and passed to an LLM that produces short NPC dialogue under explicit grounding constraints. The implementation uses a configurable Google Gemini model (default \texttt{gemini-2.5-flash}; overridable via \texttt{GEMINI\_MODEL} in \texttt{.env} or the \texttt{--model} flag) for both the vision and language calls, with extraction forced to \texttt{application/json} for machine-parseable state.
 
-A key design goal is evaluation completeness. Prior work on VLM pipelines often evaluates only the perception stage. This project contributes a two-track evaluation: automated F1 for Stage~1, and an LLM-as-judge scoring method for Stage~3 that measures Grounding, Coherence, and Engagement while also detecting hallucinated entities.
+A key design goal is evaluation completeness. Prior work on VLM pipelines often evaluates only the perception stage. This project contributes a two-track evaluation: automated F1 for Stage~1, and an LLM-as-judge scoring method for Stage~3 whose dimensions are grounded in Adams's theory of game storytelling~\cite{Adams2014}. Adams defines a good game story as an account of dramatically meaningful events that is credible, coherent, without undue repetition, and without arbitrary content, and identifies length, characters, degree of realism, and emotional richness as key quality factors. These criteria directly motivate the seven scoring dimensions used in this project's dialogue evaluation.
 
 \section{Background}
 
@@ -103,7 +104,32 @@ Secrets must not be committed. Contributors should copy \texttt{.env.example} to
 
 \section{Evaluation}
 
-Evaluation spans all three pipeline stages. Stage~1 is evaluated with automated binary classification metrics. Stage~3 is evaluated with an LLM-as-judge method and supported by a human rating instrument. Stage~2 (scene graph consolidation) is assessed indirectly through the Grounding dimension of the Stage~3 judge: if the consolidation omits or distorts key entities, the dialogue scores will reflect it.
+Evaluation spans all three pipeline stages. Stage~1 is evaluated with automated binary classification metrics. Stage~3 is evaluated with an LLM-as-judge method and a human rating study. Stage~2 (scene graph consolidation) is assessed indirectly through the Grounding dimension of the Stage~3 judge: if the consolidation omits or distorts key entities, the dialogue scores will reflect it.
+
+\subsection{Evaluation framework: Adams's storytelling criteria}
+
+The dialogue evaluation framework is derived from Adams~\cite{Adams2014}, who defines a good game story as an account of dramatically meaningful events satisfying five qualities: \textbf{credibility}, \textbf{coherence}, absence of \textbf{undue repetition}, absence of \textbf{arbitrary content}, and \textbf{dramatic meaning} (engagement). Adams also identifies \textbf{length}, character presence, \textbf{degree of realism}, and \textbf{emotional richness} as key story factors.
+
+These criteria map directly onto the seven scoring dimensions used in this project, as shown in Table~\ref{tab:dimensions}.
+
+\begin{table}[h]
+\centering
+\caption{Dialogue scoring dimensions and their source in Adams~\cite{Adams2014}.}
+\label{tab:dimensions}
+\begin{tabular}{>{\bfseries}lp{7.5cm}}
+\toprule
+Dimension & Definition (1--5 scale) \\
+\midrule
+Grounding         & All concrete claims traceable to the scene graph; no invented entities or events. \\
+Coherence         & Internally consistent, logically ordered, single narrative voice. \\
+Credibility       & Believable within the game universe; tone and vocabulary fit an NPC companion. \\
+Repetition        & Free from undue repetition of ideas or phrases (5 = no repetition). \\
+Arbitrary Content & No irrelevant game-UI elements such as health bars, menus, or HUD text (5 = none). \\
+Emotional Richness & Genuine emotion and human warmth, not a dry event log. \\
+Engagement        & Dramatically meaningful and immersive as a campfire story. \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Stage 1: VLM extraction accuracy (F1)}
 
@@ -111,46 +137,17 @@ The script \texttt{src/evaluator.py} reads \texttt{evaluation/ground\_truth\_lab
 
 \subsection{Stage 3: Dialogue quality via LLM-as-judge}
 
-The script \texttt{src/dialogue\_evaluator.py} implements an automated judge to evaluate the final dialogue against its source scene graph. For each run, it loads \texttt{*\_scene\_graph.json} and \texttt{*\_npc\_dialogue.txt}, constructs a structured prompt, and calls a Gemini model configured as an expert evaluator. The judge scores three dimensions on a 1--5 integer scale:
+The script \texttt{src/dialogue\_evaluator.py} implements an automated judge using the Adams dimensions above. For each run, it loads \texttt{*\_scene\_graph.json} and \texttt{*\_npc\_dialogue.txt}, builds a structured prompt that cites the Adams framework, and calls a Gemini model configured as an expert evaluator scoring all seven dimensions on a 1--5 scale. The judge also returns a list of \textbf{hallucinated entities}---proper nouns present in the dialogue but absent from the scene graph. Results are saved to \texttt{evaluation/dialogue\_scores.csv} and \texttt{evaluation/dialogue\_scores.json}.
 
-\begin{itemize}
-  \item \textbf{Grounding}: Are all concrete claims (entity names, locations, actions, outcomes) traceable to the scene graph? Penalises invented content.
-  \item \textbf{Coherence}: Is the narrative internally consistent, logically ordered, and expressed in a single voice?
-  \item \textbf{Engagement}: Does the output feel like a believable, immersive campfire story from an NPC companion?
-\end{itemize}
-
-The judge also returns a list of \textbf{hallucinated entities}---proper nouns present in the dialogue but absent from the scene graph. Results are saved to \texttt{evaluation/dialogue\_scores.csv} and \texttt{evaluation/dialogue\_scores.json}.
-
-\subsubsection*{Results}
-
-Table~\ref{tab:dialogue_scores} reports scores for three runs on \emph{Genshin Impact} gameplay footage, evaluated using \texttt{gemini-2.5-flash} as the judge model.
-
-\begin{table}[h]
-\centering
-\caption{LLM-as-judge dialogue evaluation results (scale: 1--5).}
-\label{tab:dialogue_scores}
-\begin{tabular}{lcccc}
-\toprule
-Run ID & Grounding & Coherence & Engagement & Hallucinations \\
-\midrule
-20260408\_182648 & 4 & 5 & 5 & 0 \\
-20260408\_185849 & 5 & 5 & 5 & 0 \\
-20260408\_193459 & 5 & 4 & 5 & 0 \\
-\midrule
-\textbf{Average}  & \textbf{4.67} & \textbf{4.67} & \textbf{5.00} & \textbf{0} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-The single Grounding deduction in run \texttt{182648} was attributed to the word \emph{flames} at the end of the dialogue---a campfire detail inferred by the model rather than present in the scene graph. The Coherence deduction in run \texttt{193459} reflects a minor event-ordering inconsistency: the Qucusaur Tyrant was mentioned after chronologically later encounters. No hallucinated proper nouns (character names, locations, item names) were detected in any run.
+The story generation prompt in Stage~3 of the pipeline (\texttt{src/main\_pipeline.py}) was updated to align with these criteria: it now specifies a target length of 80--120 words, explicitly prohibits mention of game-UI elements, requires emotional expression, and forbids undue repetition.
 
 \subsection{Human evaluation}
 
-The template \texttt{evaluation/human\_scoring\_template.csv} is pre-populated with the three run IDs (\texttt{20260408\_182648}, \texttt{20260408\_185849}, \texttt{20260408\_193459}). Human raters are provided the corresponding \texttt{.txt} files from \texttt{data/generated\_stories/} and asked to score each dialogue on Coherence, Grounding, and Engagement using the same 1--5 scale as the automated judge. The recommended study design uses 3--5 raters scoring all three samples, which would allow inter-rater agreement to be computed and compared against the automated scores.
+The template \texttt{evaluation/human\_scoring\_template.csv} is pre-populated with the three run IDs and columns for all seven Adams-derived dimensions. Human raters are provided the corresponding \texttt{.txt} files from \texttt{data/generated\_stories/} and asked to score each dialogue using the same 1--5 scale as the automated judge. The recommended study design uses 3--5 raters scoring all three samples, which allows inter-rater agreement to be computed and the automated scores to be validated against human judgment.
 
 \section{Limitations and Future Work}
 
-Frame order is user-supplied (e.g., filename order), not inferred from video timestamps. VLM mistakes propagate into the graph and dialogue; consolidation may over- or under-merge events. The current LLM-as-judge evaluation relies on the same Gemini model family used for generation, which may introduce evaluator bias; future work could use an independent judge model. The pipeline does not yet integrate live game APIs or native scene graphs from engines; extending to engine telemetry would tighten grounding further. The human evaluation study has not yet been conducted; completing it would allow direct comparison of automated and human scores across the three evaluation dimensions.
+Frame order is user-supplied (e.g., filename order), not inferred from video timestamps. VLM mistakes propagate into the graph and dialogue; consolidation may over- or under-merge events. The current LLM-as-judge evaluation relies on the same Gemini model family used for generation, which may introduce evaluator bias; future work could use an independent judge model. The pipeline does not yet integrate live game APIs or native scene graphs from engines; extending to engine telemetry would tighten grounding further. The human evaluation study has not yet been conducted; completing it would allow direct comparison of automated and human scores across all seven Adams-derived dimensions. Finally, evaluation results reported here reflect the pipeline as of April 2026; re-running \texttt{src/dialogue\_evaluator.py} after any prompt changes will produce updated scores.
 
 \bibliographystyle{IEEEbib}
 \bibliography{refs}
