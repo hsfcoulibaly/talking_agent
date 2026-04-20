@@ -162,7 +162,7 @@ Results are saved to `evaluation/dialogue_scores.csv` and `evaluation/dialogue_s
 
 ---
 
-## EDA and figures
+## EDA (Exploratory Data Analysis) and figures
 
 After pipeline runs have produced `data/extracted_state/*_frames.json` and matching `*_scene_graph.json`:
 
