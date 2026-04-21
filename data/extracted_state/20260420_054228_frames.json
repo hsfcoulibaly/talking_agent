@@ -1,0 +1,962 @@
+[
+  {
+    "frame_index": 0,
+    "source_image": "data\\test_screenshots\\frame_0001.jpg",
+    "observation": {
+      "location": "savanna",
+      "time_of_day": "night",
+      "player_status": "full health and hunger, no armor",
+      "recent_action": "viewing the crafting recipe for an acacia pressure plate",
+      "notable_enemies_or_objects": "crafting table, acacia wood, stone tools",
+      "visible_entities": [
+        "player character"
+      ]
+    }
+  },
+  {
+    "frame_index": 1,
+    "source_image": "data\\test_screenshots\\frame_0002.jpg",
+    "observation": {
+      "location": "forest",
+      "time_of_day": "night",
+      "player_status": "full health, full hunger, no armor",
+      "recent_action": "crafting acacia planks from acacia logs",
+      "notable_enemies_or_objects": [
+        "acacia logs",
+        "acacia planks",
+        "crafting table",
+        "wooden axe",
+        "wooden sword",
+        "wooden pickaxe",
+        "stone pickaxe",
+        "cobblestone"
+      ],
+      "visible_entities": [
+        "player character"
+      ]
+    }
+  },
+  {
+    "frame_index": 2,
+    "source_image": "data\\test_screenshots\\frame_0003.jpg",
+    "observation": {
+      "location": "grassy field",
+      "time_of_day": "night",
+      "player_status": "full health, 9.5 hunger, holding a wooden axe",
+      "recent_action": "looking at a block of grass on the ground",
+      "notable_enemies_or_objects": "grass, dirt, pink particles",
+      "visible_entities": []
+    }
+  },
+  {
+    "frame_index": 3,
+    "source_image": "data\\test_screenshots\\frame_0004.jpg",
+    "observation": {
+      "location": "grassy field",
+      "time_of_day": "night",
+      "player_status": "full health and hunger",
+      "recent_action": "preparing to place acacia planks",
+      "notable_enemies_or_objects": "acacia planks, tall grass",
+      "visible_entities": [
+        "acacia planks",
+        "tall grass"
+      ]
+    }
+  },
+  {
+    "frame_index": 4,
+    "source_image": "data\\test_screenshots\\frame_0005.jpg",
+    "observation": {
+      "location": "savanna biome",
+      "time_of_day": "night",
+      "player_status": "full health and hunger",
+      "recent_action": "placing acacia wood planks to build a structure",
+      "notable_enemies_or_objects": "acacia wood planks, acacia trees, wooden tools",
+      "visible_entities": [
+        "acacia trees",
+        "tall grass",
+        "acacia wood planks",
+        "wooden axe",
+        "wooden sword",
+        "wooden pickaxe",
+        "cobblestone",
+        "stone pickaxe"
+      ]
+    }
+  },
+  {
+    "frame_index": 5,
+    "source_image": "data\\test_screenshots\\frame_0006.jpg",
+    "observation": {
+      "location": "grassy field near water",
+      "time_of_day": "night",
+      "player_status": "full health and hunger",
+      "recent_action": "building a structure with acacia planks",
+      "notable_enemies_or_objects": "lava fall, acacia wood structure",
+      "visible_entities": [
+        "lava fall",
+        "wooden structure",
+        "water"
+      ]
+    }
+  },
+  {
+    "frame_index": 6,
+    "source_image": "data\\test_screenshots\\frame_0007.jpg",
+    "observation": {
+      "location": "grassy field at night",
+      "time_of_day": "night",
+      "player_status": "full health and hunger",
+      "recent_action": "placing acacia wood planks to build a structure",
+      "notable_enemies_or_objects": "acacia wood planks, wooden tools, stone pickaxe",
+      "visible_entities": [
+        "acacia wood planks",
+        "grass"
+      ]
+    }
+  },
+  {
+    "frame_index": 7,
+    "source_image": "data\\test_screenshots\\frame_0008.jpg",
+    "observation": {
+      "location": "dark grassy field",
+      "time_of_day": "night",
+      "player_status": "full health and hunger",
+      "recent_action": "building a structure with dark wood planks",
+      "notable_enemies_or_objects": "dark wood planks, wooden tools, cobblestone",
+      "visible_entities": [
+        "dark wood planks",
+        "grass",
+        "distant trees"
+      ]
+    }
+  },
+  {
+    "frame_index": 8,
+    "source_image": "data\\test_screenshots\\frame_0009.jpg",
+    "observation": {
+      "location": "savanna biome, building a wooden structure",
+      "time_of_day": "night",
+      "player_status": "full health, nearly full hunger, holding acacia wood planks",
+      "recent_action": "placing acacia wood planks to build a structure",
+      "notable_enemies_or_objects": "acacia wood planks, acacia logs, wooden tools, stone pickaxe, dirt, cobblestone",
+      "visible_entities": [
+        "acacia trees",
+        "wooden structure",
+        "savanna landscape"
+      ]
+    }
+  },
+  {
+    "frame_index": 9,
+    "source_image": "data\\test_screenshots\\frame_0010.jpg",
+    "observation": {
+      "location": "savanna biome, building a wooden structure",
+      "time_of_day": "night",
+      "player_status": "full health, full hunger, no armor",
+      "recent_action": "standing on a wooden wall overlooking the savanna",
+      "notable_enemies_or_objects": "acacia planks, wooden tools, cobblestone, savanna trees",
+      "visible_entities": [
+        "acacia planks",
+        "wooden axe",
+        "sticks",
+        "wooden sword",
+        "oak logs",
+        "wooden pickaxe",
+        "cobblestone",
+        "stone pickaxe"
+      ]
+    }
+  },
+  {
+    "frame_index": 10,
+    "source_image": "data\\test_screenshots\\frame_0011.jpg",
+    "observation": {
+      "location": "near a river and hills at night, standing next to a large wooden structure",
+      "time_of_day": "night",
+      "player_status": "full health, nearly full hunger, empty hotbar slot selected",
+      "recent_action": "standing still and looking at a large wooden surface",
+      "notable_enemies_or_objects": "large wooden structure, river, hills",
+      "visible_entities": [
+        "player's hand",
+        "wooden structure",
+        "river",
+        "hills"
+      ]
+    }
+  },
+  {
+    "frame_index": 11,
+    "source_image": "data\\test_screenshots\\frame_0012.jpg",
+    "observation": {
+      "location": "dark environment",
+      "time_of_day": "unclear",
+      "player_status": "10 hearts, 8.5 hunger, no armor",
+      "recent_action": "viewing the recipe book in the inventory, hovering over Acacia Planks",
+      "notable_enemies_or_objects": "Acacia logs, wooden tools, cobblestone, crafting table",
+      "visible_entities": [
+        "player character"
+      ]
+    }
+  },
+  {
+    "frame_index": 12,
+    "source_image": "data\\test_screenshots\\frame_0013.jpg",
+    "observation": {
+      "location": "dark environment",
+      "time_of_day": "unclear",
+      "player_status": "full health and hunger",
+      "recent_action": "crafting acacia planks from acacia logs in the inventory menu",
+      "notable_enemies_or_objects": "acacia logs, acacia planks, crafting table, wooden tools, stone pickaxe, cobblestone",
+      "visible_entities": [
+        "player character",
+        "crafting interface"
+      ]
+    }
+  },
+  {
+    "frame_index": 13,
+    "source_image": "data\\test_screenshots\\frame_0014.jpg",
+    "observation": {
+      "location": "savanna biome near water",
+      "time_of_day": "night",
+      "player_status": "full health, nearly full hunger, no armor",
+      "recent_action": "selecting or placing acacia planks",
+      "notable_enemies_or_objects": "acacia planks, wooden and stone tools, cobblestone",
+      "visible_entities": [
+        "acacia planks",
+        "water",
+        "savanna trees"
+      ]
+    }
+  },
+  {
+    "frame_index": 14,
+    "source_image": "data\\test_screenshots\\frame_0015.jpg",
+    "observation": {
+      "location": "inside a wooden structure at night",
+      "time_of_day": "night",
+      "player_status": "full health and hunger",
+      "recent_action": "building or placing wooden planks",
+      "notable_enemies_or_objects": "jungle wood planks, wooden tools, cobblestone",
+      "visible_entities": [
+        "jungle wood planks",
+        "wooden axe",
+        "jungle logs",
+        "sticks",
+        "wooden sword",
+        "wooden pickaxe",
+        "cobblestone"
+      ]
+    }
+  },
+  {
+    "frame_index": 15,
+    "source_image": "data\\test_screenshots\\frame_0016.jpg",
+    "observation": {
+      "location": "inside a wooden structure",
+      "time_of_day": "night",
+      "player_status": "full health and hunger, holding a wooden pickaxe",
+      "recent_action": "looking out from a wooden shelter",
+      "notable_enemies_or_objects": "wooden planks, water, trees, grass",
+      "visible_entities": [
+        "wooden planks",
+        "grass",
+        "water",
+        "trees"
+      ]
+    }
+  },
+  {
+    "frame_index": 16,
+    "source_image": "data\\test_screenshots\\frame_0017.jpg",
+    "observation": {
+      "location": "inside a wooden structure",
+      "time_of_day": "night",
+      "player_status": "full health, nearly full hunger",
+      "recent_action": "standing inside a wooden building looking at a wall",
+      "notable_enemies_or_objects": "lava fall in the distance, wooden pickaxe",
+      "visible_entities": [
+        "lava fall",
+        "wooden structure",
+        "water"
+      ]
+    }
+  },
+  {
+    "frame_index": 17,
+    "source_image": "data\\test_screenshots\\frame_0018.jpg",
+    "observation": {
+      "location": "inside a wooden structure",
+      "time_of_day": "night",
+      "player_status": "full health and hunger",
+      "recent_action": "looking up while holding spruce planks",
+      "notable_enemies_or_objects": "spruce planks, wooden walls",
+      "visible_entities": [
+        "spruce planks",
+        "wooden walls"
+      ]
+    }
+  },
+  {
+    "frame_index": 18,
+    "source_image": "data\\test_screenshots\\frame_0019.jpg",
+    "observation": {
+      "location": "dark cave",
+      "time_of_day": "unclear",
+      "player_status": "full health, 9.5 hunger, no armor",
+      "recent_action": "managing inventory and viewing crafting recipes",
+      "notable_enemies_or_objects": "Crafting Table, wooden tools, stone pickaxe, acacia planks, logs, sticks, torches",
+      "visible_entities": [
+        "player character"
+      ]
+    }
+  },
+  {
+    "frame_index": 19,
+    "source_image": "data\\test_screenshots\\frame_0020.jpg",
+    "observation": {
+      "location": "dark interior",
+      "time_of_day": "unclear",
+      "player_status": "full health and hunger",
+      "recent_action": "selecting a crafting table from the hotbar",
+      "notable_enemies_or_objects": "Crafting Table, wooden planks, logs, sticks, cobblestone, wooden tools",
+      "visible_entities": [
+        "Crafting Table",
+        "tall grass"
+      ]
+    }
+  },
+  {
+    "frame_index": 20,
+    "source_image": "data\\test_screenshots\\frame_0021.jpg",
+    "observation": {
+      "location": "crafting menu",
+      "time_of_day": "unclear",
+      "player_status": "full health and hunger",
+      "recent_action": "crafting acacia doors",
+      "notable_enemies_or_objects": "acacia planks, acacia doors, crafting table",
+      "visible_entities": [
+        "acacia planks",
+        "acacia doors",
+        "stone axe",
+        "sticks",
+        "wooden hoe",
+        "oak logs",
+        "wooden sword",
+        "wooden pickaxe",
+        "cobblestone"
+      ]
+    }
+  },
+  {
+    "frame_index": 21,
+    "source_image": "data\\test_screenshots\\frame_0022.jpg",
+    "observation": {
+      "location": "dark wooden room",
+      "time_of_day": "unclear",
+      "player_status": "full health and hunger",
+      "recent_action": "preparing to place a door inside a small wooden structure",
+      "notable_enemies_or_objects": "crafting table, tall grass, oak door",
+      "visible_entities": [
+        "crafting table",
+        "tall grass"
+      ]
+    }
+  },
+  {
+    "frame_index": 22,
+    "source_image": "data\\test_screenshots\\frame_0023.jpg",
+    "observation": {
+      "location": "inside a wooden shelter",
+      "time_of_day": "night",
+      "player_status": "full health and hunger",
+      "recent_action": "looking at a dirt block inside the shelter",
+      "notable_enemies_or_objects": "crafting table, dirt block, wooden planks",
+      "visible_entities": [
+        "crafting table",
+        "dirt block",
+        "wooden walls",
+        "tall grass"
+      ]
+    }
+  },
+  {
+    "frame_index": 23,
+    "source_image": "data\\test_screenshots\\frame_0024.jpg",
+    "observation": {
+      "location": "inside a small wooden hut",
+      "time_of_day": "night",
+      "player_status": "full health and hunger",
+      "recent_action": "standing inside a small wooden structure near a crafting table",
+      "notable_enemies_or_objects": "crafting table, acacia door in hand",
+      "visible_entities": [
+        "crafting table",
+        "wooden walls",
+        "water",
+        "grass"
+      ]
+    }
+  },
+  {
+    "frame_index": 24,
+    "source_image": "data\\test_screenshots\\frame_0025.jpg",
+    "observation": {
+      "location": "inside a small wooden shelter",
+      "time_of_day": "night",
+      "player_status": "full health and hunger, no armor",
+      "recent_action": "standing inside a wooden room next to a crafting table",
+      "notable_enemies_or_objects": "crafting table, wooden walls, open doorway",
+      "visible_entities": [
+        "crafting table",
+        "wooden walls",
+        "wooden pickaxe"
+      ]
+    }
+  },
+  {
+    "frame_index": 25,
+    "source_image": "data\\test_screenshots\\frame_0026.jpg",
+    "observation": {
+      "location": "inside a dark wooden structure looking out",
+      "time_of_day": "night",
+      "player_status": "10 hearts, 10 hunger, holding a wooden sword",
+      "recent_action": "switched to wooden sword",
+      "notable_enemies_or_objects": "wooden sword, oak doors, cobblestone, wooden tools",
+      "visible_entities": [
+        "wooden sword"
+      ]
+    }
+  },
+  {
+    "frame_index": 26,
+    "source_image": "data\\test_screenshots\\frame_0027.jpg",
+    "observation": {
+      "location": "inside a dark wooden structure",
+      "time_of_day": "night",
+      "player_status": "full health and hunger",
+      "recent_action": "looking up at a wooden ceiling",
+      "notable_enemies_or_objects": "wooden planks, logs, sticks, wooden axe, wooden pickaxe, cobblestone, stone pickaxe, door",
+      "visible_entities": []
+    }
+  },
+  {
+    "frame_index": 27,
+    "source_image": "data\\test_screenshots\\frame_0028.jpg",
+    "observation": {
+      "location": "dark interior",
+      "time_of_day": "unclear",
+      "player_status": "full health and hunger",
+      "recent_action": "selecting acacia planks",
+      "notable_enemies_or_objects": "acacia planks, wooden tools, cobblestone",
+      "visible_entities": []
+    }
+  },
+  {
+    "frame_index": 28,
+    "source_image": "data\\test_screenshots\\frame_0029.jpg",
+    "observation": {
+      "location": "inside a dark wooden structure",
+      "time_of_day": "unclear",
+      "player_status": "full health and hunger",
+      "recent_action": "breaking a crafting table with a wooden axe",
+      "notable_enemies_or_objects": "crafting table, wooden axe",
+      "visible_entities": [
+        "crafting table",
+        "wooden axe"
+      ]
+    }
+  },
+  {
+    "frame_index": 29,
+    "source_image": "data\\test_screenshots\\frame_0030.jpg",
+    "observation": {
+      "location": "inside a building looking out at a lake",
+      "time_of_day": "night",
+      "player_status": "full health and hunger, holding a wooden axe",
+      "recent_action": "looking out through an open door",
+      "notable_enemies_or_objects": [
+        "acacia door",
+        "wooden axe",
+        "lake",
+        "trees"
+      ],
+      "visible_entities": []
+    }
+  },
+  {
+    "frame_index": 30,
+    "source_image": "data\\test_screenshots\\frame_0031.jpg",
+    "observation": {
+      "location": "grassy riverbank at night",
+      "time_of_day": "night",
+      "player_status": "full health and hunger",
+      "recent_action": "holding a wooden sword near a placed jungle plank block",
+      "notable_enemies_or_objects": [
+        "lava fall",
+        "jungle planks",
+        "wooden sword"
+      ],
+      "visible_entities": [
+        "lava fall",
+        "jungle planks",
+        "wooden sword"
+      ]
+    }
+  },
+  {
+    "frame_index": 31,
+    "source_image": "data\\test_screenshots\\frame_0032.jpg",
+    "observation": {
+      "location": "grassy field near water",
+      "time_of_day": "night",
+      "player_status": "full health and hunger; holding a wooden sword",
+      "recent_action": "standing in a field, looking at a block outline",
+      "notable_enemies_or_objects": "wooden sword, grass, distant hills, water",
+      "visible_entities": []
+    }
+  },
+  {
+    "frame_index": 32,
+    "source_image": "data\\test_screenshots\\frame_0033.jpg",
+    "observation": {
+      "location": "savanna biome",
+      "time_of_day": "night",
+      "player_status": "full health and hunger, holding a wooden sword",
+      "recent_action": "standing in tall grass looking at a distant lava fall",
+      "notable_enemies_or_objects": "lava fall, tall grass, savanna hills",
+      "visible_entities": [
+        "lava fall",
+        "tall grass",
+        "savanna trees"
+      ]
+    }
+  },
+  {
+    "frame_index": 33,
+    "source_image": "data\\test_screenshots\\frame_0034.jpg",
+    "observation": {
+      "location": "grassy field near a lava fall",
+      "time_of_day": "night",
+      "player_status": "full health and hunger",
+      "recent_action": "targeting a block of tall grass while holding a wooden sword",
+      "notable_enemies_or_objects": "lava fall, coal ore, wooden sword, building materials in hotbar",
+      "visible_entities": [
+        "lava fall",
+        "coal ore",
+        "tall grass",
+        "hills",
+        "water"
+      ]
+    }
+  },
+  {
+    "frame_index": 34,
+    "source_image": "data\\test_screenshots\\frame_0035.jpg",
+    "observation": {
+      "location": "savanna near a river",
+      "time_of_day": "night",
+      "player_status": "full health and hunger, no armor",
+      "recent_action": "standing still, holding a wooden sword",
+      "notable_enemies_or_objects": "wooden structure in the distance, wooden sword in hand",
+      "visible_entities": [
+        "savanna trees",
+        "river",
+        "wooden house",
+        "stars"
+      ]
+    }
+  },
+  {
+    "frame_index": 35,
+    "source_image": "data\\test_screenshots\\frame_0036.jpg",
+    "observation": {
+      "location": "savanna biome",
+      "time_of_day": "night",
+      "player_status": "full health and hunger",
+      "recent_action": "exploring a dark field with a wooden sword equipped",
+      "notable_enemies_or_objects": "red block structure, acacia trees, sugar cane",
+      "visible_entities": [
+        "red block structure",
+        "acacia trees",
+        "sugar cane"
+      ]
+    }
+  },
+  {
+    "frame_index": 36,
+    "source_image": "data\\test_screenshots\\frame_0037.jpg",
+    "observation": {
+      "location": "dark savanna biome",
+      "time_of_day": "night",
+      "player_status": "full health, nearly full hunger, holding a wooden sword",
+      "recent_action": "scouting the dark landscape with a wooden sword drawn",
+      "notable_enemies_or_objects": "a small sapling in the foreground, a distant structure with an orange glow",
+      "visible_entities": [
+        "sapling",
+        "trees",
+        "distant structure"
+      ]
+    }
+  },
+  {
+    "frame_index": 37,
+    "source_image": "data\\test_screenshots\\frame_0038.jpg",
+    "observation": {
+      "location": "savanna biome near a river",
+      "time_of_day": "night",
+      "player_status": "full health and hunger",
+      "recent_action": "standing in a field at night, looking towards a distant zombie",
+      "notable_enemies_or_objects": "a zombie on the hill, sugar cane plants by the water",
+      "visible_entities": [
+        "zombie",
+        "sugar cane",
+        "acacia trees"
+      ]
+    }
+  },
+  {
+    "frame_index": 38,
+    "source_image": "data\\test_screenshots\\frame_0039.jpg",
+    "observation": {
+      "location": "riverbank at night",
+      "time_of_day": "night",
+      "player_status": "full health and hunger",
+      "recent_action": "observing a zombie across the water",
+      "notable_enemies_or_objects": "zombie, sugar cane",
+      "visible_entities": [
+        "zombie",
+        "sugar cane"
+      ]
+    }
+  },
+  {
+    "frame_index": 39,
+    "source_image": "data\\test_screenshots\\frame_0040.jpg",
+    "observation": {
+      "location": "riverbank",
+      "time_of_day": "night",
+      "player_status": "full health, full hunger, holding wooden sword",
+      "recent_action": "unlocked sugar recipe while looking at sugar cane",
+      "notable_enemies_or_objects": "sugar cane, zombie, flower, sugar recipe notification",
+      "visible_entities": [
+        "zombie",
+        "sugar cane",
+        "flower"
+      ]
+    }
+  },
+  {
+    "frame_index": 40,
+    "source_image": "data\\test_screenshots\\frame_0041.jpg",
+    "observation": {
+      "location": "riverbank at night",
+      "time_of_day": "night",
+      "player_status": "full health, nearly full hunger, holding a wooden sword",
+      "recent_action": "standing near a flower by the water",
+      "notable_enemies_or_objects": "rose bush, water, wooden sword",
+      "visible_entities": [
+        "rose bush",
+        "water",
+        "wooden sword"
+      ]
+    }
+  },
+  {
+    "frame_index": 41,
+    "source_image": "data\\test_screenshots\\frame_0042.jpg",
+    "observation": {
+      "location": "savanna biome",
+      "time_of_day": "night",
+      "player_status": "full health and hunger, holding a wooden sword",
+      "recent_action": "looking at tall grass",
+      "notable_enemies_or_objects": "tall grass, wooden sword, acacia door, wooden tools",
+      "visible_entities": [
+        "tall grass",
+        "acacia trees"
+      ]
+    }
+  },
+  {
+    "frame_index": 42,
+    "source_image": "data\\test_screenshots\\frame_0043.jpg",
+    "observation": {
+      "location": "savanna biome near water",
+      "time_of_day": "night",
+      "player_status": "full health, full hunger, holding a wooden sword",
+      "recent_action": "patrolling the savanna at night",
+      "notable_enemies_or_objects": "acacia trees, small wooden structure, water",
+      "visible_entities": [
+        "acacia trees",
+        "wooden structure",
+        "water",
+        "tall grass"
+      ]
+    }
+  },
+  {
+    "frame_index": 43,
+    "source_image": "data\\test_screenshots\\frame_0044.jpg",
+    "observation": {
+      "location": "savanna biome near a lake",
+      "time_of_day": "night",
+      "player_status": "full health, 9.5 hunger, holding a wooden sword",
+      "recent_action": "standing in tall grass looking at zombies",
+      "notable_enemies_or_objects": "two zombies",
+      "visible_entities": [
+        "zombie",
+        "zombie"
+      ]
+    }
+  },
+  {
+    "frame_index": 44,
+    "source_image": "data\\test_screenshots\\frame_0045.jpg",
+    "observation": {
+      "location": "grassy field at night",
+      "time_of_day": "night",
+      "player_status": "10 hearts health, 9.5 hunger, holding a wooden sword",
+      "recent_action": "facing a creeper and a zombie",
+      "notable_enemies_or_objects": "creeper, zombie",
+      "visible_entities": [
+        "creeper",
+        "zombie"
+      ]
+    }
+  },
+  {
+    "frame_index": 45,
+    "source_image": "data\\test_screenshots\\frame_0046.jpg",
+    "observation": {
+      "location": "riverbank in a savanna biome",
+      "time_of_day": "night",
+      "player_status": "4.5 hearts health, 8.5 hunger, holding a wooden sword",
+      "recent_action": "looking out over the water at night",
+      "notable_enemies_or_objects": "river, tall grass, small island, distant hills",
+      "visible_entities": [
+        "tall grass",
+        "river",
+        "small island",
+        "distant trees"
+      ]
+    }
+  },
+  {
+    "frame_index": 46,
+    "source_image": "data\\test_screenshots\\frame_0047.jpg",
+    "observation": {
+      "location": "inside a wooden structure",
+      "time_of_day": "night",
+      "player_status": "4.5 hearts health, 8.5 hunger",
+      "recent_action": "looking at a closed wooden door",
+      "notable_enemies_or_objects": "wooden door, wooden sword",
+      "visible_entities": [
+        "wooden door",
+        "wooden sword"
+      ]
+    }
+  },
+  {
+    "frame_index": 47,
+    "source_image": "data\\test_screenshots\\frame_0048.jpg",
+    "observation": {
+      "location": "inside a dark wooden building",
+      "time_of_day": "night",
+      "player_status": "5.5 hearts health, 8.5 hunger, holding a damaged wooden sword",
+      "recent_action": "standing inside a dark room near a door",
+      "notable_enemies_or_objects": "wooden sword, acacia door, wooden planks",
+      "visible_entities": [
+        "acacia door",
+        "wooden sword"
+      ]
+    }
+  },
+  {
+    "frame_index": 48,
+    "source_image": "data\\test_screenshots\\frame_0049.jpg",
+    "observation": {
+      "location": "inside a wooden hut",
+      "time_of_day": "night",
+      "player_status": "5.5 hearts health, 8.5 hunger, holding a wooden sword",
+      "recent_action": "standing inside a wooden structure looking at a door",
+      "notable_enemies_or_objects": "wooden door, wooden sword, various building materials in hotbar",
+      "visible_entities": [
+        "wooden door",
+        "wooden sword"
+      ]
+    }
+  },
+  {
+    "frame_index": 49,
+    "source_image": "data\\test_screenshots\\frame_0050.jpg",
+    "observation": {
+      "location": "inside a dark shelter looking out at a river",
+      "time_of_day": "night",
+      "player_status": "5 hearts health, 8.5 hunger, holding a wooden sword",
+      "recent_action": "standing in a doorway looking out at the water",
+      "notable_enemies_or_objects": "river, acacia forest, wooden sword, hotbar items",
+      "visible_entities": [
+        "river",
+        "acacia trees",
+        "wooden sword"
+      ]
+    }
+  },
+  {
+    "frame_index": 50,
+    "source_image": "data\\test_screenshots\\frame_0051.jpg",
+    "observation": {
+      "location": "inside a wooden shelter looking out at a river",
+      "time_of_day": "night",
+      "player_status": "5 hearts health, full hunger, holding a damaged wooden sword",
+      "recent_action": "standing in an open doorway looking at the water",
+      "notable_enemies_or_objects": "wooden sword, wooden door, river, trees in the distance",
+      "visible_entities": [
+        "wooden sword",
+        "wooden door",
+        "river",
+        "grass",
+        "trees"
+      ]
+    }
+  },
+  {
+    "frame_index": 51,
+    "source_image": "data\\test_screenshots\\frame_0052.jpg",
+    "observation": {
+      "location": "inside a wooden building",
+      "time_of_day": "night",
+      "player_status": "5 hearts health, 8.5 hunger, holding a damaged wooden sword",
+      "recent_action": "looking at a wooden wall inside a shelter while a drowned lurks outside",
+      "notable_enemies_or_objects": "drowned",
+      "visible_entities": [
+        "drowned",
+        "wooden wall",
+        "hotbar items"
+      ]
+    }
+  },
+  {
+    "frame_index": 52,
+    "source_image": "data\\test_screenshots\\frame_0053.jpg",
+    "observation": {
+      "location": "inside a dark wooden structure",
+      "time_of_day": "night",
+      "player_status": "5.5 hearts health, 8.5 hunger, holding a damaged wooden sword",
+      "recent_action": "peering through a gap at a drowned outside",
+      "notable_enemies_or_objects": "a drowned outside, wooden sword in hand",
+      "visible_entities": [
+        "drowned"
+      ]
+    }
+  },
+  {
+    "frame_index": 53,
+    "source_image": "data\\test_screenshots\\frame_0054.jpg",
+    "observation": {
+      "location": "inside a dark wooden hut",
+      "time_of_day": "night",
+      "player_status": "5 hearts health, 8.5 hunger, no armor, holding a damaged wooden sword",
+      "recent_action": "standing inside a shelter looking out at a drowned through an open door",
+      "notable_enemies_or_objects": "a drowned outside, an open acacia door",
+      "visible_entities": [
+        "drowned",
+        "acacia door",
+        "wooden sword"
+      ]
+    }
+  },
+  {
+    "frame_index": 54,
+    "source_image": "data\\test_screenshots\\frame_0055.jpg",
+    "observation": {
+      "location": "inside a wooden house looking out at a lake",
+      "time_of_day": "night",
+      "player_status": "5 hearts health, 8.5 hunger, holding a damaged wooden sword",
+      "recent_action": "standing at an open door looking out at the water",
+      "notable_enemies_or_objects": "open acacia door, wooden sword, lake, savanna trees",
+      "visible_entities": [
+        "acacia door",
+        "wooden sword",
+        "lake",
+        "savanna trees"
+      ]
+    }
+  },
+  {
+    "frame_index": 55,
+    "source_image": "data\\test_screenshots\\frame_0056.jpg",
+    "observation": {
+      "location": "inside a wooden structure",
+      "time_of_day": "night",
+      "player_status": "5.5 hearts health, 8.5 hunger",
+      "recent_action": "standing inside a wooden building looking at a door",
+      "notable_enemies_or_objects": "wooden door, wooden sword",
+      "visible_entities": [
+        "wooden door",
+        "wooden sword"
+      ]
+    }
+  },
+  {
+    "frame_index": 56,
+    "source_image": "data\\test_screenshots\\frame_0057.jpg",
+    "observation": {
+      "location": "inside a wooden hut",
+      "time_of_day": "night",
+      "player_status": "5 hearts health, 8.5 hunger, holding a damaged wooden sword",
+      "recent_action": "standing inside looking out the door",
+      "notable_enemies_or_objects": "wooden door, wooden sword, water outside",
+      "visible_entities": [
+        "wooden door",
+        "wooden sword",
+        "foliage"
+      ]
+    }
+  },
+  {
+    "frame_index": 57,
+    "source_image": "data\\test_screenshots\\frame_0058.jpg",
+    "observation": {
+      "location": "inside a wooden house",
+      "time_of_day": "night",
+      "player_status": "5 hearts health, 8.5 hunger, holding a wooden sword",
+      "recent_action": "looking out through a wooden door",
+      "notable_enemies_or_objects": "wooden door, water, trees outside",
+      "visible_entities": [
+        "wooden door",
+        "water",
+        "trees"
+      ]
+    }
+  },
+  {
+    "frame_index": 58,
+    "source_image": "data\\test_screenshots\\frame_0059.jpg",
+    "observation": {
+      "location": "riverbank near a savanna",
+      "time_of_day": "night",
+      "player_status": "3.5 hearts health, 9.5 hunger, holding a damaged wooden sword",
+      "recent_action": "engaging in close-quarters combat with a zombie",
+      "notable_enemies_or_objects": "Zombie",
+      "visible_entities": [
+        "Zombie"
+      ]
+    }
+  },
+  {
+    "frame_index": 59,
+    "source_image": "data\\test_screenshots\\frame_0060.jpg",
+    "observation": {
+      "location": "inside a wooden hut",
+      "time_of_day": "night",
+      "player_status": "1 heart health, 9.5 hunger, holding a damaged wooden sword",
+      "recent_action": "standing inside a wooden building looking out a door",
+      "notable_enemies_or_objects": "wooden door, wooden sword, water, trees",
+      "visible_entities": [
+        "wooden door",
+        "wooden sword"
+      ]
+    }
+  }
+]
