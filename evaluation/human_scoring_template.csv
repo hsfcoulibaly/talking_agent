@@ -1,4 +1,7 @@
-Image_Set_ID,Rater_ID,Grounding_1_5,Coherence_1_5,Credibility_1_5,Repetition_1_5,Arbitrary_Content_1_5,Emotional_Richness_1_5,Engagement_1_5,Notes
-20260408_182648,,,,,,,,
-20260408_185849,,,,,,,,
-20260408_193459,,,,,,,,
+Image_Set_ID,Game,Duration,Run,Rater_ID,Grounding_1_5,Coherence_1_5,Credibility_1_5,Repetition_1_5,Arbitrary_Content_1_5,Emotional_Richness_1_5,Engagement_1_5,Notes
+20260420_054228,Minecraft,5 min,1,yen,4,4,4,5,5,3,4,
+20260420_064300,Minecraft,5 min,2,chris,5,4,3,5,5,3,4,
+20260420_054237,Minecraft,10 min,1,yen,5,4,4,5,5,3,4,
+20260420_064335,Minecraft,10 min,2,chris,4,4,4,5,5,3,4,
+20260420_054239,Minecraft,15 min,1,yen,5,5,5,5,5,4,4,
+20260420_064352,Minecraft,15 min,2,chris,5,5,5,5,5,4,4,
