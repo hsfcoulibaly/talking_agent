@@ -5,15 +5,24 @@
 \usepackage{booktabs}
 \usepackage{array}
 
-\title{Master Project: Bridging Vision and Language---A Multi-Image AI Pipeline for Context-Aware NPC Storytelling}
-\author{Hassan Coulibaly}
+\title{Bridging Vision and Language---A Multi-Image AI Pipeline for Context-Aware NPC Storytelling}
+\author{
+  Hassan Coulibaly \\
+  Master's Project Report \\
+  Advisor: Dr. Michael Weeks \\
+  Committee Member: Dr. Kubek
+}
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-Modern interactive media frequently struggles with ludonarrative dissonance, where dynamically driven player actions conflict with static, pre-scripted game narratives. While recent advancements in Vision-Language Models (VLMs) have enabled narrative extraction from single, static images, these approaches lack the temporal and sequential context required to interpret complex gameplay. This project introduces a novel, multi-modal machine learning pipeline designed to generate context-aware, dynamic dialogue for Non-Playable Characters (NPCs) based on sequential gameplay screenshots. The proposed architecture separates visual perception from narrative generation to strictly ground the AI in gameplay reality. First, a VLM sequentially processes in-game images to extract key entities, actions, and environmental states, structuring this data into a chronological scene graph. Second, a Large Language Model (LLM) utilizes this structured data---constrained by established interactive storytelling principles derived from Adams~\cite{Adams2014}---to generate dramatically meaningful and credible NPC dialogue. By filtering raw visual data into a strict JSON framework before text generation, the pipeline reduces LLM hallucination and arbitrary content creation. The pipeline was evaluated on six \emph{Minecraft} runs stratified by context length (5, 10, and 15 minutes of gameplay, two runs each). Automated LLM-as-judge scoring across seven Adams-derived dimensions yielded an average Grounding score of 4.50/5, with all other dimensions (Coherence, Credibility, Repetition, Arbitrary Content, Emotional Richness, Engagement) averaging 5.00/5. Human raters largely agreed on Grounding (4.67), Repetition (5.00), and Arbitrary Content (5.00), but rated Emotional Richness (3.33) and Engagement (4.00) notably lower than the automated judge, suggesting that LLM-based judges may overestimate emotional quality relative to human perception. Results also indicate that longer context windows produce higher-quality narratives, with 15-minute runs receiving consistently higher scores than 5-minute runs from both evaluators.
+Modern interactive media frequently struggles with ludonarrative dissonance, where dynamically driven player actions conflict with static, pre-scripted game narratives. While recent advancements in Vision-Language Models (VLMs) have enabled narrative extraction from single, static images, these approaches lack the temporal and sequential context required to interpret complex gameplay. This project introduces a novel, multi-modal machine learning pipeline designed to generate context-aware, dynamic dialogue for Non-Playable Characters (NPCs) based on sequential gameplay screenshots. 
+
+The proposed architecture separates visual perception from narrative generation to strictly ground the AI in gameplay reality. First, a VLM sequentially processes in-game images to extract key entities, actions, and environmental states, structuring this data into a chronological scene graph. Second, a Large Language Model (LLM) utilizes this structured data---constrained by established interactive storytelling principles derived from Adams~\cite{Adams2014}---to generate dramatically meaningful and credible NPC dialogue. By filtering raw visual data into a strict JSON framework before text generation, the pipeline reduces LLM hallucination and arbitrary content creation. 
+
+The pipeline was evaluated on six \emph{Minecraft} runs stratified by context length (5, 10, and 15 minutes of gameplay, two runs each). Automated LLM-as-judge scoring across seven Adams-derived dimensions yielded an average Grounding score of 4.50/5, with all other dimensions (Coherence, Credibility, Repetition, Arbitrary Content, Emotional Richness, Engagement) averaging 5.00/5. Human raters largely agreed on Grounding (4.67), Repetition (5.00), and Arbitrary Content (5.00), but rated Emotional Richness (3.33) and Engagement (4.00) notably lower than the automated judge, suggesting that LLM-based judges may overestimate emotional quality relative to human perception. Results also indicate that longer context windows produce higher-quality narratives, with 15-minute runs receiving consistently higher scores than 5-minute runs from both evaluators.
 \end{abstract}
 
 \section{Introduction}
@@ -28,11 +37,22 @@ A key design goal is evaluation completeness. Prior work on VLM pipelines often 
 
 A prototype system for AI \& Interactive Storytelling in Cultural Heritage was developed for the Dunhuang Murals (specifically the Jataka stories) to move beyond passive viewing~\cite{11227644}. The system includes mural segmentation to explain individual elements, interactive knowledge graphs that trigger cinematic visual effects when clicked, and a creative reconstruction tool where users build their own comic-style narratives. An AI agent (built on the COZE platform and GPT models) acts as an approachable guide, providing real-time explanations and creative suggestions while drawing from a curated knowledge base to prevent ``hallucinations''. User testing showed high scores in attractiveness, novelty, and stimulation, suggesting the system helps users form deeper emotional and intellectual connections with heritage.
 
+% TODO: Include the expanded background text provided by Dr. Weeks here.
+
 \section{System Architecture and Implementation}
 
 \subsection{Design goals}
 
 The design follows three principles aligned with the research abstract: (1)~\textbf{temporal grounding}---images are processed in a user-defined order (e.g., lexicographic filename order as a proxy for capture order); (2)~\textbf{structured mediation}---raw pixels are never passed directly to the dialogue model; only JSON derived from vision passes through; (3)~\textbf{constrained narration}---the final prompt instructs the model to avoid inventing entities, locations, or plot beats absent from the scene graph.
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=0.8\textwidth]{architecture_diagram.png}
+  \caption{Overview of the proposed multi-image AI pipeline.}
+  \label{fig:architecture}
+\end{figure}
+
+Visuals are critical to understanding the data flow through the system. As illustrated in Figure~\ref{fig:architecture}, the system processes gameplay screenshots through distinct extraction, consolidation, and generation stages.
 
 \subsection{Stage 1: Per-frame visual extraction}
 
@@ -49,7 +69,17 @@ Per-frame observations are merged into one JSON \emph{scene graph} suitable for 
 
 \subsection{Stage 3: NPC dialogue generation}
 
-The LLM receives only the consolidated scene graph and a block of \emph{storytelling constraints} aligned with the Adams criteria: ground all claims in the JSON; target 80--120 words; avoid game-UI elements (health bars, menus, HUD text); express genuine emotion; and avoid repeating the same idea. Dialogue generation uses a higher temperature (0.7) for phrasing variety while the input remains fixed structured state.
+The LLM receives only the consolidated scene graph and a block of \emph{storytelling constraints} aligned with the interactive storytelling principles derived by Adams~\cite{Adams2014}: ground all claims in the JSON; target 80--120 words; avoid game-UI elements (health bars, menus, HUD text); express genuine emotion; and avoid repeating the same idea. Dialogue generation uses a higher temperature (0.7) for phrasing variety while the input remains fixed structured state.
+
+Game UI elements are intentionally excluded from the prompt constraints to prevent the narrative from breaking the fourth wall. Figure~\ref{fig:ui_comparison} shows a side-by-side view of a frame with and without UI to make this distinction clear. By ignoring health bars, quick-bars, and crosshairs, the AI is forced to contextualize only the immersive elements of the environment.
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=0.45\textwidth]{with_ui.png}
+  % \includegraphics[width=0.45\textwidth]{without_ui.png}
+  \caption{Side-by-side view of a gameplay frame with UI (left) and without UI (right).}
+  \label{fig:ui_comparison}
+\end{figure}
 
 \section{Experimental Setup}
 
@@ -64,6 +94,15 @@ A 24-minute 21-second \emph{Minecraft} gameplay session was recorded and frames 
 \end{itemize}
 
 For each duration group, the first run executed the full three-stage pipeline (VLM extraction + LLM consolidation + dialogue generation). The second run reused the VLM-extracted frames from the first and ran only the LLM stages, testing output consistency given identical visual input.
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=0.5\textwidth]{minecraft_scene.png} 
+  \caption{An example scene from \textit{Minecraft} used for evaluation.}
+  \label{fig:minecraft_scene}
+\end{figure}
+
+Figure~\ref{fig:minecraft_scene} shows an example scene from \emph{Minecraft} captured during the recording session.
 
 \subsection{Codebase and Data Layout}
 
@@ -161,7 +200,7 @@ Run ID & Duration & Run & G & C & Cr & R & A & ER & En & H \\
 
 \subsection{Human evaluation}
 
-Two raters (Yen and Chris) scored the six Minecraft dialogues independently using the same seven Adams-derived dimensions on a 1--5 scale. Table~\ref{tab:human_scores} reports their ratings alongside the automated judge averages for the same runs.
+Two raters, Yen and Chris, scored the six \emph{Minecraft} dialogues independently using the same seven Adams-derived dimensions on a 1--5 scale. Yen and Chris were explicitly chosen for this stage of the evaluation because both regularly play video games and have extensive firsthand experience with \emph{Minecraft}'s environment and mechanics. This background ensures they are well-calibrated to assess whether the NPC dialogue feels genuinely credible and dramatically resonant within the actual context of a playthrough. Table~\ref{tab:human_scores} reports their ratings alongside the automated judge averages for the same runs.
 
 \begin{table}[h]
 \centering
