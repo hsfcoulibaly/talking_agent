@@ -5,24 +5,31 @@
 \usepackage{booktabs}
 \usepackage{array}
 
-\title{Master Project: Bridging Vision and Language---A Multi-Image AI Pipeline for Context-Aware NPC Storytelling}
-\author{Hassan Coulibaly}
+\title{Bridging Vision and Language---A Multi-Image AI Pipeline for Context-Aware NPC Storytelling}
+\author{
+  Hassan Coulibaly \\
+  Master's Project Report \\
+  Advisor: Dr. Michael Weeks \\
+  Committee Member: Dr. Kubek
+}
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-Modern interactive media frequently struggles with ludonarrative dissonance, where dynamically driven player actions conflict with static, pre-scripted game narratives. While recent advancements in Vision-Language Models (VLMs) have enabled narrative extraction from single, static images, these approaches lack the temporal and sequential context required to interpret complex gameplay. This project introduces a novel, multi-modal machine learning pipeline designed to generate context-aware, dynamic dialogue for Non-Playable Characters (NPCs) based on sequential gameplay screenshots. The proposed architecture separates visual perception from narrative generation to strictly ground the AI in gameplay reality. First, a VLM sequentially processes in-game images to extract key entities, actions, and environmental states, structuring this data into a chronological scene graph. Second, a Large Language Model (LLM) utilises this structured data---constrained by established interactive storytelling principles derived from Adams~\cite{Adams2014}---to generate dramatically meaningful and credible NPC dialogue. By filtering raw visual data into a strict JSON framework before text generation, the pipeline reduces LLM hallucination and arbitrary content creation.
+Modern interactive media frequently struggles with ludonarrative dissonance, where dynamically driven player actions conflict with static, pre-scripted game narratives. While recent advancements in Vision-Language Models (VLMs) have enabled narrative extraction from single, static images, these approaches lack the temporal and sequential context required to interpret complex gameplay. This project introduces a novel, multi-modal machine learning pipeline designed to generate context-aware, dynamic dialogue for Non-Playable Characters (NPCs) based on sequential gameplay screenshots.
 
-The pipeline was evaluated on six \emph{Minecraft} runs stratified by context length (5, 10, and 15 minutes of gameplay, two runs each). Stage~1 VLM extraction was assessed across 1{,}440 binary labels (360 frames $\times$ 4 conditions), yielding F1 scores of 1.00 for action description and player-status extraction, and 0.88 and 0.85 for location detection and entity identification respectively (with false positives concentrated in menu/inventory frames). Stage~3 dialogue quality was evaluated by two independent LLM judges from different model families---Gemini~2.5~Flash and Groq/Llama-3.3-70B---alongside a two-rater human study. Both judges independently identified Grounding as the weakest dimension (Gemini avg 4.67/5; Groq avg 4.17/5) while agreeing that Coherence and Arbitrary Content are perfect (5.00/5.00). Human raters largely concurred on Grounding (4.67) but rated Emotional Richness (3.33) substantially lower than either automated judge, suggesting LLM-based judges overestimate emotional quality relative to human perception.
+The proposed architecture separates visual perception from narrative generation to strictly ground the AI in gameplay reality. First, a VLM sequentially processes in-game images to extract key entities, actions, and environmental states, structuring this data into a chronological scene graph. Second, a Large Language Model (LLM) utilizes this structured data---constrained by established interactive storytelling principles derived from Adams~\cite{Adams2014}---to generate dramatically meaningful and credible NPC dialogue. By filtering raw visual data into a strict JSON framework before text generation, the pipeline reduces LLM hallucination and arbitrary content creation.
+
+The pipeline was evaluated on six \emph{Minecraft} runs stratified by context length (5, 10, and 15 minutes of gameplay, two runs each). Stage~1 VLM extraction was assessed across 1{,}440 binary labels (360 frames $\times$ 4 conditions), yielding F1 scores of 1.00 for action description and player-status extraction, and 0.88 and 0.85 for location detection and entity identification respectively, with false positives concentrated in menu/inventory frames. Stage~3 dialogue quality was evaluated by two independent LLM judges from different model families---Gemini~2.5~Flash and Groq/Llama-3.3-70B---alongside a two-rater human study. Both judges independently identified Grounding as the weakest dimension (Gemini avg 4.67/5; Groq avg 4.17/5) while agreeing that Coherence and Arbitrary Content are perfect (5.00/5.00). Human raters largely concurred on Grounding (4.67) but rated Emotional Richness (3.33) substantially lower than either automated judge, suggesting LLM-based judges overestimate emotional quality relative to human perception. Results also indicate that longer context windows produce higher-quality narratives, with 15-minute runs receiving consistently higher scores than 5-minute runs from all three evaluators.
 \end{abstract}
 
 \section{Introduction}
 
 The landscape of interactive media and video games has evolved from simple, linear progression into expansive, open-world environments where player agency dictates the flow of events. As rendering technologies and physics engines have advanced to create highly realistic simulations, the systems governing in-game storytelling have often lagged behind. In most contemporary open-world games, Non-Playable Character (NPC) dialogue remains heavily pre-scripted. While branching dialogue trees offer the illusion of choice, they are ultimately finite and struggle to account for the emergent, unpredictable actions players take in a physics-driven world.
 
-This master's project implements a prototype \emph{talking agent} pipeline: a batch of time-ordered gameplay screenshots is summarised per frame by a VLM, merged into a single structured \emph{scene graph}, and passed to an LLM that produces short NPC dialogue under explicit grounding constraints. The implementation uses a configurable Google Gemini model (default \texttt{gemini-2.5-flash}; overridable via \texttt{GEMINI\_MODEL} in \texttt{.env} or the \texttt{--model} flag) for both the vision and language calls, with extraction forced to \texttt{application/json} for machine-parseable state.
+This master's project implements a prototype \emph{talking agent} pipeline: a batch of time-ordered gameplay screenshots is summarized per frame by a VLM, merged into a single structured \emph{scene graph}, and passed to an LLM that produces short NPC dialogue under explicit grounding constraints. The implementation uses a configurable Google Gemini model (default \texttt{gemini-2.5-flash}; overridable via \texttt{GEMINI\_MODEL} in \texttt{.env} or the \texttt{--model} flag) for both the vision and language calls, with extraction forced to \texttt{application/json} for machine-parseable state.
 
 A key design goal is evaluation completeness. Prior work on VLM pipelines often evaluates only the perception stage. This project contributes a two-track evaluation: automated F1 for Stage~1, and a dual LLM-as-judge scoring method for Stage~3 whose dimensions are grounded in Adams's theory of game storytelling~\cite{Adams2014}. Adams defines a good game story as an account of dramatically meaningful events that is credible, coherent, without undue repetition, and without arbitrary content, and identifies length, characters, degree of realism, and emotional richness as key quality factors. These criteria directly motivate the seven scoring dimensions used in this project's dialogue evaluation. To study the effect of context length on narrative quality, the evaluation is stratified by gameplay duration: 5, 10, and 15 minutes of \emph{Minecraft} footage at a 5-second frame extraction interval, with two runs at each duration level.
 
@@ -30,11 +37,22 @@ A key design goal is evaluation completeness. Prior work on VLM pipelines often 
 
 A prototype system for AI \& Interactive Storytelling in Cultural Heritage was developed for the Dunhuang Murals (specifically the Jataka stories) to move beyond passive viewing~\cite{11227644}. The system includes mural segmentation to explain individual elements, interactive knowledge graphs that trigger cinematic visual effects when clicked, and a creative reconstruction tool where users build their own comic-style narratives. An AI agent (built on the COZE platform and GPT models) acts as an approachable guide, providing real-time explanations and creative suggestions while drawing from a curated knowledge base to prevent ``hallucinations''. User testing showed high scores in attractiveness, novelty, and stimulation, suggesting the system helps users form deeper emotional and intellectual connections with heritage.
 
+% TODO: Include the expanded background text provided by Dr. Weeks here.
+
 \section{System Architecture and Implementation}
 
 \subsection{Design goals}
 
 The design follows three principles aligned with the research abstract: (1)~\textbf{temporal grounding}---images are processed in a user-defined order (e.g., lexicographic filename order as a proxy for capture order); (2)~\textbf{structured mediation}---raw pixels are never passed directly to the dialogue model; only JSON derived from vision passes through; (3)~\textbf{constrained narration}---the final prompt instructs the model to avoid inventing entities, locations, or plot beats absent from the scene graph.
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=0.8\textwidth]{architecture_diagram.png}
+  \caption{Overview of the proposed multi-image AI pipeline.}
+  \label{fig:architecture}
+\end{figure}
+
+Visuals are critical to understanding the data flow through the system. As illustrated in Figure~\ref{fig:architecture}, the system processes gameplay screenshots through distinct extraction, consolidation, and generation stages.
 
 \subsection{Stage 1: Per-frame visual extraction}
 
@@ -51,7 +69,17 @@ Per-frame observations are merged into one JSON \emph{scene graph} suitable for 
 
 \subsection{Stage 3: NPC dialogue generation}
 
-The LLM receives only the consolidated scene graph and a block of \emph{storytelling constraints} aligned with the Adams criteria: ground all claims in the JSON; target 80--120 words; avoid game-UI elements (health bars, menus, HUD text); express genuine emotion; and avoid repeating the same idea. Dialogue generation uses a higher temperature (0.7) for phrasing variety while the input remains fixed structured state.
+The LLM receives only the consolidated scene graph and a block of \emph{storytelling constraints} aligned with the interactive storytelling principles derived by Adams~\cite{Adams2014}: ground all claims in the JSON; target 80--120 words; avoid game-UI elements (health bars, menus, HUD text); express genuine emotion; and avoid repeating the same idea. Dialogue generation uses a higher temperature (0.7) for phrasing variety while the input remains fixed structured state.
+
+Game UI elements are intentionally excluded from the prompt constraints to prevent the narrative from breaking the fourth wall. Figure~\ref{fig:ui_comparison} shows a side-by-side view of a frame with and without UI to make this distinction clear. By ignoring health bars, quick-bars, and crosshairs, the AI is forced to contextualize only the immersive elements of the environment.
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=0.45\textwidth]{with_ui.png}
+  % \includegraphics[width=0.45\textwidth]{without_ui.png}
+  \caption{Side-by-side view of a gameplay frame with UI (left) and without UI (right).}
+  \label{fig:ui_comparison}
+\end{figure}
 
 \section{Experimental Setup}
 
@@ -67,9 +95,18 @@ A 24-minute 21-second \emph{Minecraft} gameplay session was recorded and frames 
 
 For each duration group, the first run executed the full three-stage pipeline (VLM extraction + LLM consolidation + dialogue generation). The second run reused the VLM-extracted frames from the first and ran only the LLM stages, testing output consistency given identical visual input.
 
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=0.5\textwidth]{minecraft_scene.png}
+  \caption{An example scene from \textit{Minecraft} used for evaluation.}
+  \label{fig:minecraft_scene}
+\end{figure}
+
+Figure~\ref{fig:minecraft_scene} shows an example scene from \emph{Minecraft} captured during the recording session.
+
 \subsection{Codebase and Data Layout}
 
-The repository is organised as follows (paths relative to project root):
+The repository is organized as follows (paths relative to project root):
 
 \begin{verbatim}
 talking_agent/
@@ -167,7 +204,7 @@ Table~\ref{tab:auto_scores} reports Gemini scores for all six Minecraft runs.
 \centering
 \caption{Gemini~2.5~Flash judge scores for all six Minecraft runs (scale: 1--5). G=Grounding, C=Coherence, Cr=Credibility, R=Repetition, A=Arbitrary Content, ER=Emotional Richness, En=Engagement, H=Hallucinations.}
 \label{tab:auto_scores}
-\begin{tabular}{lllccccccc}
+\begin{tabular}{lllcccccccc}
 \toprule
 Run ID & Duration & Run & G & C & Cr & R & A & ER & En & H \\
 \midrule
@@ -220,7 +257,7 @@ Engagement        & 5.00 & 4.50 & 0.50 \\
 
 \noindent\textbf{Key observations.}
 \begin{itemize}
-  \item \textbf{Grounding is the weakest dimension in both judges.} Gemini scores it at 4.67 and Groq/Llama at 4.17 --- the lowest axis on the radar chart for both. This cross-model agreement validates Grounding as a genuine pipeline weakness, not an artefact of any single judge.
+  \item \textbf{Grounding is the weakest dimension in both judges.} Gemini scores it at 4.67 and Groq/Llama at 4.17---the lowest axis on the radar chart for both. This cross-model agreement validates Grounding as a genuine pipeline weakness, not an artefact of any single judge.
   \item \textbf{Perfect agreement on Coherence and Arbitrary Content.} Both judges assign 5.00/5.00 to these dimensions across all runs, providing the strongest reliability signal in the evaluation. These are the most defensible findings.
   \item \textbf{Groq/Llama is consistently more conservative.} Across all dimensions, Llama scores at or below Gemini, with the largest gap on Credibility ($|\Delta|=0.67$). This systematic conservatism is consistent with known differences in how different model families calibrate evaluative leniency.
   \item \textbf{Campfire hallucination.} The word \emph{fire} was flagged as a hallucinated entity in the 5-minute Run~2 (064300). This is a systematic artefact of the story prompt framing (``NPC companion at a campfire''), which causes the model to reference fire when no campfire appears in the Minecraft footage.
@@ -229,11 +266,11 @@ Engagement        & 5.00 & 4.50 & 0.50 \\
 
 \subsection{Human evaluation}
 
-Two raters (Yen and Chris) scored the six Minecraft dialogues independently using the same seven Adams-derived dimensions on a 1--5 scale. Table~\ref{tab:human_scores} reports their ratings alongside the Gemini automated judge averages for the same runs.
+Two raters, Yen and Chris, scored the six \emph{Minecraft} dialogues independently using the same seven Adams-derived dimensions on a 1--5 scale. Yen and Chris were explicitly chosen for this stage of the evaluation because both regularly play video games and have extensive firsthand experience with \emph{Minecraft}'s environment and mechanics. This background ensures they are well-calibrated to assess whether the NPC dialogue feels genuinely credible and dramatically resonant within the actual context of a playthrough. Table~\ref{tab:human_scores} reports their ratings alongside both automated judge averages for the same runs.
 
 \begin{table}[h]
 \centering
-\caption{Human ratings for all six Minecraft runs (scale: 1--5), with Gemini automated judge averages for comparison.}
+\caption{Human ratings for all six Minecraft runs (scale: 1--5), with automated judge averages for comparison.}
 \label{tab:human_scores}
 \begin{tabular}{lllccccccc}
 \toprule
@@ -255,7 +292,7 @@ Run ID & Duration & Rater & G & C & Cr & R & A & ER & En \\
 
 \noindent\textbf{Key observations.}
 \begin{itemize}
-  \item \textbf{Three-way agreement on Repetition and Arbitrary Content.} All three evaluation methods---Gemini, Groq/Llama, and human raters---assign 5.00 (or 4.83 for Groq) to these dimensions, providing the strongest cross-method validation in the study.
+  \item \textbf{Three-way agreement on Repetition and Arbitrary Content.} All three evaluation methods---Gemini, Groq/Llama, and human raters---assign 5.00 (or 4.83 for Groq on Repetition) to these dimensions, providing the strongest cross-method validation in the study.
   \item \textbf{Perfect human--Gemini agreement on Grounding.} Human raters averaged 4.67, matching Gemini exactly. Groq/Llama scores it slightly lower at 4.17, but all three methods agree it is the weakest dimension, confirming this as the most robust finding of the evaluation.
   \item \textbf{Emotional Richness gap.} The largest discrepancy is Emotional Richness: humans averaged 3.33 versus 5.00 for Gemini and 4.50 for Groq/Llama. Even the more conservative Groq judge overestimates emotional quality by 1.17 points relative to human perception. This suggests automated judges recognise emotional vocabulary but cannot assess whether warmth feels genuine to a player.
   \item \textbf{Engagement and Coherence overestimation.} Humans rated Engagement at 4.00 and Coherence at 4.33, versus 5.00 from Gemini and 4.50 from Groq for both. Groq's more conservative scores narrow the gap but do not eliminate it.
