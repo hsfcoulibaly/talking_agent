@@ -142,6 +142,56 @@ JUDGE_BACKENDS = {
     "groq":   _make_groq_client,
 }
 
+# Per-backend inter-request delay (seconds) to respect rate limits.
+# Groq free tier: ~6 000 tokens/min for llama-3.3-70b; slim scene graph
+# keeps each request ~2 000 tokens, so 20 s gives safe headroom.
+INTER_REQUEST_DELAY = {
+    "gemini": 2,
+    "groq":   20,
+}
+
+# ---------------------------------------------------------------------------
+# Scene-graph slim helper
+# ---------------------------------------------------------------------------
+
+def _slim_scene_graph(sg: dict, max_entities: int = 20, max_events: int = 15) -> dict:
+    """
+    Return a compact version of the scene graph containing only the fields
+    the judge actually needs.  Strips frame-index numbers and caps list
+    lengths to keep token usage well within Groq's free-tier rate limit.
+    """
+    slimmed: dict = {}
+
+    if "timeline_summary" in sg:
+        slimmed["timeline_summary"] = sg["timeline_summary"]
+
+    if "environment" in sg:
+        env = sg["environment"]
+        slimmed["environment"] = {
+            "location":    env.get("location", ""),
+            "time_of_day": env.get("time_of_day", ""),
+            # keep at most 6 condition tags
+            "conditions":  (env.get("conditions") or [])[:6],
+        }
+
+    if "entities" in sg:
+        slimmed["entities"] = [
+            {"name": e.get("name_or_description", ""), "type": e.get("type", "")}
+            for e in (sg["entities"] or [])[:max_entities]
+        ]
+
+    if "events" in sg:
+        slimmed["events"] = [
+            {"description": e.get("description", "")}
+            for e in (sg["events"] or [])[:max_events]
+        ]
+
+    if "player_arc" in sg:
+        slimmed["player_arc"] = sg["player_arc"]
+
+    return slimmed
+
+
 # ---------------------------------------------------------------------------
 # Judge prompt
 # ---------------------------------------------------------------------------
@@ -205,6 +255,11 @@ and a one-sentence justification.
 
 Also list any **hallucinated entities** — proper nouns (character names, place names, item names)
 that appear in the dialogue but are NOT present in the scene graph. If none, return an empty list.
+
+**Scoring calibration** — Use the FULL 1–5 scale critically. A score of 5 means genuinely
+exceptional; a score of 3 is the expected baseline for adequate but ordinary output. Do NOT
+default to 5 for every dimension. If the dialogue has any weakness — even a minor one — reflect
+it in the score. Scores of 4 or below should be common for real-world generated text.
 
 ## Response Format
 Respond with ONLY valid JSON, no markdown fences, no extra text:
@@ -272,8 +327,10 @@ def evaluate_run(run_id: str, generate_fn, model_id: str) -> dict:
     scene_graph = json.loads(scene_graph_path.read_text(encoding="utf-8"))
     dialogue    = dialogue_path.read_text(encoding="utf-8").strip()
 
+    # Slim the scene graph to keep token usage within Groq's free-tier limit
+    slim_sg = _slim_scene_graph(scene_graph)
     prompt = JUDGE_PROMPT.format(
-        scene_graph=json.dumps(scene_graph, indent=2),
+        scene_graph=json.dumps(slim_sg, indent=2),
         dialogue=dialogue,
     )
 
@@ -411,8 +468,12 @@ def main() -> None:
         print(f"  Model  : {model_id}")
         print(f"  Runs   : {', '.join(run_ids)}\n")
 
+        delay = INTER_REQUEST_DELAY.get(judge, 5)
         results = []
-        for rid in run_ids:
+        for i, rid in enumerate(run_ids):
+            if i > 0:
+                print(f"  Waiting {delay}s before next request ...")
+                time.sleep(delay)
             try:
                 result = evaluate_run(rid, generate_fn, model_id)
                 results.append(result)
