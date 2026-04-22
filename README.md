@@ -14,6 +14,11 @@ The pipeline asks whether an LLM can produce engaging, grounded NPC dialogue fro
 
 ## Architecture
 
+<<<<<<< HEAD
+1. **Per-frame visual extraction (VLM):** A Gemini model (default `gemini-2.0-flash`; override with `GEMINI_MODEL` in `.env` or `--model`) reads each image and returns strict JSON (`location`, `recent_action`, `visible_entities`, etc.).
+2. **Temporal consolidation:** Either an LLM merges frames into a chronological scene graph (`entities`, `events`, `player_arc`, …) or a deterministic **simple stitch** (`--simple-consolidate`) for cheaper runs.
+3. **Narrative generation (LLM):** The same model role-plays an NPC and speaks only from the scene graph, with rules that limit hallucination.
+=======
 The pipeline runs in three sequential stages:
 
 ```
@@ -39,11 +44,24 @@ Either an LLM merges all frame observations into a chronological scene graph wit
 The same model role-plays an NPC companion speaking at a campfire. The prompt constrains the output to 80–120 words, forbids inventing characters/locations/quests not in the scene graph, prohibits mention of game UI elements (health bars, menus, HUD text), requires emotional expression, and disallows repetition of ideas.
 
 ---
+>>>>>>> 9b2823caeea4531b83eb1eaacc4d6e8cebe1f7ba
 
 ## Repository layout
 
 ```text
 talking_agent/
+<<<<<<< HEAD
+├── data/
+│   ├── test_screenshots/   # Preferred input folder (screenshots for batch runs)
+│   ├── extracted_state/    # Written: *_frames.json, *_scene_graph.json
+│   ├── generated_stories/   # Written: *_npc_dialogue.txt
+│   └── analysis/figures/   # Written by src/eda_visualize.py (PNG exports)
+├── test_images/            # Legacy sample screenshots (used if test_screenshots is empty)
+├── evaluation/
+│   ├── ground_truth_labels.csv   # Template + sample rows for F1 evaluation
+│   └── human_scoring_template.csv
+=======
+>>>>>>> 9b2823caeea4531b83eb1eaacc4d6e8cebe1f7ba
 ├── src/
 │   ├── main_pipeline.py         # Full 3-stage pipeline
 │   ├── evaluator.py             # Stage 1 — F1 scoring (VLM extraction)
@@ -95,6 +113,18 @@ python src/main_pipeline.py --images-dir path/to/screenshots
 
 # Skip the LLM scene-graph merge (cheaper — one VLM call per frame + one dialogue call)
 python src/main_pipeline.py --simple-consolidate
+<<<<<<< HEAD
+python src/main_pipeline.py --model gemini-3-flash-preview --max-frames 15 --max-image-side 1024
+```
+
+`--simple-consolidate` skips the LLM scene-graph merge (one VLM call per frame plus one dialogue LLM call). Use `--max-frames`, `--sleep`, and `--max-image-side` to limit cost and ease API rate limits on large folders.
+
+If VLM finished but merge/dialogue failed, resume without redoing vision calls:
+
+```bash
+python src/main_pipeline.py --from-frames-json data/extracted_state/<run_id>_frames.json --model gemini-3-flash-preview
+```
+=======
 
 # Override model and limit cost on large folders
 python src/main_pipeline.py --model gemini-3-flash-preview --max-frames 15 --max-image-side 1024
@@ -104,9 +134,13 @@ python src/main_pipeline.py --from-frames-json data/extracted_state/<run_id>_fra
 ```
 
 Use `--max-frames`, `--sleep`, and `--max-image-side` to manage API rate limits and costs.
+>>>>>>> 9b2823caeea4531b83eb1eaacc4d6e8cebe1f7ba
 
 ---
 
+<<<<<<< HEAD
+`evaluation/ground_truth_labels.csv` lists one row per **frame** (`Image_ID`, e.g. `frame_0001.png`) and **condition** (binary checks such as `location_detectable`, `action_described`). Replace the sample **Ground_Truth** and **VLM_Prediction** (0/1) with labels from your rubric and pipeline outputs, then:
+=======
 ## Evaluation
 
 The project has two complementary evaluation tracks.
@@ -114,11 +148,22 @@ The project has two complementary evaluation tracks.
 ### Stage 1 — VLM extraction accuracy (F1)
 
 `evaluation/ground_truth_labels.csv` lists one row per frame and condition (binary checks such as `location_detectable`, `action_described`). Fill in the `Ground_Truth` and `VLM_Prediction` columns (0/1) from your rubric and pipeline outputs, then run:
+>>>>>>> 9b2823caeea4531b83eb1eaacc4d6e8cebe1f7ba
 
 ```bash
 python src/evaluator.py
 ```
 
+<<<<<<< HEAD
+Human study ratings can be recorded from `evaluation/human_scoring_template.csv`.
+
+## EDA / figures from saved runs
+
+After you have `data/extracted_state/*_frames.json` (and matching `*_scene_graph.json`), generate plots and summary stats:
+
+```bash
+pip install -r requirements.txt
+=======
 Outputs Precision, Recall, and F1 per condition plus a macro-average F1.
 
 > **Note:** This measures Stage 1 only — whether the VLM correctly reads the screenshots. It does not evaluate the quality or accuracy of the generated dialogue.
@@ -167,8 +212,13 @@ Results are saved to `evaluation/dialogue_scores.csv` and `evaluation/dialogue_s
 After pipeline runs have produced `data/extracted_state/*_frames.json` and matching `*_scene_graph.json`:
 
 ```bash
+>>>>>>> 9b2823caeea4531b83eb1eaacc4d6e8cebe1f7ba
 python src/eda_visualize.py
 python src/eda_visualize.py --run-id 20260408_182648
 ```
 
+<<<<<<< HEAD
+PNGs are written to `data/analysis/figures/` (run overview, per-frame metrics, entity types/spans, event timeline, evaluation bars when the CSV is filled).
+=======
 PNGs are written to `data/analysis/figures/`: run overview, per-frame metrics, entity types and lifespans, event timeline, and evaluation bar charts (when the CSV is filled).
+>>>>>>> 9b2823caeea4531b83eb1eaacc4d6e8cebe1f7ba
