@@ -129,77 +129,24 @@ talking_agent/
   requirements.txt
 \end{verbatim}
 
-The following subsections walk through the three core source files with annotated excerpts.
+Two code excerpts are highlighted here because they directly embody the project's novel contributions; all other implementation details are covered in the Architecture section above.
 
-% ---------------------------------------------------------------
-\subsubsection*{\texttt{main\_pipeline.py} --- The 3-stage pipeline}
-
-\texttt{main\_pipeline.py} is the entry point for the entire system. It is structured as four cooperating functions that map directly onto the three pipeline stages, plus a retry wrapper that handles API rate limits.
+The first excerpt (Figure~\ref{fig:code_constraints}) shows the storytelling constraints block inside \texttt{generate\_npc\_story()} in \texttt{main\_pipeline.py}. This is where Adams's theoretical criteria are operationalized as executable instructions: every rule in the prompt maps to one of the seven evaluation dimensions, closing the loop between the theoretical framework and the generated output.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=\textwidth]{pipeline_stage1.png}
-  \caption{\texttt{extract\_game\_state()} --- Stage~1. The function opens one screenshot, attaches a structured prompt, and calls the VLM with \texttt{response\_mime\_type="application/json"} at temperature~0.2 to force factual, machine-parseable output. The six required fields (\texttt{location}, \texttt{time\_of\_day}, \texttt{player\_status}, \texttt{recent\_action}, \texttt{notable\_enemies\_or\_objects}, \texttt{visible\_entities}) are defined in the prompt.}
-  \label{fig:code_stage1}
+  \includegraphics[width=\textwidth]{pipeline_constraints.png}
+  \caption{The \texttt{constraints} block in \texttt{generate\_npc\_story()} (\texttt{main\_pipeline.py}). Each constraint corresponds directly to one of the seven Adams-derived scoring dimensions: grounding every claim in the JSON (Grounding), targeting 80--120 words (Length/Engagement), avoiding HUD elements (Arbitrary Content), expressing genuine emotion (Emotional Richness), and avoiding repeated ideas (Repetition). The scene graph is the sole source of truth passed to the model; no screenshots reach this stage.}
+  \label{fig:code_constraints}
 \end{figure}
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\textwidth]{pipeline_stage2.png}
-  \caption{\texttt{consolidate\_scene\_graph\_llm()} --- Stage~2. All per-frame JSON observations are bundled into a single prompt and sent to the LLM, which must return one unified JSON scene graph (not an array). A \texttt{\_coerce\_consolidated\_scene\_graph()} helper corrects the occasional case where the model returns a one-element array instead of a plain object. If JSON parsing fails entirely, the code falls back to the deterministic \texttt{consolidate\_scene\_graph\_simple()} function.}
-  \label{fig:code_stage2}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\textwidth]{pipeline_stage3.png}
-  \caption{\texttt{generate\_npc\_story()} --- Stage~3. The scene graph is the sole input to the LLM dialogue call; no images are passed at this stage. The \texttt{constraints} block encodes the Adams storytelling criteria directly into the prompt: ground every claim, target 80--120 words, avoid HUD elements, express genuine emotion. Temperature is raised to~0.7 to allow natural phrasing variety while keeping the factual content fixed.}
-  \label{fig:code_stage3}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\textwidth]{pipeline_retry.png}
-  \caption{\texttt{\_generate\_content()} --- rate-limit retry wrapper. Every VLM and LLM call in the pipeline passes through this function. It catches HTTP~429 / \texttt{RESOURCE\_EXHAUSTED} errors and retries with exponential back-off (base delay~2~s, capped at~90~s, up to 6 attempts). If the free-tier daily quota is fully exhausted (API reports \texttt{limit: 0}), the function raises immediately with a human-readable message rather than retrying indefinitely.}
-  \label{fig:code_retry}
-\end{figure}
-
-% ---------------------------------------------------------------
-\subsubsection*{\texttt{evaluator.py} --- Stage~1 F1 scoring}
-
-\texttt{evaluator.py} reads \texttt{evaluation/ground\_truth\_labels.csv} and computes precision, recall, F1, and accuracy per condition by comparing the \texttt{Ground\_Truth} and \texttt{VLM\_Prediction} columns.
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\textwidth]{evaluator_main.png}
-  \caption{\texttt{evaluator.py} --- main evaluation loop. The script groups rows by \texttt{Condition\_Tested}, tallies TP/FP/TN/FN counts, and prints a per-condition metrics table. The \texttt{Frame\_Type} column (menu vs.\ gameplay) is used to explain the source of false positives: menu frames always trigger VLM\_Prediction~=~1 for \texttt{location\_detectable} and \texttt{entities\_identified} even though Ground\_Truth~=~0, because the game world is hidden behind the UI overlay.}
-  \label{fig:code_evaluator}
-\end{figure}
-
-% ---------------------------------------------------------------
-\subsubsection*{\texttt{dialogue\_evaluator.py} --- Stage~3 dual LLM-as-judge}
-
-\texttt{dialogue\_evaluator.py} scores generated dialogue against its source scene graph. It is designed around a \emph{strategy pattern}: two judge backends (Gemini and Groq/Llama) share the same evaluation logic but are swapped at runtime via the \texttt{--judge} flag.
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\textwidth]{evaluator_backends.png}
-  \caption{Judge backend factory functions. \texttt{\_make\_gemini\_client()} uses the \texttt{google-genai} SDK; \texttt{\_make\_groq\_client()} uses the \texttt{openai} package pointed at \texttt{api.groq.com/openai/v1}, since Groq exposes an OpenAI-compatible endpoint. Both return the same \texttt{(generate\_fn, model\_id)} tuple so the rest of the evaluation code is backend-agnostic. Temperature is fixed at~0.0 for both judges to ensure deterministic, reproducible scores.}
-  \label{fig:code_backends}
-\end{figure}
+The second excerpt (Figure~\ref{fig:code_prompt}) shows the \texttt{JUDGE\_PROMPT} template in \texttt{dialogue\_evaluator.py}. This prompt is the methodological core of the Stage~3 evaluation: it cites Adams by name, defines all seven dimensions with explicit 1/3/5 anchor descriptions, and ends with a calibration instruction that prevents the judge from defaulting to~5 for every dimension.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\textwidth]{evaluator_prompt.png}
-  \caption{The \texttt{JUDGE\_PROMPT} template. The prompt cites Adams~\cite{Adams2014} by name and defines all seven scoring dimensions with explicit 1/3/5 anchor descriptions. A calibration instruction at the end tells the judge to use the full 1--5 scale critically and not to default to 5 for every dimension. The scene graph and dialogue are inserted via \texttt{\{scene\_graph\}} and \texttt{\{dialogue\}} placeholders; the response format is constrained to plain JSON with no markdown fences.}
+  \caption{The \texttt{JUDGE\_PROMPT} template in \texttt{dialogue\_evaluator.py}. The prompt references Adams~\cite{Adams2014} directly, defines each dimension with 1/3/5 anchor scores, and instructs the judge to use the full scale critically. The same prompt is sent to both the Gemini and Groq/Llama backends, ensuring a fair comparison. The response format is constrained to plain JSON with no markdown fences for reliable parsing.}
   \label{fig:code_prompt}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\textwidth]{evaluator_slim.png}
-  \caption{\texttt{\_slim\_scene\_graph()} --- token budget helper. The 15-minute run scene graph exceeds 14{,}000 tokens in its full form, which surpasses Groq's free-tier limit of 6{,}000 tokens per minute. This function extracts only the narrative-relevant fields (\texttt{timeline\_summary}, \texttt{environment}, entity names and types, event descriptions, and \texttt{player\_arc}), strips frame-index numbers, and caps the entity list at~20 and the event list at~15, reducing the 15-minute graph to approximately 3{,}600 tokens.}
-  \label{fig:code_slim}
 \end{figure}
 
 \section{Evaluation}
