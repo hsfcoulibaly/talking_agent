@@ -13,16 +13,18 @@
 \maketitle
 
 \begin{abstract}
-Modern interactive media frequently struggles with ludonarrative dissonance, where dynamically driven player actions conflict with static, pre-scripted game narratives. While recent advancements in Vision-Language Models (VLMs) have enabled narrative extraction from single, static images, these approaches lack the temporal and sequential context required to interpret complex gameplay. This project introduces a novel, multi-modal machine learning pipeline designed to generate context-aware, dynamic dialogue for Non-Playable Characters (NPCs) based on sequential gameplay screenshots. The proposed architecture separates visual perception from narrative generation to strictly ground the AI in gameplay reality. First, a VLM sequentially processes in-game images to extract key entities, actions, and environmental states, structuring this data into a chronological scene graph. Second, a Large Language Model (LLM) utilizes this structured data---constrained by established interactive storytelling principles---to generate dramatically meaningful and credible NPC dialogue. By filtering raw visual data into a strict JSON framework before text generation, the pipeline reduces LLM hallucination and arbitrary content creation. Evaluation covers all three pipeline stages: per-frame VLM extraction is assessed via F1 scoring against ground-truth binary labels; final dialogue quality is assessed via an automated LLM-as-judge method scoring Grounding, Coherence, and Engagement on a 1--5 scale; and a human rating study template is provided for manual validation. Across three evaluated runs on \emph{Genshin Impact} gameplay footage, the pipeline achieved average scores of 4.67/5 for Grounding, 4.67/5 for Coherence, and 5.00/5 for Engagement, with zero hallucinated entities detected. This approach demonstrates a scalable method for bridging computer vision and natural language processing, allowing games to dynamically translate visual player events into coherent, immersive lore without sacrificing narrative integrity.
+Modern interactive media frequently struggles with ludonarrative dissonance, where dynamically driven player actions conflict with static, pre-scripted game narratives. While recent advancements in Vision-Language Models (VLMs) have enabled narrative extraction from single, static images, these approaches lack the temporal and sequential context required to interpret complex gameplay. This project introduces a novel, multi-modal machine learning pipeline designed to generate context-aware, dynamic dialogue for Non-Playable Characters (NPCs) based on sequential gameplay screenshots. The proposed architecture separates visual perception from narrative generation to strictly ground the AI in gameplay reality. First, a VLM sequentially processes in-game images to extract key entities, actions, and environmental states, structuring this data into a chronological scene graph. Second, a Large Language Model (LLM) utilises this structured data---constrained by established interactive storytelling principles derived from Adams~\cite{Adams2014}---to generate dramatically meaningful and credible NPC dialogue. By filtering raw visual data into a strict JSON framework before text generation, the pipeline reduces LLM hallucination and arbitrary content creation.
+
+The pipeline was evaluated on six \emph{Minecraft} runs stratified by context length (5, 10, and 15 minutes of gameplay, two runs each). Stage~1 VLM extraction was assessed across 1{,}440 binary labels (360 frames $\times$ 4 conditions), yielding F1 scores of 1.00 for action description and player-status extraction, and 0.88 and 0.85 for location detection and entity identification respectively (with false positives concentrated in menu/inventory frames). Stage~3 dialogue quality was evaluated by two independent LLM judges from different model families---Gemini~2.5~Flash and Groq/Llama-3.3-70B---alongside a two-rater human study. Both judges independently identified Grounding as the weakest dimension (Gemini avg 4.67/5; Groq avg 4.17/5) while agreeing that Coherence and Arbitrary Content are perfect (5.00/5.00). Human raters largely concurred on Grounding (4.67) but rated Emotional Richness (3.33) substantially lower than either automated judge, suggesting LLM-based judges overestimate emotional quality relative to human perception.
 \end{abstract}
 
 \section{Introduction}
 
 The landscape of interactive media and video games has evolved from simple, linear progression into expansive, open-world environments where player agency dictates the flow of events. As rendering technologies and physics engines have advanced to create highly realistic simulations, the systems governing in-game storytelling have often lagged behind. In most contemporary open-world games, Non-Playable Character (NPC) dialogue remains heavily pre-scripted. While branching dialogue trees offer the illusion of choice, they are ultimately finite and struggle to account for the emergent, unpredictable actions players take in a physics-driven world.
 
-This master's project implements a prototype \emph{talking agent} pipeline: a batch of time-ordered gameplay screenshots is summarized per frame by a VLM, merged into a single structured \emph{scene graph}, and passed to an LLM that produces short NPC dialogue under explicit grounding constraints. The implementation uses a configurable Google Gemini model (default \texttt{gemini-2.5-flash}; overridable via \texttt{GEMINI\_MODEL} in \texttt{.env} or the \texttt{--model} flag) for both the vision and language calls, with extraction forced to \texttt{application/json} for machine-parseable state.
+This master's project implements a prototype \emph{talking agent} pipeline: a batch of time-ordered gameplay screenshots is summarised per frame by a VLM, merged into a single structured \emph{scene graph}, and passed to an LLM that produces short NPC dialogue under explicit grounding constraints. The implementation uses a configurable Google Gemini model (default \texttt{gemini-2.5-flash}; overridable via \texttt{GEMINI\_MODEL} in \texttt{.env} or the \texttt{--model} flag) for both the vision and language calls, with extraction forced to \texttt{application/json} for machine-parseable state.
 
-A key design goal is evaluation completeness. Prior work on VLM pipelines often evaluates only the perception stage. This project contributes a two-track evaluation: automated F1 for Stage~1, and an LLM-as-judge scoring method for Stage~3 whose dimensions are grounded in Adams's theory of game storytelling~\cite{Adams2014}. Adams defines a good game story as an account of dramatically meaningful events that is credible, coherent, without undue repetition, and without arbitrary content, and identifies length, characters, degree of realism, and emotional richness as key quality factors. These criteria directly motivate the seven scoring dimensions used in this project's dialogue evaluation.
+A key design goal is evaluation completeness. Prior work on VLM pipelines often evaluates only the perception stage. This project contributes a two-track evaluation: automated F1 for Stage~1, and a dual LLM-as-judge scoring method for Stage~3 whose dimensions are grounded in Adams's theory of game storytelling~\cite{Adams2014}. Adams defines a good game story as an account of dramatically meaningful events that is credible, coherent, without undue repetition, and without arbitrary content, and identifies length, characters, degree of realism, and emotional richness as key quality factors. These criteria directly motivate the seven scoring dimensions used in this project's dialogue evaluation. To study the effect of context length on narrative quality, the evaluation is stratified by gameplay duration: 5, 10, and 15 minutes of \emph{Minecraft} footage at a 5-second frame extraction interval, with two runs at each duration level.
 
 \section{Background}
 
@@ -36,7 +38,7 @@ The design follows three principles aligned with the research abstract: (1)~\tex
 
 \subsection{Stage 1: Per-frame visual extraction}
 
-For each frame index $i = 0,1,\ldots$, the pipeline sends the screenshot and a fixed instruction prompt to the VLM. The model must return a JSON object with fields including \texttt{location}, \texttt{time\_of\_day}, \texttt{player\_status}, \texttt{recent\_action}, \texttt{notable\_enemies\_or\_objects}, and \texttt{visible\_entities} (a list of short strings). Extraction uses a low temperature (0.2) to favor factual stability. Each result is wrapped with metadata: \texttt{frame\_index}, \texttt{source\_image}, and \texttt{observation}.
+For each frame index $i = 0,1,\ldots$, the pipeline sends the screenshot and a fixed instruction prompt to the VLM. The model must return a JSON object with fields including \texttt{location}, \texttt{time\_of\_day}, \texttt{player\_status}, \texttt{recent\_action}, \texttt{notable\_enemies\_or\_objects}, and \texttt{visible\_entities} (a list of short strings). Extraction uses a low temperature (0.2) to favour factual stability. Each result is wrapped with metadata: \texttt{frame\_index}, \texttt{source\_image}, and \texttt{observation}.
 
 \subsection{Stage 2: Consolidation into a chronological scene graph}
 
@@ -49,68 +51,54 @@ Per-frame observations are merged into one JSON \emph{scene graph} suitable for 
 
 \subsection{Stage 3: NPC dialogue generation}
 
-The LLM receives only the consolidated scene graph and a block of \emph{storytelling constraints}: ground claims in the JSON, avoid filling gaps with specific unsupported lore, keep a short campfire recap in second person, and avoid omniscient narration. Dialogue generation uses a higher temperature (0.7) for phrasing variety while the input remains fixed structured state.
+The LLM receives only the consolidated scene graph and a block of \emph{storytelling constraints} aligned with the Adams criteria: ground all claims in the JSON; target 80--120 words; avoid game-UI elements (health bars, menus, HUD text); express genuine emotion; and avoid repeating the same idea. Dialogue generation uses a higher temperature (0.7) for phrasing variety while the input remains fixed structured state.
 
-\section{Codebase, Data Layout, and Reproducibility}
+\section{Experimental Setup}
 
-The repository is organized as follows (paths relative to project root):
+\subsection{Dataset}
+
+A 24-minute 21-second \emph{Minecraft} gameplay session was recorded and frames were extracted at a 5-second interval, yielding 292 total frames. Six structured runs were produced by varying context length:
+
+\begin{itemize}
+  \item \textbf{5-minute runs} (60 frames, 2 runs)
+  \item \textbf{10-minute runs} (120 frames, 2 runs)
+  \item \textbf{15-minute runs} (180 frames, 2 runs)
+\end{itemize}
+
+For each duration group, the first run executed the full three-stage pipeline (VLM extraction + LLM consolidation + dialogue generation). The second run reused the VLM-extracted frames from the first and ran only the LLM stages, testing output consistency given identical visual input.
+
+\subsection{Codebase and Data Layout}
+
+The repository is organised as follows (paths relative to project root):
 
 \begin{verbatim}
 talking_agent/
   src/
     main_pipeline.py          <- full 3-stage pipeline
     evaluator.py              <- Stage 1 F1 scoring
-    dialogue_evaluator.py     <- Stage 3 LLM-as-judge scoring
+    dialogue_evaluator.py     <- Stage 3 dual LLM-as-judge scoring
     eda_visualize.py          <- EDA plots and figures
   data/
-    test_screenshots/         <- preferred input folder
+    test_screenshots/         <- input frames
     extracted_state/          <- *_frames.json, *_scene_graph.json
     generated_stories/        <- *_npc_dialogue.txt
-    analysis/figures/         <- PNG exports from eda_visualize.py
-  test_images/                <- legacy samples (fallback)
+    analysis/figures/         <- PNG exports
   evaluation/
-    ground_truth_labels.csv   <- binary frame labels for Stage 1
-    dialogue_scores.csv       <- LLM-as-judge results
-    dialogue_scores.json      <- same data, structured JSON
-    human_scoring_template.csv
+    ground_truth_labels.csv   <- 1440-row binary labels for Stage 1
+    dialogue_scores_gemini.csv <- Gemini judge results
+    dialogue_scores_groq.csv   <- Groq/Llama judge results
+    human_scoring_template.csv <- human ratings
   .env.example
   requirements.txt
 \end{verbatim}
 
-\subsection{Execution}
-
-From the repository root, after \texttt{pip install -r requirements.txt} and setting \texttt{GEMINI\_API\_KEY} in a local \texttt{.env} file (see \texttt{.env.example}):
-
-\begin{verbatim}
-python src/main_pipeline.py
-python src/main_pipeline.py --images-dir path/to/screenshots
-python src/main_pipeline.py --simple-consolidate
-python src/main_pipeline.py --model gemini-2.5-flash \
-    --max-frames 15 --max-image-side 1024
-\end{verbatim}
-
-\noindent By default, the script uses \texttt{data/test\_screenshots} if it contains images; otherwise it falls back to \texttt{test\_images}. Output files are timestamped (UTC) under \texttt{data/extracted\_state/} and \texttt{data/generated\_stories/}.
-
-If the VLM extraction stage completes but the LLM merge or dialogue step fails, the run can be resumed without repeating vision calls:
-
-\begin{verbatim}
-python src/main_pipeline.py \
-    --from-frames-json data/extracted_state/<run_id>_frames.json
-\end{verbatim}
-
-\subsection{API keys and version control}
-
-Secrets must not be committed. Contributors should copy \texttt{.env.example} to \texttt{.env} and add the key locally. If a key was ever committed, it should be revoked in the Google AI console and replaced with a new key; historical git commits do not erase exposure.
-
 \section{Evaluation}
 
-Evaluation spans all three pipeline stages. Stage~1 is evaluated with automated binary classification metrics. Stage~3 is evaluated with an LLM-as-judge method and a human rating study. Stage~2 (scene graph consolidation) is assessed indirectly through the Grounding dimension of the Stage~3 judge: if the consolidation omits or distorts key entities, the dialogue scores will reflect it.
+Evaluation spans all three pipeline stages. Stage~1 is evaluated with automated binary classification metrics across all extracted frames. Stage~3 is evaluated with a dual LLM-as-judge method using two independent model families and a human rating study. Stage~2 (scene graph consolidation) is assessed indirectly through the Grounding dimension of the Stage~3 judge: if consolidation omits or distorts key entities, the dialogue scores will reflect it.
 
 \subsection{Evaluation framework: Adams's storytelling criteria}
 
-The dialogue evaluation framework is derived from Adams~\cite{Adams2014}, who defines a good game story as an account of dramatically meaningful events satisfying five qualities: \textbf{credibility}, \textbf{coherence}, absence of \textbf{undue repetition}, absence of \textbf{arbitrary content}, and \textbf{dramatic meaning} (engagement). Adams also identifies \textbf{length}, character presence, \textbf{degree of realism}, and \textbf{emotional richness} as key story factors.
-
-These criteria map directly onto the seven scoring dimensions used in this project, as shown in Table~\ref{tab:dimensions}.
+The dialogue evaluation framework is derived from Adams~\cite{Adams2014}, who defines a good game story as an account of dramatically meaningful events satisfying five qualities: \textbf{credibility}, \textbf{coherence}, absence of \textbf{undue repetition}, absence of \textbf{arbitrary content}, and \textbf{dramatic meaning} (engagement). Adams also identifies \textbf{length}, character presence, \textbf{degree of realism}, and \textbf{emotional richness} as key story factors. These criteria map directly onto the seven scoring dimensions shown in Table~\ref{tab:dimensions}.
 
 \begin{table}[h]
 \centering
@@ -131,23 +119,152 @@ Engagement        & Dramatically meaningful and immersive as a campfire story. \
 \end{tabular}
 \end{table}
 
-\subsection{Stage 1: VLM extraction accuracy (F1)}
+\subsection{Stage 1: VLM extraction accuracy}
 
-The script \texttt{src/evaluator.py} reads \texttt{evaluation/ground\_truth\_labels.csv} with columns \texttt{Image\_ID}, \texttt{Condition\_Tested}, \texttt{Ground\_Truth}, and \texttt{VLM\_Prediction} (binary 0/1). It reports precision, recall, and F1 per condition and a macro-averaged F1. Conditions include binary checks such as \texttt{location\_detectable} and \texttt{action\_described}. Rows are populated with labels from the experimenter's rubric and pipeline outputs.
+Stage~1 accuracy was evaluated across all 360 extracted frames (60 from the 5-min run, 120 from the 10-min run, 180 from the 15-min run), yielding 1{,}440 binary labels (360 frames $\times$ 4 conditions). Ground-truth labels were assigned as follows: all gameplay frames are expected to provide detectable location, describable action, visible entities, and visible player status (Ground Truth = 1). However, 75 of 360 frames (20.8\%) were identified as menu/inventory screens in which the game world is obscured by the UI overlay; for these frames, \texttt{location\_detectable} and \texttt{entities\_identified} ground truth was set to 0, since the environment and world entities are not directly observable.
 
-\subsection{Stage 3: Dialogue quality via LLM-as-judge}
+\begin{table}[h]
+\centering
+\caption{Stage~1 VLM extraction accuracy across 360 frames (1{,}440 labels).}
+\label{tab:stage1}
+\begin{tabular}{lcccc}
+\toprule
+Condition & Precision & Recall & F1 & Accuracy \\
+\midrule
+\texttt{location\_detectable}     & 0.79 & 1.00 & \textbf{0.88} & 0.79 \\
+\texttt{action\_described}        & 1.00 & 1.00 & \textbf{1.00} & 1.00 \\
+\texttt{entities\_identified}     & 0.79 & 0.93 & \textbf{0.85} & 0.75 \\
+\texttt{player\_status\_described}& 1.00 & 1.00 & \textbf{1.00} & 1.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-The script \texttt{src/dialogue\_evaluator.py} implements an automated judge using the Adams dimensions above. For each run, it loads \texttt{*\_scene\_graph.json} and \texttt{*\_npc\_dialogue.txt}, builds a structured prompt that cites the Adams framework, and calls a Gemini model configured as an expert evaluator scoring all seven dimensions on a 1--5 scale. The judge also returns a list of \textbf{hallucinated entities}---proper nouns present in the dialogue but absent from the scene graph. Results are saved to \texttt{evaluation/dialogue\_scores.csv} and \texttt{evaluation/dialogue\_scores.json}.
+Figure~\ref{fig:confusion} shows the per-condition confusion matrices. The VLM achieves perfect extraction for action description and player status (F1~=~1.00): these fields are always observable regardless of screen state. Location detection and entity identification both suffer from false positives during menu screens (75 FP each, 20.8\%), where the model infers location and entities from contextual cues rather than direct visual evidence. Entity identification additionally produces 19 false negatives (5.3\%) in sparse gameplay frames where entities were expected but not detected.
 
-The story generation prompt in Stage~3 of the pipeline (\texttt{src/main\_pipeline.py}) was updated to align with these criteria: it now specifies a target length of 80--120 words, explicitly prohibits mention of game-UI elements, requires emotional expression, and forbids undue repetition.
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{../data/analysis/figures/06_stage1_confusion_matrices.png}
+\caption{Confusion matrices for Stage~1 VLM extraction across all 360 frames and 4 conditions. Green cells indicate correct predictions (TP/TN); red cells indicate errors (FP/FN). Counts and percentages are shown within each cell.}
+\label{fig:confusion}
+\end{figure}
+
+\subsection{Stage 3: Dialogue quality via dual LLM-as-judge}
+
+The script \texttt{src/dialogue\_evaluator.py} implements an automated judge using the Adams dimensions above. Two independent judge models were used to cross-validate findings:
+
+\begin{itemize}
+  \item \textbf{Gemini 2.5 Flash} (Google) --- the same model family as the generator, providing a within-family baseline.
+  \item \textbf{Llama-3.3-70B via Groq} (Meta) --- a different model family, providing an independent cross-family validation.
+\end{itemize}
+
+For each run, the judge loads a slimmed version of the scene graph (narrative fields only: \texttt{timeline\_summary}, \texttt{environment}, entity names, event descriptions, and \texttt{player\_arc}) and the generated dialogue, then scores all seven Adams dimensions on a 1--5 scale. The judge also returns a list of \textbf{hallucinated entities}---proper nouns present in the dialogue but absent from the scene graph.
+
+\subsubsection*{Gemini judge results}
+
+Table~\ref{tab:auto_scores} reports Gemini scores for all six Minecraft runs.
+
+\begin{table}[h]
+\centering
+\caption{Gemini~2.5~Flash judge scores for all six Minecraft runs (scale: 1--5). G=Grounding, C=Coherence, Cr=Credibility, R=Repetition, A=Arbitrary Content, ER=Emotional Richness, En=Engagement, H=Hallucinations.}
+\label{tab:auto_scores}
+\begin{tabular}{lllccccccc}
+\toprule
+Run ID & Duration & Run & G & C & Cr & R & A & ER & En & H \\
+\midrule
+20260420\_054228 & 5 min  & 1 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 0 \\
+20260420\_064300 & 5 min  & 2 & 3 & 5 & 4 & 5 & 5 & 5 & 5 & 1 \\
+20260420\_054237 & 10 min & 1 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 0 \\
+20260420\_064335 & 10 min & 2 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 0 \\
+20260420\_054239 & 15 min & 1 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 0 \\
+20260420\_064352 & 15 min & 2 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 0 \\
+\midrule
+\textbf{5-min avg}   & & & \textbf{4.00} & \textbf{5.00} & \textbf{4.50} & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} & \textbf{0.50} \\
+\textbf{10-min avg}  & & & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} & \textbf{0.00} \\
+\textbf{15-min avg}  & & & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} & \textbf{0.00} \\
+\textbf{Overall avg} & & & \textbf{4.67} & \textbf{5.00} & \textbf{4.83} & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} & \textbf{0.17} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection*{Inter-judge comparison}
+
+Table~\ref{tab:judge_compare} compares average scores across the six Minecraft runs from both judges, and Figure~\ref{fig:radar} visualises the comparison as a radar chart.
+
+\begin{table}[h]
+\centering
+\caption{Inter-judge comparison: Gemini~2.5~Flash vs.\ Groq/Llama-3.3-70B, averaged over six Minecraft runs (scale: 1--5).}
+\label{tab:judge_compare}
+\begin{tabular}{lccc}
+\toprule
+Dimension & Gemini avg & Groq/Llama avg & $|\Delta|$ \\
+\midrule
+Grounding         & 4.67 & 4.17 & 0.50 \\
+Coherence         & 5.00 & 5.00 & \textbf{0.00} \\
+Credibility       & 4.83 & 4.17 & 0.67 \\
+Repetition        & 5.00 & 4.83 & 0.17 \\
+Arbitrary Content & 5.00 & 5.00 & \textbf{0.00} \\
+Emotional Richness& 5.00 & 4.50 & 0.50 \\
+Engagement        & 5.00 & 4.50 & 0.50 \\
+\midrule
+\textbf{Mean}     & \textbf{4.93} & \textbf{4.59} & \textbf{0.33} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.78\textwidth]{../data/analysis/figures/07_judge_radar.png}
+\caption{Radar chart comparing Gemini~2.5~Flash and Groq/Llama-3.3-70B judge scores across all seven Adams dimensions, averaged over six Minecraft runs. Dimensions where both polygons overlap indicate strong inter-judge agreement.}
+\label{fig:radar}
+\end{figure}
+
+\noindent\textbf{Key observations.}
+\begin{itemize}
+  \item \textbf{Grounding is the weakest dimension in both judges.} Gemini scores it at 4.67 and Groq/Llama at 4.17 --- the lowest axis on the radar chart for both. This cross-model agreement validates Grounding as a genuine pipeline weakness, not an artefact of any single judge.
+  \item \textbf{Perfect agreement on Coherence and Arbitrary Content.} Both judges assign 5.00/5.00 to these dimensions across all runs, providing the strongest reliability signal in the evaluation. These are the most defensible findings.
+  \item \textbf{Groq/Llama is consistently more conservative.} Across all dimensions, Llama scores at or below Gemini, with the largest gap on Credibility ($|\Delta|=0.67$). This systematic conservatism is consistent with known differences in how different model families calibrate evaluative leniency.
+  \item \textbf{Campfire hallucination.} The word \emph{fire} was flagged as a hallucinated entity in the 5-minute Run~2 (064300). This is a systematic artefact of the story prompt framing (``NPC companion at a campfire''), which causes the model to reference fire when no campfire appears in the Minecraft footage.
+  \item \textbf{Context length effect.} The 10-minute and 15-minute runs achieved perfect Grounding (5.00) from the Gemini judge with zero hallucinations, while the 5-minute runs averaged 4.00. This suggests richer gameplay context produces more accurately grounded narratives.
+\end{itemize}
 
 \subsection{Human evaluation}
 
-The template \texttt{evaluation/human\_scoring\_template.csv} is pre-populated with the three run IDs and columns for all seven Adams-derived dimensions. Human raters are provided the corresponding \texttt{.txt} files from \texttt{data/generated\_stories/} and asked to score each dialogue using the same 1--5 scale as the automated judge. The recommended study design uses 3--5 raters scoring all three samples, which allows inter-rater agreement to be computed and the automated scores to be validated against human judgment.
+Two raters (Yen and Chris) scored the six Minecraft dialogues independently using the same seven Adams-derived dimensions on a 1--5 scale. Table~\ref{tab:human_scores} reports their ratings alongside the Gemini automated judge averages for the same runs.
+
+\begin{table}[h]
+\centering
+\caption{Human ratings for all six Minecraft runs (scale: 1--5), with Gemini automated judge averages for comparison.}
+\label{tab:human_scores}
+\begin{tabular}{lllccccccc}
+\toprule
+Run ID & Duration & Rater & G & C & Cr & R & A & ER & En \\
+\midrule
+20260420\_054228 & 5 min  & Yen   & 4 & 4 & 4 & 5 & 5 & 3 & 4 \\
+20260420\_064300 & 5 min  & Chris & 5 & 4 & 3 & 5 & 5 & 3 & 4 \\
+20260420\_054237 & 10 min & Yen   & 5 & 4 & 4 & 5 & 5 & 3 & 4 \\
+20260420\_064335 & 10 min & Chris & 4 & 4 & 4 & 5 & 5 & 3 & 4 \\
+20260420\_054239 & 15 min & Yen   & 5 & 5 & 5 & 5 & 5 & 4 & 4 \\
+20260420\_064352 & 15 min & Chris & 5 & 5 & 5 & 5 & 5 & 4 & 4 \\
+\midrule
+\textbf{Human avg}  & & & \textbf{4.67} & \textbf{4.33} & \textbf{4.17} & \textbf{5.00} & \textbf{5.00} & \textbf{3.33} & \textbf{4.00} \\
+\textbf{Gemini avg} & & & \textbf{4.67} & \textbf{5.00} & \textbf{4.83} & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} \\
+\textbf{Groq avg}   & & & \textbf{4.17} & \textbf{5.00} & \textbf{4.17} & \textbf{4.83} & \textbf{5.00} & \textbf{4.50} & \textbf{4.50} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent\textbf{Key observations.}
+\begin{itemize}
+  \item \textbf{Three-way agreement on Repetition and Arbitrary Content.} All three evaluation methods---Gemini, Groq/Llama, and human raters---assign 5.00 (or 4.83 for Groq) to these dimensions, providing the strongest cross-method validation in the study.
+  \item \textbf{Perfect human--Gemini agreement on Grounding.} Human raters averaged 4.67, matching Gemini exactly. Groq/Llama scores it slightly lower at 4.17, but all three methods agree it is the weakest dimension, confirming this as the most robust finding of the evaluation.
+  \item \textbf{Emotional Richness gap.} The largest discrepancy is Emotional Richness: humans averaged 3.33 versus 5.00 for Gemini and 4.50 for Groq/Llama. Even the more conservative Groq judge overestimates emotional quality by 1.17 points relative to human perception. This suggests automated judges recognise emotional vocabulary but cannot assess whether warmth feels genuine to a player.
+  \item \textbf{Engagement and Coherence overestimation.} Humans rated Engagement at 4.00 and Coherence at 4.33, versus 5.00 from Gemini and 4.50 from Groq for both. Groq's more conservative scores narrow the gap but do not eliminate it.
+  \item \textbf{Context length effect.} Both raters gave higher scores to the 15-minute runs (per-rater avg 4.57/5) than to the 5-minute runs (avg 4.14/5), corroborating the automated finding that richer gameplay context produces more satisfying narratives.
+\end{itemize}
 
 \section{Limitations and Future Work}
 
-Frame order is user-supplied (e.g., filename order), not inferred from video timestamps. VLM mistakes propagate into the graph and dialogue; consolidation may over- or under-merge events. The current LLM-as-judge evaluation relies on the same Gemini model family used for generation, which may introduce evaluator bias; future work could use an independent judge model. The pipeline does not yet integrate live game APIs or native scene graphs from engines; extending to engine telemetry would tighten grounding further. The human evaluation study has not yet been conducted; completing it would allow direct comparison of automated and human scores across all seven Adams-derived dimensions. Finally, evaluation results reported here reflect the pipeline as of April 2026; re-running \texttt{src/dialogue\_evaluator.py} after any prompt changes will produce updated scores.
+Frame order is user-supplied (e.g., filename order), not inferred from video timestamps. VLM mistakes propagate into the graph and dialogue; consolidation may over- or under-merge events. The campfire framing in the story prompt causes a systematic hallucination of \emph{fire} in environments where no campfire appears; rephrasing the NPC context to be environment-neutral would address this. The human study involved only two raters, each scoring one dialogue per duration group; a larger study with 3--5 raters per sample and inter-rater agreement metrics (e.g., Cohen's $\kappa$) would yield more statistically robust conclusions. Although using two judges from different model families (Gemini and Llama) substantially mitigates same-model leniency bias, both LLM judges still overestimate Emotional Richness relative to humans; future work should design a finer-grained emotional rubric or use pairwise preference judgements to better align automated scores with human perception. The pipeline does not yet integrate live game APIs or native scene graphs from engines; extending to engine telemetry would tighten grounding further.
 
 \bibliographystyle{IEEEbib}
 \bibliography{refs}

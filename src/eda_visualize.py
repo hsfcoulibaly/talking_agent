@@ -31,14 +31,12 @@ FIGURES = PROJECT_ROOT / "data" / "analysis" / "figures"
 
 
 def discover_run_ids() -> list[str]:
+    """Return all run IDs that have at least a scene_graph.json."""
     if not EXTRACTED.is_dir():
         return []
-    ids = []
-    for p in EXTRACTED.glob("*_frames.json"):
-        stem = p.name.removesuffix("_frames.json")
-        sg = EXTRACTED / f"{stem}_scene_graph.json"
-        if sg.is_file():
-            ids.append(stem)
+    ids = set()
+    for p in EXTRACTED.glob("*_scene_graph.json"):
+        ids.add(p.name.removesuffix("_scene_graph.json"))
     return sorted(ids)
 
 
@@ -177,8 +175,14 @@ def plot_run_overview(run_ids: list[str], out_path: Path) -> None:
     counts = []
     for rid in run_ids:
         p = EXTRACTED / f"{rid}_frames.json"
-        frames = load_frames(p)
-        counts.append({"run_id": rid, "n_frames": len(frames)})
+        if p.is_file():
+            n = len(load_frames(p))
+        else:
+            # LLM-only re-run: infer frame count from scene graph events
+            sg_path = EXTRACTED / f"{rid}_scene_graph.json"
+            sg = load_graph(sg_path) if sg_path.is_file() else {}
+            n = len(sg.get("events") or [])
+        counts.append({"run_id": rid, "n_frames": n})
     if not counts:
         return
     df = pd.DataFrame(counts)
@@ -291,14 +295,19 @@ def main() -> None:
 
     frames_path = EXTRACTED / f"{run_id}_frames.json"
     graph_path = EXTRACTED / f"{run_id}_scene_graph.json"
-    frames = load_frames(frames_path)
+    has_frames = frames_path.is_file()
+    frames = load_frames(frames_path) if has_frames else []
     graph = load_graph(graph_path)
     suf = f"({run_id})"
 
+    if not has_frames:
+        print(f"  Note: no _frames.json for {run_id} (LLM-only re-run). Skipping per-frame plot.")
+
     print_console_summary(run_id, frames, graph)
 
-    df = frames_summary_table(frames)
-    plot_frame_metrics(df, args.figures_dir / f"01_frame_metrics_{run_id}.png", suf)
+    if has_frames:
+        df = frames_summary_table(frames)
+        plot_frame_metrics(df, args.figures_dir / f"01_frame_metrics_{run_id}.png", suf)
     plot_entity_types(graph, args.figures_dir / f"02_entity_types_{run_id}.png", suf)
     plot_entity_spans(graph, args.figures_dir / f"03_entity_spans_{run_id}.png", suf)
     plot_events_timeline(graph, args.figures_dir / f"04_events_timeline_{run_id}.png", suf)

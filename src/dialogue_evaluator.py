@@ -2,33 +2,33 @@
 dialogue_evaluator.py  —  Stage-3 evaluation for the NPC Narrative Generator
 
 Uses an LLM-as-judge to score each generated dialogue against its source
-scene graph on three dimensions:
+scene graph on seven dimensions (Adams 2014):
 
-  • Grounding   (1–5): Are all concrete claims in the dialogue traceable to
-                       entities or events in the scene graph?
-  • Coherence   (1–5): Is the dialogue internally consistent and logical?
-  • Engagement  (1–5): Does it feel like a believable, immersive NPC campfire
-                       story?
+  Grounding, Coherence, Credibility, Repetition, Arbitrary Content,
+  Emotional Richness, Engagement
 
-Also runs a lightweight hallucination check: names proper nouns mentioned in
-the dialogue and flags any that don't appear in the scene graph.
+Supports two judge backends:
+  • gemini  — Google Gemini (default, uses GEMINI_API_KEY)
+  • groq    — Groq / Llama-3.3-70B (uses GROQ_API_KEY, OpenAI-compatible)
 
 Outputs
 -------
-evaluation/dialogue_scores.csv   — one row per run_id with all scores
-evaluation/dialogue_scores.json  — same data as structured JSON (easier to
-                                   load for further analysis)
+evaluation/dialogue_scores_<judge>.csv   — one row per run_id
+evaluation/dialogue_scores_<judge>.json  — same data as JSON
 
 Usage
 -----
-    # Score all runs automatically discovered in data/extracted_state/
+    # Score all runs with Gemini (default)
     python src/dialogue_evaluator.py
 
-    # Score a specific run
-    python src/dialogue_evaluator.py --run-id 20260408_182648
+    # Score all runs with Groq / Llama
+    python src/dialogue_evaluator.py --judge groq
 
-    # Use a different model (overrides .env)
-    python src/dialogue_evaluator.py --model gemini-2.0-flash
+    # Score a specific run
+    python src/dialogue_evaluator.py --run-id 20260408_182648 --judge gemini
+
+    # Compare both judges (runs both sequentially)
+    python src/dialogue_evaluator.py --judge both
 """
 
 from __future__ import annotations
@@ -42,9 +42,6 @@ import time
 from pathlib import Path
 
 from dotenv import load_dotenv
-from google import genai
-from google.genai import errors as genai_errors
-from google.genai import types
 
 # ---------------------------------------------------------------------------
 # Bootstrap
@@ -53,42 +50,146 @@ from google.genai import types
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(PROJECT_ROOT / ".env")
 
-api_key = os.getenv("GEMINI_API_KEY")
-if not api_key:
-    raise ValueError(
-        "API Key not found. Set GEMINI_API_KEY in a .env file at the project root."
-    )
-
-client = genai.Client(api_key=api_key)
-MODEL_ID = (os.getenv("GEMINI_MODEL") or "gemini-2.5-flash").strip()
-
 # ---------------------------------------------------------------------------
-# LLM helper (backoff on 429 — mirrors main_pipeline.py)
+# Judge backends
 # ---------------------------------------------------------------------------
 
-def _generate_text(prompt: str, *, max_retries: int = 6) -> str:
-    base_delay = 2.0
-    last_exc: BaseException | None = None
-    for attempt in range(max_retries):
-        try:
-            resp = client.models.generate_content(
-                model=MODEL_ID,
-                contents=prompt,
-                config=types.GenerateContentConfig(temperature=0.0),
-            )
-            return resp.text.strip()
-        except genai_errors.ClientError as e:
-            last_exc = e
-            msg = str(e)
-            if "429" not in msg and "RESOURCE_EXHAUSTED" not in msg:
-                raise
-            wait = base_delay * (2 ** attempt)
-            m = re.search(r"retry in ([0-9.]+)\s*s", msg, re.I)
-            if m:
-                wait = max(float(m.group(1)), wait)
-            print(f"  Rate-limited (attempt {attempt + 1}/{max_retries}), retrying in {wait:.0f}s …")
-            time.sleep(wait)
-    raise RuntimeError("Max retries exceeded.") from last_exc
+def _make_gemini_client():
+    from google import genai
+    from google.genai import types as gtypes
+    from google.genai import errors as genai_errors
+
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        raise ValueError("GEMINI_API_KEY not set in .env")
+    client = genai.Client(api_key=api_key)
+    model_id = (os.getenv("GEMINI_MODEL") or "gemini-2.5-flash").strip()
+
+    def generate(prompt: str, max_retries: int = 6) -> str:
+        base_delay = 2.0
+        last_exc = None
+        for attempt in range(max_retries):
+            try:
+                resp = client.models.generate_content(
+                    model=model_id,
+                    contents=prompt,
+                    config=gtypes.GenerateContentConfig(temperature=0.0),
+                )
+                return resp.text.strip()
+            except genai_errors.ClientError as e:
+                last_exc = e
+                msg = str(e)
+                if "429" not in msg and "RESOURCE_EXHAUSTED" not in msg:
+                    raise
+                wait = base_delay * (2 ** attempt)
+                m = re.search(r"retry in ([0-9.]+)\s*s", msg, re.I)
+                if m:
+                    wait = max(float(m.group(1)), wait)
+                print(f"  Rate-limited (attempt {attempt+1}/{max_retries}), retrying in {wait:.0f}s ...")
+                time.sleep(wait)
+        raise RuntimeError("Max retries exceeded.") from last_exc
+
+    return generate, model_id
+
+
+def _make_groq_client():
+    try:
+        from openai import OpenAI
+    except ImportError:
+        raise ImportError(
+            "openai package required for Groq backend. Run: pip install openai"
+        )
+
+    api_key = os.getenv("GROQ_API_KEY")
+    if not api_key:
+        raise ValueError(
+            "GROQ_API_KEY not set in .env. "
+            "Get a free key at https://console.groq.com"
+        )
+    model_id = (os.getenv("GROQ_MODEL") or "llama-3.3-70b-versatile").strip()
+    client = OpenAI(api_key=api_key, base_url="https://api.groq.com/openai/v1")
+
+    def generate(prompt: str, max_retries: int = 6) -> str:
+        base_delay = 2.0
+        last_exc = None
+        for attempt in range(max_retries):
+            try:
+                resp = client.chat.completions.create(
+                    model=model_id,
+                    messages=[{"role": "user", "content": prompt}],
+                    temperature=0.0,
+                )
+                return resp.choices[0].message.content.strip()
+            except Exception as e:
+                last_exc = e
+                msg = str(e)
+                # Groq returns 429 for rate limits
+                if "429" not in msg and "rate" not in msg.lower():
+                    raise
+                wait = base_delay * (2 ** attempt)
+                m = re.search(r"retry.{0,20}([0-9.]+)\s*s", msg, re.I)
+                if m:
+                    wait = max(float(m.group(1)), wait)
+                print(f"  Rate-limited (attempt {attempt+1}/{max_retries}), retrying in {wait:.0f}s ...")
+                time.sleep(wait)
+        raise RuntimeError("Max retries exceeded.") from last_exc
+
+    return generate, model_id
+
+
+JUDGE_BACKENDS = {
+    "gemini": _make_gemini_client,
+    "groq":   _make_groq_client,
+}
+
+# Per-backend inter-request delay (seconds) to respect rate limits.
+# Groq free tier: ~6 000 tokens/min for llama-3.3-70b; slim scene graph
+# keeps each request ~2 000 tokens, so 20 s gives safe headroom.
+INTER_REQUEST_DELAY = {
+    "gemini": 2,
+    "groq":   20,
+}
+
+# ---------------------------------------------------------------------------
+# Scene-graph slim helper
+# ---------------------------------------------------------------------------
+
+def _slim_scene_graph(sg: dict, max_entities: int = 20, max_events: int = 15) -> dict:
+    """
+    Return a compact version of the scene graph containing only the fields
+    the judge actually needs.  Strips frame-index numbers and caps list
+    lengths to keep token usage well within Groq's free-tier rate limit.
+    """
+    slimmed: dict = {}
+
+    if "timeline_summary" in sg:
+        slimmed["timeline_summary"] = sg["timeline_summary"]
+
+    if "environment" in sg:
+        env = sg["environment"]
+        slimmed["environment"] = {
+            "location":    env.get("location", ""),
+            "time_of_day": env.get("time_of_day", ""),
+            # keep at most 6 condition tags
+            "conditions":  (env.get("conditions") or [])[:6],
+        }
+
+    if "entities" in sg:
+        slimmed["entities"] = [
+            {"name": e.get("name_or_description", ""), "type": e.get("type", "")}
+            for e in (sg["entities"] or [])[:max_entities]
+        ]
+
+    if "events" in sg:
+        slimmed["events"] = [
+            {"description": e.get("description", "")}
+            for e in (sg["events"] or [])[:max_events]
+        ]
+
+    if "player_arc" in sg:
+        slimmed["player_arc"] = sg["player_arc"]
+
+    return slimmed
 
 
 # ---------------------------------------------------------------------------
@@ -155,6 +256,11 @@ and a one-sentence justification.
 Also list any **hallucinated entities** — proper nouns (character names, place names, item names)
 that appear in the dialogue but are NOT present in the scene graph. If none, return an empty list.
 
+**Scoring calibration** — Use the FULL 1–5 scale critically. A score of 5 means genuinely
+exceptional; a score of 3 is the expected baseline for adequate but ordinary output. Do NOT
+default to 5 for every dimension. If the dialogue has any weakness — even a minor one — reflect
+it in the score. Scores of 4 or below should be common for real-world generated text.
+
 ## Response Format
 Respond with ONLY valid JSON, no markdown fences, no extra text:
 {{
@@ -176,25 +282,40 @@ Respond with ONLY valid JSON, no markdown fences, no extra text:
 }}
 """
 
-
 # ---------------------------------------------------------------------------
 # Core evaluation logic
 # ---------------------------------------------------------------------------
 
+SCORE_KEYS = [
+    "grounding_score",
+    "coherence_score",
+    "credibility_score",
+    "repetition_score",
+    "arbitrary_content_score",
+    "emotional_richness_score",
+    "engagement_score",
+]
+
+JUSTIFICATION_KEYS = [k.replace("_score", "_justification") for k in SCORE_KEYS]
+
+CSV_FIELDNAMES = (
+    ["run_id"]
+    + SCORE_KEYS
+    + ["hallucination_count"]
+    + JUSTIFICATION_KEYS
+    + ["hallucinated_entities", "model_used", "dialogue_preview"]
+)
+
+
 def _extract_json(raw: str) -> dict:
-    """Strip markdown fences if present and parse JSON."""
     text = raw.strip()
-    # Remove ```json ... ``` or ``` ... ```
     text = re.sub(r"^```(?:json)?\s*", "", text, flags=re.IGNORECASE)
     text = re.sub(r"\s*```$", "", text)
     return json.loads(text)
 
 
-def evaluate_run(run_id: str) -> dict:
-    """
-    Load scene graph + dialogue for *run_id*, call the LLM judge, and return
-    a dict with all scores plus metadata.
-    """
+def evaluate_run(run_id: str, generate_fn, model_id: str) -> dict:
+    """Load scene graph + dialogue for *run_id*, call the judge, return scores."""
     scene_graph_path = PROJECT_ROOT / "data" / "extracted_state" / f"{run_id}_scene_graph.json"
     dialogue_path    = PROJECT_ROOT / "data" / "generated_stories" / f"{run_id}_npc_dialogue.txt"
 
@@ -206,13 +327,15 @@ def evaluate_run(run_id: str) -> dict:
     scene_graph = json.loads(scene_graph_path.read_text(encoding="utf-8"))
     dialogue    = dialogue_path.read_text(encoding="utf-8").strip()
 
+    # Slim the scene graph to keep token usage within Groq's free-tier limit
+    slim_sg = _slim_scene_graph(scene_graph)
     prompt = JUDGE_PROMPT.format(
-        scene_graph=json.dumps(scene_graph, indent=2),
+        scene_graph=json.dumps(slim_sg, indent=2),
         dialogue=dialogue,
     )
 
-    print(f"  Calling LLM judge for run {run_id} …")
-    raw = _generate_text(prompt)
+    print(f"  Calling judge [{model_id}] for run {run_id} ...")
+    raw = generate_fn(prompt)
 
     try:
         scores = _extract_json(raw)
@@ -240,55 +363,32 @@ def evaluate_run(run_id: str) -> dict:
         "engagement_justification":         scores.get("engagement_justification", ""),
         "hallucinated_entities":            hallucinated,
         "hallucination_count":              len(hallucinated),
-        "model_used":                       MODEL_ID,
+        "model_used":                       model_id,
         "dialogue_preview":                 dialogue[:120] + ("..." if len(dialogue) > 120 else ""),
     }
 
 
 def discover_run_ids() -> list[str]:
-    """Return all run IDs that have both a scene graph and a dialogue file."""
     state_dir   = PROJECT_ROOT / "data" / "extracted_state"
     stories_dir = PROJECT_ROOT / "data" / "generated_stories"
-
     graph_ids   = {p.stem.replace("_scene_graph", "") for p in state_dir.glob("*_scene_graph.json")}
     story_ids   = {p.stem.replace("_npc_dialogue", "") for p in stories_dir.glob("*_npc_dialogue.txt")}
     complete    = sorted(graph_ids & story_ids)
-
     if not complete:
         raise RuntimeError(
             "No complete runs found. Make sure both *_scene_graph.json and "
-            "*_npc_dialogue.txt exist in data/extracted_state/ and data/generated_stories/."
+            "*_npc_dialogue.txt exist under data/."
         )
     return complete
 
 
-SCORE_KEYS = [
-    "grounding_score",
-    "coherence_score",
-    "credibility_score",
-    "repetition_score",
-    "arbitrary_content_score",
-    "emotional_richness_score",
-    "engagement_score",
-]
-
-JUSTIFICATION_KEYS = [k.replace("_score", "_justification") for k in SCORE_KEYS]
-
-CSV_FIELDNAMES = (
-    ["run_id"]
-    + SCORE_KEYS
-    + ["hallucination_count"]
-    + JUSTIFICATION_KEYS
-    + ["hallucinated_entities", "model_used", "dialogue_preview"]
-)
-
-
-def save_results(results: list[dict]) -> None:
+def save_results(results: list[dict], judge: str) -> None:
     out_dir = PROJECT_ROOT / "evaluation"
     out_dir.mkdir(exist_ok=True)
 
-    # CSV
-    csv_path = out_dir / "dialogue_scores.csv"
+    csv_path  = out_dir / f"dialogue_scores_{judge}.csv"
+    json_path = out_dir / f"dialogue_scores_{judge}.json"
+
     with open(csv_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=CSV_FIELDNAMES, extrasaction="ignore")
         writer.writeheader()
@@ -298,19 +398,17 @@ def save_results(results: list[dict]) -> None:
             writer.writerow(row)
     print(f"\nSaved CSV  -> {csv_path}")
 
-    # JSON
-    json_path = out_dir / "dialogue_scores.json"
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
     print(f"Saved JSON -> {json_path}")
 
 
-def print_summary(results: list[dict]) -> None:
+def print_summary(results: list[dict], judge: str) -> None:
     col_labels = ["Ground", "Cohere", "Credib", "Repet", "Arbitr", "EmRich", "Engage", "Halluc"]
     col_keys   = SCORE_KEYS + ["hallucination_count"]
-    width = 22 + 9 * len(col_labels)
     header = f"{'Run ID':<22} | " + " | ".join(f"{h:>6}" for h in col_labels)
-    print("\n" + "=" * len(header))
+    print(f"\n{'='*len(header)}")
+    print(f"Judge: {judge.upper()}")
     print(header)
     print("=" * len(header))
 
@@ -331,16 +429,6 @@ def print_summary(results: list[dict]) -> None:
     print(avg_row)
     print("=" * len(header))
 
-    print("\nJustifications:")
-    labels = ["Grounding", "Coherence", "Credibility", "Repetition",
-              "Arb.Content", "Emot.Richness", "Engagement"]
-    for r in results:
-        print(f"\n  [{r['run_id']}]")
-        for label, jkey in zip(labels, JUSTIFICATION_KEYS):
-            print(f"  {label:<14}: {r.get(jkey, '')}")
-        if r["hallucinated_entities"]:
-            print(f"  Hallucinated  : {', '.join(r['hallucinated_entities'])}")
-
 
 # ---------------------------------------------------------------------------
 # CLI
@@ -352,36 +440,52 @@ def main() -> None:
     )
     parser.add_argument(
         "--run-id",
-        help="Evaluate a single run (e.g. 20260408_182648). "
-             "Omit to evaluate all discovered runs.",
+        help="Evaluate a single run (e.g. 20260408_182648). Omit to evaluate all.",
     )
     parser.add_argument(
-        "--model",
-        help="Override Gemini model ID (also overrides GEMINI_MODEL in .env).",
+        "--judge",
+        choices=["gemini", "groq", "both"],
+        default="gemini",
+        help="Which LLM judge to use (default: gemini). "
+             "Use 'both' to run Gemini and Groq sequentially.",
     )
     args = parser.parse_args()
 
-    global MODEL_ID
-    if args.model:
-        MODEL_ID = args.model.strip()
-
     run_ids = [args.run_id] if args.run_id else discover_run_ids()
-    print(f"Evaluating {len(run_ids)} run(s) with model '{MODEL_ID}':\n  {', '.join(run_ids)}\n")
+    judges  = ["gemini", "groq"] if args.judge == "both" else [args.judge]
 
-    results = []
-    for rid in run_ids:
+    for judge in judges:
+        print(f"\n{'='*60}")
+        print(f"  Judge: {judge.upper()}")
+        print(f"{'='*60}")
+
         try:
-            result = evaluate_run(rid)
-            results.append(result)
-        except Exception as exc:
-            print(f"  ERROR evaluating {rid}: {exc}")
+            generate_fn, model_id = JUDGE_BACKENDS[judge]()
+        except (ValueError, ImportError) as e:
+            print(f"  Skipping {judge}: {e}")
+            continue
 
-    if not results:
-        print("No results to save.")
-        return
+        print(f"  Model  : {model_id}")
+        print(f"  Runs   : {', '.join(run_ids)}\n")
 
-    print_summary(results)
-    save_results(results)
+        delay = INTER_REQUEST_DELAY.get(judge, 5)
+        results = []
+        for i, rid in enumerate(run_ids):
+            if i > 0:
+                print(f"  Waiting {delay}s before next request ...")
+                time.sleep(delay)
+            try:
+                result = evaluate_run(rid, generate_fn, model_id)
+                results.append(result)
+            except Exception as exc:
+                print(f"  ERROR evaluating {rid}: {exc}")
+
+        if not results:
+            print("  No results to save.")
+            continue
+
+        print_summary(results, judge)
+        save_results(results, judge)
 
 
 if __name__ == "__main__":

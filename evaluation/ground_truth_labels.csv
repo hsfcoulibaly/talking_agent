@@ -1,5 +1,1441 @@
-Image_ID,Condition_Tested,Ground_Truth,VLM_Prediction
-frame_0001.png,location_detectable,1,1
-frame_0001.png,action_described,1,0
-frame_0002.png,location_detectable,1,1
-frame_0002.png,action_described,1,1
+Image_ID,Duration,Frame_Type,Condition_Tested,Ground_Truth,VLM_Prediction,VLM_Extracted
+20260420_054228_frame_0000,5min,menu,location_detectable,0,1,savanna
+20260420_054228_frame_0000,5min,menu,action_described,1,1,viewing the crafting recipe for an acacia pressure plate
+20260420_054228_frame_0000,5min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054228_frame_0000,5min,menu,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054228_frame_0001,5min,menu,location_detectable,0,1,forest
+20260420_054228_frame_0001,5min,menu,action_described,1,1,crafting acacia planks from acacia logs
+20260420_054228_frame_0001,5min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054228_frame_0001,5min,menu,player_status_described,1,1,"full health, full hunger, no armor"
+20260420_054228_frame_0002,5min,gameplay,location_detectable,1,1,grassy field
+20260420_054228_frame_0002,5min,gameplay,action_described,1,1,looking at a block of grass on the ground
+20260420_054228_frame_0002,5min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054228_frame_0002,5min,gameplay,player_status_described,1,1,"full health, 9.5 hunger, holding a wooden axe"
+20260420_054228_frame_0003,5min,gameplay,location_detectable,1,1,grassy field
+20260420_054228_frame_0003,5min,gameplay,action_described,1,1,preparing to place acacia planks
+20260420_054228_frame_0003,5min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054228_frame_0003,5min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0004,5min,gameplay,location_detectable,1,1,savanna biome
+20260420_054228_frame_0004,5min,gameplay,action_described,1,1,placing acacia wood planks to build a structure
+20260420_054228_frame_0004,5min,gameplay,entities_identified,1,1,8 entity/entities detected
+20260420_054228_frame_0004,5min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0005,5min,gameplay,location_detectable,1,1,grassy field near water
+20260420_054228_frame_0005,5min,gameplay,action_described,1,1,building a structure with acacia planks
+20260420_054228_frame_0005,5min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054228_frame_0005,5min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0006,5min,gameplay,location_detectable,1,1,grassy field at night
+20260420_054228_frame_0006,5min,gameplay,action_described,1,1,placing acacia wood planks to build a structure
+20260420_054228_frame_0006,5min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054228_frame_0006,5min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0007,5min,gameplay,location_detectable,1,1,dark grassy field
+20260420_054228_frame_0007,5min,gameplay,action_described,1,1,building a structure with dark wood planks
+20260420_054228_frame_0007,5min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054228_frame_0007,5min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0008,5min,gameplay,location_detectable,1,1,"savanna biome, building a wooden structure"
+20260420_054228_frame_0008,5min,gameplay,action_described,1,1,placing acacia wood planks to build a structure
+20260420_054228_frame_0008,5min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054228_frame_0008,5min,gameplay,player_status_described,1,1,"full health, nearly full hunger, holding acacia wood planks"
+20260420_054228_frame_0009,5min,gameplay,location_detectable,1,1,"savanna biome, building a wooden structure"
+20260420_054228_frame_0009,5min,gameplay,action_described,1,1,standing on a wooden wall overlooking the savanna
+20260420_054228_frame_0009,5min,gameplay,entities_identified,1,1,8 entity/entities detected
+20260420_054228_frame_0009,5min,gameplay,player_status_described,1,1,"full health, full hunger, no armor"
+20260420_054228_frame_0010,5min,gameplay,location_detectable,1,1,"near a river and hills at night, standing next to a large wooden structure"
+20260420_054228_frame_0010,5min,gameplay,action_described,1,1,standing still and looking at a large wooden surface
+20260420_054228_frame_0010,5min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054228_frame_0010,5min,gameplay,player_status_described,1,1,"full health, nearly full hunger, empty hotbar slot selected"
+20260420_054228_frame_0011,5min,menu,location_detectable,0,1,dark environment
+20260420_054228_frame_0011,5min,menu,action_described,1,1,"viewing the recipe book in the inventory, hovering over Acacia Planks"
+20260420_054228_frame_0011,5min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054228_frame_0011,5min,menu,player_status_described,1,1,"10 hearts, 8.5 hunger, no armor"
+20260420_054228_frame_0012,5min,menu,location_detectable,0,1,dark environment
+20260420_054228_frame_0012,5min,menu,action_described,1,1,crafting acacia planks from acacia logs in the inventory menu
+20260420_054228_frame_0012,5min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054228_frame_0012,5min,menu,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0013,5min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054228_frame_0013,5min,gameplay,action_described,1,1,selecting or placing acacia planks
+20260420_054228_frame_0013,5min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054228_frame_0013,5min,gameplay,player_status_described,1,1,"full health, nearly full hunger, no armor"
+20260420_054228_frame_0014,5min,gameplay,location_detectable,1,1,inside a wooden structure at night
+20260420_054228_frame_0014,5min,gameplay,action_described,1,1,building or placing wooden planks
+20260420_054228_frame_0014,5min,gameplay,entities_identified,1,1,7 entity/entities detected
+20260420_054228_frame_0014,5min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0015,5min,gameplay,location_detectable,1,1,inside a wooden structure
+20260420_054228_frame_0015,5min,gameplay,action_described,1,1,looking out from a wooden shelter
+20260420_054228_frame_0015,5min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054228_frame_0015,5min,gameplay,player_status_described,1,1,"full health and hunger, holding a wooden pickaxe"
+20260420_054228_frame_0016,5min,gameplay,location_detectable,1,1,inside a wooden structure
+20260420_054228_frame_0016,5min,gameplay,action_described,1,1,standing inside a wooden building looking at a wall
+20260420_054228_frame_0016,5min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054228_frame_0016,5min,gameplay,player_status_described,1,1,"full health, nearly full hunger"
+20260420_054228_frame_0017,5min,gameplay,location_detectable,1,1,inside a wooden structure
+20260420_054228_frame_0017,5min,gameplay,action_described,1,1,looking up while holding spruce planks
+20260420_054228_frame_0017,5min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054228_frame_0017,5min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0018,5min,menu,location_detectable,0,1,dark cave
+20260420_054228_frame_0018,5min,menu,action_described,1,1,managing inventory and viewing crafting recipes
+20260420_054228_frame_0018,5min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054228_frame_0018,5min,menu,player_status_described,1,1,"full health, 9.5 hunger, no armor"
+20260420_054228_frame_0019,5min,menu,location_detectable,0,1,dark interior
+20260420_054228_frame_0019,5min,menu,action_described,1,1,selecting a crafting table from the hotbar
+20260420_054228_frame_0019,5min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054228_frame_0019,5min,menu,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0020,5min,menu,location_detectable,0,1,crafting menu
+20260420_054228_frame_0020,5min,menu,action_described,1,1,crafting acacia doors
+20260420_054228_frame_0020,5min,menu,entities_identified,0,1,9 entity/entities detected
+20260420_054228_frame_0020,5min,menu,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0021,5min,gameplay,location_detectable,1,1,dark wooden room
+20260420_054228_frame_0021,5min,gameplay,action_described,1,1,preparing to place a door inside a small wooden structure
+20260420_054228_frame_0021,5min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054228_frame_0021,5min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0022,5min,gameplay,location_detectable,1,1,inside a wooden shelter
+20260420_054228_frame_0022,5min,gameplay,action_described,1,1,looking at a dirt block inside the shelter
+20260420_054228_frame_0022,5min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054228_frame_0022,5min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0023,5min,menu,location_detectable,0,1,inside a small wooden hut
+20260420_054228_frame_0023,5min,menu,action_described,1,1,standing inside a small wooden structure near a crafting table
+20260420_054228_frame_0023,5min,menu,entities_identified,0,1,4 entity/entities detected
+20260420_054228_frame_0023,5min,menu,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0024,5min,menu,location_detectable,0,1,inside a small wooden shelter
+20260420_054228_frame_0024,5min,menu,action_described,1,1,standing inside a wooden room next to a crafting table
+20260420_054228_frame_0024,5min,menu,entities_identified,0,1,3 entity/entities detected
+20260420_054228_frame_0024,5min,menu,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054228_frame_0025,5min,gameplay,location_detectable,1,1,inside a dark wooden structure looking out
+20260420_054228_frame_0025,5min,gameplay,action_described,1,1,switched to wooden sword
+20260420_054228_frame_0025,5min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054228_frame_0025,5min,gameplay,player_status_described,1,1,"10 hearts, 10 hunger, holding a wooden sword"
+20260420_054228_frame_0026,5min,gameplay,location_detectable,1,1,inside a dark wooden structure
+20260420_054228_frame_0026,5min,gameplay,action_described,1,1,looking up at a wooden ceiling
+20260420_054228_frame_0026,5min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054228_frame_0026,5min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0027,5min,gameplay,location_detectable,1,1,dark interior
+20260420_054228_frame_0027,5min,gameplay,action_described,1,1,selecting acacia planks
+20260420_054228_frame_0027,5min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054228_frame_0027,5min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0028,5min,menu,location_detectable,0,1,inside a dark wooden structure
+20260420_054228_frame_0028,5min,menu,action_described,1,1,breaking a crafting table with a wooden axe
+20260420_054228_frame_0028,5min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054228_frame_0028,5min,menu,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0029,5min,gameplay,location_detectable,1,1,inside a building looking out at a lake
+20260420_054228_frame_0029,5min,gameplay,action_described,1,1,looking out through an open door
+20260420_054228_frame_0029,5min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054228_frame_0029,5min,gameplay,player_status_described,1,1,"full health and hunger, holding a wooden axe"
+20260420_054228_frame_0030,5min,gameplay,location_detectable,1,1,grassy riverbank at night
+20260420_054228_frame_0030,5min,gameplay,action_described,1,1,holding a wooden sword near a placed jungle plank block
+20260420_054228_frame_0030,5min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054228_frame_0030,5min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0031,5min,gameplay,location_detectable,1,1,grassy field near water
+20260420_054228_frame_0031,5min,gameplay,action_described,1,1,"standing in a field, looking at a block outline"
+20260420_054228_frame_0031,5min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054228_frame_0031,5min,gameplay,player_status_described,1,1,full health and hunger; holding a wooden sword
+20260420_054228_frame_0032,5min,gameplay,location_detectable,1,1,savanna biome
+20260420_054228_frame_0032,5min,gameplay,action_described,1,1,standing in tall grass looking at a distant lava fall
+20260420_054228_frame_0032,5min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054228_frame_0032,5min,gameplay,player_status_described,1,1,"full health and hunger, holding a wooden sword"
+20260420_054228_frame_0033,5min,gameplay,location_detectable,1,1,grassy field near a lava fall
+20260420_054228_frame_0033,5min,gameplay,action_described,1,1,targeting a block of tall grass while holding a wooden sword
+20260420_054228_frame_0033,5min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054228_frame_0033,5min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0034,5min,gameplay,location_detectable,1,1,savanna near a river
+20260420_054228_frame_0034,5min,gameplay,action_described,1,1,"standing still, holding a wooden sword"
+20260420_054228_frame_0034,5min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054228_frame_0034,5min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054228_frame_0035,5min,gameplay,location_detectable,1,1,savanna biome
+20260420_054228_frame_0035,5min,gameplay,action_described,1,1,exploring a dark field with a wooden sword equipped
+20260420_054228_frame_0035,5min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054228_frame_0035,5min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0036,5min,gameplay,location_detectable,1,1,dark savanna biome
+20260420_054228_frame_0036,5min,gameplay,action_described,1,1,scouting the dark landscape with a wooden sword drawn
+20260420_054228_frame_0036,5min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054228_frame_0036,5min,gameplay,player_status_described,1,1,"full health, nearly full hunger, holding a wooden sword"
+20260420_054228_frame_0037,5min,gameplay,location_detectable,1,1,savanna biome near a river
+20260420_054228_frame_0037,5min,gameplay,action_described,1,1,"standing in a field at night, looking towards a distant zombie"
+20260420_054228_frame_0037,5min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054228_frame_0037,5min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0038,5min,gameplay,location_detectable,1,1,riverbank at night
+20260420_054228_frame_0038,5min,gameplay,action_described,1,1,observing a zombie across the water
+20260420_054228_frame_0038,5min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054228_frame_0038,5min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054228_frame_0039,5min,menu,location_detectable,0,1,riverbank
+20260420_054228_frame_0039,5min,menu,action_described,1,1,unlocked sugar recipe while looking at sugar cane
+20260420_054228_frame_0039,5min,menu,entities_identified,0,1,3 entity/entities detected
+20260420_054228_frame_0039,5min,menu,player_status_described,1,1,"full health, full hunger, holding wooden sword"
+20260420_054228_frame_0040,5min,gameplay,location_detectable,1,1,riverbank at night
+20260420_054228_frame_0040,5min,gameplay,action_described,1,1,standing near a flower by the water
+20260420_054228_frame_0040,5min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054228_frame_0040,5min,gameplay,player_status_described,1,1,"full health, nearly full hunger, holding a wooden sword"
+20260420_054228_frame_0041,5min,gameplay,location_detectable,1,1,savanna biome
+20260420_054228_frame_0041,5min,gameplay,action_described,1,1,looking at tall grass
+20260420_054228_frame_0041,5min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054228_frame_0041,5min,gameplay,player_status_described,1,1,"full health and hunger, holding a wooden sword"
+20260420_054228_frame_0042,5min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054228_frame_0042,5min,gameplay,action_described,1,1,patrolling the savanna at night
+20260420_054228_frame_0042,5min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054228_frame_0042,5min,gameplay,player_status_described,1,1,"full health, full hunger, holding a wooden sword"
+20260420_054228_frame_0043,5min,gameplay,location_detectable,1,1,savanna biome near a lake
+20260420_054228_frame_0043,5min,gameplay,action_described,1,1,standing in tall grass looking at zombies
+20260420_054228_frame_0043,5min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054228_frame_0043,5min,gameplay,player_status_described,1,1,"full health, 9.5 hunger, holding a wooden sword"
+20260420_054228_frame_0044,5min,gameplay,location_detectable,1,1,grassy field at night
+20260420_054228_frame_0044,5min,gameplay,action_described,1,1,facing a creeper and a zombie
+20260420_054228_frame_0044,5min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054228_frame_0044,5min,gameplay,player_status_described,1,1,"10 hearts health, 9.5 hunger, holding a wooden sword"
+20260420_054228_frame_0045,5min,gameplay,location_detectable,1,1,riverbank in a savanna biome
+20260420_054228_frame_0045,5min,gameplay,action_described,1,1,looking out over the water at night
+20260420_054228_frame_0045,5min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054228_frame_0045,5min,gameplay,player_status_described,1,1,"4.5 hearts health, 8.5 hunger, holding a wooden sword"
+20260420_054228_frame_0046,5min,gameplay,location_detectable,1,1,inside a wooden structure
+20260420_054228_frame_0046,5min,gameplay,action_described,1,1,looking at a closed wooden door
+20260420_054228_frame_0046,5min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054228_frame_0046,5min,gameplay,player_status_described,1,1,"4.5 hearts health, 8.5 hunger"
+20260420_054228_frame_0047,5min,gameplay,location_detectable,1,1,inside a dark wooden building
+20260420_054228_frame_0047,5min,gameplay,action_described,1,1,standing inside a dark room near a door
+20260420_054228_frame_0047,5min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054228_frame_0047,5min,gameplay,player_status_described,1,1,"5.5 hearts health, 8.5 hunger, holding a damaged wooden sword"
+20260420_054228_frame_0048,5min,gameplay,location_detectable,1,1,inside a wooden hut
+20260420_054228_frame_0048,5min,gameplay,action_described,1,1,standing inside a wooden structure looking at a door
+20260420_054228_frame_0048,5min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054228_frame_0048,5min,gameplay,player_status_described,1,1,"5.5 hearts health, 8.5 hunger, holding a wooden sword"
+20260420_054228_frame_0049,5min,gameplay,location_detectable,1,1,inside a dark shelter looking out at a river
+20260420_054228_frame_0049,5min,gameplay,action_described,1,1,standing in a doorway looking out at the water
+20260420_054228_frame_0049,5min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054228_frame_0049,5min,gameplay,player_status_described,1,1,"5 hearts health, 8.5 hunger, holding a wooden sword"
+20260420_054228_frame_0050,5min,gameplay,location_detectable,1,1,inside a wooden shelter looking out at a river
+20260420_054228_frame_0050,5min,gameplay,action_described,1,1,standing in an open doorway looking at the water
+20260420_054228_frame_0050,5min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054228_frame_0050,5min,gameplay,player_status_described,1,1,"5 hearts health, full hunger, holding a damaged wooden sword"
+20260420_054228_frame_0051,5min,gameplay,location_detectable,1,1,inside a wooden building
+20260420_054228_frame_0051,5min,gameplay,action_described,1,1,looking at a wooden wall inside a shelter while a drowned lurks outside
+20260420_054228_frame_0051,5min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054228_frame_0051,5min,gameplay,player_status_described,1,1,"5 hearts health, 8.5 hunger, holding a damaged wooden sword"
+20260420_054228_frame_0052,5min,gameplay,location_detectable,1,1,inside a dark wooden structure
+20260420_054228_frame_0052,5min,gameplay,action_described,1,1,peering through a gap at a drowned outside
+20260420_054228_frame_0052,5min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054228_frame_0052,5min,gameplay,player_status_described,1,1,"5.5 hearts health, 8.5 hunger, holding a damaged wooden sword"
+20260420_054228_frame_0053,5min,gameplay,location_detectable,1,1,inside a dark wooden hut
+20260420_054228_frame_0053,5min,gameplay,action_described,1,1,standing inside a shelter looking out at a drowned through an open door
+20260420_054228_frame_0053,5min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054228_frame_0053,5min,gameplay,player_status_described,1,1,"5 hearts health, 8.5 hunger, no armor, holding a damaged wooden sword"
+20260420_054228_frame_0054,5min,gameplay,location_detectable,1,1,inside a wooden house looking out at a lake
+20260420_054228_frame_0054,5min,gameplay,action_described,1,1,standing at an open door looking out at the water
+20260420_054228_frame_0054,5min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054228_frame_0054,5min,gameplay,player_status_described,1,1,"5 hearts health, 8.5 hunger, holding a damaged wooden sword"
+20260420_054228_frame_0055,5min,gameplay,location_detectable,1,1,inside a wooden structure
+20260420_054228_frame_0055,5min,gameplay,action_described,1,1,standing inside a wooden building looking at a door
+20260420_054228_frame_0055,5min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054228_frame_0055,5min,gameplay,player_status_described,1,1,"5.5 hearts health, 8.5 hunger"
+20260420_054228_frame_0056,5min,gameplay,location_detectable,1,1,inside a wooden hut
+20260420_054228_frame_0056,5min,gameplay,action_described,1,1,standing inside looking out the door
+20260420_054228_frame_0056,5min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054228_frame_0056,5min,gameplay,player_status_described,1,1,"5 hearts health, 8.5 hunger, holding a damaged wooden sword"
+20260420_054228_frame_0057,5min,gameplay,location_detectable,1,1,inside a wooden house
+20260420_054228_frame_0057,5min,gameplay,action_described,1,1,looking out through a wooden door
+20260420_054228_frame_0057,5min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054228_frame_0057,5min,gameplay,player_status_described,1,1,"5 hearts health, 8.5 hunger, holding a wooden sword"
+20260420_054228_frame_0058,5min,gameplay,location_detectable,1,1,riverbank near a savanna
+20260420_054228_frame_0058,5min,gameplay,action_described,1,1,engaging in close-quarters combat with a zombie
+20260420_054228_frame_0058,5min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054228_frame_0058,5min,gameplay,player_status_described,1,1,"3.5 hearts health, 9.5 hunger, holding a damaged wooden sword"
+20260420_054228_frame_0059,5min,gameplay,location_detectable,1,1,inside a wooden hut
+20260420_054228_frame_0059,5min,gameplay,action_described,1,1,standing inside a wooden building looking out a door
+20260420_054228_frame_0059,5min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054228_frame_0059,5min,gameplay,player_status_described,1,1,"1 heart health, 9.5 hunger, holding a damaged wooden sword"
+20260420_054237_frame_0000,10min,menu,location_detectable,0,1,savanna at night
+20260420_054237_frame_0000,10min,menu,action_described,1,1,browsing the recipe book in the inventory
+20260420_054237_frame_0000,10min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054237_frame_0000,10min,menu,player_status_described,1,1,"full health, full hunger, no armor"
+20260420_054237_frame_0001,10min,menu,location_detectable,0,1,forest at night
+20260420_054237_frame_0001,10min,menu,action_described,1,1,crafting acacia planks from logs in the inventory
+20260420_054237_frame_0001,10min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054237_frame_0001,10min,menu,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054237_frame_0002,10min,gameplay,location_detectable,1,1,dark grassy field
+20260420_054237_frame_0002,10min,gameplay,action_described,1,1,looking at a block on the ground
+20260420_054237_frame_0002,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0002,10min,gameplay,player_status_described,1,1,"full health and hunger, holding a wooden axe"
+20260420_054237_frame_0003,10min,gameplay,location_detectable,1,1,grassy field
+20260420_054237_frame_0003,10min,gameplay,action_described,1,1,selecting acacia planks to build
+20260420_054237_frame_0003,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0003,10min,gameplay,player_status_described,1,1,"10 hearts, 10 hunger"
+20260420_054237_frame_0004,10min,gameplay,location_detectable,1,1,savanna biome
+20260420_054237_frame_0004,10min,gameplay,action_described,1,1,placing acacia planks to build a structure
+20260420_054237_frame_0004,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0004,10min,gameplay,player_status_described,1,1,"10 hearts, 9.5 hunger, holding acacia planks"
+20260420_054237_frame_0005,10min,gameplay,location_detectable,1,1,grassy field near water
+20260420_054237_frame_0005,10min,gameplay,action_described,1,1,building a structure with jungle planks
+20260420_054237_frame_0005,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0005,10min,gameplay,player_status_described,1,1,"full health, nearly full hunger, no armor"
+20260420_054237_frame_0006,10min,gameplay,location_detectable,1,1,grassy field
+20260420_054237_frame_0006,10min,gameplay,action_described,1,1,placing acacia planks to build a structure
+20260420_054237_frame_0006,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0006,10min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0007,10min,gameplay,location_detectable,1,1,dark grassy field
+20260420_054237_frame_0007,10min,gameplay,action_described,1,1,building a structure with dark wood planks
+20260420_054237_frame_0007,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0007,10min,gameplay,player_status_described,1,1,"full health and hunger, carrying wooden and stone tools"
+20260420_054237_frame_0008,10min,gameplay,location_detectable,1,1,"savanna biome, building a wooden structure"
+20260420_054237_frame_0008,10min,gameplay,action_described,1,1,constructing a building with acacia wood planks
+20260420_054237_frame_0008,10min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054237_frame_0008,10min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0009,10min,gameplay,location_detectable,1,1,partially built wooden house in a savanna
+20260420_054237_frame_0009,10min,gameplay,action_described,1,1,building a wooden structure
+20260420_054237_frame_0009,10min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054237_frame_0009,10min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054237_frame_0010,10min,gameplay,location_detectable,1,1,savanna near a river
+20260420_054237_frame_0010,10min,gameplay,action_described,1,1,standing next to a wooden wall or large tree
+20260420_054237_frame_0010,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0010,10min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0011,10min,menu,location_detectable,0,1,dark cave or interior
+20260420_054237_frame_0011,10min,menu,action_described,1,1,browsing the recipe book in the inventory
+20260420_054237_frame_0011,10min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054237_frame_0011,10min,menu,player_status_described,1,1,"full health, nearly full hunger, no armor"
+20260420_054237_frame_0012,10min,menu,location_detectable,0,1,dark environment
+20260420_054237_frame_0012,10min,menu,action_described,1,1,crafting acacia planks from logs
+20260420_054237_frame_0012,10min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054237_frame_0012,10min,menu,player_status_described,1,1,"full health, nearly full hunger, no armor"
+20260420_054237_frame_0013,10min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054237_frame_0013,10min,gameplay,action_described,1,1,placed or selected acacia planks
+20260420_054237_frame_0013,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0013,10min,gameplay,player_status_described,1,1,"10 hearts health, 9.5 hunger, no armor"
+20260420_054237_frame_0014,10min,gameplay,location_detectable,1,1,inside a wooden structure
+20260420_054237_frame_0014,10min,gameplay,action_described,1,1,building or standing in a wooden shelter
+20260420_054237_frame_0014,10min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054237_frame_0014,10min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0015,10min,gameplay,location_detectable,1,1,inside a wooden shelter
+20260420_054237_frame_0015,10min,gameplay,action_described,1,1,holding a wooden pickaxe and looking out from a doorway
+20260420_054237_frame_0015,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0015,10min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0016,10min,gameplay,location_detectable,1,1,inside a dark wooden shelter
+20260420_054237_frame_0016,10min,gameplay,action_described,1,1,standing inside a wooden structure looking at a wall
+20260420_054237_frame_0016,10min,gameplay,entities_identified,1,1,10 entity/entities detected
+20260420_054237_frame_0016,10min,gameplay,player_status_described,1,1,"10 hearts health, 8.5 hunger, holding a wooden pickaxe"
+20260420_054237_frame_0017,10min,gameplay,location_detectable,1,1,inside a small wooden structure
+20260420_054237_frame_0017,10min,gameplay,action_described,1,1,holding dark oak planks and looking up at the night sky
+20260420_054237_frame_0017,10min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054237_frame_0017,10min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0018,10min,menu,location_detectable,0,1,dark cave
+20260420_054237_frame_0018,10min,menu,action_described,1,1,managing inventory and hovering over a crafting table
+20260420_054237_frame_0018,10min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054237_frame_0018,10min,menu,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0019,10min,menu,location_detectable,0,1,dark enclosed space
+20260420_054237_frame_0019,10min,menu,action_described,1,1,selecting or holding a crafting table
+20260420_054237_frame_0019,10min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054237_frame_0019,10min,menu,player_status_described,1,1,"full health, near-full hunger"
+20260420_054237_frame_0020,10min,menu,location_detectable,0,1,inside a crafting menu
+20260420_054237_frame_0020,10min,menu,action_described,1,1,crafting acacia doors
+20260420_054237_frame_0020,10min,menu,entities_identified,0,0,0 entity/entities detected
+20260420_054237_frame_0020,10min,menu,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0021,10min,menu,location_detectable,0,1,inside a dark wooden structure
+20260420_054237_frame_0021,10min,menu,action_described,1,1,looking at a crafting table while holding a wooden door
+20260420_054237_frame_0021,10min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054237_frame_0021,10min,menu,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0022,10min,gameplay,location_detectable,1,1,inside a small wooden shelter
+20260420_054237_frame_0022,10min,gameplay,action_described,1,1,looking at a dirt block inside the shelter
+20260420_054237_frame_0022,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0022,10min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054237_frame_0023,10min,menu,location_detectable,0,1,inside a small wooden house
+20260420_054237_frame_0023,10min,menu,action_described,1,1,standing inside a wooden structure near a crafting table
+20260420_054237_frame_0023,10min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054237_frame_0023,10min,menu,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0024,10min,menu,location_detectable,0,1,inside a small wooden shelter
+20260420_054237_frame_0024,10min,menu,action_described,1,1,standing inside a wooden structure near a crafting table
+20260420_054237_frame_0024,10min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054237_frame_0024,10min,menu,player_status_described,1,1,full health and hunger; holding a damaged wooden pickaxe
+20260420_054237_frame_0025,10min,gameplay,location_detectable,1,1,inside a narrow wooden shelter looking out
+20260420_054237_frame_0025,10min,gameplay,action_described,1,1,switched to or holding a wooden sword
+20260420_054237_frame_0025,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0025,10min,gameplay,player_status_described,1,1,full health and hunger; holding a wooden sword
+20260420_054237_frame_0026,10min,gameplay,location_detectable,1,1,inside a dark wooden building
+20260420_054237_frame_0026,10min,gameplay,action_described,1,1,looking up at a wooden ceiling
+20260420_054237_frame_0026,10min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054237_frame_0026,10min,gameplay,player_status_described,1,1,"10 hearts health, 8.5 hunger"
+20260420_054237_frame_0027,10min,gameplay,location_detectable,1,1,inside a dark wooden structure
+20260420_054237_frame_0027,10min,gameplay,action_described,1,1,selecting acacia planks in the hotbar
+20260420_054237_frame_0027,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0027,10min,gameplay,player_status_described,1,1,"10 hearts, 9.5 hunger, no armor"
+20260420_054237_frame_0028,10min,menu,location_detectable,0,1,inside a dark wooden structure
+20260420_054237_frame_0028,10min,menu,action_described,1,1,breaking a crafting table with a wooden axe
+20260420_054237_frame_0028,10min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054237_frame_0028,10min,menu,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0029,10min,gameplay,location_detectable,1,1,inside a wooden house looking out at a lake
+20260420_054237_frame_0029,10min,gameplay,action_described,1,1,looking out of an open acacia door
+20260420_054237_frame_0029,10min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054237_frame_0029,10min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0030,10min,gameplay,location_detectable,1,1,"near a river at night, with a lava fall in the distance"
+20260420_054237_frame_0030,10min,gameplay,action_described,1,1,"standing near placed jungle planks, looking at a distant lava fall"
+20260420_054237_frame_0030,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0030,10min,gameplay,player_status_described,1,1,"full health and hunger, holding a wooden sword"
+20260420_054237_frame_0031,10min,gameplay,location_detectable,1,1,grassy field near water
+20260420_054237_frame_0031,10min,gameplay,action_described,1,1,standing in tall grass holding a wooden sword
+20260420_054237_frame_0031,10min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054237_frame_0031,10min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054237_frame_0032,10min,gameplay,location_detectable,1,1,savanna biome
+20260420_054237_frame_0032,10min,gameplay,action_described,1,1,looking towards a distant lava fall
+20260420_054237_frame_0032,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0032,10min,gameplay,player_status_described,1,1,"full health and hunger, holding a wooden sword"
+20260420_054237_frame_0033,10min,gameplay,location_detectable,1,1,grassy field near a hill with a lava flow
+20260420_054237_frame_0033,10min,gameplay,action_described,1,1,standing in a field looking at a grass block
+20260420_054237_frame_0033,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0033,10min,gameplay,player_status_described,1,1,full health and hunger; holding a wooden sword
+20260420_054237_frame_0034,10min,gameplay,location_detectable,1,1,savanna near water
+20260420_054237_frame_0034,10min,gameplay,action_described,1,1,exploring the savanna at night
+20260420_054237_frame_0034,10min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054237_frame_0034,10min,gameplay,player_status_described,1,1,"full health and hunger, holding a wooden sword"
+20260420_054237_frame_0035,10min,gameplay,location_detectable,1,1,savanna biome
+20260420_054237_frame_0035,10min,gameplay,action_described,1,1,surveying the savanna at night with a wooden sword drawn
+20260420_054237_frame_0035,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0035,10min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054237_frame_0036,10min,gameplay,location_detectable,1,1,savanna biome
+20260420_054237_frame_0036,10min,gameplay,action_described,1,1,exploring the savanna at night with a wooden sword drawn
+20260420_054237_frame_0036,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0036,10min,gameplay,player_status_described,1,1,"full health, 9.5 hunger points, no armor"
+20260420_054237_frame_0037,10min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054237_frame_0037,10min,gameplay,action_described,1,1,scanning the area with a wooden sword equipped
+20260420_054237_frame_0037,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0037,10min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0038,10min,gameplay,location_detectable,1,1,riverbank
+20260420_054237_frame_0038,10min,gameplay,action_described,1,1,observing a zombie across the water
+20260420_054237_frame_0038,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0038,10min,gameplay,player_status_described,1,1,"10 hearts, 10 hunger"
+20260420_054237_frame_0039,10min,menu,location_detectable,0,1,riverbank at night
+20260420_054237_frame_0039,10min,menu,action_described,1,1,unlocked a new recipe for sugar after interacting with sugar cane
+20260420_054237_frame_0039,10min,menu,entities_identified,0,1,3 entity/entities detected
+20260420_054237_frame_0039,10min,menu,player_status_described,1,1,"full health and hunger, holding a wooden sword"
+20260420_054237_frame_0040,10min,gameplay,location_detectable,1,1,riverbank at night
+20260420_054237_frame_0040,10min,gameplay,action_described,1,1,standing near a pitcher plant by the water
+20260420_054237_frame_0040,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0040,10min,gameplay,player_status_described,1,1,"full health, full hunger, holding a wooden sword"
+20260420_054237_frame_0041,10min,gameplay,location_detectable,1,1,savanna
+20260420_054237_frame_0041,10min,gameplay,action_described,1,1,looking at tall grass
+20260420_054237_frame_0041,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0041,10min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0042,10min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054237_frame_0042,10min,gameplay,action_described,1,1,walking through the savanna at night
+20260420_054237_frame_0042,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0042,10min,gameplay,player_status_described,1,1,full health and hunger; holding a wooden sword
+20260420_054237_frame_0043,10min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054237_frame_0043,10min,gameplay,action_described,1,1,targeting a block on the ground while two zombies approach from across the water
+20260420_054237_frame_0043,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0043,10min,gameplay,player_status_described,1,1,full health and hunger; holding a wooden sword
+20260420_054237_frame_0044,10min,gameplay,location_detectable,1,1,grassy field at night
+20260420_054237_frame_0044,10min,gameplay,action_described,1,1,facing a creeper at close range
+20260420_054237_frame_0044,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0044,10min,gameplay,player_status_described,1,1,"10 hearts health, 10 hunger, holding a wooden sword"
+20260420_054237_frame_0045,10min,gameplay,location_detectable,1,1,grassy riverbank
+20260420_054237_frame_0045,10min,gameplay,action_described,1,1,standing near a body of water looking at a small island
+20260420_054237_frame_0045,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0045,10min,gameplay,player_status_described,1,1,"4.5 hearts health, 8.5 hunger, holding a wooden sword"
+20260420_054237_frame_0046,10min,gameplay,location_detectable,1,1,outside a wooden building
+20260420_054237_frame_0046,10min,gameplay,action_described,1,1,facing a wooden door
+20260420_054237_frame_0046,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0046,10min,gameplay,player_status_described,1,1,"4.5 hearts health, 7.5 hunger"
+20260420_054237_frame_0047,10min,gameplay,location_detectable,1,1,inside a dark wooden house
+20260420_054237_frame_0047,10min,gameplay,action_described,1,1,standing inside a dark room near a door
+20260420_054237_frame_0047,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0047,10min,gameplay,player_status_described,1,1,"5 hearts health, 8.5 hunger, holding a wooden sword"
+20260420_054237_frame_0048,10min,gameplay,location_detectable,1,1,inside a wooden hut
+20260420_054237_frame_0048,10min,gameplay,action_described,1,1,standing inside a dark wooden structure looking at the door
+20260420_054237_frame_0048,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0048,10min,gameplay,player_status_described,1,1,"6.5 hearts health, 8.5 hunger, holding a wooden sword"
+20260420_054237_frame_0049,10min,gameplay,location_detectable,1,1,inside a dark shelter looking out at a river
+20260420_054237_frame_0049,10min,gameplay,action_described,1,1,standing in a doorway looking out at the water
+20260420_054237_frame_0049,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0049,10min,gameplay,player_status_described,1,1,"5.5 hearts health, 8.5 hunger, holding a wooden sword"
+20260420_054237_frame_0050,10min,gameplay,location_detectable,1,1,inside a wooden building looking out at a lake
+20260420_054237_frame_0050,10min,gameplay,action_described,1,1,looking out through an open doorway
+20260420_054237_frame_0050,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0050,10min,gameplay,player_status_described,1,1,"5 hearts health, 8.5 hunger, holding a wooden sword"
+20260420_054237_frame_0051,10min,gameplay,location_detectable,1,1,inside a wooden building
+20260420_054237_frame_0051,10min,gameplay,action_described,1,1,looking at a wooden wall inside a shelter while a drowned is outside
+20260420_054237_frame_0051,10min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054237_frame_0051,10min,gameplay,player_status_described,1,1,"5.5 hearts health, 8.5 hunger, holding a wooden sword"
+20260420_054237_frame_0052,10min,gameplay,location_detectable,1,1,inside a dark structure
+20260420_054237_frame_0052,10min,gameplay,action_described,1,1,looking through a gap at a drowned
+20260420_054237_frame_0052,10min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054237_frame_0052,10min,gameplay,player_status_described,1,1,"5.5 hearts, full hunger"
+20260420_054237_frame_0053,10min,gameplay,location_detectable,1,1,inside a dark wooden shelter
+20260420_054237_frame_0053,10min,gameplay,action_described,1,1,standing inside a dark room looking out an open door at a drowned
+20260420_054237_frame_0053,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0053,10min,gameplay,player_status_described,1,1,"5.5 hearts health, 9.5 hunger, holding a damaged wooden sword"
+20260420_054237_frame_0054,10min,gameplay,location_detectable,1,1,inside a wooden house looking out at a lake
+20260420_054237_frame_0054,10min,gameplay,action_described,1,1,standing at an open doorway looking outside
+20260420_054237_frame_0054,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0054,10min,gameplay,player_status_described,1,1,"5 hearts health, 7.5 hunger, holding a damaged wooden sword"
+20260420_054237_frame_0055,10min,gameplay,location_detectable,1,1,inside a dark wooden building
+20260420_054237_frame_0055,10min,gameplay,action_described,1,1,standing inside a structure looking towards a door
+20260420_054237_frame_0055,10min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054237_frame_0055,10min,gameplay,player_status_described,1,1,"5 hearts health, 8.5 hunger, holding a damaged wooden sword"
+20260420_054237_frame_0056,10min,gameplay,location_detectable,1,1,inside a wooden hut
+20260420_054237_frame_0056,10min,gameplay,action_described,1,1,looking at a wooden door from inside a dark room
+20260420_054237_frame_0056,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0056,10min,gameplay,player_status_described,1,1,"5 hearts health, 8.5 hunger, holding a wooden sword"
+20260420_054237_frame_0057,10min,gameplay,location_detectable,1,1,inside a wooden house
+20260420_054237_frame_0057,10min,gameplay,action_described,1,1,looking out the door of a wooden building
+20260420_054237_frame_0057,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0057,10min,gameplay,player_status_described,1,1,"5 hearts health, 8.5 hunger, holding a wooden sword"
+20260420_054237_frame_0058,10min,gameplay,location_detectable,1,1,riverbank in a savanna biome
+20260420_054237_frame_0058,10min,gameplay,action_described,1,1,confronting a zombie at very close range
+20260420_054237_frame_0058,10min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054237_frame_0058,10min,gameplay,player_status_described,1,1,"3.5 hearts health, full hunger"
+20260420_054237_frame_0059,10min,gameplay,location_detectable,1,1,inside a wooden hut
+20260420_054237_frame_0059,10min,gameplay,action_described,1,1,standing inside a wooden building looking out the door
+20260420_054237_frame_0059,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0059,10min,gameplay,player_status_described,1,1,"1 heart health, full hunger, holding a damaged wooden sword"
+20260420_054237_frame_0060,10min,menu,location_detectable,0,1,dark cave or underground area
+20260420_054237_frame_0060,10min,menu,action_described,1,1,browsing inventory and hovering over a crafting table
+20260420_054237_frame_0060,10min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054237_frame_0060,10min,menu,player_status_described,1,1,"full health, nearly full hunger, no armor equipped"
+20260420_054237_frame_0061,10min,menu,location_detectable,0,1,inside a dark wooden structure
+20260420_054237_frame_0061,10min,menu,action_described,1,1,holding a crafting table and looking at the floor
+20260420_054237_frame_0061,10min,menu,entities_identified,0,1,4 entity/entities detected
+20260420_054237_frame_0061,10min,menu,player_status_described,1,1,"1 heart health, 8.5 hunger, no armor"
+20260420_054237_frame_0062,10min,menu,location_detectable,0,1,dark interior
+20260420_054237_frame_0062,10min,menu,action_described,1,1,browsing crafting recipes
+20260420_054237_frame_0062,10min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054237_frame_0062,10min,menu,player_status_described,1,1,"health: 9 hearts, hunger: 9.5 units"
+20260420_054237_frame_0063,10min,menu,location_detectable,0,1,inside a dark wooden structure
+20260420_054237_frame_0063,10min,menu,action_described,1,1,holding sugar while looking at a crafting table
+20260420_054237_frame_0063,10min,menu,entities_identified,0,1,4 entity/entities detected
+20260420_054237_frame_0063,10min,menu,player_status_described,1,1,"1 heart health, full hunger"
+20260420_054237_frame_0064,10min,menu,location_detectable,0,1,"dark area, possibly a cave"
+20260420_054237_frame_0064,10min,menu,action_described,1,1,"viewing inventory and crafting menu, hovering over an Acacia Sapling"
+20260420_054237_frame_0064,10min,menu,entities_identified,0,1,7 entity/entities detected
+20260420_054237_frame_0064,10min,menu,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0065,10min,menu,location_detectable,0,1,"dark area, possibly a cave"
+20260420_054237_frame_0065,10min,menu,action_described,1,1,accessing the crafting table and inventory
+20260420_054237_frame_0065,10min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054237_frame_0065,10min,menu,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0066,10min,menu,location_detectable,0,1,dark cave
+20260420_054237_frame_0066,10min,menu,action_described,1,1,browsing the crafting recipe book
+20260420_054237_frame_0066,10min,menu,entities_identified,0,1,6 entity/entities detected
+20260420_054237_frame_0066,10min,menu,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0067,10min,menu,location_detectable,0,1,dark wooden interior
+20260420_054237_frame_0067,10min,menu,action_described,1,1,unlocked a new recipe
+20260420_054237_frame_0067,10min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054237_frame_0067,10min,menu,player_status_described,1,1,"1 heart health, full hunger"
+20260420_054237_frame_0068,10min,gameplay,location_detectable,1,1,dark pit or interior
+20260420_054237_frame_0068,10min,gameplay,action_described,1,1,mining a stone block with a wooden pickaxe
+20260420_054237_frame_0068,10min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054237_frame_0068,10min,gameplay,player_status_described,1,1,"1 heart health, 8.5 hunger"
+20260420_054237_frame_0069,10min,menu,location_detectable,0,1,"dark area, possibly a cave"
+20260420_054237_frame_0069,10min,menu,action_described,1,1,accessing inventory and recipe book
+20260420_054237_frame_0069,10min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054237_frame_0069,10min,menu,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054237_frame_0070,10min,gameplay,location_detectable,1,1,inside a dark wooden structure
+20260420_054237_frame_0070,10min,gameplay,action_described,1,1,looking down at a dark floor block
+20260420_054237_frame_0070,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0070,10min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0071,10min,menu,location_detectable,0,1,dark interior
+20260420_054237_frame_0071,10min,menu,action_described,1,1,opening the furnace menu
+20260420_054237_frame_0071,10min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054237_frame_0071,10min,menu,player_status_described,1,1,"10 hearts, 8.5 hunger"
+20260420_054237_frame_0072,10min,gameplay,location_detectable,1,1,dark interior
+20260420_054237_frame_0072,10min,gameplay,action_described,1,1,interacting with a furnace
+20260420_054237_frame_0072,10min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054237_frame_0072,10min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0073,10min,gameplay,location_detectable,1,1,dark interior
+20260420_054237_frame_0073,10min,gameplay,action_described,1,1,placing an oak log into the fuel slot of a furnace
+20260420_054237_frame_0073,10min,gameplay,entities_identified,1,1,7 entity/entities detected
+20260420_054237_frame_0073,10min,gameplay,player_status_described,1,1,"10 hearts health, 8.5 hunger"
+20260420_054237_frame_0074,10min,gameplay,location_detectable,1,1,inside a dark structure or cave
+20260420_054237_frame_0074,10min,gameplay,action_described,1,1,"interacting with a furnace, placing an acacia sapling in the input slot and an o"
+20260420_054237_frame_0074,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0074,10min,gameplay,player_status_described,1,1,"full health, 8.5 hunger"
+20260420_054237_frame_0075,10min,gameplay,location_detectable,1,1,dark interior
+20260420_054237_frame_0075,10min,gameplay,action_described,1,1,managing items in a furnace
+20260420_054237_frame_0075,10min,gameplay,entities_identified,1,1,9 entity/entities detected
+20260420_054237_frame_0075,10min,gameplay,player_status_described,1,1,"10 hearts health, 9.5 hunger"
+20260420_054237_frame_0076,10min,gameplay,location_detectable,1,1,inside a wooden structure
+20260420_054237_frame_0076,10min,gameplay,action_described,1,1,interacting with a furnace
+20260420_054237_frame_0076,10min,gameplay,entities_identified,1,1,8 entity/entities detected
+20260420_054237_frame_0076,10min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054237_frame_0077,10min,gameplay,location_detectable,1,1,inside a wooden building
+20260420_054237_frame_0077,10min,gameplay,action_described,1,1,accessing a furnace interface
+20260420_054237_frame_0077,10min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054237_frame_0077,10min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0078,10min,gameplay,location_detectable,1,1,inside a wooden house
+20260420_054237_frame_0078,10min,gameplay,action_described,1,1,smelting wood into charcoal using a furnace
+20260420_054237_frame_0078,10min,gameplay,entities_identified,1,1,15 entity/entities detected
+20260420_054237_frame_0078,10min,gameplay,player_status_described,1,1,"10 hearts, 10 hunger"
+20260420_054237_frame_0079,10min,gameplay,location_detectable,1,1,dark interior or cave
+20260420_054237_frame_0079,10min,gameplay,action_described,1,1,smelting charcoal in a furnace
+20260420_054237_frame_0079,10min,gameplay,entities_identified,1,1,17 entity/entities detected
+20260420_054237_frame_0079,10min,gameplay,player_status_described,1,1,"9.5 hearts health, 9.5 drumsticks hunger"
+20260420_054237_frame_0080,10min,menu,location_detectable,0,1,inside a small wooden shelter
+20260420_054237_frame_0080,10min,menu,action_described,1,1,looking at a crafting table while holding coal
+20260420_054237_frame_0080,10min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054237_frame_0080,10min,menu,player_status_described,1,1,"critical health (1 heart), 8.5 hunger"
+20260420_054237_frame_0081,10min,menu,location_detectable,0,1,dark interior or cave
+20260420_054237_frame_0081,10min,menu,action_described,1,1,browsing the recipe book in the crafting menu
+20260420_054237_frame_0081,10min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054237_frame_0081,10min,menu,player_status_described,1,1,"full health, near-full hunger"
+20260420_054237_frame_0082,10min,menu,location_detectable,0,1,inside a dark wooden shelter
+20260420_054237_frame_0082,10min,menu,action_described,1,1,looking at a crafting table with a torch selected
+20260420_054237_frame_0082,10min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054237_frame_0082,10min,menu,player_status_described,1,1,"1 heart health, full hunger"
+20260420_054237_frame_0083,10min,gameplay,location_detectable,1,1,inside a wooden building looking out a door
+20260420_054237_frame_0083,10min,gameplay,action_described,1,1,standing inside looking through an acacia door
+20260420_054237_frame_0083,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0083,10min,gameplay,player_status_described,1,1,"1 heart health, 8.5 hunger, holding a torch"
+20260420_054237_frame_0084,10min,gameplay,location_detectable,1,1,savanna biome
+20260420_054237_frame_0084,10min,gameplay,action_described,1,1,"a player named Hassancoul was just killed by a Drowned, as shown in the chat"
+20260420_054237_frame_0084,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0084,10min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054237_frame_0085,10min,gameplay,location_detectable,1,1,savanna biome near a river
+20260420_054237_frame_0085,10min,gameplay,action_described,1,1,a death message appeared: Hassancoul was slain by Drowned
+20260420_054237_frame_0085,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0085,10min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0086,10min,gameplay,location_detectable,1,1,savanna biome
+20260420_054237_frame_0086,10min,gameplay,action_described,1,1,exploring the savanna at night
+20260420_054237_frame_0086,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0086,10min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0087,10min,gameplay,location_detectable,1,1,grassy field at night near a mountain
+20260420_054237_frame_0087,10min,gameplay,action_described,1,1,looking at a grass block
+20260420_054237_frame_0087,10min,gameplay,entities_identified,1,1,6 entity/entities detected
+20260420_054237_frame_0087,10min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054237_frame_0088,10min,gameplay,location_detectable,1,1,riverbank near mountains
+20260420_054237_frame_0088,10min,gameplay,action_described,1,1,standing near a river at night
+20260420_054237_frame_0088,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0088,10min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054237_frame_0089,10min,gameplay,location_detectable,1,1,savanna biome near a river
+20260420_054237_frame_0089,10min,gameplay,action_described,1,1,observing the surroundings near a body of water
+20260420_054237_frame_0089,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0089,10min,gameplay,player_status_described,1,1,"7.5 hearts health, full hunger bar"
+20260420_054237_frame_0090,10min,gameplay,location_detectable,1,1,outside a wooden building near water at night
+20260420_054237_frame_0090,10min,gameplay,action_described,1,1,looking at a patch of tall grass
+20260420_054237_frame_0090,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0090,10min,gameplay,player_status_described,1,1,"6.5 hearts health, full hunger, no armor"
+20260420_054237_frame_0091,10min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054237_frame_0091,10min,gameplay,action_described,1,1,"standing in tall grass at night, looking around"
+20260420_054237_frame_0091,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0091,10min,gameplay,player_status_described,1,1,"7 hearts health, 8.5 hunger, holding a bow"
+20260420_054237_frame_0092,10min,gameplay,location_detectable,1,1,savanna biome
+20260420_054237_frame_0092,10min,gameplay,action_described,1,1,exploring the savanna at night with a wooden pickaxe
+20260420_054237_frame_0092,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0092,10min,gameplay,player_status_described,1,1,"7.5 hearts health, 9.5 hunger, no armor"
+20260420_054237_frame_0093,10min,gameplay,location_detectable,1,1,grassy riverbank at night
+20260420_054237_frame_0093,10min,gameplay,action_described,1,1,"breaking tall grass or a block, creating black particles"
+20260420_054237_frame_0093,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0093,10min,gameplay,player_status_described,1,1,"7 hearts health, full hunger, holding a wooden pickaxe"
+20260420_054237_frame_0094,10min,gameplay,location_detectable,1,1,savanna biome
+20260420_054237_frame_0094,10min,gameplay,action_described,1,1,standing still and looking at a grass block
+20260420_054237_frame_0094,10min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054237_frame_0094,10min,gameplay,player_status_described,1,1,"6.5 hearts, 8.5 hunger, holding a wooden pickaxe"
+20260420_054237_frame_0095,10min,gameplay,location_detectable,1,1,grassy field near water
+20260420_054237_frame_0095,10min,gameplay,action_described,1,1,targeting a block of tall grass
+20260420_054237_frame_0095,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0095,10min,gameplay,player_status_described,1,1,"6.5 hearts health, 7.5 hunger, holding a wooden axe"
+20260420_054237_frame_0096,10min,gameplay,location_detectable,1,1,riverbank in a savanna at night
+20260420_054237_frame_0096,10min,gameplay,action_described,1,1,standing near a riverbank under a tree canopy
+20260420_054237_frame_0096,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0096,10min,gameplay,player_status_described,1,1,"7.5 hearts health, 8.5 hunger, no armor"
+20260420_054237_frame_0097,10min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054237_frame_0097,10min,gameplay,action_described,1,1,exploring the savanna at night
+20260420_054237_frame_0097,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0097,10min,gameplay,player_status_described,1,1,"7 hearts, 6.5 hunger, holding a damaged wooden pickaxe"
+20260420_054237_frame_0098,10min,gameplay,location_detectable,1,1,savanna at night near water
+20260420_054237_frame_0098,10min,gameplay,action_described,1,1,exploring near a wooden structure at night
+20260420_054237_frame_0098,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0098,10min,gameplay,player_status_described,1,1,"7 hearts, 7.5 hunger, no armor, holding a damaged wooden pickaxe"
+20260420_054237_frame_0099,10min,gameplay,location_detectable,1,1,inside a wooden structure
+20260420_054237_frame_0099,10min,gameplay,action_described,1,1,standing near a glass window
+20260420_054237_frame_0099,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0099,10min,gameplay,player_status_described,1,1,"6.5 hearts, 7.5 hunger, no armor"
+20260420_054237_frame_0100,10min,gameplay,location_detectable,1,1,inside a wooden hut
+20260420_054237_frame_0100,10min,gameplay,action_described,1,1,standing inside a wooden structure looking at a door
+20260420_054237_frame_0100,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0100,10min,gameplay,player_status_described,1,1,"7.5 hearts health, 8.5 hunger, no armor"
+20260420_054237_frame_0101,10min,gameplay,location_detectable,1,1,inside a wooden building looking out
+20260420_054237_frame_0101,10min,gameplay,action_described,1,1,looking through an acacia door
+20260420_054237_frame_0101,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0101,10min,gameplay,player_status_described,1,1,"7.5 hearts, 7.5 hunger"
+20260420_054237_frame_0102,10min,menu,location_detectable,0,1,inside a small wooden house
+20260420_054237_frame_0102,10min,menu,action_described,1,1,standing inside a wooden structure near a crafting table
+20260420_054237_frame_0102,10min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054237_frame_0102,10min,menu,player_status_described,1,1,"7.5 hearts health, 7.5 hunger, no armor"
+20260420_054237_frame_0103,10min,gameplay,location_detectable,1,1,inside a wooden building looking out a door
+20260420_054237_frame_0103,10min,gameplay,action_described,1,1,standing inside looking out through a wooden door
+20260420_054237_frame_0103,10min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054237_frame_0103,10min,gameplay,player_status_described,1,1,"7.5 hearts health, 8.5 hunger, holding a damaged wooden pickaxe"
+20260420_054237_frame_0104,10min,gameplay,location_detectable,1,1,swampy plains
+20260420_054237_frame_0104,10min,gameplay,action_described,1,1,standing in a field facing a creeper
+20260420_054237_frame_0104,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0104,10min,gameplay,player_status_described,1,1,"6.5 hearts, 7.5 hunger"
+20260420_054237_frame_0105,10min,gameplay,location_detectable,1,1,inside a wooden house overlooking water
+20260420_054237_frame_0105,10min,gameplay,action_described,1,1,looking out through an acacia door while holding a torch
+20260420_054237_frame_0105,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0105,10min,gameplay,player_status_described,1,1,"7 hearts health, 7.5 hunger"
+20260420_054237_frame_0106,10min,menu,location_detectable,0,1,inside a wooden house
+20260420_054237_frame_0106,10min,menu,action_described,1,1,"standing inside a house near a crafting table, holding a torch"
+20260420_054237_frame_0106,10min,menu,entities_identified,0,1,3 entity/entities detected
+20260420_054237_frame_0106,10min,menu,player_status_described,1,1,"6.5 hearts health, 7.5 hunger, no armor"
+20260420_054237_frame_0107,10min,gameplay,location_detectable,1,1,inside a wooden house
+20260420_054237_frame_0107,10min,gameplay,action_described,1,1,looking out through a wooden door
+20260420_054237_frame_0107,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0107,10min,gameplay,player_status_described,1,1,"7.5 hearts, 7.5 hunger, holding a torch"
+20260420_054237_frame_0108,10min,gameplay,location_detectable,1,1,inside a wooden house
+20260420_054237_frame_0108,10min,gameplay,action_described,1,1,standing inside a house looking at the door while holding a torch
+20260420_054237_frame_0108,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0108,10min,gameplay,player_status_described,1,1,"6.5 hearts health, 7.5 hunger, no armor"
+20260420_054237_frame_0109,10min,gameplay,location_detectable,1,1,inside a small wooden house
+20260420_054237_frame_0109,10min,gameplay,action_described,1,1,standing inside a house looking at the door
+20260420_054237_frame_0109,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0109,10min,gameplay,player_status_described,1,1,"7.5 hearts health, 7.5 hunger, holding a torch"
+20260420_054237_frame_0110,10min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054237_frame_0110,10min,gameplay,action_described,1,1,standing near water holding a torch
+20260420_054237_frame_0110,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0110,10min,gameplay,player_status_described,1,1,"6.5 hearts health, 8.5 hunger, no armor"
+20260420_054237_frame_0111,10min,gameplay,location_detectable,1,1,savanna biome
+20260420_054237_frame_0111,10min,gameplay,action_described,1,1,walking through the savanna at sunset
+20260420_054237_frame_0111,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0111,10min,gameplay,player_status_described,1,1,"7 hearts health, 8.5 hunger"
+20260420_054237_frame_0112,10min,gameplay,location_detectable,1,1,savanna biome
+20260420_054237_frame_0112,10min,gameplay,action_described,1,1,walking through tall grass towards two creepers
+20260420_054237_frame_0112,10min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054237_frame_0112,10min,gameplay,player_status_described,1,1,"6 hearts health, 8.5 hunger, holding a torch"
+20260420_054237_frame_0113,10min,gameplay,location_detectable,1,1,savanna biome
+20260420_054237_frame_0113,10min,gameplay,action_described,1,1,holding a wooden sword while looking at tall grass
+20260420_054237_frame_0113,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0113,10min,gameplay,player_status_described,1,1,"5.5 hearts health, 7.5 hunger"
+20260420_054237_frame_0114,10min,gameplay,location_detectable,1,1,savanna biome
+20260420_054237_frame_0114,10min,gameplay,action_described,1,1,reading a death message in chat: 'Hassancoul was blown up by Creeper'
+20260420_054237_frame_0114,10min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054237_frame_0114,10min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054237_frame_0115,10min,gameplay,location_detectable,1,1,savanna biome
+20260420_054237_frame_0115,10min,gameplay,action_described,1,1,"A player named Hassancoul was just killed by a creeper explosion, as indicated b"
+20260420_054237_frame_0115,10min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054237_frame_0115,10min,gameplay,player_status_described,1,1,"10 hearts health, 9.5 hunger, empty hotbar"
+20260420_054237_frame_0116,10min,gameplay,location_detectable,1,1,savanna biome
+20260420_054237_frame_0116,10min,gameplay,action_described,1,1,exploring a savanna landscape
+20260420_054237_frame_0116,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0116,10min,gameplay,player_status_described,1,1,"full health and hunger, empty hotbar"
+20260420_054237_frame_0117,10min,gameplay,location_detectable,1,1,savanna biome
+20260420_054237_frame_0117,10min,gameplay,action_described,1,1,looking at tall grass while holding an acacia sapling
+20260420_054237_frame_0117,10min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054237_frame_0117,10min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054237_frame_0118,10min,gameplay,location_detectable,1,1,grassy riverbank
+20260420_054237_frame_0118,10min,gameplay,action_described,1,1,standing near a small water-filled pit holding a sapling
+20260420_054237_frame_0118,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0118,10min,gameplay,player_status_described,1,1,"full health, 9.5 hunger"
+20260420_054237_frame_0119,10min,gameplay,location_detectable,1,1,savanna biome near mesa hills
+20260420_054237_frame_0119,10min,gameplay,action_described,1,1,looking at a patch of tall grass
+20260420_054237_frame_0119,10min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054237_frame_0119,10min,gameplay,player_status_described,1,1,"full health and hunger, holding a sapling"
+20260420_054239_frame_0000,15min,menu,location_detectable,0,1,savanna
+20260420_054239_frame_0000,15min,menu,action_described,1,1,browsing the recipe book in the inventory menu
+20260420_054239_frame_0000,15min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054239_frame_0000,15min,menu,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054239_frame_0001,15min,menu,location_detectable,0,1,savanna
+20260420_054239_frame_0001,15min,menu,action_described,1,1,crafting acacia planks from logs in the inventory menu
+20260420_054239_frame_0001,15min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054239_frame_0001,15min,menu,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054239_frame_0002,15min,gameplay,location_detectable,1,1,grassy field
+20260420_054239_frame_0002,15min,gameplay,action_described,1,1,"standing in tall grass, looking at the ground"
+20260420_054239_frame_0002,15min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054239_frame_0002,15min,gameplay,player_status_described,1,1,"full health and hunger, holding a wooden axe"
+20260420_054239_frame_0003,15min,gameplay,location_detectable,1,1,grassy field
+20260420_054239_frame_0003,15min,gameplay,action_described,1,1,selecting Acacia Planks in the hotbar
+20260420_054239_frame_0003,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0003,15min,gameplay,player_status_described,1,1,"full health (10 hearts), full hunger (10 drumsticks)"
+20260420_054239_frame_0004,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0004,15min,gameplay,action_described,1,1,placing acacia planks to build a structure
+20260420_054239_frame_0004,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0004,15min,gameplay,player_status_described,1,1,"full health, nearly full hunger"
+20260420_054239_frame_0005,15min,gameplay,location_detectable,1,1,grassy field near water
+20260420_054239_frame_0005,15min,gameplay,action_described,1,1,building a structure with jungle planks
+20260420_054239_frame_0005,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0005,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0006,15min,gameplay,location_detectable,1,1,grassy field
+20260420_054239_frame_0006,15min,gameplay,action_described,1,1,building a structure with mangrove planks
+20260420_054239_frame_0006,15min,gameplay,entities_identified,1,1,8 entity/entities detected
+20260420_054239_frame_0006,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0007,15min,gameplay,location_detectable,1,1,swamp biome
+20260420_054239_frame_0007,15min,gameplay,action_described,1,1,placing mangrove planks to build a structure
+20260420_054239_frame_0007,15min,gameplay,entities_identified,1,1,9 entity/entities detected
+20260420_054239_frame_0007,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0008,15min,gameplay,location_detectable,1,1,"savanna biome, building a wooden structure"
+20260420_054239_frame_0008,15min,gameplay,action_described,1,1,building a structure with acacia planks
+20260420_054239_frame_0008,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0008,15min,gameplay,player_status_described,1,1,"10 hearts health, 10 hunger points"
+20260420_054239_frame_0009,15min,gameplay,location_detectable,1,1,on top of a wooden structure in a savanna
+20260420_054239_frame_0009,15min,gameplay,action_described,1,1,building a wooden structure with acacia planks
+20260420_054239_frame_0009,15min,gameplay,entities_identified,1,1,7 entity/entities detected
+20260420_054239_frame_0009,15min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054239_frame_0010,15min,gameplay,location_detectable,1,1,savanna biome near a river
+20260420_054239_frame_0010,15min,gameplay,action_described,1,1,standing next to a large tree trunk
+20260420_054239_frame_0010,15min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054239_frame_0010,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0011,15min,menu,location_detectable,0,1,"dark environment, likely a cave"
+20260420_054239_frame_0011,15min,menu,action_described,1,1,viewing the recipe for Acacia Planks in the inventory menu
+20260420_054239_frame_0011,15min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054239_frame_0011,15min,menu,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054239_frame_0012,15min,menu,location_detectable,0,1,dark environment
+20260420_054239_frame_0012,15min,menu,action_described,1,1,crafting acacia planks from acacia logs in the inventory menu
+20260420_054239_frame_0012,15min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054239_frame_0012,15min,menu,player_status_described,1,1,"10 hearts health, 9.5 hunger"
+20260420_054239_frame_0013,15min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054239_frame_0013,15min,gameplay,action_described,1,1,selecting or placing acacia planks
+20260420_054239_frame_0013,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0013,15min,gameplay,player_status_described,1,1,"full health, nearly full hunger, no armor"
+20260420_054239_frame_0014,15min,gameplay,location_detectable,1,1,inside a wooden shelter
+20260420_054239_frame_0014,15min,gameplay,action_described,1,1,holding jungle planks while building a structure
+20260420_054239_frame_0014,15min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054239_frame_0014,15min,gameplay,player_status_described,1,1,"10 hearts, 9.5 hunger"
+20260420_054239_frame_0015,15min,gameplay,location_detectable,1,1,inside a wooden structure
+20260420_054239_frame_0015,15min,gameplay,action_described,1,1,holding a wooden pickaxe
+20260420_054239_frame_0015,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0015,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0016,15min,gameplay,location_detectable,1,1,inside a wooden structure
+20260420_054239_frame_0016,15min,gameplay,action_described,1,1,standing inside a wooden shelter looking at the wall
+20260420_054239_frame_0016,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0016,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0017,15min,gameplay,location_detectable,1,1,inside a small wooden shelter
+20260420_054239_frame_0017,15min,gameplay,action_described,1,1,holding oak planks and looking up at the night sky
+20260420_054239_frame_0017,15min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054239_frame_0017,15min,gameplay,player_status_described,1,1,"10 hearts, 9.5 hunger"
+20260420_054239_frame_0018,15min,menu,location_detectable,0,1,dark environment
+20260420_054239_frame_0018,15min,menu,action_described,1,1,managing inventory and hovering over a crafting table
+20260420_054239_frame_0018,15min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054239_frame_0018,15min,menu,player_status_described,1,1,"full health, full hunger, no armor"
+20260420_054239_frame_0019,15min,menu,location_detectable,0,1,inside a dark wooden shelter
+20260420_054239_frame_0019,15min,menu,action_described,1,1,selecting a crafting table from the hotbar
+20260420_054239_frame_0019,15min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054239_frame_0019,15min,menu,player_status_described,1,1,"full health, nearly full hunger"
+20260420_054239_frame_0020,15min,menu,location_detectable,0,1,crafting menu in a dark area
+20260420_054239_frame_0020,15min,menu,action_described,1,1,crafting acacia doors
+20260420_054239_frame_0020,15min,menu,entities_identified,0,1,8 entity/entities detected
+20260420_054239_frame_0020,15min,menu,player_status_described,1,1,"10 hearts, 9.5 hunger"
+20260420_054239_frame_0021,15min,menu,location_detectable,0,1,dark wooden interior
+20260420_054239_frame_0021,15min,menu,action_described,1,1,standing in a dark room near a crafting table
+20260420_054239_frame_0021,15min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054239_frame_0021,15min,menu,player_status_described,1,1,"full health and hunger, holding oak doors"
+20260420_054239_frame_0022,15min,gameplay,location_detectable,1,1,inside a dark wooden structure
+20260420_054239_frame_0022,15min,gameplay,action_described,1,1,looking at a dirt block inside a shelter
+20260420_054239_frame_0022,15min,gameplay,entities_identified,1,1,7 entity/entities detected
+20260420_054239_frame_0022,15min,gameplay,player_status_described,1,1,"full health, full hunger, no armor"
+20260420_054239_frame_0023,15min,menu,location_detectable,0,1,inside a small wooden house
+20260420_054239_frame_0023,15min,menu,action_described,1,1,standing near a crafting table inside a wooden structure
+20260420_054239_frame_0023,15min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054239_frame_0023,15min,menu,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0024,15min,menu,location_detectable,0,1,inside a small wooden hut
+20260420_054239_frame_0024,15min,menu,action_described,1,1,standing inside a wooden structure near a crafting table
+20260420_054239_frame_0024,15min,menu,entities_identified,0,1,4 entity/entities detected
+20260420_054239_frame_0024,15min,menu,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054239_frame_0025,15min,gameplay,location_detectable,1,1,narrow passage between wooden walls
+20260420_054239_frame_0025,15min,gameplay,action_described,1,1,looking through a narrow gap with a wooden sword equipped
+20260420_054239_frame_0025,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0025,15min,gameplay,player_status_described,1,1,"full health, nearly full hunger, holding a wooden sword"
+20260420_054239_frame_0026,15min,gameplay,location_detectable,1,1,inside a dark wooden structure
+20260420_054239_frame_0026,15min,gameplay,action_described,1,1,standing in a dark room looking at the ceiling
+20260420_054239_frame_0026,15min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054239_frame_0026,15min,gameplay,player_status_described,1,1,"10 hearts, 10 hunger"
+20260420_054239_frame_0027,15min,gameplay,location_detectable,1,1,dark interior
+20260420_054239_frame_0027,15min,gameplay,action_described,1,1,holding acacia planks
+20260420_054239_frame_0027,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0027,15min,gameplay,player_status_described,1,1,"10 hearts, 10 hunger"
+20260420_054239_frame_0028,15min,menu,location_detectable,0,1,inside a dark wooden structure
+20260420_054239_frame_0028,15min,menu,action_described,1,1,breaking a crafting table with a wooden axe
+20260420_054239_frame_0028,15min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054239_frame_0028,15min,menu,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0029,15min,gameplay,location_detectable,1,1,inside a wooden house looking out at a lake
+20260420_054239_frame_0029,15min,gameplay,action_described,1,1,standing inside a house looking out through an open door
+20260420_054239_frame_0029,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0029,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0030,15min,gameplay,location_detectable,1,1,grassy area near water at night
+20260420_054239_frame_0030,15min,gameplay,action_described,1,1,holding a wooden sword near a jungle plank block
+20260420_054239_frame_0030,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0030,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0031,15min,gameplay,location_detectable,1,1,grassy field near water
+20260420_054239_frame_0031,15min,gameplay,action_described,1,1,walking through tall grass with a wooden sword
+20260420_054239_frame_0031,15min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054239_frame_0031,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0032,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0032,15min,gameplay,action_described,1,1,looking towards a distant lava fall
+20260420_054239_frame_0032,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0032,15min,gameplay,player_status_described,1,1,"full health and hunger, holding a wooden sword"
+20260420_054239_frame_0033,15min,gameplay,location_detectable,1,1,grassy field at night near a lava fall
+20260420_054239_frame_0033,15min,gameplay,action_described,1,1,"standing in tall grass, looking towards a lava fall on a cliff"
+20260420_054239_frame_0033,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0033,15min,gameplay,player_status_described,1,1,"10 hearts health, 10 hunger, holding a wooden sword"
+20260420_054239_frame_0034,15min,gameplay,location_detectable,1,1,savanna biome near a river
+20260420_054239_frame_0034,15min,gameplay,action_described,1,1,standing on the riverbank holding a wooden sword
+20260420_054239_frame_0034,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0034,15min,gameplay,player_status_described,1,1,"full health, full hunger, no armor visible"
+20260420_054239_frame_0035,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0035,15min,gameplay,action_described,1,1,exploring the savanna at night with a wooden sword drawn
+20260420_054239_frame_0035,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0035,15min,gameplay,player_status_described,1,1,full health and hunger; holding a wooden sword
+20260420_054239_frame_0036,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0036,15min,gameplay,action_described,1,1,standing in tall grass holding a wooden sword
+20260420_054239_frame_0036,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0036,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0037,15min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054239_frame_0037,15min,gameplay,action_described,1,1,exploring the savanna at night
+20260420_054239_frame_0037,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0037,15min,gameplay,player_status_described,1,1,"full health and hunger, holding a wooden sword"
+20260420_054239_frame_0038,15min,gameplay,location_detectable,1,1,riverbank at night
+20260420_054239_frame_0038,15min,gameplay,action_described,1,1,standing by the water looking at a zombie on the opposite bank
+20260420_054239_frame_0038,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0038,15min,gameplay,player_status_described,1,1,"full health and hunger, holding a wooden sword"
+20260420_054239_frame_0039,15min,menu,location_detectable,0,1,riverbank near a hill
+20260420_054239_frame_0039,15min,menu,action_described,1,1,unlocked a new recipe for sugar after gathering sugar cane
+20260420_054239_frame_0039,15min,menu,entities_identified,0,1,3 entity/entities detected
+20260420_054239_frame_0039,15min,menu,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0040,15min,gameplay,location_detectable,1,1,riverbank
+20260420_054239_frame_0040,15min,gameplay,action_described,1,1,standing near a body of water looking at a tall flower
+20260420_054239_frame_0040,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0040,15min,gameplay,player_status_described,1,1,"full health, 9.5 hunger, holding a wooden sword"
+20260420_054239_frame_0041,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0041,15min,gameplay,action_described,1,1,looking at tall grass
+20260420_054239_frame_0041,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0041,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0042,15min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054239_frame_0042,15min,gameplay,action_described,1,1,"exploring the savanna at night, looking towards a small acacia plank structure"
+20260420_054239_frame_0042,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0042,15min,gameplay,player_status_described,1,1,full health and hunger; holding a wooden sword
+20260420_054239_frame_0043,15min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054239_frame_0043,15min,gameplay,action_described,1,1,looking at zombies across the water
+20260420_054239_frame_0043,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0043,15min,gameplay,player_status_described,1,1,"full health and hunger, holding a wooden sword"
+20260420_054239_frame_0044,15min,gameplay,location_detectable,1,1,grassy field at night
+20260420_054239_frame_0044,15min,gameplay,action_described,1,1,facing a creeper at close range
+20260420_054239_frame_0044,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0044,15min,gameplay,player_status_described,1,1,"10 hearts, 10 hunger, wooden sword equipped"
+20260420_054239_frame_0045,15min,gameplay,location_detectable,1,1,grassy area near a river
+20260420_054239_frame_0045,15min,gameplay,action_described,1,1,standing near water holding a wooden sword
+20260420_054239_frame_0045,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0045,15min,gameplay,player_status_described,1,1,"4.5 hearts health, full hunger, no armor"
+20260420_054239_frame_0046,15min,gameplay,location_detectable,1,1,wooden shelter
+20260420_054239_frame_0046,15min,gameplay,action_described,1,1,standing in front of a closed wooden door
+20260420_054239_frame_0046,15min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054239_frame_0046,15min,gameplay,player_status_described,1,1,"4.5 hearts health, full hunger"
+20260420_054239_frame_0047,15min,gameplay,location_detectable,1,1,inside a dark wooden shelter
+20260420_054239_frame_0047,15min,gameplay,action_described,1,1,standing inside a dark room looking at a wall
+20260420_054239_frame_0047,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0047,15min,gameplay,player_status_described,1,1,"5 hearts health, 8.5 hunger, holding a damaged wooden sword"
+20260420_054239_frame_0048,15min,gameplay,location_detectable,1,1,inside a wooden shelter
+20260420_054239_frame_0048,15min,gameplay,action_described,1,1,standing inside a small wooden building looking at the door
+20260420_054239_frame_0048,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0048,15min,gameplay,player_status_described,1,1,"5.5 hearts health, 8.5 hunger, holding a wooden sword"
+20260420_054239_frame_0049,15min,gameplay,location_detectable,1,1,inside a dark shelter looking out at a river
+20260420_054239_frame_0049,15min,gameplay,action_described,1,1,standing in a doorway looking out at the water
+20260420_054239_frame_0049,15min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054239_frame_0049,15min,gameplay,player_status_described,1,1,"5 hearts health, 8.5 hunger, holding a wooden sword"
+20260420_054239_frame_0050,15min,gameplay,location_detectable,1,1,inside a wooden shelter looking out at a river
+20260420_054239_frame_0050,15min,gameplay,action_described,1,1,peering out of a doorway at the night landscape
+20260420_054239_frame_0050,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0050,15min,gameplay,player_status_described,1,1,"5 hearts health, 8.5 hunger, holding a damaged wooden sword"
+20260420_054239_frame_0051,15min,gameplay,location_detectable,1,1,inside a wooden house
+20260420_054239_frame_0051,15min,gameplay,action_described,1,1,looking at a wooden wall inside a shelter
+20260420_054239_frame_0051,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0051,15min,gameplay,player_status_described,1,1,"5.5 hearts health, 8.5 hunger, no armor"
+20260420_054239_frame_0052,15min,gameplay,location_detectable,1,1,inside a dark wooden structure
+20260420_054239_frame_0052,15min,gameplay,action_described,1,1,peering through a gap at a Drowned outside
+20260420_054239_frame_0052,15min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054239_frame_0052,15min,gameplay,player_status_described,1,1,"6 hearts, 8.5 hunger, holding a damaged wooden sword"
+20260420_054239_frame_0053,15min,gameplay,location_detectable,1,1,inside a dark wooden shelter
+20260420_054239_frame_0053,15min,gameplay,action_described,1,1,looking out an open door at a drowned enemy
+20260420_054239_frame_0053,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0053,15min,gameplay,player_status_described,1,1,"5 hearts health, 9.5 hunger, holding a wooden sword"
+20260420_054239_frame_0054,15min,gameplay,location_detectable,1,1,inside a wooden house looking out at a savanna lake
+20260420_054239_frame_0054,15min,gameplay,action_described,1,1,standing in an open doorway looking out at the water
+20260420_054239_frame_0054,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0054,15min,gameplay,player_status_described,1,1,"5 hearts health, 7.5 hunger, holding a damaged wooden sword"
+20260420_054239_frame_0055,15min,gameplay,location_detectable,1,1,inside a dark wooden house
+20260420_054239_frame_0055,15min,gameplay,action_described,1,1,standing inside looking at the door with a wooden sword equipped
+20260420_054239_frame_0055,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0055,15min,gameplay,player_status_described,1,1,"5.5 hearts health, 8.5 hunger, no armor"
+20260420_054239_frame_0056,15min,gameplay,location_detectable,1,1,inside a small wooden shelter
+20260420_054239_frame_0056,15min,gameplay,action_described,1,1,standing inside a dark wooden room looking at a door
+20260420_054239_frame_0056,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0056,15min,gameplay,player_status_described,1,1,"5 hearts health, 8.5 hunger, no armor"
+20260420_054239_frame_0057,15min,gameplay,location_detectable,1,1,inside a wooden structure
+20260420_054239_frame_0057,15min,gameplay,action_described,1,1,standing inside looking out through a door
+20260420_054239_frame_0057,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0057,15min,gameplay,player_status_described,1,1,"5 hearts health, 8.5 hunger, holding a wooden sword"
+20260420_054239_frame_0058,15min,gameplay,location_detectable,1,1,savanna near water
+20260420_054239_frame_0058,15min,gameplay,action_described,1,1,fighting a zombie at point-blank range
+20260420_054239_frame_0058,15min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054239_frame_0058,15min,gameplay,player_status_described,1,1,"3.5 hearts health, full hunger"
+20260420_054239_frame_0059,15min,gameplay,location_detectable,1,1,inside a wooden building
+20260420_054239_frame_0059,15min,gameplay,action_described,1,1,standing inside looking out through a wooden door
+20260420_054239_frame_0059,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0059,15min,gameplay,player_status_described,1,1,"1 heart health, full hunger, holding a damaged wooden sword"
+20260420_054239_frame_0060,15min,menu,location_detectable,0,1,"dark area, likely a cave"
+20260420_054239_frame_0060,15min,menu,action_described,1,1,"viewing inventory and crafting recipes, hovering over a crafting table"
+20260420_054239_frame_0060,15min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054239_frame_0060,15min,menu,player_status_described,1,1,"full health, 8.5 hunger"
+20260420_054239_frame_0061,15min,menu,location_detectable,0,1,inside a dark wooden structure
+20260420_054239_frame_0061,15min,menu,action_described,1,1,holding a crafting table while looking at a gravel floor
+20260420_054239_frame_0061,15min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054239_frame_0061,15min,menu,player_status_described,1,1,"full health, full hunger"
+20260420_054239_frame_0062,15min,menu,location_detectable,0,1,dark cave
+20260420_054239_frame_0062,15min,menu,action_described,1,1,browsing the crafting recipe book
+20260420_054239_frame_0062,15min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054239_frame_0062,15min,menu,player_status_described,1,1,"9.5 hearts health, 9.5 hunger"
+20260420_054239_frame_0063,15min,menu,location_detectable,0,1,inside a wooden shelter
+20260420_054239_frame_0063,15min,menu,action_described,1,1,looking at a crafting table while holding sugar
+20260420_054239_frame_0063,15min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054239_frame_0063,15min,menu,player_status_described,1,1,"full health, 8.5 hunger, no armor"
+20260420_054239_frame_0064,15min,menu,location_detectable,0,1,"dark area, possibly a cave"
+20260420_054239_frame_0064,15min,menu,action_described,1,1,viewing inventory and hovering over an Acacia Sapling
+20260420_054239_frame_0064,15min,menu,entities_identified,0,1,7 entity/entities detected
+20260420_054239_frame_0064,15min,menu,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0065,15min,menu,location_detectable,0,1,"dark area, possibly a cave"
+20260420_054239_frame_0065,15min,menu,action_described,1,1,viewing the recipe book in a crafting table
+20260420_054239_frame_0065,15min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054239_frame_0065,15min,menu,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0066,15min,menu,location_detectable,0,1,dark interior or cave
+20260420_054239_frame_0066,15min,menu,action_described,1,1,accessing the crafting table and browsing the recipe book
+20260420_054239_frame_0066,15min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054239_frame_0066,15min,menu,player_status_described,1,1,"9 hearts health, 8.5 hunger"
+20260420_054239_frame_0067,15min,menu,location_detectable,0,1,inside a dark wooden building
+20260420_054239_frame_0067,15min,menu,action_described,1,1,unlocked a new recipe for a blast furnace
+20260420_054239_frame_0067,15min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054239_frame_0067,15min,menu,player_status_described,1,1,"1 heart health, full hunger"
+20260420_054239_frame_0068,15min,gameplay,location_detectable,1,1,dark pit or enclosed room
+20260420_054239_frame_0068,15min,gameplay,action_described,1,1,mining a block with a wooden pickaxe
+20260420_054239_frame_0068,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0068,15min,gameplay,player_status_described,1,1,"1 heart health, 7.5 hunger"
+20260420_054239_frame_0069,15min,menu,location_detectable,0,1,"dark environment, possibly underground"
+20260420_054239_frame_0069,15min,menu,action_described,1,1,browsing inventory and recipe book
+20260420_054239_frame_0069,15min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054239_frame_0069,15min,menu,player_status_described,1,1,"full health, full hunger, no armor equipped"
+20260420_054239_frame_0070,15min,gameplay,location_detectable,1,1,inside a dark wooden structure
+20260420_054239_frame_0070,15min,gameplay,action_described,1,1,looking down at a dark block on the floor
+20260420_054239_frame_0070,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0070,15min,gameplay,player_status_described,1,1,"half a heart of health, full hunger"
+20260420_054239_frame_0071,15min,gameplay,location_detectable,1,1,dark interior
+20260420_054239_frame_0071,15min,gameplay,action_described,1,1,interacting with a furnace
+20260420_054239_frame_0071,15min,gameplay,entities_identified,1,1,16 entity/entities detected
+20260420_054239_frame_0071,15min,gameplay,player_status_described,1,1,"10 hearts health, 9.5 hunger"
+20260420_054239_frame_0072,15min,menu,location_detectable,0,1,inside a dark structure or cave
+20260420_054239_frame_0072,15min,menu,action_described,1,1,"interacting with a furnace, hovering over an acacia sapling in inventory"
+20260420_054239_frame_0072,15min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054239_frame_0072,15min,menu,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0073,15min,gameplay,location_detectable,1,1,dark interior
+20260420_054239_frame_0073,15min,gameplay,action_described,1,1,placing an oak log into the fuel slot of a furnace
+20260420_054239_frame_0073,15min,gameplay,entities_identified,1,1,16 entity/entities detected
+20260420_054239_frame_0073,15min,gameplay,player_status_described,1,1,health and hunger bars are mostly full
+20260420_054239_frame_0074,15min,menu,location_detectable,0,1,dark interior or cave
+20260420_054239_frame_0074,15min,menu,action_described,1,1,"interacting with a furnace, hovering over an Acacia Sapling"
+20260420_054239_frame_0074,15min,menu,entities_identified,0,1,14 entity/entities detected
+20260420_054239_frame_0074,15min,menu,player_status_described,1,1,"10 hearts health, 8.5 hunger"
+20260420_054239_frame_0075,15min,menu,location_detectable,0,1,dark interior
+20260420_054239_frame_0075,15min,menu,action_described,1,1,managing inventory and furnace fuel
+20260420_054239_frame_0075,15min,menu,entities_identified,0,1,13 entity/entities detected
+20260420_054239_frame_0075,15min,menu,player_status_described,1,1,"10 hearts, 8.5 hunger"
+20260420_054239_frame_0076,15min,gameplay,location_detectable,1,1,inside a wooden structure
+20260420_054239_frame_0076,15min,gameplay,action_described,1,1,interacting with a furnace to smelt an oak log
+20260420_054239_frame_0076,15min,gameplay,entities_identified,1,1,15 entity/entities detected
+20260420_054239_frame_0076,15min,gameplay,player_status_described,1,1,"full health, 8.5 hunger"
+20260420_054239_frame_0077,15min,gameplay,location_detectable,1,1,inside a wooden shelter
+20260420_054239_frame_0077,15min,gameplay,action_described,1,1,smelting an oak log in a furnace
+20260420_054239_frame_0077,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0077,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0078,15min,gameplay,location_detectable,1,1,inside a wooden structure
+20260420_054239_frame_0078,15min,gameplay,action_described,1,1,finished smelting charcoal in a furnace
+20260420_054239_frame_0078,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0078,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0079,15min,gameplay,location_detectable,1,1,dark interior
+20260420_054239_frame_0079,15min,gameplay,action_described,1,1,smelting charcoal in a furnace
+20260420_054239_frame_0079,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0079,15min,gameplay,player_status_described,1,1,"9.5 hearts health, 9.5 hunger"
+20260420_054239_frame_0080,15min,menu,location_detectable,0,1,inside a small wooden shelter
+20260420_054239_frame_0080,15min,menu,action_described,1,1,looking at a crafting table while holding coal
+20260420_054239_frame_0080,15min,menu,entities_identified,0,1,4 entity/entities detected
+20260420_054239_frame_0080,15min,menu,player_status_described,1,1,"1 heart health, 8.5 hunger, no armor"
+20260420_054239_frame_0081,15min,menu,location_detectable,0,1,dark cave or interior
+20260420_054239_frame_0081,15min,menu,action_described,1,1,browsing the crafting recipe book
+20260420_054239_frame_0081,15min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054239_frame_0081,15min,menu,player_status_described,1,1,"9 hearts health, full hunger"
+20260420_054239_frame_0082,15min,menu,location_detectable,0,1,inside a small wooden shelter
+20260420_054239_frame_0082,15min,menu,action_described,1,1,looking at a crafting table with a torch selected
+20260420_054239_frame_0082,15min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054239_frame_0082,15min,menu,player_status_described,1,1,"0.5 hearts health, full hunger"
+20260420_054239_frame_0083,15min,gameplay,location_detectable,1,1,inside a wooden building looking out a door
+20260420_054239_frame_0083,15min,gameplay,action_described,1,1,looking through an acacia door at the night landscape
+20260420_054239_frame_0083,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0083,15min,gameplay,player_status_described,1,1,"1 heart health, 8.5 hunger, holding a torch"
+20260420_054239_frame_0084,15min,gameplay,location_detectable,1,1,savanna hills
+20260420_054239_frame_0084,15min,gameplay,action_described,1,1,a death message appeared in chat: Hassancoul was slain by Drowned
+20260420_054239_frame_0084,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0084,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0085,15min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054239_frame_0085,15min,gameplay,action_described,1,1,a player named Hassancoul was just killed by a Drowned
+20260420_054239_frame_0085,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0085,15min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054239_frame_0086,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0086,15min,gameplay,action_described,1,1,exploring the savanna at night
+20260420_054239_frame_0086,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0086,15min,gameplay,player_status_described,1,1,"full health, full hunger, no armor"
+20260420_054239_frame_0087,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0087,15min,gameplay,action_described,1,1,looking at a block of grass
+20260420_054239_frame_0087,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0087,15min,gameplay,player_status_described,1,1,"full health, 8.5 hunger, no armor"
+20260420_054239_frame_0088,15min,gameplay,location_detectable,1,1,grassy riverbank near a mountain
+20260420_054239_frame_0088,15min,gameplay,action_described,1,1,standing near the water's edge looking towards a distant mountain
+20260420_054239_frame_0088,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0088,15min,gameplay,player_status_described,1,1,"full health and hunger, no armor visible"
+20260420_054239_frame_0089,15min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054239_frame_0089,15min,gameplay,action_described,1,1,standing near a wooden structure and water
+20260420_054239_frame_0089,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0089,15min,gameplay,player_status_described,1,1,"7.5 hearts health, full hunger"
+20260420_054239_frame_0090,15min,gameplay,location_detectable,1,1,savanna biome near a wooden building and water
+20260420_054239_frame_0090,15min,gameplay,action_described,1,1,looking at tall grass near a wooden structure
+20260420_054239_frame_0090,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0090,15min,gameplay,player_status_described,1,1,"6 hearts health, full hunger, no armor"
+20260420_054239_frame_0091,15min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054239_frame_0091,15min,gameplay,action_described,1,1,"standing in tall grass at night, looking towards a small ledge"
+20260420_054239_frame_0091,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0091,15min,gameplay,player_status_described,1,1,"7 hearts health, 8.5 hunger, holding a bow"
+20260420_054239_frame_0092,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0092,15min,gameplay,action_described,1,1,standing in a field of tall grass
+20260420_054239_frame_0092,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0092,15min,gameplay,player_status_described,1,1,"7.5 hearts, 9.5 hunger, holding a wooden pickaxe"
+20260420_054239_frame_0093,15min,gameplay,location_detectable,1,1,grassy area near water
+20260420_054239_frame_0093,15min,gameplay,action_described,1,1,breaking tall grass
+20260420_054239_frame_0093,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0093,15min,gameplay,player_status_described,1,1,"7 hearts health, 8.5 hunger, no armor"
+20260420_054239_frame_0094,15min,gameplay,location_detectable,1,1,savanna
+20260420_054239_frame_0094,15min,gameplay,action_described,1,1,holding a wooden pickaxe while looking at the ground
+20260420_054239_frame_0094,15min,gameplay,entities_identified,1,1,1 entity/entities detected
+20260420_054239_frame_0094,15min,gameplay,player_status_described,1,1,"6.5 hearts, 8.5 hunger"
+20260420_054239_frame_0095,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0095,15min,gameplay,action_described,1,1,looking at tall grass with a wooden pickaxe in hand
+20260420_054239_frame_0095,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0095,15min,gameplay,player_status_described,1,1,"7 hearts health, 7.5 hunger, holding a damaged wooden pickaxe"
+20260420_054239_frame_0096,15min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054239_frame_0096,15min,gameplay,action_described,1,1,standing under a tree canopy looking out at the landscape
+20260420_054239_frame_0096,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0096,15min,gameplay,player_status_described,1,1,"7 hearts health, 8.5 hunger, holding a damaged wooden pickaxe"
+20260420_054239_frame_0097,15min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054239_frame_0097,15min,gameplay,action_described,1,1,exploring the savanna at night
+20260420_054239_frame_0097,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0097,15min,gameplay,player_status_described,1,1,"7 hearts, 7.5 hunger, holding a damaged wooden pickaxe"
+20260420_054239_frame_0098,15min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054239_frame_0098,15min,gameplay,action_described,1,1,exploring the savanna at night near a wooden structure
+20260420_054239_frame_0098,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0098,15min,gameplay,player_status_described,1,1,"7 hearts, 7.5 hunger, holding a damaged wooden pickaxe"
+20260420_054239_frame_0099,15min,gameplay,location_detectable,1,1,inside a wooden structure
+20260420_054239_frame_0099,15min,gameplay,action_described,1,1,looking at a wooden door while holding a wooden pickaxe
+20260420_054239_frame_0099,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0099,15min,gameplay,player_status_described,1,1,"6.5 hearts health, 7.5 hunger"
+20260420_054239_frame_0100,15min,gameplay,location_detectable,1,1,inside a wooden building
+20260420_054239_frame_0100,15min,gameplay,action_described,1,1,standing inside a wooden structure looking at an acacia door
+20260420_054239_frame_0100,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0100,15min,gameplay,player_status_described,1,1,"7 hearts health, 7.5 hunger, holding a damaged wooden pickaxe"
+20260420_054239_frame_0101,15min,gameplay,location_detectable,1,1,inside a wooden shelter by a river
+20260420_054239_frame_0101,15min,gameplay,action_described,1,1,looking out through an acacia door
+20260420_054239_frame_0101,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0101,15min,gameplay,player_status_described,1,1,"7.5 hearts health, 8.5 hunger, holding a wooden pickaxe"
+20260420_054239_frame_0102,15min,gameplay,location_detectable,1,1,inside a small wooden structure
+20260420_054239_frame_0102,15min,gameplay,action_described,1,1,standing inside a wooden building near a door
+20260420_054239_frame_0102,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0102,15min,gameplay,player_status_described,1,1,"6.5 hearts health, 7.5 hunger, holding a damaged wooden pickaxe"
+20260420_054239_frame_0103,15min,gameplay,location_detectable,1,1,inside an acacia wood structure
+20260420_054239_frame_0103,15min,gameplay,action_described,1,1,looking out through an acacia door
+20260420_054239_frame_0103,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0103,15min,gameplay,player_status_described,1,1,"7.5 hearts health, 8.5 hunger"
+20260420_054239_frame_0104,15min,gameplay,location_detectable,1,1,swampy field near a lava flow
+20260420_054239_frame_0104,15min,gameplay,action_described,1,1,observing a nearby creeper
+20260420_054239_frame_0104,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0104,15min,gameplay,player_status_described,1,1,"7 hearts, 8.5 hunger, holding a wooden pickaxe"
+20260420_054239_frame_0105,15min,gameplay,location_detectable,1,1,inside a wooden building looking out a door
+20260420_054239_frame_0105,15min,gameplay,action_described,1,1,looking through an acacia door at a river
+20260420_054239_frame_0105,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0105,15min,gameplay,player_status_described,1,1,"7.5 hearts health, 7.5 hunger"
+20260420_054239_frame_0106,15min,menu,location_detectable,0,1,inside a wooden house
+20260420_054239_frame_0106,15min,menu,action_described,1,1,"standing inside a house near a crafting table, holding a torch"
+20260420_054239_frame_0106,15min,menu,entities_identified,0,1,3 entity/entities detected
+20260420_054239_frame_0106,15min,menu,player_status_described,1,1,"6 hearts health, 8.5 hunger, no armor"
+20260420_054239_frame_0107,15min,gameplay,location_detectable,1,1,inside a wooden house near a river
+20260420_054239_frame_0107,15min,gameplay,action_described,1,1,looking out of an acacia door while holding a torch
+20260420_054239_frame_0107,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0107,15min,gameplay,player_status_described,1,1,"7.5 hearts health, 7.5 hunger, no armor"
+20260420_054239_frame_0108,15min,gameplay,location_detectable,1,1,inside a wooden house
+20260420_054239_frame_0108,15min,gameplay,action_described,1,1,standing inside a house looking at the door
+20260420_054239_frame_0108,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0108,15min,gameplay,player_status_described,1,1,"6.5 hearts health, 6.5 hunger, holding a torch"
+20260420_054239_frame_0109,15min,gameplay,location_detectable,1,1,inside a wooden house
+20260420_054239_frame_0109,15min,gameplay,action_described,1,1,looking at an acacia door while holding a torch
+20260420_054239_frame_0109,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0109,15min,gameplay,player_status_described,1,1,"7.5 hearts health, 7.5 hunger"
+20260420_054239_frame_0110,15min,gameplay,location_detectable,1,1,savanna biome near a river
+20260420_054239_frame_0110,15min,gameplay,action_described,1,1,standing near a placed acacia wood block overlooking the water
+20260420_054239_frame_0110,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0110,15min,gameplay,player_status_described,1,1,"6.5 hearts health, 8.5 hunger, holding a torch"
+20260420_054239_frame_0111,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0111,15min,gameplay,action_described,1,1,exploring the savanna as the sun sets
+20260420_054239_frame_0111,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0111,15min,gameplay,player_status_described,1,1,"7 hearts, 7.5 hunger, holding torches"
+20260420_054239_frame_0112,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0112,15min,gameplay,action_described,1,1,"standing in a field holding a torch, observing two creepers in the distance"
+20260420_054239_frame_0112,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0112,15min,gameplay,player_status_described,1,1,"6 hearts health, 9.5 hunger, no armor"
+20260420_054239_frame_0113,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0113,15min,gameplay,action_described,1,1,looking at tall grass with a wooden sword equipped
+20260420_054239_frame_0113,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0113,15min,gameplay,player_status_described,1,1,"5.5 hearts health, 7.5 hunger, holding a wooden sword"
+20260420_054239_frame_0114,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0114,15min,gameplay,action_described,1,1,witnessing a death message in chat: 'Hassancoul was blown up by Creeper'
+20260420_054239_frame_0114,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0114,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0115,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0115,15min,gameplay,action_described,1,1,a player named Hassancoul was killed by a creeper explosion
+20260420_054239_frame_0115,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0115,15min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054239_frame_0116,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0116,15min,gameplay,action_described,1,1,walking through an open savanna
+20260420_054239_frame_0116,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0116,15min,gameplay,player_status_described,1,1,"full health, full hunger, empty hotbar"
+20260420_054239_frame_0117,15min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054239_frame_0117,15min,gameplay,action_described,1,1,selecting an acacia sapling in the hotbar while looking at tall grass
+20260420_054239_frame_0117,15min,gameplay,entities_identified,1,1,6 entity/entities detected
+20260420_054239_frame_0117,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0118,15min,gameplay,location_detectable,1,1,savanna riverbank
+20260420_054239_frame_0118,15min,gameplay,action_described,1,1,standing near a small water pit holding an oak sapling
+20260420_054239_frame_0118,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0118,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0119,15min,gameplay,location_detectable,1,1,savanna biome near a mesa mountain
+20260420_054239_frame_0119,15min,gameplay,action_described,1,1,holding an acacia sapling and looking at a grass block
+20260420_054239_frame_0119,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0119,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0120,15min,gameplay,location_detectable,1,1,savanna shore by a river
+20260420_054239_frame_0120,15min,gameplay,action_described,1,1,"standing on the shore holding an acacia sapling, looking at a dropped item in th"
+20260420_054239_frame_0120,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0120,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0121,15min,gameplay,location_detectable,1,1,river in a savanna biome
+20260420_054239_frame_0121,15min,gameplay,action_described,1,1,dropped a stone axe into the water
+20260420_054239_frame_0121,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0121,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0122,15min,gameplay,location_detectable,1,1,savanna biome near a small body of water
+20260420_054239_frame_0122,15min,gameplay,action_described,1,1,looking at a small acacia wood house while holding a sapling
+20260420_054239_frame_0122,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0122,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0123,15min,gameplay,location_detectable,1,1,inside a wooden structure
+20260420_054239_frame_0123,15min,gameplay,action_described,1,1,standing in a corner holding a sapling
+20260420_054239_frame_0123,15min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054239_frame_0123,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0124,15min,gameplay,location_detectable,1,1,"savanna biome, near a wooden structure"
+20260420_054239_frame_0124,15min,gameplay,action_described,1,1,selecting or using a wooden axe while looking at acacia wood planks
+20260420_054239_frame_0124,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0124,15min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054239_frame_0125,15min,gameplay,location_detectable,1,1,outside an acacia wood house in a savanna biome
+20260420_054239_frame_0125,15min,gameplay,action_described,1,1,breaking an acacia wood plank block with a wooden axe
+20260420_054239_frame_0125,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0125,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0126,15min,gameplay,location_detectable,1,1,"savanna biome, near a wooden structure"
+20260420_054239_frame_0126,15min,gameplay,action_described,1,1,breaking an acacia wood block with a wooden axe
+20260420_054239_frame_0126,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0126,15min,gameplay,player_status_described,1,1,"full health, nearly full hunger, no armor"
+20260420_054239_frame_0127,15min,gameplay,location_detectable,1,1,"savanna biome, near an acacia tree"
+20260420_054239_frame_0127,15min,gameplay,action_described,1,1,chopping an acacia wood block with a wooden axe
+20260420_054239_frame_0127,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0127,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0128,15min,gameplay,location_detectable,1,1,outside a wooden structure in a grassy biome
+20260420_054239_frame_0128,15min,gameplay,action_described,1,1,holding a wooden axe while standing next to a wooden house
+20260420_054239_frame_0128,15min,gameplay,entities_identified,1,1,6 entity/entities detected
+20260420_054239_frame_0128,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0129,15min,gameplay,location_detectable,1,1,savanna biome near a small acacia wood structure
+20260420_054239_frame_0129,15min,gameplay,action_described,1,1,"holding acacia planks, likely building or expanding a small shelter"
+20260420_054239_frame_0129,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0129,15min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054239_frame_0130,15min,gameplay,location_detectable,1,1,savanna biome near a small wooden structure
+20260420_054239_frame_0130,15min,gameplay,action_described,1,1,preparing to place an acacia plank block
+20260420_054239_frame_0130,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0130,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0131,15min,gameplay,location_detectable,1,1,savanna biome near a lake
+20260420_054239_frame_0131,15min,gameplay,action_described,1,1,building a small acacia wood structure
+20260420_054239_frame_0131,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0131,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0132,15min,gameplay,location_detectable,1,1,grassy area near water
+20260420_054239_frame_0132,15min,gameplay,action_described,1,1,holding acacia planks to build
+20260420_054239_frame_0132,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0132,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0133,15min,gameplay,location_detectable,1,1,grassy field near a wooden structure
+20260420_054239_frame_0133,15min,gameplay,action_described,1,1,holding a wooden axe and looking at a patch of grass
+20260420_054239_frame_0133,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0133,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0134,15min,gameplay,location_detectable,1,1,grassy hillside near a pit
+20260420_054239_frame_0134,15min,gameplay,action_described,1,1,breaking a grass block
+20260420_054239_frame_0134,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0134,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0135,15min,gameplay,location_detectable,1,1,outside a wooden house in a grassy field
+20260420_054239_frame_0135,15min,gameplay,action_described,1,1,approaching experience orbs on the ground
+20260420_054239_frame_0135,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0135,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0136,15min,gameplay,location_detectable,1,1,grassy field next to a wooden structure
+20260420_054239_frame_0136,15min,gameplay,action_described,1,1,"breaking grass, causing particles and dropping a seed"
+20260420_054239_frame_0136,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0136,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0137,15min,gameplay,location_detectable,1,1,grassy field near a wooden structure
+20260420_054239_frame_0137,15min,gameplay,action_described,1,1,breaking tall grass
+20260420_054239_frame_0137,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0137,15min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054239_frame_0138,15min,gameplay,location_detectable,1,1,grassy field near a tree
+20260420_054239_frame_0138,15min,gameplay,action_described,1,1,looking at a planted sapling
+20260420_054239_frame_0138,15min,gameplay,entities_identified,1,1,2 entity/entities detected
+20260420_054239_frame_0138,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0139,15min,gameplay,location_detectable,1,1,savanna biome near a river
+20260420_054239_frame_0139,15min,gameplay,action_described,1,1,building a structure with acacia planks
+20260420_054239_frame_0139,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0139,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0140,15min,menu,location_detectable,0,1,outside a small wooden shelter near a lake
+20260420_054239_frame_0140,15min,menu,action_described,1,1,standing at the entrance of a wooden house looking at a crafting table
+20260420_054239_frame_0140,15min,menu,entities_identified,0,1,4 entity/entities detected
+20260420_054239_frame_0140,15min,menu,player_status_described,1,1,"10 hearts, 10 hunger, holding a stick"
+20260420_054239_frame_0141,15min,menu,location_detectable,0,1,dark interior
+20260420_054239_frame_0141,15min,menu,action_described,1,1,crafting acacia planks from acacia logs
+20260420_054239_frame_0141,15min,menu,entities_identified,0,0,0 entity/entities detected
+20260420_054239_frame_0141,15min,menu,player_status_described,1,1,"10 hearts health, 9.5 hunger"
+20260420_054239_frame_0142,15min,menu,location_detectable,0,1,dark cave or interior
+20260420_054239_frame_0142,15min,menu,action_described,1,1,crafting acacia planks
+20260420_054239_frame_0142,15min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054239_frame_0142,15min,menu,player_status_described,1,1,"full health, nearly full hunger"
+20260420_054239_frame_0143,15min,menu,location_detectable,0,1,inside a dark structure or cave
+20260420_054239_frame_0143,15min,menu,action_described,1,1,accessing the crafting table
+20260420_054239_frame_0143,15min,menu,entities_identified,0,1,1 entity/entities detected
+20260420_054239_frame_0143,15min,menu,player_status_described,1,1,"full health, nearly full hunger"
+20260420_054239_frame_0144,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0144,15min,gameplay,action_described,1,1,building a wall with acacia planks
+20260420_054239_frame_0144,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0144,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0145,15min,gameplay,location_detectable,1,1,savanna biome near a river
+20260420_054239_frame_0145,15min,gameplay,action_described,1,1,building a structure with acacia planks
+20260420_054239_frame_0145,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0145,15min,gameplay,player_status_described,1,1,"full health, nearly full hunger, no armor"
+20260420_054239_frame_0146,15min,gameplay,location_detectable,1,1,savanna biome near water
+20260420_054239_frame_0146,15min,gameplay,action_described,1,1,building a structure with acacia planks
+20260420_054239_frame_0146,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0146,15min,gameplay,player_status_described,1,1,"10 hearts health, 8.5 hunger"
+20260420_054239_frame_0147,15min,gameplay,location_detectable,1,1,savanna biome near a river
+20260420_054239_frame_0147,15min,gameplay,action_described,1,1,building a structure with acacia planks
+20260420_054239_frame_0147,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0147,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0148,15min,gameplay,location_detectable,1,1,grassy field near trees
+20260420_054239_frame_0148,15min,gameplay,action_described,1,1,"holding acacia planks, looking at tall grass"
+20260420_054239_frame_0148,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0148,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0149,15min,gameplay,location_detectable,1,1,savanna biome
+20260420_054239_frame_0149,15min,gameplay,action_described,1,1,building a structure with acacia wood planks
+20260420_054239_frame_0149,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0149,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0150,15min,gameplay,location_detectable,1,1,grassy plains near a forest
+20260420_054239_frame_0150,15min,gameplay,action_described,1,1,building a structure with acacia wood planks
+20260420_054239_frame_0150,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0150,15min,gameplay,player_status_described,1,1,"full health and hunger, no armor visible"
+20260420_054239_frame_0151,15min,gameplay,location_detectable,1,1,"savanna biome, building a wooden structure"
+20260420_054239_frame_0151,15min,gameplay,action_described,1,1,placing acacia wood planks to build a structure
+20260420_054239_frame_0151,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0151,15min,gameplay,player_status_described,1,1,"full health, full hunger"
+20260420_054239_frame_0152,15min,gameplay,location_detectable,1,1,"savanna biome, building a wooden structure"
+20260420_054239_frame_0152,15min,gameplay,action_described,1,1,building a structure with acacia wood planks
+20260420_054239_frame_0152,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0152,15min,gameplay,player_status_described,1,1,"10 hearts health, 10 drumsticks hunger"
+20260420_054239_frame_0153,15min,gameplay,location_detectable,1,1,"savanna biome, building site"
+20260420_054239_frame_0153,15min,gameplay,action_described,1,1,placing acacia wood planks to build a wall
+20260420_054239_frame_0153,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0153,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0154,15min,gameplay,location_detectable,1,1,outside an acacia wood structure
+20260420_054239_frame_0154,15min,gameplay,action_described,1,1,building a structure with acacia planks
+20260420_054239_frame_0154,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0154,15min,gameplay,player_status_described,1,1,"full health, full hunger"
+20260420_054239_frame_0155,15min,gameplay,location_detectable,1,1,savanna biome near a wooden structure
+20260420_054239_frame_0155,15min,gameplay,action_described,1,1,building a house with acacia planks
+20260420_054239_frame_0155,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0155,15min,gameplay,player_status_described,1,1,"full health, nearly full hunger"
+20260420_054239_frame_0156,15min,gameplay,location_detectable,1,1,"savanna biome, near a wooden structure"
+20260420_054239_frame_0156,15min,gameplay,action_described,1,1,placing acacia planks to build a structure
+20260420_054239_frame_0156,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0156,15min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054239_frame_0157,15min,gameplay,location_detectable,1,1,"savanna biome, on an acacia wood structure"
+20260420_054239_frame_0157,15min,gameplay,action_described,1,1,building with acacia planks
+20260420_054239_frame_0157,15min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054239_frame_0157,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0158,15min,gameplay,location_detectable,1,1,outside a wooden structure near a mountain
+20260420_054239_frame_0158,15min,gameplay,action_described,1,1,looking at a wooden block while holding a wooden axe
+20260420_054239_frame_0158,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0158,15min,gameplay,player_status_described,1,1,"full health and hunger, holding a wooden axe"
+20260420_054239_frame_0159,15min,gameplay,location_detectable,1,1,"savanna biome, near an acacia wood structure"
+20260420_054239_frame_0159,15min,gameplay,action_described,1,1,breaking an acacia log with a wooden axe
+20260420_054239_frame_0159,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0159,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0160,15min,gameplay,location_detectable,1,1,outside a wooden building under construction
+20260420_054239_frame_0160,15min,gameplay,action_described,1,1,placing or looking at wooden planks while building
+20260420_054239_frame_0160,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0160,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0161,15min,gameplay,location_detectable,1,1,inside a wooden structure
+20260420_054239_frame_0161,15min,gameplay,action_described,1,1,breaking a wooden block
+20260420_054239_frame_0161,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0161,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0162,15min,gameplay,location_detectable,1,1,"savanna biome, building site"
+20260420_054239_frame_0162,15min,gameplay,action_described,1,1,placing acacia planks to build a structure
+20260420_054239_frame_0162,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0162,15min,gameplay,player_status_described,1,1,"full health, full hunger"
+20260420_054239_frame_0163,15min,gameplay,location_detectable,1,1,grassy field near a wooden structure
+20260420_054239_frame_0163,15min,gameplay,action_described,1,1,building a structure with acacia planks
+20260420_054239_frame_0163,15min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054239_frame_0163,15min,gameplay,player_status_described,1,1,"full health, nearly full hunger"
+20260420_054239_frame_0164,15min,gameplay,location_detectable,1,1,grassy field near a wooden structure
+20260420_054239_frame_0164,15min,gameplay,action_described,1,1,building a structure with acacia wood planks
+20260420_054239_frame_0164,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0164,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0165,15min,menu,location_detectable,0,1,inside a wooden structure
+20260420_054239_frame_0165,15min,menu,action_described,1,1,crafting oak planks using oak logs in the crafting table
+20260420_054239_frame_0165,15min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054239_frame_0165,15min,menu,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0166,15min,menu,location_detectable,0,1,inside a wooden structure
+20260420_054239_frame_0166,15min,menu,action_described,1,1,crafting acacia planks and unlocking a new recipe
+20260420_054239_frame_0166,15min,menu,entities_identified,0,0,0 entity/entities detected
+20260420_054239_frame_0166,15min,menu,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0167,15min,menu,location_detectable,0,1,inside a wooden structure
+20260420_054239_frame_0167,15min,menu,action_described,1,1,crafting acacia planks from an acacia log
+20260420_054239_frame_0167,15min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054239_frame_0167,15min,menu,player_status_described,1,1,"full health, 8.5 hunger"
+20260420_054239_frame_0168,15min,menu,location_detectable,0,1,inside a wooden building
+20260420_054239_frame_0168,15min,menu,action_described,1,1,accessing the crafting table and viewing the recipe book
+20260420_054239_frame_0168,15min,menu,entities_identified,0,1,2 entity/entities detected
+20260420_054239_frame_0168,15min,menu,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0169,15min,menu,location_detectable,0,1,inside a wooden structure
+20260420_054239_frame_0169,15min,menu,action_described,1,1,browsing the recipe book in the crafting menu
+20260420_054239_frame_0169,15min,menu,entities_identified,0,1,3 entity/entities detected
+20260420_054239_frame_0169,15min,menu,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0170,15min,gameplay,location_detectable,1,1,inside an unfinished acacia wood house
+20260420_054239_frame_0170,15min,gameplay,action_described,1,1,holding oak planks while standing inside an unfinished acacia wood structure
+20260420_054239_frame_0170,15min,gameplay,entities_identified,1,1,3 entity/entities detected
+20260420_054239_frame_0170,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0171,15min,gameplay,location_detectable,1,1,on a wooden structure overlooking a lake and savanna
+20260420_054239_frame_0171,15min,gameplay,action_described,1,1,"standing on a wooden platform, looking at the landscape"
+20260420_054239_frame_0171,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0171,15min,gameplay,player_status_described,1,1,"full health and hunger, holding oak planks"
+20260420_054239_frame_0172,15min,gameplay,location_detectable,1,1,grassy field near water
+20260420_054239_frame_0172,15min,gameplay,action_described,1,1,building a structure with acacia planks
+20260420_054239_frame_0172,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0172,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0173,15min,gameplay,location_detectable,1,1,grassy area with wooden structures
+20260420_054239_frame_0173,15min,gameplay,action_described,1,1,looking down at acacia planks while holding oak planks
+20260420_054239_frame_0173,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0173,15min,gameplay,player_status_described,1,1,"full health and hunger, no armor"
+20260420_054239_frame_0174,15min,gameplay,location_detectable,1,1,"savanna biome, under acacia leaves"
+20260420_054239_frame_0174,15min,gameplay,action_described,1,1,breaking an oak planks block while holding acacia planks
+20260420_054239_frame_0174,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0174,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0175,15min,gameplay,location_detectable,1,1,jungle forest
+20260420_054239_frame_0175,15min,gameplay,action_described,1,1,placing jungle wood planks to build a structure
+20260420_054239_frame_0175,15min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054239_frame_0175,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0176,15min,gameplay,location_detectable,1,1,jungle treehouse construction
+20260420_054239_frame_0176,15min,gameplay,action_described,1,1,building with jungle wood planks
+20260420_054239_frame_0176,15min,gameplay,entities_identified,1,1,5 entity/entities detected
+20260420_054239_frame_0176,15min,gameplay,player_status_described,1,1,"full health, nearly full hunger"
+20260420_054239_frame_0177,15min,gameplay,location_detectable,1,1,inside a wooden structure under construction
+20260420_054239_frame_0177,15min,gameplay,action_described,1,1,building a structure with jungle wood planks
+20260420_054239_frame_0177,15min,gameplay,entities_identified,1,0,0 entity/entities detected
+20260420_054239_frame_0177,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0178,15min,gameplay,location_detectable,1,1,savanna biome near a river
+20260420_054239_frame_0178,15min,gameplay,action_described,1,1,building a house with acacia wood planks
+20260420_054239_frame_0178,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0178,15min,gameplay,player_status_described,1,1,full health and hunger
+20260420_054239_frame_0179,15min,gameplay,location_detectable,1,1,savanna biome near a river
+20260420_054239_frame_0179,15min,gameplay,action_described,1,1,building a structure with acacia wood planks
+20260420_054239_frame_0179,15min,gameplay,entities_identified,1,1,4 entity/entities detected
+20260420_054239_frame_0179,15min,gameplay,player_status_described,1,1,full health and hunger

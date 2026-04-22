@@ -376,10 +376,7 @@ def run_pipeline(
         frames = json.loads(raw)
         if not isinstance(frames, list):
             raise ValueError(f"Expected a JSON array of frames in {fp}")
-        stem = fp.stem
-        rid = run_id or (
-            stem.removesuffix("_frames") if stem.endswith("_frames") else stem
-        )
+        rid = run_id or datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
         frames_path = fp
         print(f"Loaded {len(frames)} frames from {fp.relative_to(PROJECT_ROOT)} (skip VLM)")
     else:

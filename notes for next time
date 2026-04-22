@@ -1,0 +1,7 @@
+use another llm for judging the story
+try to remove the heart in the UI of the game to see if the LLM
+use F1 button in minecraft to disable UI and record a new footage (and run the pipeline to see if the result change)
+the UI can misclassified some elements into extracted data (white heart considered as pink particales)
+add the table of true positive 
+update the f1 scoring algorithm because it's giving the score based on the genshin run on frame 1 and 2 in genshin 
+true positive and true negative etc.. shouldn't be binary. It should be count

@@ -1,0 +1,2694 @@
+{
+  "timeline_summary": "browsing the recipe book in the inventory menu crafting acacia planks from logs in the inventory menu standing in tall grass, looking at the ground selecting Acacia Planks in the hotbar placing acacia planks to build a structure building a structure with jungle planks building a structure with mangrove planks placing mangrove planks to build a structure building a structure with acacia planks building a wooden structure with acacia planks standing next to a large tree trunk viewing the recipe fo",
+  "environment": {
+    "location": "savanna biome near a river",
+    "time_of_day": "day",
+    "conditions": []
+  },
+  "entities": [
+    {
+      "id": "e0",
+      "name_or_description": "Acacia Planks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e1",
+      "name_or_description": "Acacia Sapling",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e2",
+      "name_or_description": "Acacia Wood",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e3",
+      "name_or_description": "Acacia planks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e4",
+      "name_or_description": "Acacia trees",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e5",
+      "name_or_description": "Cobblestone",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e6",
+      "name_or_description": "Crafting Table",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e7",
+      "name_or_description": "Drowned",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e8",
+      "name_or_description": "Enderman",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e9",
+      "name_or_description": "Enderman in the distance",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e10",
+      "name_or_description": "Oak Logs",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e11",
+      "name_or_description": "Sticks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e12",
+      "name_or_description": "Stone Axe",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e13",
+      "name_or_description": "Stone Pickaxe",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e14",
+      "name_or_description": "Sugar",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e15",
+      "name_or_description": "Wooden Pickaxe",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e16",
+      "name_or_description": "Wooden Sword",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e17",
+      "name_or_description": "a drowned outside the window",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e18",
+      "name_or_description": "acacia door",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e19",
+      "name_or_description": "acacia doors",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e20",
+      "name_or_description": "acacia leaves",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e21",
+      "name_or_description": "acacia log",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e22",
+      "name_or_description": "acacia logs",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e23",
+      "name_or_description": "acacia plank structure",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e24",
+      "name_or_description": "acacia plank walls",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e25",
+      "name_or_description": "acacia planks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e26",
+      "name_or_description": "acacia planks foundation",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e27",
+      "name_or_description": "acacia sapling",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e28",
+      "name_or_description": "acacia tree",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e29",
+      "name_or_description": "acacia trees",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e30",
+      "name_or_description": "acacia wood",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e31",
+      "name_or_description": "acacia wood block",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e32",
+      "name_or_description": "acacia wood blocks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e33",
+      "name_or_description": "acacia wood building",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e34",
+      "name_or_description": "acacia wood house",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e35",
+      "name_or_description": "acacia wood planks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e36",
+      "name_or_description": "acacia wood structure",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e37",
+      "name_or_description": "acacia wood walls",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e38",
+      "name_or_description": "and dirt",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e39",
+      "name_or_description": "bamboo",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e40",
+      "name_or_description": "blast furnace recipe notification",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e41",
+      "name_or_description": "body of water",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e42",
+      "name_or_description": "bow in hand",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e43",
+      "name_or_description": "breaking particles",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e44",
+      "name_or_description": "building blocks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e45",
+      "name_or_description": "building materials in hotbar",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e46",
+      "name_or_description": "bush",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e47",
+      "name_or_description": "charcoal",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e48",
+      "name_or_description": "clouds",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e49",
+      "name_or_description": "coal",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e50",
+      "name_or_description": "coal ore",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e51",
+      "name_or_description": "cobblestone",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e52",
+      "name_or_description": "cobblestone floor",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e53",
+      "name_or_description": "crafting interface",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e54",
+      "name_or_description": "crafting table",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e55",
+      "name_or_description": "crafting table interface",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e56",
+      "name_or_description": "creeper",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e57",
+      "name_or_description": "crosshair",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e58",
+      "name_or_description": "dark block",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e59",
+      "name_or_description": "dark oak planks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e60",
+      "name_or_description": "dead bush",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e61",
+      "name_or_description": "death message",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e62",
+      "name_or_description": "death message in chat",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e63",
+      "name_or_description": "deep pit",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e64",
+      "name_or_description": "dirt",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e65",
+      "name_or_description": "dirt block",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e66",
+      "name_or_description": "dirt blocks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e67",
+      "name_or_description": "dirt pit",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e68",
+      "name_or_description": "distant hills",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e69",
+      "name_or_description": "distant mountain",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e70",
+      "name_or_description": "distant spider eyes",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e71",
+      "name_or_description": "distant trees",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e72",
+      "name_or_description": "distant zombie",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e73",
+      "name_or_description": "doors",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e74",
+      "name_or_description": "dropped acacia planks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e75",
+      "name_or_description": "dropped meat",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e76",
+      "name_or_description": "dropped seed",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e77",
+      "name_or_description": "dropped stick",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e78",
+      "name_or_description": "dropped stone pickaxe",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e79",
+      "name_or_description": "dropped wooden tool",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e80",
+      "name_or_description": "drowned",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e81",
+      "name_or_description": "drowned in the water",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e82",
+      "name_or_description": "experience orbs",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e83",
+      "name_or_description": "fence gate",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e84",
+      "name_or_description": "fishing rod",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e85",
+      "name_or_description": "floating green particles",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e86",
+      "name_or_description": "floating tree leaves",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e87",
+      "name_or_description": "forest",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e88",
+      "name_or_description": "furnace",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e89",
+      "name_or_description": "furnace interface",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e90",
+      "name_or_description": "glass panes",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e91",
+      "name_or_description": "grass",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e92",
+      "name_or_description": "grass block",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e93",
+      "name_or_description": "grass floor",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e94",
+      "name_or_description": "gravel block",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e95",
+      "name_or_description": "gravel floor",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e96",
+      "name_or_description": "hills",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e97",
+      "name_or_description": "hotbar",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e98",
+      "name_or_description": "hotbar items",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e99",
+      "name_or_description": "hotbar items (saplings",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e100",
+      "name_or_description": "hotbar items including a wooden axe and seeds",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e101",
+      "name_or_description": "inventory",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e102",
+      "name_or_description": "inventory containing wood",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e103",
+      "name_or_description": "inventory items",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e104",
+      "name_or_description": "inventory items (dirt",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e105",
+      "name_or_description": "inventory items (tools",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e106",
+      "name_or_description": "inventory tools and blocks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e107",
+      "name_or_description": "jungle leaves",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e108",
+      "name_or_description": "jungle planks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e109",
+      "name_or_description": "jungle wood planks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e110",
+      "name_or_description": "jungle wood walls",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e111",
+      "name_or_description": "lake",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e112",
+      "name_or_description": "large body of water",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e113",
+      "name_or_description": "large tree",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e114",
+      "name_or_description": "large tree trunk",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e115",
+      "name_or_description": "lava",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e116",
+      "name_or_description": "lava fall",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e117",
+      "name_or_description": "lava fall in the distance",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e118",
+      "name_or_description": "lava flow",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e119",
+      "name_or_description": "lava flow in the distance",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e120",
+      "name_or_description": "leaves",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e121",
+      "name_or_description": "logs",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e122",
+      "name_or_description": "mangrove logs",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e123",
+      "name_or_description": "mangrove planks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e124",
+      "name_or_description": "mesa mountain",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e125",
+      "name_or_description": "moon",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e126",
+      "name_or_description": "mountain",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e127",
+      "name_or_description": "mountain in background",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e128",
+      "name_or_description": "mountains",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e129",
+      "name_or_description": "oak door",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e130",
+      "name_or_description": "oak door in inventory",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e131",
+      "name_or_description": "oak doors",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e132",
+      "name_or_description": "oak log",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e133",
+      "name_or_description": "oak logs",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e134",
+      "name_or_description": "oak planks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e135",
+      "name_or_description": "oak planks block",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e136",
+      "name_or_description": "oak planks block being broken",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e137",
+      "name_or_description": "oak planks in hand",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e138",
+      "name_or_description": "oak sapling",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e139",
+      "name_or_description": "open acacia door",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e140",
+      "name_or_description": "planks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e141",
+      "name_or_description": "player character",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e142",
+      "name_or_description": "player hand",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e143",
+      "name_or_description": "purple particles",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e144",
+      "name_or_description": "recipe book",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e145",
+      "name_or_description": "recipe notification",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e146",
+      "name_or_description": "river",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e147",
+      "name_or_description": "sand",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e148",
+      "name_or_description": "sapling",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e149",
+      "name_or_description": "saplings",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e150",
+      "name_or_description": "savanna biome",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e151",
+      "name_or_description": "savanna hills",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e152",
+      "name_or_description": "savanna landscape",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e153",
+      "name_or_description": "savanna mountains",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e154",
+      "name_or_description": "savanna trees",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e155",
+      "name_or_description": "seeds",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e156",
+      "name_or_description": "small acacia plank structure",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e157",
+      "name_or_description": "small island",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e158",
+      "name_or_description": "spider",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e159",
+      "name_or_description": "spider (distant)",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e160",
+      "name_or_description": "spider with red eyes",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e161",
+      "name_or_description": "squid",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e162",
+      "name_or_description": "stick",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e163",
+      "name_or_description": "sticks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e164",
+      "name_or_description": "stone",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e165",
+      "name_or_description": "stone axe",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e166",
+      "name_or_description": "stone pickaxe",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e167",
+      "name_or_description": "stone pickaxe)",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e168",
+      "name_or_description": "stone tools",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e169",
+      "name_or_description": "sugar",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e170",
+      "name_or_description": "sugar cane",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e171",
+      "name_or_description": "sugar cane)",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e172",
+      "name_or_description": "sun",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e173",
+      "name_or_description": "tall flower",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e174",
+      "name_or_description": "tall grass",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e175",
+      "name_or_description": "tall red and yellow flower",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e176",
+      "name_or_description": "tools",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e177",
+      "name_or_description": "torch",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e178",
+      "name_or_description": "torches",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e179",
+      "name_or_description": "tree",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e180",
+      "name_or_description": "trees",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e181",
+      "name_or_description": "two creepers",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e182",
+      "name_or_description": "two zombies",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e183",
+      "name_or_description": "unfinished house structure",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e184",
+      "name_or_description": "various building materials in hotbar",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e185",
+      "name_or_description": "various resources in inventory",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e186",
+      "name_or_description": "various tools",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e187",
+      "name_or_description": "various tools and materials",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e188",
+      "name_or_description": "various tools and materials in hotbar",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e189",
+      "name_or_description": "various tools and materials in inventory",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e190",
+      "name_or_description": "various tools in hotbar",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e191",
+      "name_or_description": "villager",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e192",
+      "name_or_description": "water",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e193",
+      "name_or_description": "water outside",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e194",
+      "name_or_description": "water pit",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e195",
+      "name_or_description": "water pool",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e196",
+      "name_or_description": "wheat seeds",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e197",
+      "name_or_description": "window",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e198",
+      "name_or_description": "wood",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e199",
+      "name_or_description": "wood logs",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e200",
+      "name_or_description": "wood logs and planks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e201",
+      "name_or_description": "wood planks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e202",
+      "name_or_description": "wooden and stone tools",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e203",
+      "name_or_description": "wooden axe",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e204",
+      "name_or_description": "wooden axe)",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e205",
+      "name_or_description": "wooden block",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e206",
+      "name_or_description": "wooden blocks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e207",
+      "name_or_description": "wooden building",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e208",
+      "name_or_description": "wooden building on the left",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e209",
+      "name_or_description": "wooden door",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e210",
+      "name_or_description": "wooden door in hand",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e211",
+      "name_or_description": "wooden doors",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e212",
+      "name_or_description": "wooden house",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e213",
+      "name_or_description": "wooden house structure",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e214",
+      "name_or_description": "wooden house wall",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e215",
+      "name_or_description": "wooden pickaxe",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e216",
+      "name_or_description": "wooden plank structure",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e217",
+      "name_or_description": "wooden planks",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e218",
+      "name_or_description": "wooden structure",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e219",
+      "name_or_description": "wooden structure to the left",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e220",
+      "name_or_description": "wooden sword",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e221",
+      "name_or_description": "wooden tools",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e222",
+      "name_or_description": "wooden wall",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e223",
+      "name_or_description": "wooden walls",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e224",
+      "name_or_description": "yellow flower",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e225",
+      "name_or_description": "zombie",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e226",
+      "name_or_description": "zombie in the distance",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    },
+    {
+      "id": "e227",
+      "name_or_description": "zombie on the hill",
+      "type": "unknown",
+      "first_frame": 0,
+      "last_frame": 179
+    }
+  ],
+  "events": [
+    {
+      "frame_index": 0,
+      "description": "browsing the recipe book in the inventory menu",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 1,
+      "description": "crafting acacia planks from logs in the inventory menu",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 2,
+      "description": "standing in tall grass, looking at the ground",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 3,
+      "description": "selecting Acacia Planks in the hotbar",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 4,
+      "description": "placing acacia planks to build a structure",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 5,
+      "description": "building a structure with jungle planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 6,
+      "description": "building a structure with mangrove planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 7,
+      "description": "placing mangrove planks to build a structure",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 8,
+      "description": "building a structure with acacia planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 9,
+      "description": "building a wooden structure with acacia planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 10,
+      "description": "standing next to a large tree trunk",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 11,
+      "description": "viewing the recipe for Acacia Planks in the inventory menu",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 12,
+      "description": "crafting acacia planks from acacia logs in the inventory menu",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 13,
+      "description": "selecting or placing acacia planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 14,
+      "description": "holding jungle planks while building a structure",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 15,
+      "description": "holding a wooden pickaxe",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 16,
+      "description": "standing inside a wooden shelter looking at the wall",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 17,
+      "description": "holding oak planks and looking up at the night sky",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 18,
+      "description": "managing inventory and hovering over a crafting table",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 19,
+      "description": "selecting a crafting table from the hotbar",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 20,
+      "description": "crafting acacia doors",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 21,
+      "description": "standing in a dark room near a crafting table",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 22,
+      "description": "looking at a dirt block inside a shelter",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 23,
+      "description": "standing near a crafting table inside a wooden structure",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 24,
+      "description": "standing inside a wooden structure near a crafting table",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 25,
+      "description": "looking through a narrow gap with a wooden sword equipped",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 26,
+      "description": "standing in a dark room looking at the ceiling",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 27,
+      "description": "holding acacia planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 28,
+      "description": "breaking a crafting table with a wooden axe",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 29,
+      "description": "standing inside a house looking out through an open door",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 30,
+      "description": "holding a wooden sword near a jungle plank block",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 31,
+      "description": "walking through tall grass with a wooden sword",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 32,
+      "description": "looking towards a distant lava fall",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 33,
+      "description": "standing in tall grass, looking towards a lava fall on a cliff",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 34,
+      "description": "standing on the riverbank holding a wooden sword",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 35,
+      "description": "exploring the savanna at night with a wooden sword drawn",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 36,
+      "description": "standing in tall grass holding a wooden sword",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 37,
+      "description": "exploring the savanna at night",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 38,
+      "description": "standing by the water looking at a zombie on the opposite bank",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 39,
+      "description": "unlocked a new recipe for sugar after gathering sugar cane",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 40,
+      "description": "standing near a body of water looking at a tall flower",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 41,
+      "description": "looking at tall grass",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 42,
+      "description": "exploring the savanna at night, looking towards a small acacia plank structure",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 43,
+      "description": "looking at zombies across the water",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 44,
+      "description": "facing a creeper at close range",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 45,
+      "description": "standing near water holding a wooden sword",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 46,
+      "description": "standing in front of a closed wooden door",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 47,
+      "description": "standing inside a dark room looking at a wall",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 48,
+      "description": "standing inside a small wooden building looking at the door",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 49,
+      "description": "standing in a doorway looking out at the water",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 50,
+      "description": "peering out of a doorway at the night landscape",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 51,
+      "description": "looking at a wooden wall inside a shelter",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 52,
+      "description": "peering through a gap at a Drowned outside",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 53,
+      "description": "looking out an open door at a drowned enemy",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 54,
+      "description": "standing in an open doorway looking out at the water",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 55,
+      "description": "standing inside looking at the door with a wooden sword equipped",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 56,
+      "description": "standing inside a dark wooden room looking at a door",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 57,
+      "description": "standing inside looking out through a door",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 58,
+      "description": "fighting a zombie at point-blank range",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 59,
+      "description": "standing inside looking out through a wooden door",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 60,
+      "description": "viewing inventory and crafting recipes, hovering over a crafting table",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 61,
+      "description": "holding a crafting table while looking at a gravel floor",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 62,
+      "description": "browsing the crafting recipe book",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 63,
+      "description": "looking at a crafting table while holding sugar",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 64,
+      "description": "viewing inventory and hovering over an Acacia Sapling",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 65,
+      "description": "viewing the recipe book in a crafting table",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 66,
+      "description": "accessing the crafting table and browsing the recipe book",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 67,
+      "description": "unlocked a new recipe for a blast furnace",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 68,
+      "description": "mining a block with a wooden pickaxe",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 69,
+      "description": "browsing inventory and recipe book",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 70,
+      "description": "looking down at a dark block on the floor",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 71,
+      "description": "interacting with a furnace",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 72,
+      "description": "interacting with a furnace, hovering over an acacia sapling in inventory",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 73,
+      "description": "placing an oak log into the fuel slot of a furnace",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 74,
+      "description": "interacting with a furnace, hovering over an Acacia Sapling",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 75,
+      "description": "managing inventory and furnace fuel",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 76,
+      "description": "interacting with a furnace to smelt an oak log",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 77,
+      "description": "smelting an oak log in a furnace",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 78,
+      "description": "finished smelting charcoal in a furnace",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 79,
+      "description": "smelting charcoal in a furnace",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 80,
+      "description": "looking at a crafting table while holding coal",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 81,
+      "description": "browsing the crafting recipe book",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 82,
+      "description": "looking at a crafting table with a torch selected",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 83,
+      "description": "looking through an acacia door at the night landscape",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 84,
+      "description": "a death message appeared in chat: Hassancoul was slain by Drowned",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 85,
+      "description": "a player named Hassancoul was just killed by a Drowned",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 86,
+      "description": "exploring the savanna at night",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 87,
+      "description": "looking at a block of grass",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 88,
+      "description": "standing near the water's edge looking towards a distant mountain",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 89,
+      "description": "standing near a wooden structure and water",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 90,
+      "description": "looking at tall grass near a wooden structure",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 91,
+      "description": "standing in tall grass at night, looking towards a small ledge",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 92,
+      "description": "standing in a field of tall grass",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 93,
+      "description": "breaking tall grass",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 94,
+      "description": "holding a wooden pickaxe while looking at the ground",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 95,
+      "description": "looking at tall grass with a wooden pickaxe in hand",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 96,
+      "description": "standing under a tree canopy looking out at the landscape",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 97,
+      "description": "exploring the savanna at night",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 98,
+      "description": "exploring the savanna at night near a wooden structure",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 99,
+      "description": "looking at a wooden door while holding a wooden pickaxe",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 100,
+      "description": "standing inside a wooden structure looking at an acacia door",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 101,
+      "description": "looking out through an acacia door",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 102,
+      "description": "standing inside a wooden building near a door",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 103,
+      "description": "looking out through an acacia door",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 104,
+      "description": "observing a nearby creeper",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 105,
+      "description": "looking through an acacia door at a river",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 106,
+      "description": "standing inside a house near a crafting table, holding a torch",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 107,
+      "description": "looking out of an acacia door while holding a torch",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 108,
+      "description": "standing inside a house looking at the door",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 109,
+      "description": "looking at an acacia door while holding a torch",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 110,
+      "description": "standing near a placed acacia wood block overlooking the water",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 111,
+      "description": "exploring the savanna as the sun sets",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 112,
+      "description": "standing in a field holding a torch, observing two creepers in the distance",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 113,
+      "description": "looking at tall grass with a wooden sword equipped",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 114,
+      "description": "witnessing a death message in chat: 'Hassancoul was blown up by Creeper'",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 115,
+      "description": "a player named Hassancoul was killed by a creeper explosion",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 116,
+      "description": "walking through an open savanna",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 117,
+      "description": "selecting an acacia sapling in the hotbar while looking at tall grass",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 118,
+      "description": "standing near a small water pit holding an oak sapling",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 119,
+      "description": "holding an acacia sapling and looking at a grass block",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 120,
+      "description": "standing on the shore holding an acacia sapling, looking at a dropped item in the water",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 121,
+      "description": "dropped a stone axe into the water",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 122,
+      "description": "looking at a small acacia wood house while holding a sapling",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 123,
+      "description": "standing in a corner holding a sapling",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 124,
+      "description": "selecting or using a wooden axe while looking at acacia wood planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 125,
+      "description": "breaking an acacia wood plank block with a wooden axe",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 126,
+      "description": "breaking an acacia wood block with a wooden axe",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 127,
+      "description": "chopping an acacia wood block with a wooden axe",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 128,
+      "description": "holding a wooden axe while standing next to a wooden house",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 129,
+      "description": "holding acacia planks, likely building or expanding a small shelter",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 130,
+      "description": "preparing to place an acacia plank block",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 131,
+      "description": "building a small acacia wood structure",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 132,
+      "description": "holding acacia planks to build",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 133,
+      "description": "holding a wooden axe and looking at a patch of grass",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 134,
+      "description": "breaking a grass block",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 135,
+      "description": "approaching experience orbs on the ground",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 136,
+      "description": "breaking grass, causing particles and dropping a seed",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 137,
+      "description": "breaking tall grass",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 138,
+      "description": "looking at a planted sapling",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 139,
+      "description": "building a structure with acacia planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 140,
+      "description": "standing at the entrance of a wooden house looking at a crafting table",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 141,
+      "description": "crafting acacia planks from acacia logs",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 142,
+      "description": "crafting acacia planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 143,
+      "description": "accessing the crafting table",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 144,
+      "description": "building a wall with acacia planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 145,
+      "description": "building a structure with acacia planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 146,
+      "description": "building a structure with acacia planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 147,
+      "description": "building a structure with acacia planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 148,
+      "description": "holding acacia planks, looking at tall grass",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 149,
+      "description": "building a structure with acacia wood planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 150,
+      "description": "building a structure with acacia wood planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 151,
+      "description": "placing acacia wood planks to build a structure",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 152,
+      "description": "building a structure with acacia wood planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 153,
+      "description": "placing acacia wood planks to build a wall",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 154,
+      "description": "building a structure with acacia planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 155,
+      "description": "building a house with acacia planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 156,
+      "description": "placing acacia planks to build a structure",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 157,
+      "description": "building with acacia planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 158,
+      "description": "looking at a wooden block while holding a wooden axe",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 159,
+      "description": "breaking an acacia log with a wooden axe",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 160,
+      "description": "placing or looking at wooden planks while building",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 161,
+      "description": "breaking a wooden block",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 162,
+      "description": "placing acacia planks to build a structure",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 163,
+      "description": "building a structure with acacia planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 164,
+      "description": "building a structure with acacia wood planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 165,
+      "description": "crafting oak planks using oak logs in the crafting table",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 166,
+      "description": "crafting acacia planks and unlocking a new recipe",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 167,
+      "description": "crafting acacia planks from an acacia log",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 168,
+      "description": "accessing the crafting table and viewing the recipe book",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 169,
+      "description": "browsing the recipe book in the crafting menu",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 170,
+      "description": "holding oak planks while standing inside an unfinished acacia wood structure",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 171,
+      "description": "standing on a wooden platform, looking at the landscape",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 172,
+      "description": "building a structure with acacia planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 173,
+      "description": "looking down at acacia planks while holding oak planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 174,
+      "description": "breaking an oak planks block while holding acacia planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 175,
+      "description": "placing jungle wood planks to build a structure",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 176,
+      "description": "building with jungle wood planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 177,
+      "description": "building a structure with jungle wood planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 178,
+      "description": "building a house with acacia wood planks",
+      "involved_entity_ids": []
+    },
+    {
+      "frame_index": 179,
+      "description": "building a structure with acacia wood planks",
+      "involved_entity_ids": []
+    }
+  ],
+  "player_arc": {
+    "status_notes": "full health and hunger, no armor; full health and hunger, holding a wooden axe; full health (10 hearts), full hunger (10 drumsticks); full health, nearly full hunger; full health and hunger; 10 hearts health, 10 hunger points; 10 hearts health, 9.5 hunger; full health, nearly full hunger, no armor; 10 hearts, 9.5 hunger; full health, full hunger, no armor; full health and hunger, holding oak doors; full health, nearly full hunger, holding a wooden sword; 10 hearts, 10 hunger; full health and hunger, holding a wooden sword; 10 hearts health, 10 hunger, holding a wooden sword; full health, full hunger, no armor visible; full health and hunger; holding a wooden sword; full health, 9.5 hunger, holding a wooden sword; 10 hearts, 10 hunger, wooden sword equipped; 4.5 hearts health, full hunger, no armor; 4.5 hearts health, full hunger; 5 hearts health, 8.5 hunger, holding a damaged wooden sword; 5.5 hearts health, 8.5 hunger, holding a wooden sword; 5 hearts health, 8.5 hunger, holding a wooden sword; 5.5 hearts health, 8.5 hunger, no armor; 6 hearts, 8.5 hunger, holding a damaged wooden sword; 5 hearts health, 9.5 hunger, holding a wooden sword; 5 hearts health, 7.5 hunger, holding a damaged wooden sword; 5 hearts health, 8.5 hunger, no armor; 3.5 hearts health, full hunger; 1 heart health, full hunger, holding a damaged wooden sword; full health, 8.5 hunger; full health, full hunger; 9.5 hearts health, 9.5 hunger; full health, 8.5 hunger, no armor; 9 hearts health, 8.5 hunger; 1 heart health, full hunger; 1 heart health, 7.5 hunger; full health, full hunger, no armor equipped; half a heart of health, full hunger; health and hunger bars are mostly full; 10 hearts health, 8.5 hunger; 10 hearts, 8.5 hunger; 1 heart health, 8.5 hunger, no armor; 9 hearts health, full hunger; 0.5 hearts health, full hunger; 1 heart health, 8.5 hunger, holding a torch; full health and hunger, no armor visible; 7.5 hearts health, full hunger; 6 hearts health, full hunger, no armor; 7 hearts health, 8.5 hunger, holding a bow; 7.5 hearts, 9.5 hunger, holding a wooden pickaxe; 7 hearts health, 8.5 hunger, no armor; 6.5 hearts, 8.5 hunger; 7 hearts health, 7.5 hunger, holding a damaged wooden pickaxe; 7 hearts health, 8.5 hunger, holding a damaged wooden pickaxe; 7 hearts, 7.5 hunger, holding a damaged wooden pickaxe; 6.5 hearts health, 7.5 hunger; 7.5 hearts health, 8.5 hunger, holding a wooden pickaxe; 6.5 hearts health, 7.5 hunger, holding a damaged wooden pickaxe; 7.5 hearts health, 8.5 hunger; 7 hearts, 8.5 hunger, holding a wooden pickaxe; 7.5 hearts health, 7.5 hunger; 6 hearts health, 8.5 hunger, no armor; 7.5 hearts health, 7.5 hunger, no armor; 6.5 hearts health, 6.5 hunger, holding a torch; 6.5 hearts health, 8.5 hunger, holding a torch; 7 hearts, 7.5 hunger, holding torches; 6 hearts health, 9.5 hunger, no armor; 5.5 hearts health, 7.5 hunger, holding a wooden sword; full health, full hunger, empty hotbar; 10 hearts, 10 hunger, holding a stick; 10 hearts health, 10 drumsticks hunger; full health and hunger, holding oak planks",
+    "notable_actions": [
+      "browsing the recipe book in the inventory menu",
+      "crafting acacia planks from logs in the inventory menu",
+      "standing in tall grass, looking at the ground",
+      "selecting Acacia Planks in the hotbar",
+      "placing acacia planks to build a structure",
+      "building a structure with jungle planks",
+      "building a structure with mangrove planks",
+      "placing mangrove planks to build a structure",
+      "building a structure with acacia planks",
+      "building a wooden structure with acacia planks",
+      "standing next to a large tree trunk",
+      "viewing the recipe for Acacia Planks in the inventory menu",
+      "crafting acacia planks from acacia logs in the inventory menu",
+      "selecting or placing acacia planks",
+      "holding jungle planks while building a structure",
+      "holding a wooden pickaxe",
+      "standing inside a wooden shelter looking at the wall",
+      "holding oak planks and looking up at the night sky",
+      "managing inventory and hovering over a crafting table",
+      "selecting a crafting table from the hotbar",
+      "crafting acacia doors",
+      "standing in a dark room near a crafting table",
+      "looking at a dirt block inside a shelter",
+      "standing near a crafting table inside a wooden structure",
+      "standing inside a wooden structure near a crafting table",
+      "looking through a narrow gap with a wooden sword equipped",
+      "standing in a dark room looking at the ceiling",
+      "holding acacia planks",
+      "breaking a crafting table with a wooden axe",
+      "standing inside a house looking out through an open door",
+      "holding a wooden sword near a jungle plank block",
+      "walking through tall grass with a wooden sword",
+      "looking towards a distant lava fall",
+      "standing in tall grass, looking towards a lava fall on a cliff",
+      "standing on the riverbank holding a wooden sword",
+      "exploring the savanna at night with a wooden sword drawn",
+      "standing in tall grass holding a wooden sword",
+      "exploring the savanna at night",
+      "standing by the water looking at a zombie on the opposite bank",
+      "unlocked a new recipe for sugar after gathering sugar cane",
+      "standing near a body of water looking at a tall flower",
+      "looking at tall grass",
+      "exploring the savanna at night, looking towards a small acacia plank structure",
+      "looking at zombies across the water",
+      "facing a creeper at close range",
+      "standing near water holding a wooden sword",
+      "standing in front of a closed wooden door",
+      "standing inside a dark room looking at a wall",
+      "standing inside a small wooden building looking at the door",
+      "standing in a doorway looking out at the water",
+      "peering out of a doorway at the night landscape",
+      "looking at a wooden wall inside a shelter",
+      "peering through a gap at a Drowned outside",
+      "looking out an open door at a drowned enemy",
+      "standing in an open doorway looking out at the water",
+      "standing inside looking at the door with a wooden sword equipped",
+      "standing inside a dark wooden room looking at a door",
+      "standing inside looking out through a door",
+      "fighting a zombie at point-blank range",
+      "standing inside looking out through a wooden door",
+      "viewing inventory and crafting recipes, hovering over a crafting table",
+      "holding a crafting table while looking at a gravel floor",
+      "browsing the crafting recipe book",
+      "looking at a crafting table while holding sugar",
+      "viewing inventory and hovering over an Acacia Sapling",
+      "viewing the recipe book in a crafting table",
+      "accessing the crafting table and browsing the recipe book",
+      "unlocked a new recipe for a blast furnace",
+      "mining a block with a wooden pickaxe",
+      "browsing inventory and recipe book",
+      "looking down at a dark block on the floor",
+      "interacting with a furnace",
+      "interacting with a furnace, hovering over an acacia sapling in inventory",
+      "placing an oak log into the fuel slot of a furnace",
+      "interacting with a furnace, hovering over an Acacia Sapling",
+      "managing inventory and furnace fuel",
+      "interacting with a furnace to smelt an oak log",
+      "smelting an oak log in a furnace",
+      "finished smelting charcoal in a furnace",
+      "smelting charcoal in a furnace",
+      "looking at a crafting table while holding coal",
+      "browsing the crafting recipe book",
+      "looking at a crafting table with a torch selected",
+      "looking through an acacia door at the night landscape",
+      "a death message appeared in chat: Hassancoul was slain by Drowned",
+      "a player named Hassancoul was just killed by a Drowned",
+      "exploring the savanna at night",
+      "looking at a block of grass",
+      "standing near the water's edge looking towards a distant mountain",
+      "standing near a wooden structure and water",
+      "looking at tall grass near a wooden structure",
+      "standing in tall grass at night, looking towards a small ledge",
+      "standing in a field of tall grass",
+      "breaking tall grass",
+      "holding a wooden pickaxe while looking at the ground",
+      "looking at tall grass with a wooden pickaxe in hand",
+      "standing under a tree canopy looking out at the landscape",
+      "exploring the savanna at night",
+      "exploring the savanna at night near a wooden structure",
+      "looking at a wooden door while holding a wooden pickaxe",
+      "standing inside a wooden structure looking at an acacia door",
+      "looking out through an acacia door",
+      "standing inside a wooden building near a door",
+      "looking out through an acacia door",
+      "observing a nearby creeper",
+      "looking through an acacia door at a river",
+      "standing inside a house near a crafting table, holding a torch",
+      "looking out of an acacia door while holding a torch",
+      "standing inside a house looking at the door",
+      "looking at an acacia door while holding a torch",
+      "standing near a placed acacia wood block overlooking the water",
+      "exploring the savanna as the sun sets",
+      "standing in a field holding a torch, observing two creepers in the distance",
+      "looking at tall grass with a wooden sword equipped",
+      "witnessing a death message in chat: 'Hassancoul was blown up by Creeper'",
+      "a player named Hassancoul was killed by a creeper explosion",
+      "walking through an open savanna",
+      "selecting an acacia sapling in the hotbar while looking at tall grass",
+      "standing near a small water pit holding an oak sapling",
+      "holding an acacia sapling and looking at a grass block",
+      "standing on the shore holding an acacia sapling, looking at a dropped item in the water",
+      "dropped a stone axe into the water",
+      "looking at a small acacia wood house while holding a sapling",
+      "standing in a corner holding a sapling",
+      "selecting or using a wooden axe while looking at acacia wood planks",
+      "breaking an acacia wood plank block with a wooden axe",
+      "breaking an acacia wood block with a wooden axe",
+      "chopping an acacia wood block with a wooden axe",
+      "holding a wooden axe while standing next to a wooden house",
+      "holding acacia planks, likely building or expanding a small shelter",
+      "preparing to place an acacia plank block",
+      "building a small acacia wood structure",
+      "holding acacia planks to build",
+      "holding a wooden axe and looking at a patch of grass",
+      "breaking a grass block",
+      "approaching experience orbs on the ground",
+      "breaking grass, causing particles and dropping a seed",
+      "breaking tall grass",
+      "looking at a planted sapling",
+      "building a structure with acacia planks",
+      "standing at the entrance of a wooden house looking at a crafting table",
+      "crafting acacia planks from acacia logs",
+      "crafting acacia planks",
+      "accessing the crafting table",
+      "building a wall with acacia planks",
+      "building a structure with acacia planks",
+      "building a structure with acacia planks",
+      "building a structure with acacia planks",
+      "holding acacia planks, looking at tall grass",
+      "building a structure with acacia wood planks",
+      "building a structure with acacia wood planks",
+      "placing acacia wood planks to build a structure",
+      "building a structure with acacia wood planks",
+      "placing acacia wood planks to build a wall",
+      "building a structure with acacia planks",
+      "building a house with acacia planks",
+      "placing acacia planks to build a structure",
+      "building with acacia planks",
+      "looking at a wooden block while holding a wooden axe",
+      "breaking an acacia log with a wooden axe",
+      "placing or looking at wooden planks while building",
+      "breaking a wooden block",
+      "placing acacia planks to build a structure",
+      "building a structure with acacia planks",
+      "building a structure with acacia wood planks",
+      "crafting oak planks using oak logs in the crafting table",
+      "crafting acacia planks and unlocking a new recipe",
+      "crafting acacia planks from an acacia log",
+      "accessing the crafting table and viewing the recipe book",
+      "browsing the recipe book in the crafting menu",
+      "holding oak planks while standing inside an unfinished acacia wood structure",
+      "standing on a wooden platform, looking at the landscape",
+      "building a structure with acacia planks",
+      "looking down at acacia planks while holding oak planks",
+      "breaking an oak planks block while holding acacia planks",
+      "placing jungle wood planks to build a structure",
+      "building with jungle wood planks",
+      "building a structure with jungle wood planks",
+      "building a house with acacia wood planks",
+      "building a structure with acacia wood planks"
+    ]
+  },
+  "consolidation_method": "simple_stitch"
+}
