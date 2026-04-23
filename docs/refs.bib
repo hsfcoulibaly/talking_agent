@@ -1,3 +1,8 @@
+% ============================================================
+%  refs.bib — Talking Agent Master's Project
+% ============================================================
+
+% ── Core theoretical framework ───────────────────────────────
 @book{Adams2014,
   author    = {Adams, Ernest},
   title     = {Fundamentals of Game Design},
@@ -7,37 +12,131 @@
   isbn      = {978-0-321-92967-9}
 }
 
-@INPROCEEDINGS{11227644,
-  author={Xie, Yejuan and Dou, Yuehan and Yao, Lijie and Wang, Yunzhe and Li, Yushi and Ji, Chengtao},
-  booktitle={2025 International Joint Conference on Neural Networks (IJCNN)}, 
-  title={A{I}-Enhanced Interactive Storytelling for Cultural Heritage: A Prototype System for {D}unhuang Murals}, 
-  year={2025},
-  volume={},
-  number={},
-  pages={1-8},
-  keywords={Visualization;Neural networks;Prototypes;Knowledge graphs;Digitization;User experience;Real-time systems;Cultural differences;Global communication;Artificial intelligence;Cultural Heritage;AI Agents;LLMs;Visualization;Interactive Storytelling},
-  doi={10.1109/IJCNN64981.2025.11227644}}
+% ── Ludonarrative dissonance (coined here) ───────────────────
+@misc{Hocking2007,
+  author       = {Hocking, Clint},
+  title        = {Ludonarrative Dissonance in {BioShock}},
+  howpublished = {Click Nothing (blog)},
+  year         = {2007},
+  url          = {https://clicknothing.typepad.com/click_nothing/2007/10/ludonarrative-d.html}
+}
 
-@INPROCEEDINGS{11025303,
-  author={Moslemi, Mohammad and Pirehbabi, Saman and Gavagsaz-Ghoachani, Roghayeh and Phattanasak, Matheepot},
-  booktitle={2025 12th International and the 18th National Conference on E-Learning and E-Teaching (ICeLeT)}, 
-  title={Revolutionizing Online Learning: The Role of Storytelling, Artificial Intelligence, and Emerging Technologies in Teaching Complex Engineering Concepts}, 
-  year={2025},
-  volume={},
-  number={},
-  pages={1-5},
-  keywords={Technological innovation;Renewable energy sources;Electronic learning;Education;Circuits;Learning (artificial intelligence);Indexes;Engineering education;Index Terms-- Artificial Intelligence;Engineering Education;Online Classes;Student Interaction;Storytelling},
-  doi={10.1109/ICeLeT66022.2025.11025303}}
+% ── Vision-Language / Multimodal LLM foundations ─────────────
+@article{GeminiTeam2024,
+  author  = {{Gemini Team, Google}},
+  title   = {Gemini: A Family of Highly Capable Multimodal Models},
+  journal = {arXiv preprint arXiv:2312.11805},
+  year    = {2024},
+  url     = {https://arxiv.org/abs/2312.11805}
+}
 
+@article{GeminiTeam2024b,
+  author  = {{Gemini Team, Google}},
+  title   = {Gemini 1.5: Unlocking Multimodal Understanding Across Millions of Tokens of Context},
+  journal = {arXiv preprint arXiv:2403.05530},
+  year    = {2024},
+  url     = {https://arxiv.org/abs/2403.05530}
+}
 
-@INPROCEEDINGS{9929609,
-  author={Rizvic, Selma and Boskovic, Dusanka and Mijatovic, Bojan and Ivkovic-Kihic, Ivona and Škaljo, Edo},
-  booktitle={2022 International Conference on Interactive Media, Smart Systems and Emerging Technologies (IMET)}, 
-  title={Learning about prehistory through interactive digital storytelling}, 
-  year={2022},
-  volume={},
-  number={},
-  pages={1-4},
-  keywords={Visualization;Humanities;Three-dimensional displays;Virtual reality;Media;Excavation;Museums;interactive digital storytelling;digital cultural heritage;virtual reality;serious games},
-  doi={10.1109/IMET54801.2022.9929609}}
+% ── Llama 3 (Groq backend model) ─────────────────────────────
+@article{Dubey2024,
+  author  = {Dubey, Abhimanyu and Jauhri, Abhinav and Pandey, Abhinav and Kadian, Abhishek and
+             Al-Dahle, Ahmad and Letman, Aiesha and Mathur, Akhil and Schelten, Alan and
+             Yang, Amy and Fan, Angela and others},
+  title   = {The {Llama}~3 Herd of Models},
+  journal = {arXiv preprint arXiv:2407.21783},
+  year    = {2024},
+  url     = {https://arxiv.org/abs/2407.21783}
+}
 
+% ── LLM-as-judge evaluation methodology ──────────────────────
+@inproceedings{Zheng2023,
+  author    = {Zheng, Lianmin and Chiang, Wei-Lin and Sheng, Ying and Zhuang, Siyuan and
+               Wu, Zhanghao and Zhuang, Yonghao and Lin, Zi and Li, Zhuohan and
+               Li, Dacheng and Xing, Eric P. and Zhang, Hao and Gonzalez, Joseph E. and
+               Stoica, Ion},
+  title     = {Judging {LLM}-as-a-Judge with {MT}-Bench and Chatbot Arena},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {36},
+  pages     = {46595--46623},
+  year      = {2023}
+}
+
+% ── Minecraft as an AI research environment ───────────────────
+@inproceedings{Johnson2016,
+  author    = {Johnson, Matthew and Hofmann, Katja and Hutton, Tim and Bignell, David},
+  title     = {The {Malmo} Platform for {Artificial Intelligence} Experimentation},
+  booktitle = {Proceedings of the 25th International Joint Conference on Artificial Intelligence (IJCAI)},
+  pages     = {4246--4247},
+  year      = {2016}
+}
+
+% ── Game-playing agents from screenshots (related work) ───────
+@article{Tan2024CRADLE,
+  author  = {Tan, Weihao and Ding, Ziluo and Zhang, Wentao and Li, Boyu and Zhou, Bohan and
+             Yue, Junpeng and Xia, Haochong and Jiang, Jiechuan and Zheng, Longtao and
+             Xu, Xinrun and Bi, Yifei and Gu, Pengjie and Wang, Xinrun and
+             Karlsson, B{\"o}rje F. and An, Bo and Lu, Zongqing},
+  title   = {{CRADLE}: Empowering Foundation Agents Towards General Computer Control},
+  journal = {arXiv preprint arXiv:2403.03186},
+  year    = {2024},
+  url     = {https://arxiv.org/abs/2403.03186}
+}
+
+% ── LLM agents for open-world games (related work) ───────────
+@inproceedings{Wang2023Voyager,
+  author    = {Wang, Guanzhi and Xie, Yuqi and Jiang, Yunfan and Mandlekar, Ajay and
+               Xiao, Chaowei and Zhu, Yuke and Fan, Linxi and Anandkumar, Anima},
+  title     = {Voyager: An Open-Ended Embodied Agent with Large Language Models},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {36},
+  year      = {2023},
+  url       = {https://arxiv.org/abs/2305.16291}
+}
+
+% ── Structured scene representation for VLM pipelines ────────
+@inproceedings{Chang2023,
+  author    = {Chang, Yapeng and Lu, Yahui and Ruan, Haolin and Song, Yan and
+               He, Shuai and Li, Jianwei},
+  title     = {A Video Is Worth 4096 Tokens: Verbalize Story Videos to Understand Them in Zero Shot},
+  booktitle = {Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  year      = {2023},
+  pages     = {1407--1419}
+}
+
+% ── AI-enhanced interactive storytelling (cultural heritage) ──
+@inproceedings{11227644,
+  author    = {Xie, Yejuan and Dou, Yuehan and Yao, Lijie and Wang, Yunzhe and
+               Li, Yushi and Ji, Chengtao},
+  booktitle = {2025 International Joint Conference on Neural Networks (IJCNN)},
+  title     = {{AI}-Enhanced Interactive Storytelling for Cultural Heritage:
+               A Prototype System for {Dunhuang} Murals},
+  year      = {2025},
+  pages     = {1--8},
+  doi       = {10.1109/IJCNN64981.2025.11227644}
+}
+
+% ── Storytelling in engineering education (background) ────────
+@inproceedings{11025303,
+  author    = {Moslemi, Mohammad and Pirehbabi, Saman and Gavagsaz-Ghoachani, Roghayeh and
+               Phattanasak, Matheepot},
+  booktitle = {2025 12th International and the 18th National Conference on
+               E-Learning and E-Teaching (ICeLeT)},
+  title     = {Revolutionizing Online Learning: The Role of Storytelling, Artificial
+               Intelligence, and Emerging Technologies in Teaching Complex Engineering Concepts},
+  year      = {2025},
+  pages     = {1--5},
+  doi       = {10.1109/ICeLeT66022.2025.11025303}
+}
+
+% ── Interactive digital storytelling for cultural heritage ────
+@inproceedings{9929609,
+  author    = {Rizvic, Selma and Boskovic, Dusanka and Mijatovic, Bojan and
+               Ivkovic-Kihic, Ivona and {\v{S}}kaljo, Edo},
+  booktitle = {2022 International Conference on Interactive Media, Smart Systems and
+               Emerging Technologies (IMET)},
+  title     = {Learning about Prehistory Through Interactive Digital Storytelling},
+  year      = {2022},
+  pages     = {1--4},
+  doi       = {10.1109/IMET54801.2022.9929609}
+}
