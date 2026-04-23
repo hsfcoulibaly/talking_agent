@@ -163,6 +163,91 @@ The second excerpt (Figure~\ref{fig:code_prompt}) shows the \texttt{JUDGE\_PROMP
   \label{fig:code_prompt}
 \end{figure}
 
+\section{Results: Generated NPC Dialogue}
+
+This section presents the verbatim outputs produced by the pipeline for all six \emph{Minecraft} runs. Each dialogue is the direct output of Stage~3 with no post-processing. Reading the outputs alongside the evaluation scores in the next section allows the reader to ground the numerical findings in actual generated text.
+
+% ── 5-minute runs ────────────────────────────────────────────
+\subsection{5-minute runs (60 frames each)}
+
+\textbf{Run 1 --- 20260420\_054228}
+\begin{quote}\itshape
+You really made quick work of that shelter, crafting all those acacia planks earlier.
+It served you well tonight, especially after you ventured out into the dark savanna
+with your wooden sword. I watched you face those horrors---the zombies, and even that
+dreadful creeper. You took quite a beating out there, didn't you? It's a relief you
+made it back to the safety of these walls. But even from inside, we could see that
+drowned by the water. It's never truly peaceful, is it?
+\end{quote}
+
+\textbf{Run 2 --- 20260420\_064300}
+\begin{quote}\itshape
+My heart was in my throat out there, friend. It feels like just moments ago you were
+working so hard, crafting those acacia planks and building our little wooden shelter.
+You even managed to get some doors put up, which proved vital when darkness truly fell.
+Then you ventured out into the savanna, past the lava fall and by the water, and
+that's when the real trouble started. Those zombies, and then that awful creeper, and
+even a drowned by the riverbank\ldots{} they really gave you a fright. I was so worried
+when you took those hits, but you held your own with that wooden sword. It's good to
+be back by the warmth of this fire, safe for a moment.
+\end{quote}
+
+\noindent\textit{Note:} Run~2 received a Grounding score of 3 from the Gemini judge because the phrase ``warmth of this fire'' was flagged as a hallucinated entity---no campfire appears in the 5-minute footage. This is a systematic artefact of the NPC campfire framing in the story prompt.
+
+% ── 10-minute runs ───────────────────────────────────────────
+\subsection{10-minute runs (120 frames each)}
+
+\textbf{Run 1 --- 20260420\_054237}
+\begin{quote}\itshape
+Whew, you really pushed yourself out there tonight. First, you were so busy, crafting
+those acacia planks and building up our little shelter, making sure we had doors and
+everything. It felt safer inside, especially with the night drawing in. But then you
+ventured out into the savanna, even with the moon watching. Those zombies, creepers,
+and the drowned by the water\ldots{} it was harrowing. My heart stopped twice, seeing
+you fall. But you always come back. We even managed to get charcoal for torches from
+the furnace! Let's get some rest now, alright?
+\end{quote}
+
+\textbf{Run 2 --- 20260420\_064335}
+\begin{quote}\itshape
+Ah, what a journey you've had, my friend. It feels like only moments ago you were
+gathering acacia, carefully crafting planks, and raising those sturdy wooden walls to
+give us a place to rest. But the night\ldots{} the savanna truly comes alive when the
+sun sets, doesn't it? You faced down those shambling zombies, and those terrifying
+creepers. My heart sank each time you fell, but you always found your way back. And
+now, with charcoal from the furnace, we have these brilliant torches to chase the
+darkness away, at least for a while. We'll be safer now, I promise.
+\end{quote}
+
+\noindent\textit{Note:} Both 10-minute runs received perfect Grounding scores (5/5) from all evaluators, with zero hallucinated entities. The additional 60 frames of context (vs.\ 5-minute runs) are reflected in slightly richer scene details: both outputs reference the furnace and charcoal, a crafting event that appears only in the later portion of the recording.
+
+% ── 15-minute runs ───────────────────────────────────────────
+\subsection{15-minute runs (180 frames each)}
+
+\textbf{Run 1 --- 20260420\_054239}
+\begin{quote}\itshape
+It was quite the day, wasn't it? We spent so much time in the savanna, crafting planks
+from logs and building up our little shelter. You were so focused, even learning new
+recipes like for sugar and furnaces! I remember you smelting charcoal, too. But then
+night fell, and the dangers came out. You faced those zombies by the river, and that
+creeper was too close for comfort. My heart stopped when you were lost to the Drowned,
+and then again by that explosion. It's good we're safe by this fire now.
+\end{quote}
+
+\textbf{Run 2 --- 20260420\_064352}
+\begin{quote}\itshape
+It's good to finally rest by this fire, isn't it? You spent so much time today, first
+crafting all those acacia planks from logs, then building up our little shelter. I saw
+you using jungle and mangrove planks too, really making it sturdy. And you even managed
+to figure out how to make sugar from those canes you found, and smelted logs into
+charcoal in the furnace. But then the night came, and\ldots{} well, it was terrifying.
+That Drowned near the river, it took you down so quickly. And not long after, that
+dreadful creeper explosion\ldots{} my heart stopped when I saw you fall. But you're
+back with me now, and we even planted some saplings. A new beginning, right?
+\end{quote}
+
+\noindent\textit{Note:} The 15-minute outputs are the most specific of the three groups. Run~2 names three distinct wood types (acacia, jungle, mangrove), references sugar cane crafting, charcoal smelting, sapling planting, and two separate death events---all verifiable in the scene graph. Both human raters awarded their highest scores to the 15-minute dialogues, with per-rater averages of 4.57/5 versus 4.14/5 for the 5-minute group.
+
 \section{Evaluation}
 
 Evaluation spans all three pipeline stages. Stage~1 is evaluated with automated binary classification metrics across all extracted frames. Stage~3 is evaluated with a dual LLM-as-judge method~\cite{Zheng2023} using two independent model families and a human rating study. Stage~2 (scene graph consolidation) is assessed indirectly through the Grounding dimension of the Stage~3 judge: if consolidation omits or distorts key entities, the dialogue scores will reflect it.
