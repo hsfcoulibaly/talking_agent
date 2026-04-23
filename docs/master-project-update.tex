@@ -10,7 +10,7 @@
   Hassan Coulibaly \\
   Master's Project Report \\
   Advisor: Dr. Michael Weeks \\
-  Committee Member: Dr. Kubek
+  Committee Member: Dr. Mario Kubek
 }
 
 \begin{document}
@@ -35,6 +35,11 @@ A key design goal is evaluation completeness. Prior work on VLM pipelines often 
 
 \section{Background}
 
+A Vision-Language Model (VLM) processes visual data, and allows text to be generated,
+such as image captioning~\cite{bordes2024introductionvisionlanguagemodeling}.
+One way to create a VLM is to pair an image encoder with an LLM.
+``Grounding VLMs is another important step to ensure
+that the VLMs correctly associate words with specific concepts''~\cite{bordes2024introductionvisionlanguagemodeling}.
 A prototype system for AI \& Interactive Storytelling in Cultural Heritage was developed for the Dunhuang Murals (specifically the Jataka stories) to move beyond passive viewing~\cite{11227644}. The system includes mural segmentation to explain individual elements, interactive knowledge graphs that trigger cinematic visual effects when clicked, and a creative reconstruction tool where users build their own comic-style narratives. An AI agent (built on the COZE platform and GPT models) acts as an approachable guide, providing real-time explanations and creative suggestions while drawing from a curated knowledge base to prevent ``hallucinations''. User testing showed high scores in attractiveness, novelty, and stimulation, suggesting the system helps users form deeper emotional and intellectual connections with heritage.
 
 Recent work has also applied large foundation models directly to video-game environments. Voyager~\cite{Wang2023Voyager} uses GPT-4 as a lifelong agent in \emph{Minecraft}, autonomously learning skills through code-based actions without access to visual screenshots. CRADLE~\cite{Tan2024CRADLE} takes a complementary approach: it operates from raw screen pixels using a VLM, enabling computer control without any game-specific API. Unlike these agent-oriented systems, the present project focuses on the \emph{narrative layer}---using sequential screenshots not to act in the game world but to understand it well enough to generate contextually grounded NPC dialogue.
@@ -77,8 +82,8 @@ Game UI elements are intentionally excluded from the prompt constraints to preve
 
 \begin{figure}[htbp]
   \centering
-  % \includegraphics[width=0.45\textwidth]{with_ui.png}
-  % \includegraphics[width=0.45\textwidth]{without_ui.png}
+  \includegraphics[width=0.45\textwidth]{with_ui.jpg}
+  \includegraphics[width=0.45\textwidth]{without_ui.png}
   \caption{Side-by-side view of a gameplay frame with UI (left) and without UI (right).}
   \label{fig:ui_comparison}
 \end{figure}
@@ -99,7 +104,7 @@ For each duration group, the first run executed the full three-stage pipeline (V
 
 \begin{figure}[htbp]
   \centering
-  % \includegraphics[width=0.5\textwidth]{minecraft_scene.png}
+  \includegraphics[width=0.5\textwidth]{minecraftframeused.jpg}
   \caption{An example scene from \textit{Minecraft} used for evaluation.}
   \label{fig:minecraft_scene}
 \end{figure}
@@ -131,7 +136,11 @@ talking_agent/
   requirements.txt
 \end{verbatim}
 
+\section{Code}
+
 Two code excerpts are highlighted here because they directly embody the project's novel contributions; all other implementation details are covered in the Architecture section above.
+
+\subsection{1st excerpt}
 
 The first excerpt (Figure~\ref{fig:code_constraints}) shows the storytelling constraints block inside \texttt{generate\_npc\_story()} in \texttt{main\_pipeline.py}. This is where Adams's theoretical criteria are operationalized as executable instructions: every rule in the prompt maps to one of the seven evaluation dimensions, closing the loop between the theoretical framework and the generated output.
 
@@ -142,18 +151,21 @@ The first excerpt (Figure~\ref{fig:code_constraints}) shows the storytelling con
   \label{fig:code_constraints}
 \end{figure}
 
-The second excerpt (Figure~\ref{fig:code_prompt}) shows the \texttt{JUDGE\_PROMPT} template in \texttt{dialogue\_evaluator.py}. This prompt is the methodological core of the Stage~3 evaluation: it cites Adams by name, defines all seven dimensions with explicit 1/3/5 anchor descriptions, and ends with a calibration instruction that prevents the judge from defaulting to~5 for every dimension.
+\subsection{2nd Excerpt}
+
+The second excerpt (Figure~\ref{fig:code_prompt}) shows the \texttt{JUDGE\_PROMPT} template in \texttt{dialogue\_evaluator.py}. This prompt is the methodological core of the Stage~3 evaluation: it cites Adams by name, defines all seven dimensions with explicit 1/3/5 anchor descriptions, and ends with a calibration instruction that prevents the judge from defaulting to~5 for every dimension. The same prompt is sent to both the Gemini and Groq/Llama backends, ensuring a fair comparison. The response format is constrained to plain JSON with no markdown fences for reliable parsing.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=\textwidth]{evaluator_prompt.png}
-  \caption{The \texttt{JUDGE\_PROMPT} template in \texttt{dialogue\_evaluator.py}. The prompt references Adams~\cite{Adams2014} directly, defines each dimension with 1/3/5 anchor scores, and instructs the judge to use the full scale critically. The same prompt is sent to both the Gemini and Groq/Llama backends, ensuring a fair comparison. The response format is constrained to plain JSON with no markdown fences for reliable parsing.}
+  \includegraphics[width=0.45\textwidth]{evaluator_prompt1.png}
+  \includegraphics[width=0.45\textwidth]{evaluator_prompt2.png}
+  \caption{The \texttt{JUDGE\_PROMPT} template in \texttt{dialogue\_evaluator.py}.}
   \label{fig:code_prompt}
 \end{figure}
 
 \section{Evaluation}
 
-Evaluation spans all three pipeline stages. Stage~1 is evaluated with automated binary classification metrics across all extracted frames. Stage~3 is evaluated with a dual LLM-as-judge method using two independent model families and a human rating study. Stage~2 (scene graph consolidation) is assessed indirectly through the Grounding dimension of the Stage~3 judge: if consolidation omits or distorts key entities, the dialogue scores will reflect it.
+Evaluation spans all three pipeline stages. Stage~1 is evaluated with automated binary classification metrics across all extracted frames. Stage~3 is evaluated with a dual LLM-as-judge method~\cite{Zheng2023} using two independent model families and a human rating study. Stage~2 (scene graph consolidation) is assessed indirectly through the Grounding dimension of the Stage~3 judge: if consolidation omits or distorts key entities, the dialogue scores will reflect it.
 
 \subsection{Evaluation framework: Adams's storytelling criteria}
 
@@ -178,7 +190,7 @@ Engagement        & Dramatically meaningful and immersive as a campfire story. \
 \end{tabular}
 \end{table}
 
-\subsection{Stage 1: VLM extraction accuracy}
+\subsection{VLM extraction accuracy}
 
 Stage~1 accuracy was evaluated across all 360 extracted frames (60 from the 5-min run, 120 from the 10-min run, 180 from the 15-min run), yielding 1{,}440 binary labels (360 frames $\times$ 4 conditions). Ground-truth labels were assigned as follows: all gameplay frames are expected to provide detectable location, describable action, visible entities, and visible player status (Ground Truth = 1). However, 75 of 360 frames (20.8\%) were identified as menu/inventory screens in which the game world is obscured by the UI overlay; for these frames, \texttt{location\_detectable} and \texttt{entities\_identified} ground truth was set to 0, since the environment and world entities are not directly observable.
 
@@ -202,12 +214,12 @@ Figure~\ref{fig:confusion} shows the per-condition confusion matrices. The VLM a
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{../data/analysis/figures/06_stage1_confusion_matrices.png}
+\includegraphics[width=\textwidth]{06_stage1_confusion_matrices.png}
 \caption{Confusion matrices for Stage~1 VLM extraction across all 360 frames and 4 conditions. Green cells indicate correct predictions (TP/TN); red cells indicate errors (FP/FN). Counts and percentages are shown within each cell.}
 \label{fig:confusion}
 \end{figure}
 
-\subsection{Stage 3: Dialogue quality via dual LLM-as-judge}
+\subsection{Dialogue quality via dual LLM-as-judge}
 
 The script \texttt{src/dialogue\_evaluator.py} implements an automated judge using the Adams dimensions above. Two independent judge models were used to cross-validate findings:
 
@@ -272,12 +284,14 @@ Engagement        & 5.00 & 4.50 & 0.50 \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.78\textwidth]{../data/analysis/figures/07_judge_radar.png}
+\includegraphics[width=0.78\textwidth]{07_judge_radar.png}
 \caption{Radar chart comparing Gemini~2.5~Flash and Groq/Llama-3.3-70B judge scores across all seven Adams dimensions, averaged over six Minecraft runs. Dimensions where both polygons overlap indicate strong inter-judge agreement.}
 \label{fig:radar}
 \end{figure}
 
-\noindent\textbf{Key observations.}
+\section{Observation}
+
+\noindent\textbf{Key observations}
 \begin{itemize}
   \item \textbf{Grounding is the weakest dimension in both judges.} Gemini scores it at 4.67 and Groq/Llama at 4.17---the lowest axis on the radar chart for both. This cross-model agreement validates Grounding as a genuine pipeline weakness, not an artefact of any single judge.
   \item \textbf{Perfect agreement on Coherence and Arbitrary Content.} Both judges assign 5.00/5.00 to these dimensions across all runs, providing the strongest reliability signal in the evaluation. These are the most defensible findings.
