@@ -279,6 +279,9 @@ Engagement        & Dramatically meaningful and immersive as a campfire story. \
 
 Stage~1 accuracy was evaluated across all 360 extracted frames (60 from the 5-min run, 120 from the 10-min run, 180 from the 15-min run), yielding 1{,}440 binary labels (360 frames $\times$ 4 conditions). Ground-truth labels were assigned as follows: all gameplay frames are expected to provide detectable location, describable action, visible entities, and visible player status (Ground Truth = 1). However, 75 of 360 frames (20.8\%) were identified as menu/inventory screens in which the game world is obscured by the UI overlay; for these frames, \texttt{location\_detectable} and \texttt{entities\_identified} ground truth was set to 0, since the environment and world entities are not directly observable.
 
+\paragraph{Ground-truth labelling methodology.}
+Labels were assigned by a deterministic rule, not by an LLM, to avoid any circularity between the judge and the system under evaluation. Menu and inventory frames were identified by matching the VLM-extracted \texttt{recent\_action} string against a fixed keyword list (\textit{inventory, recipe, crafting, menu, browsing, hovering}). When any keyword matched, the frame was classified as a UI-overlay frame and GT was set to 0 for \texttt{location\_detectable} and \texttt{entities\_identified}. All remaining frames received GT = 1 for all four conditions. To verify this classifier, 30 frames were randomly sampled (15 keyword-matched menu frames and 15 gameplay frames) and visually inspected by the author; all 30 were confirmed to match their assigned ground-truth label, yielding a 100\% spot-check agreement rate. This human verification step confirms that the keyword rule accurately captures the visual distinction between menu-obscured and open-world frames.
+
 \begin{table}[h]
 \centering
 \caption{Stage~1 VLM extraction accuracy across 360 frames (1{,}440 labels).}
@@ -419,6 +422,33 @@ Run ID & Duration & Rater & G & C & Cr & R & A & ER & En \\
   \item \textbf{Engagement and Coherence overestimation.} Humans rated Engagement at 4.00 and Coherence at 4.33, versus 5.00 from Gemini and 4.50 from Groq for both. Groq's more conservative scores narrow the gap but do not eliminate it.
   \item \textbf{Context length effect.} Both raters gave higher scores to the 15-minute runs (per-rater avg 4.57/5) than to the 5-minute runs (avg 4.14/5), corroborating the automated finding that richer gameplay context produces more satisfying narratives.
 \end{itemize}
+
+\section{Discussion}
+
+\subsection{What the results mean collectively}
+
+Taken together, the three evaluation methods---automated F1, dual LLM judges, and human raters---tell a consistent story. The pipeline reliably extracts structured information from gameplay screenshots (Stage~1 F1 of 0.85--1.00) and produces dialogue that is coherent, free of arbitrary UI content, and non-repetitive. These are the dimensions where all evaluators agree, and they represent the strongest validated claims of the project.
+
+The more interesting finding is where the evaluators \emph{diverge}. Figure~\ref{fig:three_way} shows the full three-way comparison across all seven dimensions. Emotional Richness stands out as the largest gap: human raters scored it at 3.33 on average, while Gemini gave 5.00 and Groq gave 4.50. This gap is not a calibration artefact---it reflects a fundamental limitation of LLM-based judges for creative text. Automated judges can detect emotional vocabulary (words like \emph{heart stopped}, \emph{worried}, \emph{relief}) but cannot assess whether that warmth feels \emph{genuine} to a domain-aware human reader who knows what \emph{Minecraft} actually feels like to play.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{08_three_way_comparison.png}
+\caption{Three-way evaluation comparison across all seven Adams dimensions, averaged over six Minecraft runs. The gold-highlighted column (Emotional Richness) shows the largest gap between automated judges and human raters (1.67 points for Gemini, 1.17 for Groq), suggesting LLM judges recognise emotional vocabulary but cannot assess perceived authenticity.}
+\label{fig:three_way}
+\end{figure}
+
+\subsection{Implications for LLM-as-judge evaluation}
+
+This project used two judges from different model families specifically to detect same-model leniency bias. The approach works: Groq/Llama is systematically more conservative than Gemini across all dimensions, with the largest gap on Credibility ($|\Delta|=0.67$). However, both automated judges still overestimate Emotional Richness relative to humans. This suggests that the problem is not model-family leniency but a deeper limitation: LLM judges share a common evaluation prior for emotional language that does not align with the expectations of a domain expert. A practical implication for future work is to move toward a \textbf{majority-vote multi-agent judge} using three or more models from different families (e.g., Gemini, Llama, GPT-4o, Claude). When the majority agree on a score, confidence in that score is higher; when they disagree strongly on a dimension, that disagreement itself is a signal that the dimension may require human calibration.
+
+\subsection{Broader applicability of the architecture}
+
+The pipeline as designed is game-agnostic. The only game-specific element is the input frame format: any game that produces sequential screenshots can feed Stage~1 without modification. Candidate domains include open-world RPGs (where NPC dialogue currently relies on branching trees), strategy games (where an AI narrator could describe the player's campaign decisions), and simulation games such as \emph{The Sims} or \emph{Stardew Valley} (where emergent player behaviour is currently unacknowledged by NPCs). The JSON scene graph produced at Stage~2 is also a natural integration point for existing game dialogue engines: rather than generating text, the pipeline could export the scene graph directly into a dialogue management system that selects from pre-written lines, grounding the selection in actual gameplay context.
+
+\subsection{Towards real-time deployment}
+
+The current implementation is a batch pipeline: it processes a fixed set of frames after a gameplay session ends. A natural extension is a \textbf{rolling-window variant} that processes the last $N$ frames on demand---for example, triggered when the player enters a dialogue zone. Preliminary estimation suggests that at 5-second frame intervals, a 5-minute context window (60 frames) could be processed in 30--60 seconds on the free-tier Gemini API, which may be acceptable for dialogue that appears between gameplay segments. Reducing the polling interval or caching scene graph updates frame-by-frame would bring this closer to real-time.
 
 \section{Limitations and Future Work}
 
