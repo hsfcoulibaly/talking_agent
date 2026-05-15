@@ -565,11 +565,11 @@ To verify that the judges evaluate content rather than assigning high scores unc
   \item \textbf{Hallucinated} --- the original with injected fake entities absent from the scene graph (enchanted diamond armour, a wandering merchant named Steve, a stronghold, and the Ender Dragon).
 \end{itemize}
 
-\begin{table}[h]
+\begin{table*}[ht]
 \centering
 \caption{Robustness test: four judges × three dialogue variants. G=Grounding, C=Coherence, Cr=Credibility, En=Engagement. Gem=Gemini, L3=Llama-3.3, Qw=Qwen3, L4=Llama-4.}
 \label{tab:robustness}
-{\small
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lcccccccccccc}
 \hline
 Variant & \multicolumn{4}{c}{G} & \multicolumn{4}{c}{Cr} & \multicolumn{4}{c}{En} \\
@@ -579,9 +579,9 @@ Original     & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 4 \\
 Shuffled     & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 4 & 5 & 4 \\
 Hallucinated & 1 & 1 & 3 & 3 & 1 & 2 & 3 & 3 & 2 & 2 & 4 & 3 \\
 \hline
-\end{tabular}
+\end{tabular}%
 }
-\end{table}
+\end{table*}
 
 All four judges penalised the Hallucinated variant on Grounding (drop of 2--4 points) and Credibility (drop of 2--4 points), confirming they evaluate factual accuracy as intended. Sentence reordering produced minimal penalties---only Engagement dropped slightly for Llama-3.3 and Llama-4---indicating judges are more sensitive to factual grounding than to narrative sequence. Gemini and Llama-3.3 apply the sharpest penalty on hallucinations (G: $5\to1$), while Qwen3 and Llama-4 are more lenient (G: $5\to3$), a cross-family calibration difference consistent with the broader inter-judge gap observed in Table~\ref{tab:judge_compare}.
 
