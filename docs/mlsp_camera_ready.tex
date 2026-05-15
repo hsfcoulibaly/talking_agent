@@ -529,6 +529,7 @@ Table~\ref{tab:judge_compare} compares average scores across the six Minecraft r
 \centering
 \caption{Inter-judge comparison across five models from four AI families, averaged over six Minecraft runs (scale: 1--5). $|\Delta_\text{max}|$ is the largest pairwise gap across all five judges. Gem=Gemini~2.5~Flash, L33=Llama-3.3-70B, Qw3=Qwen3-32B, L4=Llama-4-Scout, Cla=Claude-Haiku.}
 \label{tab:judge_compare}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lcccccc}
 \hline
 Dimension & Gem & L33 & Qw3 & L4 & Cla & $|\Delta_\text{max}|$ \\
@@ -543,7 +544,8 @@ Engagement         & 5.00 & 4.33 & 4.83 & 4.83 & 3.67 & 1.33 \\
 \hline
 \textbf{Mean}      & \textbf{4.93} & \textbf{4.52} & \textbf{4.76} & \textbf{4.95} & \textbf{4.26} & \textbf{0.69} \\
 \hline
-\end{tabular}
+\end{tabular}%
+}
 \end{table*}
 
 \begin{figure}[ht]
