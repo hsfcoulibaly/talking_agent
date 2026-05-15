@@ -1,0 +1,25 @@
+[
+  {
+    "run_id": "20260420_064352",
+    "grounding_score": 3,
+    "grounding_justification": "Mentions crafting acacia planks, building with jungle/mangrove planks, and smelting charcoal are grounded, but 'sugar from canes' is not explicitly supported by the scene graph.",
+    "coherence_score": 5,
+    "coherence_justification": "Dialogue is logically ordered, moving from rest to daytime activities, nighttime dangers, and concludes with hope, maintaining a single narrative voice.",
+    "credibility_score": 4,
+    "credibility_justification": "References in-game actions and entities plausibly (e.g., Drowned, creepers, saplings), though 'sugar from canes' is slightly ambiguous without explicit recipe confirmation.",
+    "repetition_score": 5,
+    "repetition_justification": "No undue repetition; each sentence introduces new details about crafting, building, or events.",
+    "arbitrary_content_score": 5,
+    "arbitrary_content_justification": "Avoids UI references (e.g., health bars, menus) and focuses on in-world actions and story elements.",
+    "emotional_richness_score": 3,
+    "emotional_richness_justification": "Includes emotional language (e.g., 'terrifying,' 'my heart stopped') but remains factual rather than deeply expressive.",
+    "engagement_score": 4,
+    "engagement_justification": "Constructs an immersive narrative with tension (nighttime dangers) and resolution (planting saplings), fitting a campfire story tone.",
+    "hallucinated_entities": [
+      "sugar canes"
+    ],
+    "hallucination_count": 1,
+    "model_used": "qwen/qwen3-32b",
+    "dialogue_preview": "It's good to finally rest by this fire, isn't it? You spent so much time today, first crafting all those acacia planks f..."
+  }
+]

@@ -48,7 +48,7 @@ from dotenv import load_dotenv
 # ---------------------------------------------------------------------------
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-load_dotenv(PROJECT_ROOT / ".env")
+load_dotenv(PROJECT_ROOT / ".env", override=True)
 
 # ---------------------------------------------------------------------------
 # Judge backends
@@ -182,7 +182,7 @@ def _make_claude_client():
             "ANTHROPIC_API_KEY not set in .env. "
             "Get a key at https://console.anthropic.com"
         )
-    model_id = (os.getenv("CLAUDE_MODEL") or "claude-3-5-haiku-20241022").strip()
+    model_id = (os.getenv("CLAUDE_MODEL") or "claude-haiku-4-5").strip()
     client = anthropic.Anthropic(api_key=api_key)
 
     def generate(prompt: str, max_retries: int = 6) -> str:
