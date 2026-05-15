@@ -432,7 +432,7 @@ Engagement        & Dramatically meaningful and immersive as a campfire story. \
 
 \subsection{VLM extraction accuracy}
 
-Stage~1 accuracy was evaluated across all 360 extracted frames (60 from the 5-min run, 120 from the 10-min run, 180 from the 15-min run), yielding 1{,}440 binary labels (360 frames $\times$ 4 conditions). Ground-truth labels were assigned as follows: all gameplay frames are expected to provide detectable location, describable action, visible entities, and visible player status (Ground Truth = 1). However, 75 of 360 frames (20.8\%) were identified as menu/inventory screens in which the game world is obscured by the UI overlay; for these frames, \texttt{location\_detectable} and \texttt{entities\_identified} ground truth was set to 0, since the environment and world entities are not directly observable.
+Stage~1 accuracy was evaluated across all 360 extracted frames (60 from the 5-min run, 120 from the 10-min run, 180 from the 15-min run), yielding 1{,}440 binary labels (360 frames $\times$ 4 conditions), stored in \texttt{evaluation/ground\_truth\_labels.csv} in the repository. Ground-truth labels were assigned as follows: all gameplay frames are expected to provide detectable location, describable action, visible entities, and visible player status (Ground Truth = 1). However, 75 of 360 frames (20.8\%) were identified as menu/inventory screens in which the game world is obscured by the UI overlay; for these frames, \texttt{location\_detectable} and \texttt{entities\_identified} ground truth was set to 0, since the environment and world entities are not directly observable.
 
 %\paragraph{}
 \subsubsection{Ground-truth labelling methodology.}
