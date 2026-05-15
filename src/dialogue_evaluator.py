@@ -137,9 +137,52 @@ def _make_groq_client():
     return generate, model_id
 
 
+def _make_claude_client():
+    try:
+        import anthropic
+    except ImportError:
+        raise ImportError(
+            "anthropic package required for Claude backend. Run: pip install anthropic"
+        )
+
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    if not api_key:
+        raise ValueError(
+            "ANTHROPIC_API_KEY not set in .env. "
+            "Get a key at https://console.anthropic.com"
+        )
+    model_id = (os.getenv("CLAUDE_MODEL") or "claude-3-5-haiku-20241022").strip()
+    client = anthropic.Anthropic(api_key=api_key)
+
+    def generate(prompt: str, max_retries: int = 6) -> str:
+        base_delay = 2.0
+        last_exc = None
+        for attempt in range(max_retries):
+            try:
+                msg = client.messages.create(
+                    model=model_id,
+                    max_tokens=1024,
+                    temperature=0.0,
+                    messages=[{"role": "user", "content": prompt}],
+                )
+                return msg.content[0].text.strip()
+            except Exception as e:
+                last_exc = e
+                msg_str = str(e)
+                if "429" not in msg_str and "rate" not in msg_str.lower() and "overloaded" not in msg_str.lower():
+                    raise
+                wait = base_delay * (2 ** attempt)
+                print(f"  Rate-limited (attempt {attempt+1}/{max_retries}), retrying in {wait:.0f}s ...")
+                time.sleep(wait)
+        raise RuntimeError("Max retries exceeded.") from last_exc
+
+    return generate, model_id
+
+
 JUDGE_BACKENDS = {
     "gemini": _make_gemini_client,
     "groq":   _make_groq_client,
+    "claude": _make_claude_client,
 }
 
 # Per-backend inter-request delay (seconds) to respect rate limits.
@@ -148,6 +191,7 @@ JUDGE_BACKENDS = {
 INTER_REQUEST_DELAY = {
     "gemini": 2,
     "groq":   20,
+    "claude": 3,
 }
 
 # ---------------------------------------------------------------------------
@@ -444,15 +488,15 @@ def main() -> None:
     )
     parser.add_argument(
         "--judge",
-        choices=["gemini", "groq", "both"],
+        choices=["gemini", "groq", "claude", "all"],
         default="gemini",
         help="Which LLM judge to use (default: gemini). "
-             "Use 'both' to run Gemini and Groq sequentially.",
+             "Use 'all' to run Gemini, Groq, and Claude sequentially.",
     )
     args = parser.parse_args()
 
     run_ids = [args.run_id] if args.run_id else discover_run_ids()
-    judges  = ["gemini", "groq"] if args.judge == "both" else [args.judge]
+    judges  = ["gemini", "groq", "claude"] if args.judge == "all" else [args.judge]
 
     for judge in judges:
         print(f"\n{'='*60}")

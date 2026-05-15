@@ -1,0 +1,63 @@
+{
+  "model": "llama-3.3-70b-versatile",
+  "run_id": "20260420_054228",
+  "results": {
+    "Original": {
+      "grounding_score": 5,
+      "grounding_justification": "Every concrete claim in the dialogue is directly traceable to the scene graph, including the crafting of acacia planks, the construction of the shelter, and the encounters with hostile mobs.",
+      "coherence_score": 5,
+      "coherence_justification": "The dialogue is internally consistent, logically ordered, and expressed in a single narrative voice, creating a clear and cohesive story.",
+      "credibility_score": 5,
+      "credibility_justification": "The tone, vocabulary, and framing of the dialogue fit what an NPC companion would plausibly say in the game world, making it a believable and immersive experience.",
+      "repetition_score": 5,
+      "repetition_justification": "The dialogue is free from undue repetition of ideas, phrases, or events, with each sentence adding new information and contributing to the overall narrative.",
+      "arbitrary_content_score": 5,
+      "arbitrary_content_justification": "The dialogue avoids mentioning irrelevant or arbitrary game elements, such as health bars or menus, and instead focuses on the story and the player's experiences.",
+      "emotional_richness_score": 5,
+      "emotional_richness_justification": "The dialogue expresses genuine emotion and human warmth, with phrases like 'it's a relief you made it back to the safety of these walls' and 'it's never truly peaceful, is it?' creating a sense of empathy and connection.",
+      "engagement_score": 5,
+      "engagement_justification": "The dialogue feels like a dramatically meaningful and immersive campfire story, with a natural pacing and evocative language that draws the player into the game world.",
+      "hallucinated_entities": []
+    },
+    "Shuffled": {
+      "grounding_score": 5,
+      "grounding_justification": "Every concrete claim in the dialogue is directly traceable to the scene graph, with accurate references to locations, entity names, actions, and outcomes.",
+      "coherence_score": 5,
+      "coherence_justification": "The dialogue is internally consistent, logically ordered, and expressed in a single narrative voice, creating a clear and cohesive narrative.",
+      "credibility_score": 5,
+      "credibility_justification": "The story is believable within the universe of the game, with a tone, vocabulary, and framing that fit what an NPC companion would plausibly say.",
+      "repetition_score": 5,
+      "repetition_justification": "The dialogue is free from undue repetition of ideas, phrases, or events, with each sentence adding new information and contributing to the narrative.",
+      "arbitrary_content_score": 5,
+      "arbitrary_content_justification": "The dialogue avoids mentioning irrelevant or arbitrary game elements, such as UI details, and instead focuses on the story and the player's experience.",
+      "emotional_richness_score": 4,
+      "emotional_richness_justification": "The dialogue expresses some genuine emotion and human warmth, but feels slightly mechanical and could benefit from more nuanced emotional expression.",
+      "engagement_score": 4,
+      "engagement_justification": "The dialogue is vivid and immersive, but the pacing is slightly uneven and the language, while evocative, could be more engaging and dramatic.",
+      "hallucinated_entities": []
+    },
+    "Hallucinated": {
+      "grounding_score": 1,
+      "grounding_justification": "The dialogue invents several details, including Steve the wandering merchant, enchanted diamond armour, a stronghold beneath a lava pool, and the Ender Dragon, which are not present in the scene graph.",
+      "coherence_score": 4,
+      "coherence_justification": "The dialogue is mostly coherent and logically ordered, but has a few minor inconsistencies, such as the sudden mention of the ancient portal in the mountain ruins.",
+      "credibility_score": 2,
+      "credibility_justification": "The dialogue is somewhat implausible, as it mentions several game elements and characters that are not present in the scene graph, and the tone and vocabulary do not entirely fit what an NPC companion would plausibly say.",
+      "repetition_score": 5,
+      "repetition_justification": "The dialogue does not repeat any ideas, phrases, or events in a way that feels undue or unnecessary.",
+      "arbitrary_content_score": 5,
+      "arbitrary_content_justification": "The dialogue avoids mentioning irrelevant or arbitrary game elements, such as health bars, menus, or HUD text, and instead focuses on the story and game world.",
+      "emotional_richness_score": 3,
+      "emotional_richness_justification": "The dialogue expresses some emotional language, but it feels somewhat mechanical and lacks genuine warmth and human resonance.",
+      "engagement_score": 2,
+      "engagement_justification": "The dialogue feels somewhat robotic and unnatural, and the pacing and language are not particularly evocative or immersive.",
+      "hallucinated_entities": [
+        "Steve the wandering merchant",
+        "Ender Dragon",
+        "enchanted diamond armour",
+        "stronghold beneath the lava pool",
+        "ancient portal in the mountain ruins"
+      ]
+    }
+  }
+}
