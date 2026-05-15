@@ -142,11 +142,11 @@ def main() -> None:
     )
     parser.add_argument(
         "--judge",
-        choices=["gemini", "groq", "claude", "all"],
+        choices=["gemini", "groq", "qwen", "llama4", "claude", "all"],
         default="gemini",
     )
     args = parser.parse_args()
-    judges = ["gemini", "groq", "claude"] if args.judge == "all" else [args.judge]
+    judges = ["gemini", "groq", "qwen", "llama4", "claude"] if args.judge == "all" else [args.judge]
     for j in judges:
         run_robustness_test(j)
 

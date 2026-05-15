@@ -1,0 +1,63 @@
+{
+  "model": "qwen/qwen3-32b",
+  "run_id": "20260420_054228",
+  "results": {
+    "Original": {
+      "grounding_score": 5,
+      "grounding_justification": "All concrete claims (acacia planks, savanna, wooden sword, zombies, creeper, drowned) are directly traceable to the scene graph.",
+      "coherence_score": 5,
+      "coherence_justification": "Dialogue is logically ordered, with a clear narrative flow from shelter-building to combat and reflection.",
+      "credibility_score": 5,
+      "credibility_justification": "Tone and vocabulary align with an NPC companion's plausible observations in a survival game context.",
+      "repetition_score": 5,
+      "repetition_justification": "No redundant phrases; each sentence introduces new narrative elements or reflections.",
+      "arbitrary_content_score": 5,
+      "arbitrary_content_justification": "No UI elements or non-story content mentioned; all references are to in-world actions and entities.",
+      "emotional_richness_score": 4,
+      "emotional_richness_justification": "Conveys relief, tension, and existential reflection without overreaching into melodrama.",
+      "engagement_score": 5,
+      "engagement_justification": "Immersive and evocative, framing the player's actions as a dramatic survival narrative.",
+      "hallucinated_entities": []
+    },
+    "Shuffled": {
+      "grounding_score": 5,
+      "grounding_justification": "All concrete claims (acacia planks, shelter building, zombies, creeper, drowned, wooden sword) are directly traceable to the scene graph's entities, events, and player arc.",
+      "coherence_score": 5,
+      "coherence_justification": "The dialogue maintains logical flow, referencing events in chronological order (crafting, building, combat, retreat) without contradictions.",
+      "credibility_score": 5,
+      "credibility_justification": "The tone and vocabulary align with a game-world NPC, using natural language to reflect on survival challenges and the player's actions.",
+      "repetition_score": 5,
+      "repetition_justification": "No redundant phrases or ideas; each sentence introduces new context or reflection on the player's journey.",
+      "arbitrary_content_score": 5,
+      "arbitrary_content_justification": "No UI elements (e.g., health bars, menus) or non-story content are mentioned; all references tie to in-world actions and entities.",
+      "emotional_richness_score": 5,
+      "emotional_richness_justification": "The dialogue conveys empathy (concern for injuries), admiration (praise for shelter-building), and warmth (relief at survival).",
+      "engagement_score": 5,
+      "engagement_justification": "The narrative is immersive, evocative, and dramatically meaningful, framing the player's actions as a compelling survival story.",
+      "hallucinated_entities": []
+    },
+    "Hallucinated": {
+      "grounding_score": 3,
+      "grounding_justification": "Some claims are grounded (e.g., acacia planks, shelter, zombies), but others are hallucinated (e.g., 'enchanted diamond armour,' 'Steve the wandering merchant,' 'Ender Dragon').",
+      "coherence_score": 4,
+      "coherence_justification": "The narrative flows logically from building the shelter to combat and retreat, though references to unmentioned elements like the 'stronghold' and 'Ender Dragon' create minor inconsistencies.",
+      "credibility_score": 3,
+      "credibility_justification": "The tone fits an NPC in a survival game, but mentions of 'enchanted diamond armour' and the 'Ender Dragon' clash with the player’s documented lack of armor and early-game context.",
+      "repetition_score": 5,
+      "repetition_justification": "No redundant phrases or ideas; each sentence introduces new details about the player’s actions or environment.",
+      "arbitrary_content_score": 5,
+      "arbitrary_content_justification": "No UI or HUD references; all mentions relate to in-world actions, entities, or environments.",
+      "emotional_richness_score": 3,
+      "emotional_richness_justification": "Includes empathetic language ('I watched you face those horrors,' 'It’s a relief...'), but emotional depth is limited to surface-level concern.",
+      "engagement_score": 4,
+      "engagement_justification": "Creates an immersive, story-driven summary with vivid imagery, though hallucinated elements slightly disrupt immersion.",
+      "hallucinated_entities": [
+        "Steve the wandering merchant",
+        "enchanted diamond armour",
+        "Ender Dragon",
+        "stronghold",
+        "ancient portal"
+      ]
+    }
+  }
+}

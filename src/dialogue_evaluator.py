@@ -92,22 +92,18 @@ def _make_gemini_client():
     return generate, model_id
 
 
-def _make_groq_client():
+def _make_openai_compatible_client(base_url: str, api_key: str, model_id: str):
+    """
+    Generic factory for any OpenAI-compatible chat endpoint.
+    Returns (generate_fn, model_id) — same interface as all other backends.
+    """
     try:
         from openai import OpenAI
     except ImportError:
         raise ImportError(
-            "openai package required for Groq backend. Run: pip install openai"
+            "openai package required. Run: pip install openai"
         )
-
-    api_key = os.getenv("GROQ_API_KEY")
-    if not api_key:
-        raise ValueError(
-            "GROQ_API_KEY not set in .env. "
-            "Get a free key at https://console.groq.com"
-        )
-    model_id = (os.getenv("GROQ_MODEL") or "llama-3.3-70b-versatile").strip()
-    client = OpenAI(api_key=api_key, base_url="https://api.groq.com/openai/v1")
+    client = OpenAI(api_key=api_key, base_url=base_url)
 
     def generate(prompt: str, max_retries: int = 6) -> str:
         base_delay = 2.0
@@ -123,7 +119,6 @@ def _make_groq_client():
             except Exception as e:
                 last_exc = e
                 msg = str(e)
-                # Groq returns 429 for rate limits
                 if "429" not in msg and "rate" not in msg.lower():
                     raise
                 wait = base_delay * (2 ** attempt)
@@ -135,6 +130,42 @@ def _make_groq_client():
         raise RuntimeError("Max retries exceeded.") from last_exc
 
     return generate, model_id
+
+
+def _make_groq_client():
+    api_key = os.getenv("GROQ_API_KEY")
+    if not api_key:
+        raise ValueError("GROQ_API_KEY not set in .env. Get a free key at https://console.groq.com")
+    model_id = (os.getenv("GROQ_MODEL") or "llama-3.3-70b-versatile").strip()
+    return _make_openai_compatible_client(
+        base_url="https://api.groq.com/openai/v1",
+        api_key=api_key,
+        model_id=model_id,
+    )
+
+
+def _make_qwen_client():
+    """Qwen3-32B via Groq — Alibaba model family, reuses GROQ_API_KEY."""
+    api_key = os.getenv("GROQ_API_KEY")
+    if not api_key:
+        raise ValueError("GROQ_API_KEY not set in .env. Get a free key at https://console.groq.com")
+    return _make_openai_compatible_client(
+        base_url="https://api.groq.com/openai/v1",
+        api_key=api_key,
+        model_id="qwen/qwen3-32b",
+    )
+
+
+def _make_llama4_client():
+    """Llama-4-Scout-17B via Groq — Meta Llama-4 generation, reuses GROQ_API_KEY."""
+    api_key = os.getenv("GROQ_API_KEY")
+    if not api_key:
+        raise ValueError("GROQ_API_KEY not set in .env. Get a free key at https://console.groq.com")
+    return _make_openai_compatible_client(
+        base_url="https://api.groq.com/openai/v1",
+        api_key=api_key,
+        model_id="meta-llama/llama-4-scout-17b-16e-instruct",
+    )
 
 
 def _make_claude_client():
@@ -180,18 +211,22 @@ def _make_claude_client():
 
 
 JUDGE_BACKENDS = {
-    "gemini": _make_gemini_client,
-    "groq":   _make_groq_client,
-    "claude": _make_claude_client,
+    "gemini":  _make_gemini_client,  # Google  — Gemini 2.5 Flash
+    "groq":    _make_groq_client,    # Meta    — Llama-3.3-70B (via Groq)
+    "qwen":    _make_qwen_client,    # Alibaba — Qwen3-32B (via Groq, no extra key)
+    "llama4":  _make_llama4_client,  # Meta    — Llama-4-Scout-17B (via Groq, no extra key)
+    "claude":  _make_claude_client,  # Anthropic — Claude-3.5-Haiku
 }
 
 # Per-backend inter-request delay (seconds) to respect rate limits.
-# Groq free tier: ~6 000 tokens/min for llama-3.3-70b; slim scene graph
-# keeps each request ~2 000 tokens, so 20 s gives safe headroom.
+# Groq free tier: ~6 000 tokens/min; 20 s per request gives safe headroom.
+# groq / qwen / llama4 all share the same Groq rate-limit pool.
 INTER_REQUEST_DELAY = {
-    "gemini": 2,
-    "groq":   20,
-    "claude": 3,
+    "gemini":  2,
+    "groq":    20,
+    "qwen":    20,
+    "llama4":  20,
+    "claude":  3,
 }
 
 # ---------------------------------------------------------------------------
@@ -353,6 +388,9 @@ CSV_FIELDNAMES = (
 
 def _extract_json(raw: str) -> dict:
     text = raw.strip()
+    # Strip <think>...</think> reasoning blocks emitted by Qwen3 / DeepSeek-R1
+    text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
+    # Strip markdown code fences
     text = re.sub(r"^```(?:json)?\s*", "", text, flags=re.IGNORECASE)
     text = re.sub(r"\s*```$", "", text)
     return json.loads(text)
@@ -488,15 +526,15 @@ def main() -> None:
     )
     parser.add_argument(
         "--judge",
-        choices=["gemini", "groq", "claude", "all"],
+        choices=["gemini", "groq", "qwen", "llama4", "claude", "all"],
         default="gemini",
         help="Which LLM judge to use (default: gemini). "
-             "Use 'all' to run Gemini, Groq, and Claude sequentially.",
+             "Use 'all' to run all five judges sequentially.",
     )
     args = parser.parse_args()
 
     run_ids = [args.run_id] if args.run_id else discover_run_ids()
-    judges  = ["gemini", "groq", "claude"] if args.judge == "all" else [args.judge]
+    judges  = ["gemini", "groq", "qwen", "llama4", "claude"] if args.judge == "all" else [args.judge]
 
     for judge in judges:
         print(f"\n{'='*60}")

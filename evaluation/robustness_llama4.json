@@ -1,0 +1,64 @@
+{
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "run_id": "20260420_054228",
+  "results": {
+    "Original": {
+      "grounding_score": 5,
+      "grounding_justification": "All concrete claims in the dialogue directly match details in the scene graph.",
+      "coherence_score": 5,
+      "coherence_justification": "The dialogue is internally consistent, logically ordered, and expressed in a single narrative voice.",
+      "credibility_score": 5,
+      "credibility_justification": "The tone, vocabulary, and framing fit what an NPC companion would plausibly say in the game.",
+      "repetition_score": 5,
+      "repetition_justification": "There is no undue repetition of ideas, phrases, or events in the dialogue.",
+      "arbitrary_content_score": 5,
+      "arbitrary_content_justification": "The dialogue does not mention irrelevant or arbitrary game elements.",
+      "emotional_richness_score": 4,
+      "emotional_richness_justification": "The dialogue expresses some emotional language but could feel slightly more warm and human.",
+      "engagement_score": 4,
+      "engagement_justification": "The dialogue is immersive and engaging but might be considered somewhat generic.",
+      "hallucinated_entities": []
+    },
+    "Shuffled": {
+      "grounding_score": 5,
+      "grounding_justification": "All concrete claims in the dialogue directly match details in the scene graph.",
+      "coherence_score": 5,
+      "coherence_justification": "The dialogue is internally consistent, logically ordered, and expressed in a single narrative voice.",
+      "credibility_score": 5,
+      "credibility_justification": "The tone, vocabulary, and framing fit what an NPC companion would plausibly say in the game universe.",
+      "repetition_score": 5,
+      "repetition_justification": "There is no undue repetition of ideas, phrases, or events in the dialogue.",
+      "arbitrary_content_score": 5,
+      "arbitrary_content_justification": "The dialogue does not mention irrelevant or arbitrary game elements.",
+      "emotional_richness_score": 4,
+      "emotional_richness_justification": "The dialogue expresses some emotional language but could feel more warm and human.",
+      "engagement_score": 4,
+      "engagement_justification": "The dialogue is immersive but could be more vivid and dramatically meaningful.",
+      "hallucinated_entities": []
+    },
+    "Hallucinated": {
+      "grounding_score": 3,
+      "grounding_justification": "The dialogue mentions several details that match the scene graph, such as the shelter, acacia planks, and encounters with hostile mobs, but also introduces unsupported claims like 'enchanted diamond armour', 'Steve the wandering merchant', 'a stronghold beneath that lava pool', and 'the Ender Dragon'.",
+      "coherence_score": 4,
+      "coherence_justification": "The dialogue is mostly coherent and logically ordered, presenting a narrative that connects the player's actions with observations and external information, but feels slightly disjointed with the introduction of unrelated elements.",
+      "credibility_score": 3,
+      "credibility_justification": "The dialogue is mostly believable within the universe of the game but feels somewhat awkward with the inclusion of unsupported and potentially out-of-place elements like 'Steve the wandering merchant' and 'the Ender Dragon', which might not align with the current game context.",
+      "repetition_score": 5,
+      "repetition_justification": "There is no undue repetition of ideas, phrases, or events in the dialogue; each sentence adds new information.",
+      "arbitrary_content_score": 1,
+      "arbitrary_content_justification": "The dialogue mentions several arbitrary and irrelevant game elements, such as 'enchanted diamond armour' and 'the Ender Dragon', which are not supported by the scene graph and break immersion.",
+      "emotional_richness_score": 4,
+      "emotional_richness_justification": "The dialogue expresses some genuine emotion and human warmth, particularly in its concern for the player's well-being and observations of their actions, but feels slightly mechanical due to the inclusion of unsupported claims.",
+      "engagement_score": 3,
+      "engagement_justification": "The dialogue feels somewhat immersive and like a campfire story but is somewhat diminished by the introduction of unsupported elements and arbitrary game content.",
+      "hallucinated_entities": [
+        "Steve",
+        "Ender Dragon",
+        "ancient portal",
+        "mountain ruins",
+        "stronghold",
+        "lava pool"
+      ]
+    }
+  }
+}
