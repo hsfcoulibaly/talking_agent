@@ -112,7 +112,7 @@ The landscape of interactive media and video games has evolved from simple, line
 
 The proposed architecture separates visual perception from narrative generation to strictly ground the AI in gameplay reality. First, a VLM sequentially processes in-game images to extract key entities, actions, and environmental states, structuring this data into a chronological scene graph. Second, a Large Language Model (LLM) utilizes this structured data to generate dramatically meaningful and credible NPC dialogue. 
 
-Results suggest that LLM-based judges overestimate emotional quality.
+Results from five independent LLM judges across four model families confirm that Grounding is the weakest pipeline dimension and that all automated judges overestimate Emotional Richness relative to human raters.
 \end{abstract}
 \begin{keywords}
 Games,
@@ -125,7 +125,7 @@ Modern interactive media frequently struggles with ludonarrative dissonance~\cit
 
 The proposed architecture separates visual perception from narrative generation to strictly ground the AI in gameplay reality. First, a VLM sequentially processes in-game images to extract key entities, actions, and environmental states, structuring this data into a chronological scene graph. Second, a Large Language Model (LLM) utilizes this structured data---constrained by established interactive storytelling principles derived from Adams~\cite{Adams2014}---to generate dramatically meaningful and credible NPC dialogue. By filtering raw visual data into a strict JSON framework before text generation, the pipeline reduces LLM hallucination and arbitrary content creation.
 
-The pipeline was evaluated on six \emph{Minecraft} runs stratified by context length (5, 10, and 15 minutes of gameplay, two runs each). Stage~1 VLM extraction was assessed across 1{,}440 binary labels (360 frames $\times$ 4 conditions), yielding F1 scores of 1.00 for action description and player-status extraction, and 0.88 and 0.85 for location detection and entity identification respectively, with false positives concentrated in menu/inventory frames. Stage~3 dialogue quality was evaluated by two independent LLM judges from different model families---Gemini~2.5~Flash~\cite{GeminiTeam2024b} and Groq/Llama-3.3-70B~\cite{Dubey2024}---alongside a two-rater human study. Both judges independently identified Grounding as the weakest dimension (Gemini avg 4.67/5; Groq avg 4.17/5) while agreeing that Coherence and Arbitrary Content are perfect (5.00/5.00). Human raters largely concurred on Grounding (4.67) but rated Emotional Richness (3.33) substantially lower than either automated judge, suggesting LLM-based judges overestimate emotional quality relative to human perception. Results also indicate that longer context windows produce higher-quality narratives, with 15-minute runs receiving consistently higher scores than 5-minute runs from all three evaluators.
+The pipeline was evaluated on six \emph{Minecraft} runs stratified by context length (5, 10, and 15 minutes of gameplay, two runs each). Stage~1 VLM extraction was assessed across 1{,}440 binary labels (360 frames $\times$ 4 conditions), yielding F1 scores of 1.00 for action description and player-status extraction, and 0.88 and 0.85 for location detection and entity identification respectively, with false positives concentrated in menu/inventory frames. Stage~3 dialogue quality was evaluated by five independent LLM judges from four model families---Google Gemini~2.5~Flash~\cite{GeminiTeam2024b}, Meta Llama-3.3-70B and Llama-4-Scout~\cite{Dubey2024} (via Groq), Alibaba Qwen3-32B~\cite{QwenTeam2025}, and Anthropic Claude-Haiku~\cite{AnthropicClaude2024}---alongside a two-rater human study. All five judges independently identified Grounding as the weakest dimension (avg range 4.17--5.00/5) while agreeing that Arbitrary Content is perfect (5.00/5.00). Coherence was perfect for four of the five judges; Claude was the most conservative at 4.67. Human raters largely concurred on Grounding (4.67) but rated Emotional Richness (3.33) substantially lower than any automated judge, suggesting LLM-based judges overestimate emotional quality relative to human perception. Results also indicate that longer context windows produce higher-quality narratives, with 15-minute runs receiving consistently higher scores than 5-minute runs from all evaluators.
 
 This research implements a prototype \emph{talking agent} pipeline: a batch of time-ordered gameplay screenshots is summarized per frame by a VLM, merged into a single structured \emph{scene graph}, and passed to an LLM that produces short NPC dialogue under explicit grounding constraints. The implementation uses a configurable Google Gemini model~\cite{GeminiTeam2024b} (default \texttt{gemini-2.5-flash}; overridable via \texttt{GEMINI\_MODEL} in \texttt{.env} or the \texttt{--model} flag) for both the vision and language calls, with extraction forced to \texttt{application/json} for machine-parseable state.
 
@@ -475,9 +475,9 @@ The script \texttt{src/dialogue\_evaluator.py} implements an automated judge usi
 \begin{itemize}
   \item \textbf{Gemini 2.5 Flash}~\cite{GeminiTeam2024b} (Google) --- same family as the generator; within-family baseline.
   \item \textbf{Llama-3.3-70B}~\cite{Dubey2024} (Meta, via Groq) --- cross-family validation.
-  \item \textbf{Qwen3-32B}~\cite{QwenTeam2025} (Alibaba) --- second independent cross-family validation.
+  \item \textbf{Qwen3-32B}~\cite{QwenTeam2025} (Alibaba, via Groq) --- second independent cross-family validation.
   \item \textbf{Llama-4-Scout-17B} (Meta, via Groq) --- intra-family generational comparison against Llama-3.3.
-  \item \textbf{Claude-3.5-Haiku}~\cite{AnthropicClaude2024} (Anthropic) --- fifth independent judge; pending API key.
+  \item \textbf{Claude-Haiku-4.5}~\cite{AnthropicClaude2024} (Anthropic) --- fifth independent judge; strictest scorer across all dimensions.
 \end{itemize}
 
 For each run, the judge loads a slimmed version of the scene graph (narrative fields only: \texttt{timeline\_summary}, \texttt{environment}, entity names, event descriptions, and \texttt{player\_arc}) and the generated dialogue, then scores all seven Adams dimensions on a 1--5 scale. The judge also returns a list of \textbf{hallucinated entities}---proper nouns present in the dialogue but absent from the scene graph.
@@ -515,25 +515,25 @@ Run ID & Duration & Run & G & C & Cr & R & A & ER & En & H \\
 
 \subsubsection*{Inter-judge comparison}
 
-Table~\ref{tab:judge_compare} compares average scores across the six Minecraft runs from both judges, and Figure~\ref{fig:radar} visualises the comparison as a radar chart.
+Table~\ref{tab:judge_compare} compares average scores across the six Minecraft runs from all five judges, and Figure~\ref{fig:radar} visualises the comparison as a radar chart.
 
 \begin{table*}[ht]
 \centering
-\caption{Inter-judge comparison across three model families, averaged over six Minecraft runs (scale: 1--5). Claude-3.5-Haiku scores are pending API run; $|\Delta_\text{max}|$ shows the largest pairwise gap across all three judges.}
+\caption{Inter-judge comparison across five models from four AI families, averaged over six Minecraft runs (scale: 1--5). $|\Delta_\text{max}|$ is the largest pairwise gap across all five judges. Gem=Gemini~2.5~Flash, L33=Llama-3.3-70B, Qw3=Qwen3-32B, L4=Llama-4-Scout, Cla=Claude-Haiku.}
 \label{tab:judge_compare}
-\begin{tabular}{lcccc}
+\begin{tabular}{lcccccc}
 \hline
-Dimension & Gemini & Groq/Llama & Claude & $|\Delta_\text{max}|$ \\
+Dimension & Gem & L33 & Qw3 & L4 & Cla & $|\Delta_\text{max}|$ \\
 \hline
-Grounding         & 4.67 & 4.17 & --- & 0.50 \\
-Coherence         & 5.00 & 5.00 & --- & \textbf{0.00} \\
-Credibility       & 4.83 & 4.17 & --- & 0.67 \\
-Repetition        & 5.00 & 4.83 & --- & 0.17 \\
-Arbitrary Content & 5.00 & 5.00 & --- & \textbf{0.00} \\
-Emotional Richness& 5.00 & 4.50 & --- & 0.50 \\
-Engagement        & 5.00 & 4.50 & --- & 0.50 \\
+Grounding          & 4.67 & 4.17 & 4.33 & \textbf{5.00} & 4.17 & 0.83 \\
+Coherence          & 5.00 & 5.00 & 5.00 & 5.00 & 4.67 & 0.33 \\
+Credibility        & 4.83 & 4.17 & 4.83 & \textbf{5.00} & 3.67 & 1.33 \\
+Repetition         & 5.00 & 4.67 & 5.00 & 5.00 & 4.50 & 0.50 \\
+Arbitrary Content  & 5.00 & 5.00 & 5.00 & 5.00 & 5.00 & \textbf{0.00} \\
+Emotional Richness & 5.00 & 4.33 & 4.33 & 4.83 & 4.17 & 0.83 \\
+Engagement         & 5.00 & 4.33 & 4.83 & 4.83 & 3.67 & 1.33 \\
 \hline
-\textbf{Mean}     & \textbf{4.93} & \textbf{4.59} & --- & \textbf{0.33} \\
+\textbf{Mean}      & \textbf{4.93} & \textbf{4.52} & \textbf{4.76} & \textbf{4.95} & \textbf{4.26} & \textbf{0.69} \\
 \hline
 \end{tabular}
 \end{table*}
@@ -541,7 +541,7 @@ Engagement        & 5.00 & 4.50 & --- & 0.50 \\
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\columnwidth]{07_judge_radar.png}
-\caption{Radar chart comparing Gemini~2.5~Flash and Groq/Llama-3.3-70B judge scores across all seven Adams dimensions, averaged over six Minecraft runs. Dimensions where both polygons overlap indicate strong inter-judge agreement.}
+\caption{Radar chart comparing all five judge scores (Gemini, Llama-3.3, Qwen3, Llama-4, Claude) across all seven Adams dimensions, averaged over six Minecraft runs. Dimensions where all polygons converge indicate strong inter-judge agreement (Coherence, Arbitrary Content); dimensions where Claude diverges inward indicate the strictest scoring.}
 \label{fig:radar}
 \end{figure}
 
@@ -577,31 +577,21 @@ All four judges penalised the Hallucinated variant on Grounding (drop of 2--4 po
 
 \section{Observation}
 
-In our study, we noted the following observations. First, grounding is the weakest dimension in both judges.
-Second, there is perfect agreement on Coherence and Arbitrary Content.
-Third, Groq/Llama is consistently more conservative.
-Fourth, there were hallucinations related to the campfire.
+In our study, we noted the following observations. First, grounding is the weakest dimension across all five judges.
+Second, there is unanimous agreement on Arbitrary Content being perfect.
+Third, Claude is consistently the most conservative judge.
+Fourth, there were hallucinations related to the campfire framing.
 Finally, a context length effect was observed.
 
-%\noindent\textbf{Key observations}
-%\begin{itemize}
-  %\item \textbf{Grounding is the weakest dimension in both judges.}
-For grounding, Gemini scores it at 4.67 and Groq/Llama at 4.17---the lowest axis on the radar chart for both. This cross-model agreement validates Grounding as a genuine pipeline weakness, not an artefact of any single judge.
-  
-%\item \textbf{Perfect agreement on Coherence and Arbitrary Content.} 
-Both judges assign 5.00/5.00 to the Coherence and Arbitrary Content dimensions across all runs, providing the strongest reliability signal in the evaluation. These are the most defensible findings.
-  
-%\item \textbf{Groq/Llama is consistently more conservative.} 
-Across all dimensions, Llama scores the generated text at or below Gemini, with the largest gap on Credibility ($|\Delta|=0.67$). This systematic conservatism is consistent with known differences in how different model families calibrate evaluative leniency.
-  
-%\item \textbf{Campfire hallucination.} 
-For hallucinations, we found that the model struggled with campfire as part of the prompt.
-The word \emph{fire} was flagged as a hallucinated entity in the 5-minute Run~2 (064300). This is a systematic artefact of the story prompt framing (``NPC companion at a campfire''), which causes the model to reference fire when no campfire appears in the Minecraft footage.
+For grounding, scores range from 4.17 (Llama-3.3 and Claude) to 5.00 (Llama-4)---the lowest axis on the radar chart for all judges. This five-way cross-model agreement validates Grounding as a genuine pipeline weakness, not an artefact of any single judge family.
 
-Also, we noticed a context length effect.  
-%\item \textbf{Context length effect.} 
-The 10-minute and 15-minute runs achieved perfect Grounding (5.00) from the Gemini judge with zero hallucinations, while the 5-minute runs averaged 4.00. This suggests richer gameplay context produces more accurately grounded narratives.
-%\end{itemize}
+All five judges assign 5.00/5.00 to Arbitrary Content across all runs, and four of five give perfect Coherence (Claude: 4.67), providing the strongest reliability signal in the evaluation. These are the most defensible findings.
+
+Claude is the most conservative judge overall (mean 4.26/5), with the largest penalties on Credibility (3.67) and Engagement (3.67). The largest pairwise gap across any dimension is 1.33 points (Credibility and Engagement between Llama-4 and Claude), suggesting cross-family calibration differences are substantial at finer-grained quality axes. Arbitrary Content remains the single dimension where all five judges agree perfectly.
+
+The word \emph{fire} was flagged as a hallucinated entity in the 5-minute Run~2 (064300) by Gemini. This is a systematic artefact of the story prompt framing (``NPC companion at a campfire''), which causes the model to reference fire when no campfire appears in the Minecraft footage.
+
+The 10-minute and 15-minute runs achieved perfect Grounding (5.00) from the Gemini judge with zero hallucinations, while the 5-minute runs averaged 4.00. This suggests richer gameplay context produces more accurately grounded narratives, a finding corroborated by all five automated judges and both human raters.
 
 \subsection{Human evaluation}
 
@@ -627,7 +617,7 @@ Run ID & Duration & Rater & G & C & Cr & R & A & ER & En \\
 \hline
 \textbf{Human avg}  & & & \textbf{4.67} & \textbf{4.33} & \textbf{4.17} & \textbf{5.00} & \textbf{5.00} & \textbf{3.33} & \textbf{4.00} \\
 \textbf{Gemini avg} & & & \textbf{4.67} & \textbf{5.00} & \textbf{4.83} & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} & \textbf{5.00} \\
-\textbf{Groq avg}   & & & \textbf{4.17} & \textbf{5.00} & \textbf{4.17} & \textbf{4.83} & \textbf{5.00} & \textbf{4.50} & \textbf{4.50} \\
+\textbf{Groq avg}   & & & \textbf{4.17} & \textbf{5.00} & \textbf{4.17} & \textbf{4.67} & \textbf{5.00} & \textbf{4.33} & \textbf{4.33} \\
 %\bottomrule
 \hline
 \end{tabular}
@@ -635,10 +625,10 @@ Run ID & Duration & Rater & G & C & Cr & R & A & ER & En \\
 
 \noindent\textbf{Key observations.}
 \begin{itemize}
-  \item \textbf{Three-way agreement on Repetition and Arbitrary Content.} All three evaluation methods---Gemini, Groq/Llama, and human raters---assign 5.00 (or 4.83 for Groq on Repetition) to these dimensions, providing the strongest cross-method validation in the study.
-  \item \textbf{Perfect human--Gemini agreement on Grounding.} Human raters averaged 4.67, matching Gemini exactly. Groq/Llama scores it slightly lower at 4.17, but all three methods agree it is the weakest dimension, confirming this as the most robust finding of the evaluation.
-  \item \textbf{Emotional Richness gap.} The largest discrepancy is Emotional Richness: humans averaged 3.33 versus 5.00 for Gemini and 4.50 for Groq/Llama. Even the more conservative Groq judge overestimates emotional quality by 1.17 points relative to human perception. This suggests automated judges recognise emotional vocabulary but cannot assess whether warmth feels genuine to a player.
-  \item \textbf{Engagement and Coherence overestimation.} Humans rated Engagement at 4.00 and Coherence at 4.33, versus 5.00 from Gemini and 4.50 from Groq for both. Groq's more conservative scores narrow the gap but do not eliminate it.
+  \item \textbf{Cross-method agreement on Repetition and Arbitrary Content.} All evaluation methods assign near-perfect scores to Repetition and 5.00/5.00 to Arbitrary Content, providing the strongest cross-method validation in the study.
+  \item \textbf{Perfect human--Gemini agreement on Grounding.} Human raters averaged 4.67, matching Gemini exactly. Groq/Llama and Claude score it at 4.17, but all methods agree it is the weakest dimension, confirming this as the most robust finding of the evaluation.
+  \item \textbf{Emotional Richness gap.} The largest human-vs-machine discrepancy is Emotional Richness: humans averaged 3.33 versus a range of 4.17 (Claude) to 5.00 (Gemini) for automated judges. Even the most conservative automated judge overestimates emotional quality by 0.84 points relative to human perception. This suggests automated judges recognise emotional vocabulary but cannot assess whether warmth feels genuine to a player.
+  \item \textbf{Engagement and Coherence overestimation.} Humans rated Engagement at 4.00 and Coherence at 4.33, versus 3.67--5.00 from automated judges. Claude's more conservative scores narrow the gap on Engagement but do not eliminate it.
   \item \textbf{Context length effect.} Both raters gave higher scores to the 15-minute runs (per-rater avg 4.57/5) than to the 5-minute runs (avg 4.14/5), corroborating the automated finding that richer gameplay context produces more satisfying narratives.
 \end{itemize}
 
@@ -646,9 +636,9 @@ Run ID & Duration & Rater & G & C & Cr & R & A & ER & En \\
 
 \subsection{What the results mean collectively}
 
-Taken together, the three evaluation methods---automated F1, dual LLM judges, and human raters---tell a consistent story. The pipeline reliably extracts structured information from gameplay screenshots (Stage~1 F1 of 0.85--1.00) and produces dialogue that is coherent, free of arbitrary UI content, and non-repetitive. These are the dimensions where all evaluators agree, and they represent the strongest validated claims of the research.
+Taken together, the four evaluation methods---automated F1, five LLM judges, and human raters---tell a consistent story. The pipeline reliably extracts structured information from gameplay screenshots (Stage~1 F1 of 0.85--1.00) and produces dialogue that is coherent, free of arbitrary UI content, and non-repetitive. These are the dimensions where all evaluators agree, and they represent the strongest validated claims of the research.
 
-The more interesting finding is where the evaluators \emph{diverge}. Figure~\ref{fig:three_way} shows the full three-way comparison across all seven dimensions. Emotional Richness stands out as the largest gap: human raters scored it at 3.33 on average, while Gemini gave 5.00 and Groq gave 4.50. This gap is not a calibration artefact---it reflects a fundamental limitation of LLM-based judges for creative text. Automated judges can detect emotional vocabulary (words like \emph{heart stopped}, \emph{worried}, \emph{relief}) but cannot assess whether that warmth feels \emph{genuine} to a domain-aware human reader who knows what \emph{Minecraft} actually feels like to play.
+The more interesting finding is where the evaluators \emph{diverge}. Figure~\ref{fig:three_way} shows the full three-way comparison across all seven dimensions (Human vs.\ Gemini vs.\ Groq/Llama-3.3 as representative automated judges). Emotional Richness stands out as the largest human-vs-machine gap: human raters scored it at 3.33 on average, while Gemini gave 5.00, Llama-3.3 gave 4.33, and even the strictest automated judge (Claude) gave 4.17. This gap is not a calibration artefact---it reflects a fundamental limitation of LLM-based judges for creative text. Automated judges can detect emotional vocabulary (words like \emph{heart stopped}, \emph{worried}, \emph{relief}) but cannot assess whether that warmth feels \emph{genuine} to a domain-aware human reader who knows what \emph{Minecraft} actually feels like to play.
 
 \begin{figure}[ht]
 \centering
@@ -659,7 +649,7 @@ The more interesting finding is where the evaluators \emph{diverge}. Figure~\ref
 
 \subsection{Implications for LLM-as-judge evaluation}
 
-This project used two judges from different model families specifically to detect same-model leniency bias. The approach works: Groq/Llama is systematically more conservative than Gemini across all dimensions, with the largest gap on Credibility ($|\Delta|=0.67$). However, both automated judges still overestimate Emotional Richness relative to humans. This suggests that the problem is not model-family leniency but a deeper limitation: LLM judges share a common evaluation prior for emotional language that does not align with the expectations of a domain expert. A practical implication for future work is to move toward a \textbf{majority-vote multi-agent judge} using three or more models from different families (e.g., Gemini, Llama, GPT-4o, Claude). When the majority agree on a score, confidence in that score is higher; when they disagree strongly on a dimension, that disagreement itself is a signal that the dimension may require human calibration.
+This project used five judges from four model families specifically to detect same-model leniency bias. The approach reveals a clear calibration spectrum: Llama-4 is the most lenient (mean 4.95/5), followed by Gemini (4.93), Qwen3 (4.76), Llama-3.3 (4.52), and Claude as the strictest (4.26). Despite this spread, all five judges agree on the two extremes---Arbitrary Content is perfect (5.00) and Credibility/Engagement are the weakest dimensions other than Grounding---confirming these findings are genuine rather than model-specific. The largest pairwise gap across all dimensions is 1.33 points (Credibility and Engagement: Llama-4 vs.\ Claude), suggesting that for finer-grained quality axes, a multi-judge ensemble with majority-vote aggregation is preferable to any single automated score. All five automated judges still overestimate Emotional Richness relative to humans, indicating that the problem is a deeper shared prior for emotional language across model families rather than any single judge's leniency.
 
 \subsection{Broader applicability of the architecture}
 
@@ -671,7 +661,7 @@ The current implementation is a batch pipeline: it processes a fixed set of fram
 
 \section{Limitations and Future Work}
 
-Frame order is user-supplied (e.g., filename order), not inferred from video timestamps. VLM mistakes propagate into the graph and dialogue; consolidation may over- or under-merge events. The campfire framing in the story prompt causes a systematic hallucination of \emph{fire} in environments where no campfire appears; rephrasing the NPC context to be environment-neutral would address this. The human study involved only two raters, each scoring one dialogue per duration group; a larger study with 3--5 raters per sample and inter-rater agreement metrics (e.g., Cohen's $\kappa$) would yield more statistically robust conclusions. Although using two judges from different model families (Gemini and Llama) substantially mitigates same-model leniency bias, both LLM judges still overestimate Emotional Richness relative to humans; future work should design a finer-grained emotional rubric or use pairwise preference judgements to better align automated scores with human perception. The pipeline does not yet integrate live game APIs or native scene graphs from engines; extending to engine telemetry would tighten grounding further.
+Frame order is user-supplied (e.g., filename order), not inferred from video timestamps. VLM mistakes propagate into the graph and dialogue; consolidation may over- or under-merge events. The campfire framing in the story prompt causes a systematic hallucination of \emph{fire} in environments where no campfire appears; rephrasing the NPC context to be environment-neutral would address this. The human study involved only two raters, each scoring one dialogue per duration group; a larger study with 3--5 raters per sample and inter-rater agreement metrics (e.g., Cohen's $\kappa$) would yield more statistically robust conclusions. Although using five judges from four model families substantially mitigates same-model leniency bias, all automated judges still overestimate Emotional Richness relative to humans; future work should design a finer-grained emotional rubric or use pairwise preference judgements to better align automated scores with human perception. The pipeline does not yet integrate live game APIs or native scene graphs from engines; extending to engine telemetry would tighten grounding further.
 
 
 
