@@ -14,7 +14,7 @@
 % Copyright notices.
 % ------------------
 % Select one of the four copyright notices below. Only required for the camera-ready paper submission.
-% 
+%
 % * For papers in which all authors are employed by the US government:
 \copyrightnotice{U.S.\ Government work not protected by U.S.\ copyright}
 
@@ -41,7 +41,7 @@
 %
 % Double-blind peer review.
 % -------------------------
-% Anonymize your paper for the double-blind peer-review process using the 
+% Anonymize your paper for the double-blind peer-review process using the
 % following author and affiliation.
 \name{Anonymous\thanks{Anonymous.}}
 \address{Anonymous}
@@ -76,10 +76,10 @@
 %    Address C-D \\
 %    Email C-D
 %}
-% 
+%
 % Two or more addresses (alternative form).
 % -----------------------------------------
-% If you need to list more than 2 authors or the option for two options above 
+% If you need to list more than 2 authors or the option for two options above
 % produces a poor author block, please use the following structure:
 %\name{%
 %    Author Name$^{\star \dagger}$%
@@ -121,7 +121,7 @@ Results suggest that LLM-based judges overestimate emotional quality and, to a l
 \end{abstract}
 \begin{keywords}
 Games,
-%dialog generation system, 
+%dialog generation system,
 Large Language Models, Visual Language Models
 \end{keywords}
 
@@ -258,8 +258,8 @@ Two code excerpts are highlighted here because they directly embody the project'
 
 \subsection{1st excerpt}
 
-%The first excerpt (Figure~\ref{fig:code_constraints}) shows the storytelling constraints. 
-%block inside \texttt{generate\_npc\_story()} in \texttt{main\_pipeline.py}. 
+%The first excerpt (Figure~\ref{fig:code_constraints}) shows the storytelling constraints.
+%block inside \texttt{generate\_npc\_story()} in \texttt{main\_pipeline.py}.
 %
 %\begin{figure}[htbp]
 %  \centering
@@ -280,7 +280,7 @@ Two code excerpts are highlighted here because they directly embody the project'
 %    """
 %\end{verbatim}
 %}
-%  \caption{The %\texttt{constraints} block in \texttt{generate\_npc\_story()} (\texttt{main\_pipeline.py}). 
+%  \caption{The %\texttt{constraints} block in \texttt{generate\_npc\_story()} (\texttt{main\_pipeline.py}).
 %  constraints block given as instructions to the LLM generating the NPC story.
 %  Each constraint corresponds directly to one of the seven Adams-derived scoring dimensions: grounding every claim in the JSON (Grounding), targeting 80--120 words (Length/Engagement), avoiding HUD elements (Arbitrary Content), expressing genuine emotion (Emotional Richness), and avoiding repeated ideas (Repetition). The scene graph is the sole source of truth passed to the model; no screenshots reach this stage.}
 %  \label{fig:code_constraints}
@@ -444,7 +444,7 @@ Stage~1 accuracy was evaluated across all 360 extracted frames (60 from the 5-mi
 
 %\paragraph{}
 \subsubsection{Ground-truth labelling methodology.}
-Labels were assigned by a deterministic rule, not by an LLM, to avoid any circularity between the judge and the system under evaluation. 
+Labels were assigned by a deterministic rule, not by an LLM, to avoid any circularity between the judge and the system under evaluation.
 Menu and inventory frames were identified by matching the VLM-extracted \texttt{recent\_action} string against a fixed keyword list (\textit{inventory, recipe, crafting, menu, browsing, hovering}). When any keyword matched, the frame was classified as a UI-overlay frame and GT was set to 0 for \texttt{location\_detectable} and \texttt{entities\_identified}. All remaining frames received GT = 1 for all four conditions. To verify this classifier, 30 frames were randomly sampled (15 keyword-matched menu frames and 15 gameplay frames) and visually inspected by the author; all 30 were confirmed to match their assigned ground-truth label, yielding a 100\% spot-check agreement rate. This human verification step confirms that the keyword rule accurately captures the visual distinction between menu-obscured and open-world frames.
 
 \begin{table*}[ht]
@@ -551,7 +551,7 @@ Engagement         & 5.00 & 4.33 & 4.83 & 4.83 & 3.67 & 1.33 \\
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\columnwidth]{07_judge_radar.png}
-\caption{Radar chart comparing all five judge scores (Gemini, Llama-3.3, Qwen3, Llama-4, Claude) across all seven Adams dimensions, averaged over six Minecraft runs. Dimensions where all polygons converge indicate strong inter-judge agreement (Coherence, Arbitrary Content); dimensions where Claude diverges inward indicate the strictest scoring.}
+\caption{Radar chart comparing all five judge scores (Gemini, Llama-3.3, Qwen3, Llama-4, Claude) across all seven Adams dimensions, averaged over six Minecraft runs.}
 \label{fig:radar}
 \end{figure}
 
