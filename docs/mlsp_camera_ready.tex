@@ -110,9 +110,14 @@
 \begin{abstract}
 The landscape of interactive media and video games has evolved from simple, linear progression into expansive, open-world environments where player agency dictates the flow of events. As rendering technologies and physics engines have advanced to create highly realistic simulations, the systems governing in-game storytelling have often lagged behind. In most contemporary open-world games, Non-Playable Character (NPC) dialogue remains heavily pre-scripted. While branching dialogue trees offer the illusion of choice, they are ultimately finite and struggle to account for the emergent, unpredictable actions players take in a physics-driven world.
 
-The proposed architecture separates visual perception from narrative generation to strictly ground the AI in gameplay reality. First, a VLM sequentially processes in-game images to extract key entities, actions, and environmental states, structuring this data into a chronological scene graph. Second, a Large Language Model (LLM) utilizes this structured data to generate dramatically meaningful and credible NPC dialogue. 
+We have a three stage pipeline where video game footage is sampled, objects
+in the frame are identified, and the sequence of frames are turned into
+a summary of the gameplay, as if the summarizer is an NPC in the game.
+The proposed architecture separates visual perception from narrative generation to strictly ground the AI in gameplay reality. First, a VLM sequentially processes in-game images to extract key entities, actions, and environmental states, structuring this data into a chronological scene graph. Second, a Large Language Model (LLM) utilizes this structured data to generate dramatically meaningful and credible NPC dialogue.
 
-Results from five independent LLM judges across four model families confirm that Grounding is the weakest pipeline dimension and that all automated judges overestimate Emotional Richness relative to human raters.
+To evaluate the game-play summaries, we primarily rely on LLM's.
+We found the summaries are typically good, with lack of repetition and lack of arbitrary content among the best categories.
+Results suggest that LLM-based judges overestimate emotional quality and, to a lesser extent, engagement.
 \end{abstract}
 \begin{keywords}
 Games,
@@ -152,7 +157,7 @@ The design follows three principles aligned with the research abstract: (1)~\tex
 
 \begin{figure}[htbp]
   \centering
-   \includegraphics[width=\columnwidth]{architecture_diagram.png}
+   \includegraphics[width=0.95\columnwidth]{architecture_diagram_v2.png}
   \caption{Overview of the proposed multi-image AI pipeline.}
   \label{fig:architecture}
 \end{figure}
@@ -161,16 +166,23 @@ Visuals are critical to understanding the data flow through the system. As illus
 
 \subsection{Stage 1: Per-frame visual extraction}
 
-For each frame index $i = 0,1,\ldots$, the pipeline sends the screenshot and a fixed instruction prompt to the VLM. The model must return a JSON object with fields including \texttt{location}, \texttt{time\_of\_day}, \texttt{player\_status}, \texttt{recent\_action}, \texttt{notable\_enemies\_or\_objects}, and \texttt{visible\_entities} (a list of short strings). Extraction uses a low temperature (0.2) to favour factual stability. Each result is wrapped with metadata: \texttt{frame\_index}, \texttt{source\_image}, and \texttt{observation}.
+For each frame index, %$i = 0,1,\ldots$,
+the pipeline sends the screenshot and a fixed instruction prompt to the VLM.
+%The model must return a JSON object with fields including \texttt{location}, \texttt{time\_of\_day}, \texttt{player\_status}, \texttt{recent\_action}, \texttt{notable\_enemies\_or\_objects}, and \texttt{visible\_entities} (a list of short strings). Extraction uses a low temperature (0.2) to favour factual stability. Each result is wrapped with metadata: \texttt{frame\_index}, \texttt{source\_image}, and \texttt{observation}.
+The model must return a JSON object with fields including location, time-of-day, player status, recent action, notable enemies or objects, and visible entities (a list of short strings). Extraction uses a low temperature (0.2) to favor factual stability. Each result is wrapped with metadata including the frame index, the source image, and observation.
 
 \subsection{Stage 2: Consolidation into a chronological scene graph}
 
-Per-frame observations are merged into one JSON \emph{scene graph} suitable for dialogue generation. Two modes are implemented:
+Per-frame observations are merged into one JSON \emph{scene graph} suitable for dialogue generation. Two modes are implemented: LLM consolidation and simple stitch.
+The LLM consolidation is the default.
+A second call to the same model merges the ordered frame list into a graph with the timeline summary, environment (location, time-of-day, and conditions), entities (with ID, name or description, type, index of the first frame, and index of the last frame), the events (frame index, description, IDs of the involved entities), and player arc (status notes, and notable actions). The consolidator is instructed not to invent content absent from the observations.
 
-\begin{itemize}
-  \item \textbf{LLM consolidation (default).} A second call to the same model merges the ordered frame list into a graph with \texttt{timeline\_summary}, \texttt{environment} (\texttt{location}, \texttt{time\_of\_day}, \texttt{conditions}), \texttt{entities} (with \texttt{id}, \texttt{name\_or\_description}, \texttt{type}, \texttt{first\_frame}, \texttt{last\_frame}), \texttt{events} (\texttt{frame\_index}, \texttt{description}, \texttt{involved\_entity\_ids}), and \texttt{player\_arc} (\texttt{status\_notes}, \texttt{notable\_actions}). The consolidator is instructed not to invent content absent from the observations.
-  \item \textbf{Simple stitch (\texttt{--simple-consolidate}).} A deterministic merge (no extra API call) concatenates actions, collects entity strings, and builds a minimal graph; useful for cost-sensitive runs or ablations.
-\end{itemize}
+%\begin{itemize}
+%  \item \textbf{LLM consolidation (default).} ...
+%  \item \textbf{Simple stitch (\texttt{--simple-consolidate}).} ...
+%\end{itemize}
+Simple stitch allows you to run it locally. It merges the frames and scene graphs (the list of events) with the VLM and the local machine.
+This is a deterministic merge, i.e. with no extra API call, that concatenates actions, collects entity strings, and builds a minimal graph. This is useful for cost-sensitive runs or ablations.
 
 \subsection{Stage 3: NPC dialogue generation}
 
@@ -182,7 +194,7 @@ Game UI elements are intentionally excluded from the prompt constraints to preve
   \centering
   \includegraphics[width=\columnwidth]{with_ui.jpg}
   \includegraphics[width=\columnwidth]{without_ui.png}
-  \caption{Gameplay frame with UI overlay (top) and the clean version used by the pipeline (bottom). Note: the two frames are from slightly different moments in the recording and may differ in ambient lighting; they are chosen to illustrate the UI removal principle rather than to show an identical frame.}
+  \caption{View of a gameplay frame with UI (top) and without UI (bottom).}
   \label{fig:ui_comparison}
 \end{figure}
 
@@ -190,7 +202,12 @@ Game UI elements are intentionally excluded from the prompt constraints to preve
 
 %\subsection{Dataset}
 
-A 24-minute 21-second \emph{Minecraft}~\cite{Johnson2016} gameplay session was recorded and frames were extracted at a 5-second interval, yielding 292 total frames. Six structured runs were produced by varying context length:
+A 24-minute 21-second \emph{Minecraft}~\cite{Johnson2016} gameplay session was recorded and frames were extracted at a 5-second interval, yielding 292 total frames.
+The VLM gets the events from a consecutive sequence of frames.
+We chose an interval of 5 seconds to reduce the amount of frames.
+We found this interval experimentally as a compromise between having too many
+frames and too much of a gap between actions generated.
+Six structured runs were produced by varying context length:
 
 \begin{itemize}
   \item \textbf{5-minute runs} (60 frames, 2 runs)
@@ -198,16 +215,16 @@ A 24-minute 21-second \emph{Minecraft}~\cite{Johnson2016} gameplay session was r
   \item \textbf{15-minute runs} (180 frames, 2 runs)
 \end{itemize}
 
-For each duration group, the first run executed the full three-stage pipeline (VLM extraction + LLM consolidation + dialogue generation). The second run reused the VLM-extracted frames from the first and ran only the LLM stages, testing output consistency given identical visual input.
+For each duration group, the first run executed the full three-stage pipeline (VLM extraction, LLM consolidation, and dialogue generation). The second runs reuse the VLM-extracted frames from the first and utilize only the LLM stages, testing output consistency given identical visual input.
+Having these runs from the same source video allows us to compare the stories generated.
+Figure~\ref{fig:minecraft_scene} shows an example scene from \emph{Minecraft} captured during the recording session.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=\columnwidth]{without_ui.png}
-  \caption{An example scene from \textit{Minecraft} as seen by the pipeline (UI removed). The pipeline discards health bars, hotbar, and crosshair before constructing the scene graph.}
+  \includegraphics[width=\columnwidth]{minecraftframeused.jpg}
+  \caption{An example scene from \textit{Minecraft} used for evaluation.}
   \label{fig:minecraft_scene}
 \end{figure}
-
-Figure~\ref{fig:minecraft_scene} shows an example clean frame from \emph{Minecraft} as processed by Stage~1.
 
 %\subsection{Codebase and Data Layout}
 %The ground truth labels file contains 1440-row binary labels for Stage 1.
@@ -286,33 +303,24 @@ This is where Adams's theoretical criteria~\cite{Adams2014} are operationalized 
 
 \subsection{2nd Excerpt}
 
-The \texttt{JUDGE\_PROMPT} template (below) is the methodological core of Stage~3 evaluation. It cites Adams by name, defines all seven dimensions with 1/3/5 anchor descriptions, and ends with a calibration instruction that prevents the judge from defaulting to~5. The same prompt is sent to every judge backend, ensuring a fair multi-model comparison.
+%The second excerpt (Figure~\ref{fig:code_prompt}) shows the \texttt{JUDGE\_PROMPT} template in \texttt{dialogue\_evaluator.py}.
+The second excerpt contains the template for the judge prompt.
+``You are an expert evaluator for AI-generated NPC (non-player character) dialogue
+in video games. Your evaluation framework is based on Ernest Adams,
+``Fundamentals of Game Design'' (3rd ed., Pearson, 2014), which defines a good game story as:
+an account of dramatically meaningful events that is credible, coherent,
+without undue repetition, and without arbitrary content.''
+The scoring LLM is given the task to ``[s]core the dialogue on SEVEN dimensions. For each dimension give an integer score from 1 to 5
+and a one-sentence justification.''
+For example, grounding is described to the LLM as ``Do all concrete claims (locations, entity names, actions, outcomes) match the
+  scene graph? Penalise invented characters, places, or events not supported by the JSON.   1 = Mostly hallucinated / many invented details;
+  3 = Some claims grounded, some invented;
+  5 = Every concrete claim is directly traceable to the scene graph''.
+The other items include ``Coherence'', ``Credibility'', lack of ``Repetition'', lack of ``Arbitrary Content'', ``Emotional Richness'', and ``Engagement''.
+Additionally, the LLMs are requested to list any hallucinated entities, defined as proper nouns (character names, place names, or item names) that appear in the dialogue but are not present in the scene graph.
+For each of the categories, a score of 1 is the worst possible rating and 5 is the best.
 
-{\small
-\begin{verbatim}
-You are an expert evaluator for AI-generated NPC dialogue.
-Your framework is based on Ernest Adams, "Fundamentals of
-Game Design" (3rd ed., 2014).
-
-## Scene Graph (JSON)
-{scene_graph}
-
-## NPC Dialogue
-{dialogue}
-
-## Your Task  (score each 1-5 + one-sentence justification)
-Grounding    — all claims traceable to scene graph?
-  1=mostly hallucinated  3=mixed  5=fully grounded
-Coherence    — consistent, logically ordered?
-  ...
-[5 more dimensions with 1/3/5 anchors]
-
-Scoring calibration: use the FULL 1-5 scale critically.
-A 5 is genuinely exceptional; 3 is the expected baseline.
-
-Respond with ONLY valid JSON, no markdown fences.
-\end{verbatim}
-}
+This prompt is the methodological core of the Stage~3 evaluation: it cites Adams by name, defines all seven dimensions with explicit 1/3/5 anchor descriptions, and ends with a calibration instruction that prevents the judge from defaulting to~5 for every dimension. The same prompt is sent to all five judge backends, ensuring a fair multi-model comparison. The response format is constrained to plain JSON with no markdown fences for reliable parsing.
 
 \section{Results: Generated NPC Dialogue}
 
@@ -595,7 +603,11 @@ The 10-minute and 15-minute runs achieved perfect Grounding (5.00) from the Gemi
 
 \subsection{Human evaluation}
 
-Two raters, Yen and Chris, scored the six \emph{Minecraft} dialogues independently using the same seven Adams-derived dimensions on a 1--5 scale. Yen and Chris were explicitly chosen for this stage of the evaluation because both regularly play video games and have extensive firsthand experience with \emph{Minecraft}'s environment and mechanics. This background ensures they are well-calibrated to assess whether the NPC dialogue feels genuinely credible and dramatically resonant within the actual context of a playthrough. Table~\ref{tab:human_scores} reports their ratings alongside both automated judge averages for the same runs.
+Two volunteers %raters, Yen and Chris,
+scored the six \emph{Minecraft} dialogues independently using the same seven Adams-derived dimensions on a 1--5 scale.
+%Yen (Volunteer 1) and Chris (Volunteer 2)
+They %were explicitly chosen for this stage of the evaluation because
+both regularly play video games and have extensive firsthand experience with \emph{Minecraft}'s environment and mechanics. This background ensures they are well-calibrated to assess whether the NPC dialogue feels genuinely credible and dramatically resonant within the actual context of a playthrough. Table~\ref{tab:human_scores} reports their ratings alongside the automated judge averages for the same runs.
 
 \begin{table*}[ht]
 \centering
@@ -607,12 +619,12 @@ Two raters, Yen and Chris, scored the six \emph{Minecraft} dialogues independent
 Run ID & Duration & Rater & G & C & Cr & R & A & ER & En \\
 %\midrule
 \hline
-20260420\_054228 & 5 min  & Yen   & 4 & 4 & 4 & 5 & 5 & 3 & 4 \\
-20260420\_064300 & 5 min  & Chris & 5 & 4 & 3 & 5 & 5 & 3 & 4 \\
-20260420\_054237 & 10 min & Yen   & 5 & 4 & 4 & 5 & 5 & 3 & 4 \\
-20260420\_064335 & 10 min & Chris & 4 & 4 & 4 & 5 & 5 & 3 & 4 \\
-20260420\_054239 & 15 min & Yen   & 5 & 5 & 5 & 5 & 5 & 4 & 4 \\
-20260420\_064352 & 15 min & Chris & 5 & 5 & 5 & 5 & 5 & 4 & 4 \\
+20260420\_054228 & 5 min  & Volunteer 1 & 4 & 4 & 4 & 5 & 5 & 3 & 4 \\
+20260420\_064300 & 5 min  & Volunteer 2 & 5 & 4 & 3 & 5 & 5 & 3 & 4 \\
+20260420\_054237 & 10 min & Volunteer 1 & 5 & 4 & 4 & 5 & 5 & 3 & 4 \\
+20260420\_064335 & 10 min & Volunteer 2 & 4 & 4 & 4 & 5 & 5 & 3 & 4 \\
+20260420\_054239 & 15 min & Volunteer 1 & 5 & 5 & 5 & 5 & 5 & 4 & 4 \\
+20260420\_064352 & 15 min & Volunteer 2 & 5 & 5 & 5 & 5 & 5 & 4 & 4 \\
 %\midrule
 \hline
 \textbf{Human avg}  & & & \textbf{4.67} & \textbf{4.33} & \textbf{4.17} & \textbf{5.00} & \textbf{5.00} & \textbf{3.33} & \textbf{4.00} \\
