@@ -162,44 +162,49 @@ def gen_radar():
 
 
 # ============================================================
-#  Figure 08 — 3-way grouped bar chart (Human / Gemini / Groq)
+#  Figure 08 — 6-way grouped bar chart (Human + 5 LLM judges)
 # ============================================================
 def gen_three_way_bar():
-    # 6-run averages — corrected Groq values
-    human  = [4.67, 4.33, 4.17, 5.00, 5.00, 3.33, 4.00]
-    gemini = [4.67, 5.00, 4.83, 5.00, 5.00, 5.00, 5.00]
-    groq   = [4.17, 5.00, 4.17, 4.67, 5.00, 4.33, 4.33]   # corrected R/ER/En
+    # 6-run averages (20260420_* Minecraft runs only)
+    evaluators = [
+        ("Human raters",       [4.67, 4.33, 4.17, 5.00, 5.00, 3.33, 4.00], "#4C72B0"),
+        ("Gemini 2.5 Flash",   [4.67, 5.00, 4.83, 5.00, 5.00, 5.00, 5.00], "#55A868"),
+        ("Llama-3.3-70B",      [4.17, 5.00, 4.17, 4.67, 5.00, 4.33, 4.33], "#C44E52"),
+        ("Qwen3-32B",          [4.33, 5.00, 4.83, 5.00, 5.00, 4.33, 4.83], "#FF7F0E"),
+        ("Llama-4-Scout",      [5.00, 5.00, 5.00, 5.00, 5.00, 4.83, 4.83], "#9467BD"),
+        ("Claude-Haiku",       [4.17, 4.67, 3.67, 4.50, 5.00, 4.17, 3.67], "#8C564B"),
+    ]
 
-    x     = np.arange(len(DIM_LABELS))
-    width = 0.26
-    fig, ax = plt.subplots(figsize=(11, 5))
+    n_groups = len(evaluators)
+    x        = np.arange(len(DIM_LABELS))
+    width    = 0.13
+    offsets  = np.linspace(-(n_groups - 1) / 2, (n_groups - 1) / 2, n_groups) * width
 
-    bars_h = ax.bar(x - width, human,  width, label="Human raters",         color="#4C72B0", zorder=3)
-    bars_g = ax.bar(x,         gemini, width, label="Gemini 2.5 Flash",     color="#55A868", zorder=3)
-    bars_r = ax.bar(x + width, groq,   width, label="Groq / Llama-3.3-70B", color="#C44E52", zorder=3)
+    fig, ax = plt.subplots(figsize=(15, 6))
 
-    for bars in (bars_h, bars_g, bars_r):
+    for (label, scores, color), offset in zip(evaluators, offsets):
+        bars = ax.bar(x + offset, scores, width, label=label, color=color, zorder=3)
         for bar in bars:
             h = bar.get_height()
-            ax.text(bar.get_x() + bar.get_width() / 2, h + 0.04,
-                    f"{h:.2f}", ha="center", va="bottom", fontsize=8)
+            ax.text(bar.get_x() + bar.get_width() / 2, h + 0.03,
+                    f"{h:.2f}", ha="center", va="bottom", fontsize=6.5, rotation=90)
 
-    ax.set_ylim(2.5, 5.55)
+    ax.set_ylim(2.5, 5.75)
     ax.set_xticks(x)
     ax.set_xticklabels(DIM_LABELS, fontsize=10)
     ax.set_ylabel("Average score (1–5 scale)", fontsize=11)
     ax.set_title(
-        "Three-way Evaluation Comparison — Human Raters vs. LLM Judges\n"
+        "Evaluation Comparison — Human Raters vs. 5 LLM Judges\n"
         "(Adams 7 dimensions · averaged over 6 Minecraft runs)",
         fontsize=12, pad=10
     )
     ax.yaxis.grid(True, linestyle="--", alpha=0.6, zorder=0)
     ax.set_axisbelow(True)
-    ax.legend(loc="lower right", fontsize=10, framealpha=0.9)
+    ax.legend(loc="lower right", fontsize=9, framealpha=0.9, ncol=2)
 
     # highlight Emotional Richness column — biggest human-vs-machine gap
-    ax.axvspan(x[5] - 0.45, x[5] + 0.45, color="gold", alpha=0.15, zorder=1)
-    ax.text(x[5], 2.6, "largest gap", ha="center", va="bottom",
+    ax.axvspan(x[5] - 0.5, x[5] + 0.5, color="gold", alpha=0.15, zorder=1)
+    ax.text(x[5], 2.62, "largest gap", ha="center", va="bottom",
             fontsize=8, style="italic", color="goldenrod")
 
     plt.tight_layout()
